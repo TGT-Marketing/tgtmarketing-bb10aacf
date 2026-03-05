@@ -2,12 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const portfolioItems = [
-  { title: "Identidade Visual", category: "Branding", color: "from-accent/80 to-orange-600/80" },
-  { title: "Site Institucional", category: "Web Design", color: "from-primary/80 to-blue-700/80" },
-  { title: "Campanha Digital", category: "Marketing", color: "from-teal-600/80 to-emerald-600/80" },
-  { title: "Redes Sociais", category: "Social Media", color: "from-rose-600/80 to-pink-600/80" },
-  { title: "E-commerce", category: "Loja Virtual", color: "from-violet-600/80 to-purple-600/80" },
-  { title: "Produção de Vídeo", category: "Conteúdo", color: "from-amber-600/80 to-yellow-600/80" },
+  { title: "Identidade Visual Completa", category: "Branding", color: "from-accent to-marsala" },
+  { title: "Site Institucional", category: "Web Design", color: "from-primary to-gray-700" },
+  { title: "Campanha de Performance", category: "Marketing Digital", color: "from-marsala to-red-900" },
+  { title: "Gestão de Redes Sociais", category: "Social Media", color: "from-gray-800 to-gray-600" },
+  { title: "Loja Virtual", category: "E-commerce", color: "from-accent/90 to-primary" },
+  { title: "Produção Audiovisual", category: "Conteúdo", color: "from-marsala to-gray-800" },
 ];
 
 const PortfolioSection = () => {
@@ -27,11 +27,11 @@ const PortfolioSection = () => {
             Portfólio
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mt-3 mb-4">
-            Projetos que geram resultados
+            Projetos que <span className="text-accent">falam por si</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Conheça alguns dos projetos que desenvolvemos para nossos clientes ao
-            longo de mais de 12 anos de atuação.
+            Mais de uma década de projetos entregues com excelência.
+            Cada trabalho é uma prova de que estratégia e criatividade geram resultados.
           </p>
         </motion.div>
 
@@ -45,9 +45,9 @@ const PortfolioSection = () => {
               className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${item.color}`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent group-hover:from-primary/90 transition-all" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <span className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/70 mb-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-accent mb-1">
                   {item.category}
                 </span>
                 <h3 className="text-xl font-bold text-primary-foreground group-hover:text-accent transition-colors">

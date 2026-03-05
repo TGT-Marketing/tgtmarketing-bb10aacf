@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { ArrowRight, MessageCircle, Clock, Shield } from "lucide-react";
 
 const CtaSection = () => {
   const ref = useRef(null);
@@ -8,40 +9,59 @@ const CtaSection = () => {
   return (
     <section id="contato" className="section-padding bg-primary relative overflow-hidden" ref={ref}>
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent via-marsala to-transparent" />
 
-      <div className="container-main relative z-10 text-center">
+      <div className="container-main relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground mb-6 leading-tight">
-            Sua empresa está pronta para{" "}
-            <span className="text-accent">crescer?</span>
+          <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+            Próximo passo
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground mt-4 mb-6 leading-tight">
+            Sua empresa merece ser vista,
+            <br />
+            lembrada e <span className="text-accent">escolhida.</span>
           </h2>
-          <p className="text-primary-foreground/70 max-w-2xl mx-auto text-lg mb-10 leading-relaxed">
-            Fale com a TGT e descubra como transformar seu marketing em resultados
-            reais. Agende um diagnóstico gratuito e personalizado para o seu negócio.
+          <p className="text-primary-foreground/60 text-lg mb-4 leading-relaxed">
+            Pare de desperdiçar tempo e dinheiro com marketing que não funciona.
+            Agende um diagnóstico gratuito e descubra exatamente o que fazer
+            para crescer.
           </p>
+
+          {/* Urgency / trust badges */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-10 text-primary-foreground/50 text-sm">
+            <div className="flex items-center gap-2">
+              <Clock size={16} className="text-accent" />
+              <span>Resposta em até 24h</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Shield size={16} className="text-accent" />
+              <span>Diagnóstico 100% gratuito</span>
+            </div>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://wa.me/5519999999999"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent text-accent-foreground px-10 py-4 rounded-lg font-bold text-lg hover:brightness-110 transition"
+              className="btn-primary flex items-center justify-center gap-2 text-lg"
             >
-              Solicitar diagnóstico
+              Quero meu diagnóstico gratuito <ArrowRight size={20} />
             </a>
             <a
               href="https://wa.me/5519999999999"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-primary-foreground/30 text-primary-foreground px-10 py-4 rounded-lg font-bold text-lg hover:border-accent hover:text-accent transition"
+              className="btn-outline-light flex items-center justify-center gap-2 text-lg"
             >
-              Falar no WhatsApp
+              <MessageCircle size={20} /> Falar no WhatsApp
             </a>
           </div>
         </motion.div>

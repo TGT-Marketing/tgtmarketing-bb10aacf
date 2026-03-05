@@ -6,39 +6,42 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 35% 15%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 35% 15%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 35% 15%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 215 70% 18%;
+    --primary: 0 0% 8%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 25% 95%;
-    --secondary-foreground: 215 35% 15%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 42%;
 
-    --accent: 25 95% 53%;
+    --accent: 0 78% 48%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --marsala: 0 45% 32%;
+    --marsala-foreground: 0 0% 100%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 25 95% 53%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 78% 48%;
 
     --radius: 0.5rem;
 
-    --hero-overlay: 215 70% 10%;
-    --section-dark: 215 50% 12%;
-    --section-dark-foreground: 210 20% 95%;
+    --hero-overlay: 0 0% 5%;
+    --section-dark: 0 0% 8%;
+    --section-dark-foreground: 0 0% 95%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -47,7 +50,7 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 0 78% 48%;
   }
 }
 
@@ -67,7 +70,8 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-orange-400;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(0 78% 48%), hsl(0 45% 32%));
   }
 
   .section-padding {
@@ -76,6 +80,22 @@
 
   .container-main {
     @apply max-w-7xl mx-auto;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-accent-foreground px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center inline-block;
+    box-shadow: 0 4px 20px hsl(0 78% 48% / 0.35);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 6px 30px hsl(0 78% 48% / 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-light {
+    @apply border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 text-center inline-block;
+  }
+  .btn-outline-light:hover {
+    @apply border-accent text-accent;
   }
 }
 

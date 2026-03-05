@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import logoTgt from "@/assets/logo-tgt.png";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -16,54 +16,66 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="text-accent font-semibold text-sm uppercase tracking-widest">
-              Sobre a TGT
+              Quem somos
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mt-3 mb-6 leading-tight">
-              Uma agência que entende de{" "}
-              <span className="text-accent">resultados.</span>
+              Não somos mais uma agência.
+              <br />
+              Somos sua <span className="text-accent">parceira estratégica.</span>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Somos a <strong className="text-foreground">TGT Marketing & Comunicação</strong>, uma agência localizada em
-                Americana – SP. Desde 2012 ajudamos empresas a crescer, ganhar
-                visibilidade e se posicionar de forma estratégica no mercado.
+                A <strong className="text-foreground">TGT Marketing & Comunicação</strong> nasceu em 2012 em Americana – SP
+                com um propósito claro: ajudar empresas a serem vistas, lembradas
+                e escolhidas.
               </p>
               <p>
-                Ao longo desses anos já atendemos mais de 200 empresas no Brasil e
-                também clientes na Europa, desenvolvendo projetos de marketing,
-                comunicação e posicionamento de marca.
+                Ao longo de mais de uma década, desenvolvemos mais de 200 projetos
+                de marketing, branding e comunicação para empresas no Brasil e na
+                Europa. Cada projeto é tratado como único — porque cada empresa
+                tem desafios únicos.
               </p>
-              <p className="text-foreground font-medium italic border-l-4 border-accent pl-4">
-                Acreditamos que não basta existir no mercado — é preciso ser visto,
-                lembrado e escolhido.
+              <p className="text-foreground font-semibold italic border-l-4 border-accent pl-4 py-2">
+                "Não basta existir no mercado — é preciso ser visto, lembrado e
+                escolhido."
               </p>
             </div>
+            <a href="#contato" className="inline-block mt-6 btn-primary text-base py-3 px-6">
+              Conheça nosso trabalho
+            </a>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-6"
+            className="space-y-6"
           >
-            {[
-              { number: "+200", label: "Empresas atendidas" },
-              { number: "12+", label: "Anos de experiência" },
-              { number: "2", label: "Continentes" },
-              { number: "100%", label: "Estratégia personalizada" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-secondary rounded-xl p-6 text-center"
-              >
-                <div className="text-3xl font-extrabold text-accent mb-1">
-                  {stat.number}
+            {/* Logo display */}
+            <div className="bg-secondary rounded-2xl p-10 flex items-center justify-center">
+              <img src={logoTgt} alt="TGT Marketing & Comunicação" className="max-w-[280px] w-full" />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { number: "+200", label: "Empresas atendidas" },
+                { number: "12+", label: "Anos de mercado" },
+                { number: "Brasil & Europa", label: "Atuação internacional" },
+                { number: "100%", label: "Estratégia sob medida" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="bg-secondary rounded-xl p-5 text-center border border-border hover:border-accent/30 transition-colors"
+                >
+                  <div className="text-2xl font-extrabold text-accent mb-1">
+                    {stat.number}
+                  </div>
+                  <div className="text-xs text-muted-foreground font-medium">
+                    {stat.label}
+                  </div>
                 </div>
-                <div className="text-sm text-muted-foreground font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

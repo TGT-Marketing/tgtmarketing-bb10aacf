@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, ArrowRight, MessageCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const highlights = [
@@ -14,61 +14,73 @@ const HeroSection = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/98 via-primary/90 to-primary/70" />
       </div>
+
+      {/* Decorative red accent line */}
+      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent via-marsala to-transparent" />
 
       <div className="container-main relative z-10 pt-32 pb-20">
         <div className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 rounded-full px-4 py-1.5 mb-8"
+          >
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse-glow" />
+            <span className="text-accent text-sm font-semibold">Diagnóstico gratuito disponível</span>
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-primary-foreground mb-6"
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-primary-foreground mb-6"
           >
-            Marketing estratégico para empresas que querem{" "}
-            <span className="text-accent">crescer.</span>
+            Sua empresa não precisa de mais marketing.
+            <br />
+            <span className="text-accent">Precisa do marketing certo.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-lg sm:text-xl text-primary-foreground/80 mb-8 max-w-2xl leading-relaxed"
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-lg sm:text-xl text-primary-foreground/75 mb-10 max-w-2xl leading-relaxed"
           >
-            Desde 2012 ajudamos empresas a ganhar visibilidade, posicionamento e
-            resultados com estratégias inteligentes de marketing e comunicação.
+            Há mais de 12 anos, a TGT transforma a comunicação de empresas em
+            estratégia real de crescimento. Mais de 200 empresas no Brasil e na
+            Europa já comprovaram.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 mb-10"
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 mb-12"
           >
-            <a
-              href="#contato"
-              className="bg-accent text-accent-foreground px-8 py-4 rounded-lg font-bold text-lg hover:brightness-110 transition text-center"
-            >
-              Solicitar diagnóstico
+            <a href="#contato" className="btn-primary flex items-center justify-center gap-2">
+              Quero um diagnóstico gratuito <ArrowRight size={20} />
             </a>
             <a
               href="https://wa.me/5519999999999"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-bold text-lg hover:border-accent hover:text-accent transition text-center"
+              className="btn-outline-light flex items-center justify-center gap-2"
             >
-              Falar no WhatsApp
+              <MessageCircle size={20} /> Falar no WhatsApp
             </a>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-4 sm:gap-8"
           >
             {highlights.map((item) => (
-              <div key={item} className="flex items-center gap-2 text-primary-foreground/70">
+              <div key={item} className="flex items-center gap-2 text-primary-foreground/60">
                 <CheckCircle className="text-accent shrink-0" size={18} />
                 <span className="text-sm font-medium">{item}</span>
               </div>
@@ -76,6 +88,9 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

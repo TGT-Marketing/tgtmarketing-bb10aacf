@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: "Carlos Mendes",
     role: "CEO, Tech Solutions",
-    text: "A TGT transformou completamente nosso posicionamento. Em 6 meses nossos leads triplicaram e a receita cresceu 40%. Não é uma agência, é uma parceira de negócios.",
+    text: "A TGT transformou completamente nosso posicionamento. Durante o trabalho, nossos leads triplicaram e a receita cresceu 40%. Não é uma agência, é uma parceira de negócios.",
     rating: 5,
   },
   {

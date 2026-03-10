@@ -12,8 +12,8 @@ const services = [
 {
   icon: Globe,
   title: "Sites e E-commerce",
-  desc: "Seu site é seu vendedor 24h. Criamos sites institucionais e lojas virtuais com foco em conversão, performance e experiência do usuário.",
-  highlight: "Vendas no automático"
+  desc: "Seu site é seu vendedor 24h. Criamos sites institucionais e lojas virtuais com foco em conversão, performance e experiência do usuário na navegação.",
+  highlight: "VENDA NA INTERNET"
 },
 {
   icon: Palette,
@@ -24,13 +24,13 @@ const services = [
 {
   icon: ShieldCheck,
   title: "Registro de Marca (INPI)",
-  desc: "Proteja o que é seu. Cuidamos de todo o processo de registro de marca no INPI para garantir a segurança jurídica do seu negócio.",
+  desc: "Proteja o que é seu. Cuidamos de todo o processo de registro de marca no INPI para garantir a segurança jurídica do seu negócio. Sem risco de perder sua marca.",
   highlight: "Proteção legal completa"
 },
 {
   icon: Video,
   title: "Produção de Conteúdos",
-  desc: "Conteúdo que engaja e converte. Produção profissional de vídeos, fotos e materiais digitais que fortalecem sua autoridade no mercado.",
+  desc: "Conteúdo que engaja e converte. Produção profissional de vídeos, fotos e materiais digitais que fortalecem sua autoridade no mercado com posicionamento.",
   highlight: "Conteúdo que vende"
 }];
 

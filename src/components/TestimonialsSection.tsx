@@ -6,13 +6,13 @@ const testimonials = [
   {
     name: "Carlos Mendes",
     role: "CEO, Tech Solutions",
-    text: "A TGT transformou completamente nosso posicionamento. Em 6 meses nossos leads triplicaram e a receita cresceu 40%. Não é uma agência, é uma parceira de negócios.",
+    text: "A TGT transformou completamente nosso posicionamento. Durante o trabalho, nossos leads triplicaram e a receita cresceu 40%. Não é uma agência, é uma parceira de negócios.",
     rating: 5,
   },
   {
     name: "Ana Paula Silva",
     role: "Diretora, Studio AP",
-    text: "Finalmente uma agência que entende de RESULTADO. Antes gastávamos com marketing sem saber se funcionava. Com a TGT, cada real investido gera retorno mensurável.",
+    text: "Finalmente uma agência que entende de RESULTADO. Antes gastávamos com marketing sem saber se funcionava. Com a TGT, cada real foi investido e não mais gasto, gerando retorno mensurável para nós.",
     rating: 5,
   },
   {

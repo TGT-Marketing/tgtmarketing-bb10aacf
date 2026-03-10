@@ -20,21 +20,21 @@ const Footer = () => {
             <h4 className="text-section-dark-foreground font-bold mb-4">Navegação</h4>
             <ul className="space-y-2">
               {[
-                { label: "Sobre", href: "#sobre" },
-                { label: "Serviços", href: "#servicos" },
-                { label: "Portfólio", href: "#portfolio" },
-                { label: "Resultados", href: "#resultados" },
-                { label: "Contato", href: "#contato" },
-              ].map((link) => (
-                <li key={link.label}>
+              { label: "Sobre", href: "#sobre" },
+              { label: "Serviços", href: "#servicos" },
+              { label: "Portfólio", href: "#portfolio" },
+              { label: "Resultados", href: "#resultados" },
+              { label: "Contato", href: "#contato" }].
+              map((link) =>
+              <li key={link.label}>
                   <a
-                    href={link.href}
-                    className="text-section-dark-foreground/50 hover:text-accent transition-colors text-sm"
-                  >
+                  href={link.href}
+                  className="text-section-dark-foreground/50 hover:text-accent transition-colors text-sm">
+                  
                     {link.label}
                   </a>
                 </li>
-              ))}
+              )}
             </ul>
           </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-section-dark-foreground/50 text-sm">
                 <MapPin size={16} className="text-accent shrink-0 mt-0.5" />
-                <span>Americana – São Paulo, Brasil</span>
+                <span>Americana – São Paulo, BR</span>
               </div>
               <div className="flex items-center gap-3 text-section-dark-foreground/50 text-sm">
                 <Phone size={16} className="text-accent shrink-0" />
@@ -83,8 +83,8 @@ const Footer = () => {
           © {new Date().getFullYear()} TGT Marketing & Comunicação. Todos os direitos reservados.
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;

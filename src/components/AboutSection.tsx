@@ -13,8 +13,8 @@ const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
+            transition={{ duration: 0.6 }}>
+            
             <span className="text-accent font-semibold text-sm uppercase tracking-widest">
               Quem somos
             </span>
@@ -35,9 +35,9 @@ const AboutSection = () => {
                 Europa. Cada projeto é tratado como único — porque cada empresa
                 tem desafios únicos.
               </p>
-              <p className="text-foreground font-semibold italic border-l-4 border-accent pl-4 py-2">
-                "Não basta existir no mercado — é preciso ser visto, lembrado e
-                escolhido."
+              <p className="text-foreground font-semibold italic border-l-4 border-accent pl-4 py-2">"Não basta existir no mercado — é preciso ser visto, lembrado e escolhido por seu público."
+
+
               </p>
             </div>
             <a href="#contato" className="inline-block mt-6 btn-primary text-base py-3 px-6">
@@ -49,8 +49,8 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
+            className="space-y-6">
+            
             {/* Logo display */}
             <div className="bg-secondary rounded-2xl p-10 flex items-center justify-center">
               <img src={logoTgt} alt="TGT Marketing & Comunicação" className="max-w-[280px] w-full" />
@@ -58,15 +58,15 @@ const AboutSection = () => {
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { number: "+200", label: "Empresas atendidas" },
-                { number: "12+", label: "Anos de mercado" },
-                { number: "Brasil & Europa", label: "Atuação internacional" },
-                { number: "100%", label: "Estratégia sob medida" },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="bg-secondary rounded-xl p-5 text-center border border-border hover:border-accent/30 transition-colors"
-                >
+              { number: "+200", label: "Empresas atendidas" },
+              { number: "12+", label: "Anos de mercado" },
+              { number: "Brasil & Europa", label: "Atuação internacional" },
+              { number: "100%", label: "Estratégia sob medida" }].
+              map((stat) =>
+              <div
+                key={stat.label}
+                className="bg-secondary rounded-xl p-5 text-center border border-border hover:border-accent/30 transition-colors">
+                
                   <div className="text-2xl font-extrabold text-accent mb-1">
                     {stat.number}
                   </div>
@@ -74,13 +74,13 @@ const AboutSection = () => {
                     {stat.label}
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AboutSection;

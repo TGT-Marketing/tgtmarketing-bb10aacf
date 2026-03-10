@@ -3,31 +3,31 @@ import { useRef } from "react";
 import { Search, FileText, Rocket, LineChart } from "lucide-react";
 
 const steps = [
-  {
-    icon: Search,
-    step: "01",
-    title: "Diagnóstico",
-    desc: "Entendemos seu negócio, mercado e concorrência. Sem achismo — dados e análise real.",
-  },
-  {
-    icon: FileText,
-    step: "02",
-    title: "Estratégia",
-    desc: "Criamos um plano sob medida com metas claras, prazos e indicadores de sucesso.",
-  },
-  {
-    icon: Rocket,
-    step: "03",
-    title: "Execução",
-    desc: "Colocamos a estratégia em prática com qualidade, velocidade e foco total em resultado.",
-  },
-  {
-    icon: LineChart,
-    step: "04",
-    title: "Otimização",
-    desc: "Acompanhamos os números e otimizamos continuamente. Seu investimento rende cada vez mais.",
-  },
-];
+{
+  icon: Search,
+  step: "01",
+  title: "Diagnóstico",
+  desc: "Entendemos seu negócio, mercado e concorrência. Sem achismo — dados e análise real."
+},
+{
+  icon: FileText,
+  step: "02",
+  title: "Estratégia",
+  desc: "Criamos um plano sob medida com metas claras, prazos e indicadores de sucesso."
+},
+{
+  icon: Rocket,
+  step: "03",
+  title: "Execução",
+  desc: "Colocamos a estratégia em prática com qualidade, velocidade e foco total em resultado."
+},
+{
+  icon: LineChart,
+  step: "04",
+  title: "Otimização",
+  desc: "Acompanhamos os números e otimizamos continuamente. Seu investimento rende cada vez mais."
+}];
+
 
 const ProcessSection = () => {
   const ref = useRef(null);
@@ -40,29 +40,29 @@ const ProcessSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
+          className="text-center mb-14">
+          
           <span className="text-accent font-semibold text-sm uppercase tracking-widest">
             Método TGT
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mt-3 mb-4">
             Do diagnóstico ao <span className="text-accent">resultado</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Nosso processo é simples, transparente e focado em uma coisa:
-            fazer sua empresa crescer.
+          <p className="text-muted-foreground max-w-2xl mx-auto">Nosso processo é simples, transparente e focado em uma coisa: fazer sua empresa crescer e se desenvolver, com escala e performance.
+
+
           </p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.step}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="relative group"
-            >
+          {steps.map((step, i) =>
+          <motion.div
+            key={step.step}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: i * 0.15 }}
+            className="relative group">
+            
               <div className="text-7xl font-extrabold text-accent/8 absolute -top-6 -left-2 select-none">
                 {step.step}
               </div>
@@ -78,7 +78,7 @@ const ProcessSection = () => {
                 </p>
               </div>
             </motion.div>
-          ))}
+          )}
         </div>
 
         {/* CTA after process */}
@@ -86,8 +86,8 @@ const ProcessSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-14"
-        >
+          className="text-center mt-14">
+          
           <p className="text-muted-foreground mb-4">
             O primeiro passo é simples — e gratuito.
           </p>
@@ -96,8 +96,8 @@ const ProcessSection = () => {
           </a>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ProcessSection;

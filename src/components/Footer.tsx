@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-section-dark-foreground/10 pt-8 text-center text-section-dark-foreground/30 text-sm">
-          © {new Date().getFullYear()} TGT Marketing & Comunicação. Todos os direitos reservados.
+          © TGT Marketing & Comunicação. Todos os direitos reservados.
         </div>
       </div>
     </footer>);

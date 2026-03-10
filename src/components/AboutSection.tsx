@@ -59,7 +59,7 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-4">
               {[
               { number: "+200", label: "Empresas atendidas" },
-              { number: "12+", label: "Anos de mercado" },
+              { number: "+1 década", label: "de mercado" },
               { number: "Brasil & Europa", label: "Atuação internacional" },
               { number: "100%", label: "Estratégia sob medida" }].
               map((stat) =>

@@ -25,7 +25,7 @@ const steps = [
   icon: LineChart,
   step: "04",
   title: "Otimização",
-  desc: "Acompanhamos os números e otimizamos continuamente. Seu investimento rende cada vez mais."
+  desc: "Acompanhamos os números e otimizamos continuamente. Seu investimento rende cada vez mais e com performance."
 }];
 
 

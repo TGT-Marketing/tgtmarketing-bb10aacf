@@ -30,7 +30,7 @@ const services = [
 {
   icon: Video,
   title: "Produção de Conteúdos",
-  desc: "Conteúdo que engaja e converte. Produção profissional de vídeos, fotos e materiais digitais que fortalecem sua autoridade no mercado.",
+  desc: "Conteúdo que engaja e converte. Produção profissional de vídeos, fotos e materiais digitais que fortalecem sua autoridade no mercado com posicionamento.",
   highlight: "Conteúdo que vende"
 }];
 

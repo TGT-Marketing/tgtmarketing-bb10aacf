@@ -12,7 +12,7 @@ const testimonials = [
   {
     name: "Ana Paula Silva",
     role: "Diretora, Studio AP",
-    text: "Finalmente uma agência que entende de RESULTADO. Antes gastávamos com marketing sem saber se funcionava. Com a TGT, cada real investido gera retorno mensurável.",
+    text: "Finalmente uma agência que entende de RESULTADO. Antes gastávamos com marketing sem saber se funcionava. Com a TGT, cada real foi investido e não mais gasto, gerando retorno mensurável para nós.",
     rating: 5,
   },
   {

@@ -36,7 +36,7 @@ const services = [
 {
   icon: Megaphone,
   title: "Meta e Google Ads",
-  desc: "Campanhas de tráfego pago estratégicas no Meta Ads e Google Ads para atrair clientes qualificados, aumentar suas vendas e escalar seus resultados com investimento inteligente.",
+  desc: "Campanhas de tráfego pago estratégicas no Meta Ads e Google Ads para atrair clientes qualificados, aumentar suas vendas e escalar seus resultados com investimento inteligente e estratégico.",
   highlight: "Resultados com tráfego pago"
 }];
 

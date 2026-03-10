@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Globe, Palette, ShieldCheck, Video, BarChart3, ArrowRight } from "lucide-react";
+import { Globe, Palette, ShieldCheck, Video, BarChart3, Megaphone, ArrowRight } from "lucide-react";
 
 const services = [
 {

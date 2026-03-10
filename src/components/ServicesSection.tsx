@@ -12,8 +12,8 @@ const services = [
 {
   icon: Globe,
   title: "Sites e E-commerce",
-  desc: "Seu site é seu vendedor 24h. Criamos sites institucionais e lojas virtuais com foco em conversão, performance e experiência do usuário.",
-  highlight: "Vendas no automático"
+  desc: "Seu site é seu vendedor 24h. Criamos sites institucionais e lojas virtuais com foco em conversão, performance e experiência do usuário na navegação.",
+  highlight: "VENDA NA INTERNET"
 },
 {
   icon: Palette,

@@ -10,6 +10,12 @@ const services = [
   highlight: "Mais visibilidade, mais clientes"
 },
 {
+  icon: Megaphone,
+  title: "Meta e Google Ads",
+  desc: "Campanhas de tráfego pago estratégicas no Meta Ads e Google Ads para atrair clientes qualificados, aumentar suas vendas e escalar seus resultados com investimento inteligente e estratégico.",
+  highlight: "Resultados com tráfego pago"
+},
+{
   icon: Globe,
   title: "Sites e E-commerce",
   desc: "Seu site é seu vendedor 24h. Criamos sites institucionais e lojas virtuais com foco em conversão, performance e experiência do usuário na navegação.",
@@ -32,12 +38,6 @@ const services = [
   title: "Produção de Conteúdos",
   desc: "Conteúdo que engaja e converte. Produção profissional de vídeos, fotos e materiais digitais que fortalecem sua autoridade no mercado com posicionamento.",
   highlight: "Conteúdo que vende"
-},
-{
-  icon: Megaphone,
-  title: "Meta e Google Ads",
-  desc: "Campanhas de tráfego pago estratégicas no Meta Ads e Google Ads para atrair clientes qualificados, aumentar suas vendas e escalar seus resultados com investimento inteligente e estratégico.",
-  highlight: "Resultados com tráfego pago"
 }];
 
 

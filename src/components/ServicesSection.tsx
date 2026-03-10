@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Globe, Palette, ShieldCheck, Video, BarChart3, ArrowRight } from "lucide-react";
+import { Globe, Palette, ShieldCheck, Video, BarChart3, Megaphone, ArrowRight } from "lucide-react";
 
 const services = [
 {
@@ -32,6 +32,12 @@ const services = [
   title: "Produção de Conteúdos",
   desc: "Conteúdo que engaja e converte. Produção profissional de vídeos, fotos e materiais digitais que fortalecem sua autoridade no mercado com posicionamento.",
   highlight: "Conteúdo que vende"
+},
+{
+  icon: Megaphone,
+  title: "Meta e Google Ads",
+  desc: "Campanhas de tráfego pago estratégicas no Meta Ads e Google Ads para atrair clientes qualificados, aumentar suas vendas e escalar seus resultados com investimento inteligente.",
+  highlight: "Resultados com tráfego pago"
 }];
 
 

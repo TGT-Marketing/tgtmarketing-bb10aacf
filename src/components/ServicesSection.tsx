@@ -24,7 +24,7 @@ const services = [
 {
   icon: ShieldCheck,
   title: "Registro de Marca (INPI)",
-  desc: "Proteja o que é seu. Cuidamos de todo o processo de registro de marca no INPI para garantir a segurança jurídica do seu negócio.",
+  desc: "Proteja o que é seu. Cuidamos de todo o processo de registro de marca no INPI para garantir a segurança jurídica do seu negócio. Sem risco de perder sua marca.",
   highlight: "Proteção legal completa"
 },
 {

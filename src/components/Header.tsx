@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Contato", href: "#contato" },
 ];
 
-const Header = () => {
+const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 

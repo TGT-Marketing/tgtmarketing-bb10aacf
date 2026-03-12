@@ -60,9 +60,9 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 mb-12">
             
-            <a href="#contato" className="btn-primary flex items-center justify-center gap-2">
+            <button onClick={onOpenContact} className="btn-primary flex items-center justify-center gap-2">
               Quero um diagnóstico gratuito <ArrowRight size={20} />
-            </a>
+            </button>
             <a
               href="https://wa.me/5519992795271"
               target="_blank"

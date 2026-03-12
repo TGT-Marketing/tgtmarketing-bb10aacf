@@ -8,7 +8,7 @@ const highlights = [
 "Clientes no Brasil e Europa"];
 
 
-const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
+const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
@@ -47,11 +47,11 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-lg sm:text-xl text-primary-foreground/75 mb-10 max-w-2xl leading-relaxed">
-            
-            Há mais de 12 anos, a TGT transforma a comunicação de empresas em
-            estratégia real de crescimento. Mais de 200 empresas no Brasil e na
-            Europa já comprovaram.
+            className="text-lg sm:text-xl text-primary-foreground/75 mb-10 max-w-2xl leading-relaxed">Há mais de 14 anos, a TGT transforma a comunicação de empresas em estratégia real de crescimento. Mais de 200 empresas no Brasil e na Europa já comprovaram.
+
+
+
+
           </motion.p>
 
           <motion.div

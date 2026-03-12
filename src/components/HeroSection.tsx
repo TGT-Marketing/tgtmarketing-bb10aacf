@@ -8,7 +8,7 @@ const highlights = [
 "Clientes no Brasil e Europa"];
 
 
-const HeroSection = () => {
+const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}

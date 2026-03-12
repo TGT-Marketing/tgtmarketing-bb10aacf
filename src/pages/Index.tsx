@@ -9,6 +9,7 @@ import ResultsSection from "@/components/ResultsSection";
 import ProcessSection from "@/components/ProcessSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <ProcessSection />
       <CtaSection />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

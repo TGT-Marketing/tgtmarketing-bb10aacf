@@ -56,7 +56,7 @@ const CtaSection = () => {
               Quero meu diagnóstico gratuito <ArrowRight size={20} />
             </a>
             <a
-              href="https://wa.me/5519999999999"
+              href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline-light flex items-center justify-center gap-2 text-lg"

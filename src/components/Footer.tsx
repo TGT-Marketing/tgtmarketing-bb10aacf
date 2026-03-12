@@ -60,7 +60,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3 text-section-dark-foreground/50 text-sm">
                 <Phone size={16} className="text-accent shrink-0" />
-                <a href="https://wa.me/5519999999999" className="hover:text-accent transition-colors">
+                <a href="https://wa.me/5519992795271" className="hover:text-accent transition-colors">
                   WhatsApp
                 </a>
               </div>

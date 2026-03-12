@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, MessageCircle, Clock, Shield } from "lucide-react";
 
-const CtaSection = () => {
+const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 

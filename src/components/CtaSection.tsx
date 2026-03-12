@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, MessageCircle, Clock, Shield } from "lucide-react";
 
-const CtaSection = () => {
+const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -47,14 +47,12 @@ const CtaSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/5519992795271"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={onOpenContact}
               className="btn-primary flex items-center justify-center gap-2 text-lg"
             >
               Quero meu diagnóstico gratuito <ArrowRight size={20} />
-            </a>
+            </button>
             <a
               href="https://wa.me/5519992795271"
               target="_blank"

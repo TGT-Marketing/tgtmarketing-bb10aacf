@@ -17,8 +17,16 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/98 via-primary/90 to-primary/70" />
       </div>
 
-      {/* Decorative red accent line */}
-      
+      {/* Decorative target/bullseye rings */}
+      <div className="absolute -right-32 top-1/2 -translate-y-1/2 z-0 opacity-[0.07]">
+        <div className="relative w-[700px] h-[700px]">
+          <div className="absolute inset-0 rounded-full border-[40px] border-accent" />
+          <div className="absolute inset-[80px] rounded-full border-[35px] border-accent" />
+          <div className="absolute inset-[155px] rounded-full border-[30px] border-accent" />
+          <div className="absolute inset-[220px] rounded-full bg-accent" />
+        </div>
+      </div>
+
 
       <div className="container-main relative z-10 pt-32 pb-20">
         <div className="max-w-3xl">

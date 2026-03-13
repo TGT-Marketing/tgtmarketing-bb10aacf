@@ -18,7 +18,7 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
       </div>
 
       {/* Decorative red accent line */}
-      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent via-marsala to-transparent" />
+      
 
       <div className="container-main relative z-10 pt-32 pb-20">
         <div className="max-w-3xl">

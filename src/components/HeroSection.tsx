@@ -17,6 +17,8 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/98 via-primary/90 to-primary/70" />
       </div>
 
+      {/* Decorative red accent line */}
+      
 
       <div className="container-main relative z-10 pt-32 pb-20">
         <div className="max-w-3xl">

@@ -22,15 +22,16 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
 
       <div className="container-main relative z-10 pt-32 pb-20">
         <div className="max-w-3xl">
-          <motion.div
+          <motion.button
+            onClick={onOpenContact}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 rounded-full px-4 py-1.5 mb-8">
+            className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 rounded-full px-4 py-1.5 mb-8 cursor-pointer hover:bg-accent/25 transition-colors">
             
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse-glow" />
             <span className="text-accent text-sm font-semibold">Diagnóstico gratuito disponível</span>
-          </motion.div>
+          </motion.button>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

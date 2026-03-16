@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight, MessageCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import TargetAnimation from "./TargetAnimation";
 
 const highlights = [
 "+200 empresas atendidas",

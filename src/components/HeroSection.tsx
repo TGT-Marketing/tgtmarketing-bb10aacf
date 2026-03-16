@@ -16,6 +16,7 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/98 via-primary/90 to-primary/70" />
+        <TargetAnimation />
       </div>
 
       {/* Decorative red accent line */}

@@ -49,17 +49,17 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={onOpenContact}
-              className="btn-primary flex items-center justify-center gap-2 text-lg"
+              className="btn-primary inline-flex items-center justify-center gap-2 text-lg flex-nowrap"
             >
-              Quero meu diagnóstico gratuito <ArrowRight size={20} />
+              Quero meu diagnóstico gratuito <ArrowRight size={20} className="shrink-0" />
             </button>
             <a
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-light flex items-center justify-center gap-2 text-lg"
+              className="btn-outline-light inline-flex items-center justify-center gap-2 text-lg flex-nowrap"
             >
-              <MessageCircle size={20} /> Falar no WhatsApp
+              <MessageCircle size={20} className="shrink-0" /> Falar no WhatsApp
             </a>
           </div>
         </motion.div>

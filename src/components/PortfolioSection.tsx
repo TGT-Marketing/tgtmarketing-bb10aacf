@@ -12,6 +12,34 @@ import portfolioContent from "@/assets/portfolio-content.jpg";
 
 const portfolioItems = [
   {
+    title: "Gestão de Redes Sociais",
+    category: "Social Media",
+    color: "from-gray-800 to-gray-600",
+    image: portfolioSocial,
+    description: "Gestão completa das suas redes sociais com conteúdo estratégico, calendário editorial e interação com o público. Posicionamos sua marca como autoridade no seu segmento.",
+    deliverables: [
+      "Planejamento estratégico mensal",
+      "Criação de conteúdo visual",
+      "Copywriting persuasivo",
+      "Gestão de comunidade",
+      "Relatórios de engajamento",
+    ],
+  },
+  {
+    title: "Campanha de Performance",
+    category: "Marketing Digital",
+    color: "from-marsala to-red-900",
+    image: portfolioPerformance,
+    description: "Campanhas estratégicas no Google Ads e Meta Ads que geram leads qualificados e vendas reais. Monitoramento constante e otimização para maximizar seu ROI.",
+    deliverables: [
+      "Estratégia de tráfego pago",
+      "Criação de anúncios otimizados",
+      "Segmentação de público-alvo",
+      "Relatórios de performance",
+      "Otimização contínua de campanhas",
+    ],
+  },
+  {
     title: "Identidade Visual Completa",
     category: "Branding",
     color: "from-accent to-marsala",
@@ -37,34 +65,6 @@ const portfolioItems = [
       "Otimização SEO",
       "Integração com redes sociais",
       "Painel administrativo intuitivo",
-    ],
-  },
-  {
-    title: "Campanha de Performance",
-    category: "Marketing Digital",
-    color: "from-marsala to-red-900",
-    image: portfolioPerformance,
-    description: "Campanhas estratégicas no Google Ads e Meta Ads que geram leads qualificados e vendas reais. Monitoramento constante e otimização para maximizar seu ROI.",
-    deliverables: [
-      "Estratégia de tráfego pago",
-      "Criação de anúncios otimizados",
-      "Segmentação de público-alvo",
-      "Relatórios de performance",
-      "Otimização contínua de campanhas",
-    ],
-  },
-  {
-    title: "Gestão de Redes Sociais",
-    category: "Social Media",
-    color: "from-gray-800 to-gray-600",
-    image: portfolioSocial,
-    description: "Gestão completa das suas redes sociais com conteúdo estratégico, calendário editorial e interação com o público. Posicionamos sua marca como autoridade no seu segmento.",
-    deliverables: [
-      "Planejamento estratégico mensal",
-      "Criação de conteúdo visual",
-      "Copywriting persuasivo",
-      "Gestão de comunidade",
-      "Relatórios de engajamento",
     ],
   },
   {

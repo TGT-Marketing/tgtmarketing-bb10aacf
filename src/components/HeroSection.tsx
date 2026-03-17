@@ -39,7 +39,7 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-primary-foreground mb-6">Sua agência de marketing especialista em
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-primary-foreground mb-6">Sua agência de marketing especialista em 
 estratégias e ideias que transformam
 
             <br />

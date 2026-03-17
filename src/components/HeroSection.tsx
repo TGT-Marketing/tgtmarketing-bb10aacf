@@ -43,7 +43,7 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
 estratégias e ideias que transformam!
 
             <br />
-            <span className="text-accent">Precisa do marketing certo.</span>
+            <span className="text-accent">estratégias e ideias que transformam</span>
           </motion.h1>
 
           <motion.p

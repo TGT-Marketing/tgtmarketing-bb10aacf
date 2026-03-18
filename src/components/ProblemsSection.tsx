@@ -10,7 +10,7 @@ const problems = [
 { icon: HelpCircle, title: "Marca sem identidade", text: "Seu público não reconhece sua marca. Sem posicionamento claro, você vira commodity." }];
 
 
-const ProblemsSection = () => {
+const ProblemsSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 

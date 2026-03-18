@@ -66,7 +66,7 @@ const ProblemsSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             <span className="inline-flex items-center gap-2 text-accent font-bold group-hover:gap-3 transition-all">
               Começar <ArrowRight size={18} />
             </span>
-          </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>);

@@ -1,19 +1,19 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Globe, Palette, ShieldCheck, Video, BarChart3, Megaphone, ArrowRight } from "lucide-react";
+import { Globe, Palette, ShieldCheck, Video, BarChart3, Megaphone, ArrowRight, MessageCircle } from "lucide-react";
 
 const services = [
-{
-  icon: BarChart3,
-  title: "Marketing Digital",
-  desc: "Não é sobre postar. É sobre posicionar. Gestão estratégica de redes sociais e campanhas digitais que geram visibilidade e oportunidades reais de negócio.",
-  highlight: "Mais visibilidade, mais clientes"
-},
 {
   icon: Megaphone,
   title: "Meta e Google Ads",
   desc: "Campanhas de tráfego pago estratégicas no Meta Ads e Google Ads para atrair clientes qualificados, aumentar suas vendas e escalar seus resultados com investimento inteligente e estratégico.",
   highlight: "Resultados com tráfego pago"
+},
+{
+  icon: BarChart3,
+  title: "Marketing Digital",
+  desc: "Não é sobre postar. É sobre posicionar. Gestão estratégica de redes sociais e campanhas digitais que geram visibilidade e oportunidades reais de negócio.",
+  highlight: "Mais visibilidade, mais clientes"
 },
 {
   icon: Globe,

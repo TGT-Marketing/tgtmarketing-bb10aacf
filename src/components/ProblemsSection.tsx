@@ -54,8 +54,8 @@ const ProblemsSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             </motion.div>
           )}
 
-          <motion.a
-            href="#contato"
+          <motion.div
+            onClick={onOpenContact}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}

@@ -11,7 +11,7 @@ const services = [
 },
 {
   icon: BarChart3,
-  title: "Marketing Digital",
+  title: "Marketing Digital - Gestão Mídias Sociais",
   desc: "Não é sobre postar. É sobre posicionar. Gestão estratégica de redes sociais e campanhas digitais que geram visibilidade e oportunidades reais de negócio.",
   highlight: "Mais visibilidade, mais clientes"
 },

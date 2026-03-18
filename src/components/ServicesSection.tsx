@@ -1,19 +1,19 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Globe, Palette, ShieldCheck, Video, BarChart3, Megaphone, ArrowRight } from "lucide-react";
+import { Globe, Palette, ShieldCheck, Video, BarChart3, Megaphone, ArrowRight, MessageCircle } from "lucide-react";
 
 const services = [
-{
-  icon: BarChart3,
-  title: "Marketing Digital",
-  desc: "Não é sobre postar. É sobre posicionar. Gestão estratégica de redes sociais e campanhas digitais que geram visibilidade e oportunidades reais de negócio.",
-  highlight: "Mais visibilidade, mais clientes"
-},
 {
   icon: Megaphone,
   title: "Meta e Google Ads",
   desc: "Campanhas de tráfego pago estratégicas no Meta Ads e Google Ads para atrair clientes qualificados, aumentar suas vendas e escalar seus resultados com investimento inteligente e estratégico.",
   highlight: "Resultados com tráfego pago"
+},
+{
+  icon: BarChart3,
+  title: "Marketing Digital",
+  desc: "Não é sobre postar. É sobre posicionar. Gestão estratégica de redes sociais e campanhas digitais que geram visibilidade e oportunidades reais de negócio.",
+  highlight: "Mais visibilidade, mais clientes"
 },
 {
   icon: Globe,
@@ -93,6 +93,23 @@ const ServicesSection = () => {
             </motion.div>
           )}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="text-center mt-12"
+        >
+          <a
+            href="https://wa.me/5519992795271"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            <MessageCircle size={24} fill="white" />
+            Fale conosco no WhatsApp
+          </a>
+        </motion.div>
       </div>
     </section>);
 

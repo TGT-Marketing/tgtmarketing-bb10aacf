@@ -53,7 +53,7 @@ const AboutSection = () => {
             
             {/* Logo display */}
             <div className="bg-secondary rounded-2xl p-10 flex items-center justify-center">
-              <img src={logoTgt} alt="TGT Marketing & Comunicação" className="max-w-[280px] w-full" />
+              <img src={logoTgt} alt="TGT Marketing & Comunicação" className="max-w-[280px] w-full transition-transform duration-500 hover:scale-110 hover:rotate-3 cursor-pointer" />
             </div>
 
             <div className="grid grid-cols-2 gap-4">

@@ -61,14 +61,11 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 mb-12">
             
-            <button onClick={onOpenContact} className="btn-primary inline-flex items-center justify-center gap-2 flex-nowrap">
-              Quero um diagnóstico gratuito <ArrowRight size={20} className="shrink-0" />
-            </button>
             <a
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-light inline-flex items-center justify-center gap-2 flex-nowrap">
+              className="btn-primary inline-flex items-center justify-center gap-2 flex-nowrap">
               <MessageCircle size={20} className="shrink-0" /> Falar no WhatsApp
             </a>
           </motion.div>

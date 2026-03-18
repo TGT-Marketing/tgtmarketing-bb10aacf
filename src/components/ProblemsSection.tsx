@@ -10,7 +10,7 @@ const problems = [
 { icon: HelpCircle, title: "Marca sem identidade", text: "Seu público não reconhece sua marca. Sem posicionamento claro, você vira commodity." }];
 
 
-const ProblemsSection = () => {
+const ProblemsSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -54,8 +54,8 @@ const ProblemsSection = () => {
             </motion.div>
           )}
 
-          <motion.a
-            href="#contato"
+          <motion.div
+            onClick={onOpenContact}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -66,7 +66,7 @@ const ProblemsSection = () => {
             <span className="inline-flex items-center gap-2 text-accent font-bold group-hover:gap-3 transition-all">
               Começar <ArrowRight size={18} />
             </span>
-          </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>);

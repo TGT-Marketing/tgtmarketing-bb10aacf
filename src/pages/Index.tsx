@@ -21,7 +21,7 @@ const Index = () => {
       <Header onOpenContact={() => setContactOpen(true)} />
       <HeroSection onOpenContact={() => setContactOpen(true)} />
       <AboutSection />
-      <ProblemsSection />
+      <ProblemsSection onOpenContact={() => setContactOpen(true)} />
       <ServicesSection />
       <PortfolioSection />
       <TestimonialsSection />

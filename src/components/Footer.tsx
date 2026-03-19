@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <img src={logoTgt} alt="TGT Marketing & Comunicação" className="h-12 w-auto brightness-0 invert mb-4" />
+            <a href="#"><img src={logoTgt} alt="TGT Marketing & Comunicação" className="h-12 w-auto brightness-0 invert mb-4" /></a>
             <p className="text-section-dark-foreground/50 text-sm leading-relaxed">
               Agência especializada em estratégia, posicionamento de marca e
               crescimento empresarial desde 2012.

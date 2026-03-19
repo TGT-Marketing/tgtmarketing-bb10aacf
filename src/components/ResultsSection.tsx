@@ -83,22 +83,12 @@ const ResultsSection = () => {
                 <stat.icon className="text-accent" size={28} />
               </div>
               <div className="text-4xl font-extrabold text-accent mb-1">
-                {stat.numericValue !== null ? (
-                  <CountUpNumber
-                    value={stat.numericValue}
-                    prefix={stat.prefix}
-                    suffix={stat.suffix}
-                    isInView={isInView}
-                  />
-                ) : (
-                  <motion.span
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                  >
-                    {stat.displayText}
-                  </motion.span>
-                )}
+                <CountUpNumber
+                  value={stat.numericValue}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                  isInView={isInView}
+                />
               </div>
               <div className="text-section-dark-foreground font-semibold text-sm mb-1">
                 {stat.label}

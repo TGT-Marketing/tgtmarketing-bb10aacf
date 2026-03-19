@@ -102,16 +102,15 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2"
-        >
-          <span className="text-primary-foreground/30 text-xs uppercase tracking-widest">
-            Scroll
-          </span>
-          <ChevronDown size={18} className="text-primary-foreground/30" />
-        </motion.div>
+        <div className="flex flex-col items-center gap-1">
+          <Mouse size={28} className="text-primary-foreground/40" strokeWidth={1.5} />
+          <motion.div
+            animate={{ y: [0, 6, 0], opacity: [0.4, 0.8, 0.4] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronsDown size={18} className="text-primary-foreground/40" strokeWidth={2} />
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );

@@ -20,7 +20,7 @@ const testimonials = [
   {
     name: "Roberto Fernandes",
     role: "Fundador, RF Consultoria",
-    text: "A identidade visual que criaram para nós mudou a percepção dos nossos clientes. Passamos a cobrar 60% mais caro e fechar mais contratos. O branding fez toda diferença.",
+    text: "A identidade visual que criaram para nós mudou a percepção dos nossos clientes. Passamos a cobrar 60% mais caro e fechar mais contratos. O branding fez toda diferença e atingiu o sucesso da minha marca.",
     rating: 5,
     initials: "RF",
   },

@@ -1,4 +1,4 @@
-import { MapPin, Phone, Instagram, Facebook, Linkedin } from "lucide-react";
+import { MapPin, Phone, Instagram, Facebook } from "lucide-react";
 import logoTgt from "@/assets/logo-tgt.png";
 
 const Footer = () => {

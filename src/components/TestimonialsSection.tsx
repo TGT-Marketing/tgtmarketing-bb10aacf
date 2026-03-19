@@ -8,18 +8,21 @@ const testimonials = [
     role: "CEO, Tech Solutions",
     text: "A TGT transformou completamente nosso posicionamento. Durante o trabalho, nossos leads triplicaram e a receita cresceu 40%. Não é uma agência, é uma parceira de negócios.",
     rating: 5,
+    initials: "CM",
   },
   {
     name: "Ana Paula Silva",
     role: "Diretora, Studio AP",
     text: "Finalmente uma agência que entende de RESULTADO. Antes gastávamos com marketing sem saber se funcionava. Com a TGT, cada real foi investido e não mais gasto, gerando retorno mensurável para nós.",
     rating: 5,
+    initials: "AP",
   },
   {
     name: "Roberto Fernandes",
     role: "Fundador, RF Consultoria",
     text: "A identidade visual que criaram para nós mudou a percepção dos nossos clientes. Passamos a cobrar 60% mais caro e fechar mais contratos. O branding fez toda diferença.",
     rating: 5,
+    initials: "RF",
   },
 ];
 
@@ -34,17 +37,18 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+          <span className="section-label justify-center mb-4 block">
             Prova social
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mt-3 mb-4">
-            Quem trabalhou com a TGT <span className="text-accent">recomenda.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
+            Quem trabalhou com a TGT{" "}
+            <span className="text-accent">recomenda.</span>
           </h2>
-          <div className="flex items-center justify-center gap-1 mb-2">
+          <div className="flex items-center justify-center gap-1 mb-3">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="text-accent fill-accent" size={22} />
+              <Star key={i} className="text-accent fill-accent" size={20} />
             ))}
           </div>
           <p className="text-muted-foreground text-sm">
@@ -52,27 +56,41 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-card border border-border rounded-xl p-8 relative hover:border-accent/30 hover:shadow-lg transition-all duration-300"
+              className="card-premium p-8 relative group"
             >
-              <Quote className="text-accent/15 absolute top-6 right-6" size={48} />
-              <div className="flex gap-0.5 mb-4">
+              <Quote
+                className="text-accent/8 absolute top-6 right-6 group-hover:text-accent/15 transition-colors duration-500"
+                size={48}
+              />
+              <div className="flex gap-0.5 mb-5">
                 {[...Array(t.rating)].map((_, j) => (
-                  <Star key={j} className="text-accent fill-accent" size={14} />
+                  <Star
+                    key={j}
+                    className="text-accent fill-accent"
+                    size={14}
+                  />
                 ))}
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-6 relative z-10">
+              <p className="text-muted-foreground leading-relaxed mb-8 relative z-10 text-[15px]">
                 "{t.text}"
               </p>
-              <div className="border-t border-border pt-4">
-                <div className="font-bold text-foreground">{t.name}</div>
-                <div className="text-sm text-muted-foreground">{t.role}</div>
+              <div className="border-t border-border pt-5 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">
+                  {t.initials}
+                </div>
+                <div>
+                  <div className="font-bold text-foreground text-sm">
+                    {t.name}
+                  </div>
+                  <div className="text-xs text-muted-foreground">{t.role}</div>
+                </div>
               </div>
             </motion.div>
           ))}

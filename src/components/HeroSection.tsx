@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { CheckCircle, ArrowRight, MessageCircle } from "lucide-react";
+import { CheckCircle, MessageCircle, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import TargetAnimation from "./TargetAnimation";
 
 const highlights = [
-"+200 empresas atendidas",
-"Desde 2012 no mercado",
-"Clientes no Brasil e Europa"];
+  "+200 empresas atendidas",
+  "Desde 2012 no mercado",
+  "Clientes no Brasil e Europa",
+];
 
-
-const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
+const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
@@ -19,9 +19,6 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
         <TargetAnimation />
       </div>
 
-      {/* Decorative red accent line */}
-      
-
       <div className="container-main relative z-10 pt-32 pb-20">
         <div className="max-w-3xl">
           <motion.button
@@ -29,43 +26,52 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2.5 bg-accent border border-accent rounded-full px-6 py-2.5 mb-8 cursor-pointer hover:bg-accent/90 transition-all shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 hover:scale-105">
-            
+            className="inline-flex items-center gap-2.5 bg-accent border border-accent rounded-full px-6 py-2.5 mb-8 cursor-pointer hover:bg-accent/90 transition-all shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 hover:scale-105"
+          >
             <span className="w-2.5 h-2.5 rounded-full bg-accent-foreground animate-pulse-glow" />
-            <span className="text-accent-foreground text-base font-bold tracking-wide">Diagnóstico gratuito disponível</span>
+            <span className="text-accent-foreground text-base font-bold tracking-wide">
+              Diagnóstico gratuito disponível
+            </span>
           </motion.button>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-primary-foreground mb-6">Sua agência de marketing especialista em
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.05] text-primary-foreground mb-8 tracking-tight"
+          >
+            Sua agência de marketing
             <br />
-            <span className="text-accent">gestão de tráfego e conversão de leads</span>
+            especialista em{" "}
+            <span className="text-gradient bg-gradient-to-r from-accent to-marsala bg-clip-text text-transparent">
+              gestão de tráfego
+            </span>{" "}
+            e conversão de leads
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-lg sm:text-xl text-primary-foreground/75 mb-10 max-w-2xl leading-relaxed">Há mais de 14 anos, a TGT transforma a comunicação de empresas em estratégia real de crescimento. Mais de 200 empresas no Brasil e na Europa já comprovaram.
-
-
-
-
+            className="text-lg sm:text-xl text-primary-foreground/65 mb-12 max-w-2xl leading-relaxed"
+          >
+            Há mais de 14 anos, a TGT transforma a comunicação de empresas em
+            estratégia real de crescimento. Mais de 200 empresas no Brasil e na
+            Europa já comprovaram.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 mb-12">
-            
+            className="flex flex-col sm:flex-row gap-4 mb-14"
+          >
             <a
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center gap-2 flex-nowrap">
+              className="btn-primary inline-flex items-center justify-center gap-2 flex-nowrap text-lg"
+            >
               <MessageCircle size={20} className="shrink-0" /> Falar no WhatsApp
             </a>
           </motion.div>
@@ -74,22 +80,41 @@ const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-8">
-            
-            {highlights.map((item) =>
-            <div key={item} className="flex items-center gap-2 text-primary-foreground/60">
-                <CheckCircle className="text-accent shrink-0" size={18} />
+            className="flex flex-col sm:flex-row gap-4 sm:gap-8"
+          >
+            {highlights.map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-2 text-primary-foreground/50"
+              >
+                <CheckCircle className="text-accent shrink-0" size={16} />
                 <span className="text-sm font-medium">{item}</span>
               </div>
-            )}
+            ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      
-    </section>);
-
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2"
+        >
+          <span className="text-primary-foreground/30 text-xs uppercase tracking-widest">
+            Scroll
+          </span>
+          <ChevronDown size={18} className="text-primary-foreground/30" />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
 };
 
 export default HeroSection;

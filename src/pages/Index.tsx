@@ -11,6 +11,7 @@ import ProcessSection from "@/components/ProcessSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import ScrollToTop from "@/components/ScrollToTop";
 import ContactFormDialog from "@/components/ContactFormDialog";
 
 const Index = () => {

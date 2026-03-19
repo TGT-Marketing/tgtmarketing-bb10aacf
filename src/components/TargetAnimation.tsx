@@ -9,6 +9,8 @@ interface Node {
   baseOpacity: number;
 }
 
+const LABELS = ["SEO", "B2B", "B2C", "CTA", "ROI", "KPI", "BUZZ"];
+
 const TargetAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>(0);
@@ -36,17 +38,16 @@ const TargetAnimation = () => {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // Reinit nodes on resize
       nodesRef.current = [];
-      const count = Math.floor((w * h) / 12000);
-      for (let i = 0; i < Math.min(count, 80); i++) {
+      const count = Math.floor((w * h) / 6000);
+      for (let i = 0; i < Math.min(count, 160); i++) {
         nodesRef.current.push({
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          radius: 1.5 + Math.random() * 2,
-          baseOpacity: 0.15 + Math.random() * 0.25,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: 1.5 + Math.random() * 2.5,
+          baseOpacity: 0.12 + Math.random() * 0.28,
         });
       }
     };
@@ -62,97 +63,92 @@ const TargetAnimation = () => {
     canvas.addEventListener("mousemove", handleMouseMove);
     canvas.addEventListener("mouseleave", handleMouseLeave);
 
-    const drawTarget = (cx: number, cy: number, t: number) => {
-      const radii = [28, 60, 100, 148];
-      const rotation = t * 0.003;
-
-      // Crosshair lines
-      const lineLen = 170;
-      ctx.strokeStyle = "hsla(0, 78%, 48%, 0.07)";
-      ctx.lineWidth = 1;
-      ctx.setLineDash([6, 8]);
-      ctx.beginPath();
-      ctx.moveTo(cx - lineLen, cy);
-      ctx.lineTo(cx + lineLen, cy);
-      ctx.moveTo(cx, cy - lineLen);
-      ctx.lineTo(cx, cy + lineLen);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      // Target rings
-      radii.forEach((r, i) => {
-        ctx.beginPath();
-        const startAngle = rotation + i * 0.5;
-        const arcLen = Math.PI * 1.5;
-        ctx.arc(cx, cy, r, startAngle, startAngle + arcLen);
-        ctx.strokeStyle = `hsla(0, 78%, 48%, ${0.12 - i * 0.02})`;
-        ctx.lineWidth = i === 0 ? 2 : 1;
-        ctx.stroke();
-
-        // Tick marks
-        for (let j = 0; j < 4; j++) {
-          const angle = startAngle + j * (Math.PI / 2);
-          const ix = cx + Math.cos(angle) * r;
-          const iy = cy + Math.sin(angle) * r;
-          const ox = cx + Math.cos(angle) * (r + 6);
-          const oy = cy + Math.sin(angle) * (r + 6);
-          ctx.beginPath();
-          ctx.moveTo(ix, iy);
-          ctx.lineTo(ox, oy);
-          ctx.strokeStyle = `hsla(0, 78%, 48%, ${0.1 - i * 0.02})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      });
-
-      // Center pulsing dot
-      const pulse = 1 + Math.sin(t * 0.05) * 0.4;
-      ctx.beginPath();
-      ctx.arc(cx, cy, 4 * pulse, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(0, 78%, 48%, ${0.25 + Math.sin(t * 0.05) * 0.1})`;
-      ctx.fill();
-
-      // Scanning sweep
-      const sweepAngle = t * 0.015;
-      const gradient = ctx.createConicGradient(sweepAngle, cx, cy);
-      gradient.addColorStop(0, "hsla(0, 78%, 48%, 0.06)");
-      gradient.addColorStop(0.1, "hsla(0, 78%, 48%, 0)");
-      gradient.addColorStop(1, "hsla(0, 78%, 48%, 0)");
-      ctx.beginPath();
-      ctx.arc(cx, cy, 148, 0, Math.PI * 2);
-      ctx.fillStyle = gradient;
-      ctx.fill();
-    };
-
     const drawHexGrid = (t: number) => {
-      const spacing = 60;
+      const spacing = 55;
       const cols = Math.ceil(w / spacing) + 1;
       const rows = Math.ceil(h / (spacing * 0.866)) + 1;
+      const mx = mouseRef.current.x;
+      const my = mouseRef.current.y;
 
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
           const x = col * spacing + (row % 2 ? spacing / 2 : 0);
           const y = row * spacing * 0.866;
-
-          const distToMouse = Math.hypot(mouseRef.current.x - x, mouseRef.current.y - y);
-          const mouseInfluence = Math.max(0, 1 - distToMouse / 200);
-          const opacity = 0.025 + mouseInfluence * 0.06;
+          const distToMouse = Math.hypot(mx - x, my - y);
+          const mouseInfluence = Math.max(0, 1 - distToMouse / 220);
+          const opacity = 0.02 + mouseInfluence * 0.08;
 
           ctx.beginPath();
           for (let i = 0; i < 6; i++) {
-            const angle = (Math.PI / 3) * i + t * 0.001;
-            const size = 3 + mouseInfluence * 3;
+            const angle = (Math.PI / 3) * i + t * 0.0008;
+            const size = 4 + mouseInfluence * 4;
             const px = x + Math.cos(angle) * size;
             const py = y + Math.sin(angle) * size;
             if (i === 0) ctx.moveTo(px, py);
             else ctx.lineTo(px, py);
           }
           ctx.closePath();
-          ctx.strokeStyle = `hsla(0, 0%, 100%, ${opacity})`;
+          ctx.strokeStyle = mouseInfluence > 0.3
+            ? `hsla(0, 78%, 48%, ${opacity})`
+            : `hsla(0, 0%, 100%, ${opacity})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
       }
+    };
+
+    const drawTarget = (cx: number, cy: number, t: number) => {
+      const radii = [24, 52, 88, 130, 170];
+      const rotation = t * 0.003;
+
+      // Crosshair
+      const lineLen = 195;
+      ctx.strokeStyle = "hsla(0, 78%, 48%, 0.06)";
+      ctx.lineWidth = 1;
+      ctx.setLineDash([5, 8]);
+      ctx.beginPath();
+      ctx.moveTo(cx - lineLen, cy); ctx.lineTo(cx + lineLen, cy);
+      ctx.moveTo(cx, cy - lineLen); ctx.lineTo(cx, cy + lineLen);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Rings
+      radii.forEach((r, i) => {
+        ctx.beginPath();
+        const startAngle = rotation + i * 0.6;
+        ctx.arc(cx, cy, r, startAngle, startAngle + Math.PI * 1.5);
+        ctx.strokeStyle = `hsla(0, 78%, 48%, ${0.14 - i * 0.02})`;
+        ctx.lineWidth = i === 0 ? 2.5 : 1;
+        ctx.stroke();
+
+        for (let j = 0; j < 4; j++) {
+          const angle = startAngle + j * (Math.PI / 2);
+          ctx.beginPath();
+          ctx.moveTo(cx + Math.cos(angle) * r, cy + Math.sin(angle) * r);
+          ctx.lineTo(cx + Math.cos(angle) * (r + 7), cy + Math.sin(angle) * (r + 7));
+          ctx.strokeStyle = `hsla(0, 78%, 48%, ${0.1 - i * 0.015})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      });
+
+      // Center pulse
+      const pulse = 1 + Math.sin(t * 0.05) * 0.4;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 5 * pulse, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(0, 78%, 48%, ${0.3 + Math.sin(t * 0.05) * 0.12})`;
+      ctx.fill();
+
+      // Radar sweep
+      const sweepAngle = t * 0.012;
+      const gradient = ctx.createConicGradient(sweepAngle, cx, cy);
+      gradient.addColorStop(0, "hsla(0, 78%, 48%, 0.08)");
+      gradient.addColorStop(0.12, "hsla(0, 78%, 48%, 0)");
+      gradient.addColorStop(1, "hsla(0, 78%, 48%, 0)");
+      ctx.beginPath();
+      ctx.arc(cx, cy, 170, 0, Math.PI * 2);
+      ctx.fillStyle = gradient;
+      ctx.fill();
     };
 
     const animate = () => {
@@ -162,42 +158,33 @@ const TargetAnimation = () => {
       const mx = mouseRef.current.x;
       const my = mouseRef.current.y;
 
-      // Hex grid background
       drawHexGrid(t);
 
-      // Target element
-      const targetX = w * 0.78;
-      const targetY = h * 0.42;
-      drawTarget(targetX, targetY, t);
+      // Target
+      drawTarget(w * 0.78, h * 0.42, t);
 
-      // Update and draw network nodes
+      // Update nodes
       const nodes = nodesRef.current;
-      const connectionDist = 140;
-      const mouseDist = 200;
+      const connectionDist = 120;
+      const mouseRadius = 220;
 
       nodes.forEach((node) => {
-        // Mouse repulsion/attraction
         const dx = mx - node.x;
         const dy = my - node.y;
         const dist = Math.hypot(dx, dy);
-        if (dist < mouseDist && dist > 0) {
-          const force = (mouseDist - dist) / mouseDist * 0.02;
+        if (dist < mouseRadius && dist > 0) {
+          const force = (mouseRadius - dist) / mouseRadius * 0.025;
           node.vx += (dx / dist) * force;
           node.vy += (dy / dist) * force;
         }
-
         node.x += node.vx;
         node.y += node.vy;
-
-        // Damping
-        node.vx *= 0.995;
-        node.vy *= 0.995;
-
-        // Wrap edges
-        if (node.x < -20) node.x = w + 20;
-        if (node.x > w + 20) node.x = -20;
-        if (node.y < -20) node.y = h + 20;
-        if (node.y > h + 20) node.y = -20;
+        node.vx *= 0.994;
+        node.vy *= 0.994;
+        if (node.x < -30) node.x = w + 30;
+        if (node.x > w + 30) node.x = -30;
+        if (node.y < -30) node.y = h + 30;
+        if (node.y > h + 30) node.y = -30;
       });
 
       // Draw connections
@@ -207,13 +194,11 @@ const TargetAnimation = () => {
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.hypot(dx, dy);
           if (dist < connectionDist) {
-            const alpha = (1 - dist / connectionDist) * 0.12;
-
-            // Highlight connections near mouse
+            const alpha = (1 - dist / connectionDist) * 0.15;
             const midX = (nodes[i].x + nodes[j].x) / 2;
             const midY = (nodes[i].y + nodes[j].y) / 2;
             const mouseMid = Math.hypot(mx - midX, my - midY);
-            const boost = mouseMid < 150 ? (1 - mouseMid / 150) * 0.15 : 0;
+            const boost = mouseMid < 180 ? (1 - mouseMid / 180) * 0.25 : 0;
 
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -221,7 +206,7 @@ const TargetAnimation = () => {
             ctx.strokeStyle = boost > 0
               ? `hsla(0, 78%, 48%, ${alpha + boost})`
               : `hsla(0, 0%, 100%, ${alpha})`;
-            ctx.lineWidth = 0.6;
+            ctx.lineWidth = boost > 0 ? 0.8 + boost * 2 : 0.6;
             ctx.stroke();
           }
         }
@@ -229,37 +214,39 @@ const TargetAnimation = () => {
 
       // Draw nodes
       nodes.forEach((node) => {
-        const mouseDist2 = Math.hypot(mx - node.x, my - node.y);
-        const highlight = mouseDist2 < 150 ? (1 - mouseDist2 / 150) : 0;
+        const d = Math.hypot(mx - node.x, my - node.y);
+        const highlight = d < 180 ? (1 - d / 180) : 0;
 
         ctx.beginPath();
-        ctx.arc(node.x, node.y, node.radius + highlight * 2, 0, Math.PI * 2);
-        ctx.fillStyle = highlight > 0.3
-          ? `hsla(0, 78%, 48%, ${node.baseOpacity + highlight * 0.4})`
+        ctx.arc(node.x, node.y, node.radius + highlight * 3, 0, Math.PI * 2);
+        ctx.fillStyle = highlight > 0.2
+          ? `hsla(0, 78%, 48%, ${node.baseOpacity + highlight * 0.5})`
           : `hsla(0, 0%, 100%, ${node.baseOpacity})`;
         ctx.fill();
 
-        if (highlight > 0.3) {
+        if (highlight > 0.25) {
           ctx.beginPath();
-          ctx.arc(node.x, node.y, node.radius + 6, 0, Math.PI * 2);
-          const glow = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.radius + 6);
-          glow.addColorStop(0, `hsla(0, 78%, 48%, ${highlight * 0.2})`);
+          ctx.arc(node.x, node.y, node.radius + 8, 0, Math.PI * 2);
+          const glow = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.radius + 8);
+          glow.addColorStop(0, `hsla(0, 78%, 48%, ${highlight * 0.25})`);
           glow.addColorStop(1, "hsla(0, 78%, 48%, 0)");
           ctx.fillStyle = glow;
           ctx.fill();
         }
       });
 
-      // Floating data labels (subtle)
-      const labels = ["ROI", "KPI", "SEO", "CRM", "B2B"];
-      labels.forEach((label, i) => {
-        const lx = (w * (0.6 + i * 0.08)) + Math.sin(t * 0.01 + i * 2) * 15;
-        const ly = (h * (0.15 + i * 0.15)) + Math.cos(t * 0.008 + i * 3) * 10;
+      // Floating labels
+      LABELS.forEach((label, i) => {
+        const lx = (w * (0.12 + i * 0.12)) + Math.sin(t * 0.008 + i * 1.8) * 18;
+        const ly = (h * (0.12 + (i % 4) * 0.2)) + Math.cos(t * 0.006 + i * 2.5) * 14;
         const distToMouse = Math.hypot(mx - lx, my - ly);
-        const labelOpacity = distToMouse < 120 ? 0.12 + (1 - distToMouse / 120) * 0.1 : 0.05;
+        const labelOpacity = distToMouse < 140 ? 0.15 + (1 - distToMouse / 140) * 0.2 : 0.06;
+        const color = distToMouse < 140
+          ? `hsla(0, 78%, 48%, ${labelOpacity})`
+          : `hsla(0, 0%, 100%, ${labelOpacity})`;
 
-        ctx.font = "600 10px Inter, sans-serif";
-        ctx.fillStyle = `hsla(0, 0%, 100%, ${labelOpacity})`;
+        ctx.font = "700 11px Inter, sans-serif";
+        ctx.fillStyle = color;
         ctx.fillText(label, lx, ly);
       });
 

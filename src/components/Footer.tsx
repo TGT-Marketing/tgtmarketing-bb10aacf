@@ -68,7 +68,7 @@ const Footer = () => {
                 <a href="https://www.instagram.com/tgt.mkt" target="_blank" rel="noopener noreferrer" className="text-section-dark-foreground/50 hover:text-accent transition-colors">
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="text-section-dark-foreground/50 hover:text-accent transition-colors">
+                <a href="https://www.facebook.com/tgt.mktecom" target="_blank" rel="noopener noreferrer" className="text-section-dark-foreground/50 hover:text-accent transition-colors">
                   <Facebook size={20} />
                 </a>
                 <a href="#" className="text-section-dark-foreground/50 hover:text-accent transition-colors">

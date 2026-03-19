@@ -106,12 +106,26 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           <div className="border border-primary-foreground/20 rounded-full p-2 group-hover:border-primary-foreground/50 transition-all duration-500 cursor-pointer">
             <Mouse size={24} className="text-primary-foreground/40" strokeWidth={1.5} />
           </div>
-          <motion.div
-            animate={{ y: [0, 6, 0], opacity: [0.4, 0.8, 0.4] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronsDown size={16} className="text-primary-foreground/40" strokeWidth={2} />
-          </motion.div>
+          <div className="flex flex-col items-center -space-y-1.5">
+            <motion.div
+              animate={{ y: [0, 4, 0], opacity: [0.2, 0.6, 0.2] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ChevronDown size={16} className="text-primary-foreground/50" strokeWidth={2.5} />
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 4, 0], opacity: [0.15, 0.5, 0.15] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.15 }}
+            >
+              <ChevronDown size={16} className="text-primary-foreground/40" strokeWidth={2.5} />
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 4, 0], opacity: [0.1, 0.4, 0.1] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+            >
+              <ChevronDown size={16} className="text-primary-foreground/30" strokeWidth={2.5} />
+            </motion.div>
+          </div>
         </a>
       </motion.div>
     </section>

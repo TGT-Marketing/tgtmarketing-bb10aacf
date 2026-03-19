@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle, MessageCircle, Mouse, ChevronsDown } from "lucide-react";
+import { CheckCircle, MessageCircle, Mouse, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import TargetAnimation from "./TargetAnimation";
 

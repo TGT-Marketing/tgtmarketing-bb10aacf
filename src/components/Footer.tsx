@@ -118,8 +118,7 @@ const Footer = () => {
 
         <div className="border-t border-section-dark-foreground/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-section-dark-foreground/25 text-sm">
-            © {new Date().getFullYear()} TGT Marketing & Comunicação. Todos os direitos
-            reservados.
+            © TGT Marketing & Comunicação. Todos os direitos reservados.
           </span>
           <span className="text-section-dark-foreground/20 text-xs">
             Feito com estratégia e performance.

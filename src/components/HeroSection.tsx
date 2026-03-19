@@ -70,7 +70,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center gap-2 flex-nowrap text-lg"
+              className="btn-primary inline-flex items-center justify-center gap-2 flex-nowrap text-lg border-2 border-accent-foreground/30 hover:border-accent-foreground/80"
             >
               <MessageCircle size={20} className="shrink-0" /> Falar no WhatsApp
             </a>

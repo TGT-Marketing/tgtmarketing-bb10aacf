@@ -54,8 +54,8 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14">
           
-          <span className="text-accent font-semibold text-sm uppercase tracking-widest">
-            O que fazemos
+          <span className="text-accent font-semibold text-sm uppercase tracking-widest">O QUE FAZEMOS:
+
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mt-3 mb-4">
             Soluções que geram <span className="text-accent">resultado real</span>
@@ -98,14 +98,14 @@ const ServicesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="text-center mt-12"
-        >
+          className="text-center mt-12">
+          
           <a
             href="https://wa.me/5519992795271"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-          >
+            className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+            
             <MessageCircle size={24} fill="white" />
             Fale conosco no WhatsApp
           </a>

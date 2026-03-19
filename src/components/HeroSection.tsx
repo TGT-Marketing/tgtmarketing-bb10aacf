@@ -100,7 +100,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute -bottom-1 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10"
       >
         <a href="#sobre" className="flex flex-col items-center gap-1 group">
           <div className="border border-primary-foreground/20 rounded-full p-2 group-hover:border-primary-foreground/50 transition-all duration-500 cursor-pointer">

@@ -100,15 +100,17 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10"
       >
         <div className="flex flex-col items-center gap-1">
-          <Mouse size={28} className="text-primary-foreground/40" strokeWidth={1.5} />
+          <div className="border border-primary-foreground/20 rounded-full p-2 hover:border-primary-foreground/50 transition-all duration-500 cursor-pointer">
+            <Mouse size={24} className="text-primary-foreground/40" strokeWidth={1.5} />
+          </div>
           <motion.div
             animate={{ y: [0, 6, 0], opacity: [0.4, 0.8, 0.4] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronsDown size={18} className="text-primary-foreground/40" strokeWidth={2} />
+            <ChevronsDown size={16} className="text-primary-foreground/40" strokeWidth={2} />
           </motion.div>
         </div>
       </motion.div>

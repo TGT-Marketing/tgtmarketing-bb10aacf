@@ -13,34 +13,40 @@ const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}>
-            
-            <span className="text-accent font-semibold text-sm uppercase tracking-widest">
-              Quem somos
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mt-3 mb-6 leading-tight">
+            transition={{ duration: 0.7 }}
+          >
+            <span className="section-label mb-4 block">Quem somos</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-6 leading-tight tracking-tight">
               Não somos mais uma agência.
               <br />
-              Somos sua <span className="text-accent">parceira estratégica.</span>
+              Somos sua{" "}
+              <span className="text-accent">parceira estratégica.</span>
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="divider-accent mb-8" />
+            <div className="space-y-5 text-muted-foreground leading-relaxed text-[15px]">
               <p>
-                A <strong className="text-foreground">TGT Marketing & Comunicação</strong> nasceu em 2012 em Americana – SP
-                com um propósito claro: ajudar empresas a serem vistas, lembradas
-                e escolhidas.
+                A{" "}
+                <strong className="text-foreground">
+                  TGT Marketing & Comunicação
+                </strong>{" "}
+                nasceu em 2012 em Americana – SP com um propósito claro: ajudar
+                empresas a serem vistas, lembradas e escolhidas.
               </p>
               <p>
-                Ao longo de mais de uma década, desenvolvemos mais de 200 projetos
-                de marketing, branding e comunicação para empresas no Brasil e na
-                Europa. Cada projeto é tratado como único — porque cada empresa
-                tem desafios únicos.
+                Ao longo de mais de uma década, desenvolvemos mais de 200
+                projetos de marketing, branding e comunicação para empresas no
+                Brasil e na Europa. Cada projeto é tratado como único — porque
+                cada empresa tem desafios únicos.
               </p>
-              <p className="text-foreground font-semibold italic border-l-4 border-accent pl-4 py-2">"Não basta existir no mercado — é preciso ser visto, lembrado e escolhido por seu público."
-
-
+              <p className="text-foreground font-medium italic border-l-4 border-accent pl-5 py-3 bg-accent/5 rounded-r-lg">
+                "Não basta existir no mercado — é preciso ser visto, lembrado e
+                escolhido por seu público."
               </p>
             </div>
-            <a href="#contato" className="inline-block mt-6 btn-primary text-base py-3 px-6">
+            <a
+              href="#contato"
+              className="inline-block mt-8 btn-primary text-base py-3.5 px-7"
+            >
               Conheça nosso trabalho
             </a>
           </motion.div>
@@ -48,39 +54,46 @@ const AboutSection = () => {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6">
-            
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="space-y-6"
+          >
             {/* Logo display */}
-            <div className="bg-secondary rounded-2xl p-10 flex items-center justify-center">
-              <img src={logoTgt} alt="TGT Marketing & Comunicação" className="max-w-[280px] w-full transition-transform duration-500 hover:scale-110 cursor-pointer" />
+            <div className="bg-secondary rounded-2xl p-12 flex items-center justify-center border border-border">
+              <img
+                src={logoTgt}
+                alt="TGT Marketing & Comunicação"
+                className="max-w-[280px] w-full transition-transform duration-500 hover:scale-110 cursor-pointer"
+              />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               {[
-              { number: "+200", label: "Empresas atendidas" },
-              { number: "+1 década", label: "de mercado" },
-              { number: "Brasil & Europa", label: "Atuação internacional" },
-              { number: "100%", label: "Estratégia sob medida" }].
-              map((stat) =>
-              <div
-                key={stat.label}
-                className="bg-secondary rounded-xl p-5 text-center border border-border hover:border-accent/30 transition-colors">
-                
+                { number: "+200", label: "Empresas atendidas" },
+                { number: "+1 década", label: "de mercado" },
+                { number: "Brasil & Europa", label: "Atuação internacional" },
+                { number: "100%", label: "Estratégia sob medida" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
+                  className="card-premium p-5 text-center"
+                >
                   <div className="text-2xl font-extrabold text-accent mb-1">
                     {stat.number}
                   </div>
                   <div className="text-xs text-muted-foreground font-medium">
                     {stat.label}
                   </div>
-                </div>
-              )}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default AboutSection;

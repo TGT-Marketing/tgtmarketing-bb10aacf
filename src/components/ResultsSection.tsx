@@ -4,7 +4,7 @@ import { Building2, Clock, Globe2, Target } from "lucide-react";
 
 const stats = [
   { icon: Building2, numericValue: 200, prefix: "+", suffix: "", label: "Empresas transformadas", sub: "em mais de uma década" },
-  { icon: Clock, numericValue: null, displayText: "+1 década", prefix: "", suffix: "", label: "de experiência", sub: "desde 2012 no mercado" },
+  { icon: Clock, numericValue: 14, prefix: "", suffix: "", label: "anos de experiência", sub: "desde 2012 no mercado" },
   { icon: Globe2, numericValue: 2, prefix: "", suffix: "", label: "Continentes", sub: "Brasil e Europa" },
   { icon: Target, numericValue: 100, prefix: "", suffix: "%", label: "Personalizado", sub: "zero fórmulas prontas" },
 ];

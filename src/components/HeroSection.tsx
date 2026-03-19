@@ -26,7 +26,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2.5 bg-accent border border-accent rounded-full px-6 py-2.5 mb-8 cursor-pointer hover:bg-accent/90 transition-all shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 hover:scale-105"
+            className="inline-flex items-center gap-2.5 bg-accent border-2 border-accent-foreground/30 rounded-full px-6 py-2.5 mb-8 cursor-pointer hover:border-accent-foreground/80 hover:bg-accent/90 transition-all shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 hover:scale-105"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-accent-foreground animate-pulse-glow" />
             <span className="text-accent-foreground text-base font-bold tracking-wide">

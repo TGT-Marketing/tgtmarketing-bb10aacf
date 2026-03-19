@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
+import { CheckCircle, ArrowRight, MessageCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import logoTgt from "@/assets/logo-tgt.png";
 import TargetAnimation from "./TargetAnimation";
 
-const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
+const highlights = [
+"+200 empresas atendidas",
+"Desde 2012 no mercado",
+"Clientes no Brasil e Europa"];
+
+
+const HeroSection = ({ onOpenContact }: {onOpenContact?: () => void;}) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover" />
@@ -13,87 +19,77 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         <TargetAnimation />
       </div>
 
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          className="mb-8"
-        >
-          <img
-            src={logoTgt}
-            alt="TGT Marketing & Comunicação"
-            className="h-20 sm:h-24 w-auto mx-auto brightness-0 invert"
-          />
-        </motion.div>
+      {/* Decorative red accent line */}
+      
 
-        {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-primary-foreground/50 text-xs sm:text-sm tracking-[0.3em] uppercase font-medium mb-6"
-        >
-          "Desenvolvendo ideias que se transformam em resultados!"
-        </motion.p>
+      <div className="container-main relative z-10 pt-32 pb-20">
+        <div className="max-w-3xl">
+          <motion.button
+            onClick={onOpenContact}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2.5 bg-accent border border-accent rounded-full px-6 py-2.5 mb-8 cursor-pointer hover:bg-accent/90 transition-all shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 hover:scale-105">
+            
+            <span className="w-2.5 h-2.5 rounded-full bg-accent-foreground animate-pulse-glow" />
+            <span className="text-accent-foreground text-base font-bold tracking-wide">Diagnóstico gratuito disponível</span>
+          </motion.button>
 
-        {/* Main Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.1] text-primary-foreground mb-6"
-        >
-          Marketing que <span className="text-accent">posiciona.</span>
-          <br />
-          Estratégia que gera
-          <br />
-          <span className="text-accent">resultados.</span>
-        </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-primary-foreground mb-6">Sua agência de marketing especialista em
+            <br />
+            <span className="text-accent">gestão de tráfego e conversão de leads</span>
+          </motion.h1>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.55 }}
-          className="text-primary-foreground/50 text-base sm:text-lg mb-10"
-        >
-          Apresentação Institucional
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-lg sm:text-xl text-primary-foreground/75 mb-10 max-w-2xl leading-relaxed">Há mais de 14 anos, a TGT transforma a comunicação de empresas em estratégia real de crescimento. Mais de 200 empresas no Brasil e na Europa já comprovaram.
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="flex items-center justify-center gap-4 sm:gap-8 text-primary-foreground/60 text-sm sm:text-base"
-        >
-          <span>Desde 2012</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-          <span>+200 empresas</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-          <span>Brasil & Europa</span>
-        </motion.div>
+
+
+
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 mb-12">
+            
+            <a
+              href="https://wa.me/5519992795271"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center justify-center gap-2 flex-nowrap">
+              <MessageCircle size={20} className="shrink-0" /> Falar no WhatsApp
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
+            className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+            
+            {highlights.map((item) =>
+            <div key={item} className="flex items-center gap-2 text-primary-foreground/60">
+                <CheckCircle className="text-accent shrink-0" size={18} />
+                <span className="text-sm font-medium">{item}</span>
+              </div>
+            )}
+          </motion.div>
+        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <div className="w-6 h-10 border-2 border-primary-foreground/20 rounded-full flex justify-center pt-2">
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-1.5 rounded-full bg-accent"
-          />
-        </div>
-      </motion.div>
-    </section>
-  );
+      {/* Bottom gradient fade */}
+      
+    </section>);
+
 };
 
 export default HeroSection;

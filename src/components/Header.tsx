@@ -23,18 +23,18 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-primary/95 backdrop-blur-md shadow-lg py-2"
-          : "bg-transparent py-4"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container-main flex items-center justify-between">
-        <a href="#">
+        <a href="#" className="relative z-10">
           <img
             src={logoTgt}
             alt="TGT Marketing & Comunicação"
-            className={`transition-all duration-300 ${scrolled ? "h-10" : "h-12"} w-auto brightness-0 invert`}
+            className={`transition-all duration-500 ${scrolled ? "h-9" : "h-11"} w-auto brightness-0 invert`}
           />
         </a>
 
@@ -44,7 +44,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-primary-foreground/80 hover:text-accent transition-colors"
+              className="text-[13px] font-medium text-primary-foreground/70 hover:text-accent transition-colors duration-300 uppercase tracking-wide"
             >
               {link.label}
             </a>
@@ -53,7 +53,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             href="https://wa.me/5519992795271"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-sm font-bold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300"
+            className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-[13px] font-bold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 uppercase tracking-wide"
           >
             Falar no WhatsApp
           </a>
@@ -61,7 +61,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-primary-foreground"
+          className="md:hidden text-primary-foreground relative z-10"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,7 +75,8 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-primary/95 backdrop-blur-md border-t border-primary-foreground/10"
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-primary/98 backdrop-blur-md border-t border-primary-foreground/5"
           >
             <nav className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
@@ -83,7 +84,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-primary-foreground/80 hover:text-accent transition-colors font-medium"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors font-medium text-sm uppercase tracking-wide"
                 >
                   {link.label}
                 </a>
@@ -92,7 +93,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                 href="https://wa.me/5519992795271"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent text-accent-foreground px-5 py-3 rounded-lg text-sm font-bold text-center hover:shadow-lg transition mt-2"
+                className="bg-accent text-accent-foreground px-5 py-3 rounded-lg text-sm font-bold text-center hover:shadow-lg transition-all mt-2 uppercase tracking-wide"
               >
                 Falar no WhatsApp
               </a>

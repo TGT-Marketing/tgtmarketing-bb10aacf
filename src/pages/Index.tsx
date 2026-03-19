@@ -31,6 +31,7 @@ const Index = () => {
       <CtaSection onOpenContact={() => setContactOpen(true)} />
       <Footer />
       <WhatsAppFloat />
+      <ScrollToTop />
       <ContactFormDialog open={contactOpen} onOpenChange={setContactOpen} />
     </div>
   );

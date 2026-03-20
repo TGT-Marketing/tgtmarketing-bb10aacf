@@ -65,7 +65,7 @@ const ProcessSection = () => {
               transition={{ duration: 0.5, delay: i * 0.15 }}
               className="relative group"
             >
-              <div className="text-8xl font-extrabold text-accent/5 absolute -top-8 -left-2 select-none group-hover:text-accent/10 transition-colors duration-500">
+              <div className="text-5xl sm:text-8xl font-extrabold text-accent/5 absolute -top-4 sm:-top-8 -left-1 sm:-left-2 select-none group-hover:text-accent/10 transition-colors duration-500">
                 {step.step}
               </div>
               <div className="relative pt-12 pl-1">

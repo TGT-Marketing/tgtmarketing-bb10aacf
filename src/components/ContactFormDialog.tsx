@@ -80,7 +80,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-primary border-accent/20">
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-primary border-accent/20 mx-3 sm:mx-auto rounded-xl sm:rounded-2xl p-4 sm:p-6">
         <DialogHeader>
           <DialogTitle className="text-2xl font-extrabold text-primary-foreground">
             Diagnóstico <span className="text-accent">Gratuito</span>

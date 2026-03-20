@@ -78,9 +78,9 @@ const AboutSection = () => {
                   initial={{ opacity: 0, y: 15 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-                  className="card-premium p-5 text-center"
+                  className="card-premium p-3.5 sm:p-5 text-center"
                 >
-                  <div className="text-2xl font-extrabold text-accent mb-1">
+                  <div className="text-xl sm:text-2xl font-extrabold text-accent mb-1">
                     {stat.number}
                   </div>
                   <div className="text-xs text-muted-foreground font-medium">

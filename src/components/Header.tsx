@@ -94,8 +94,9 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                 href="https://wa.me/5519992795271"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent text-accent-foreground px-5 py-3 rounded-lg text-sm font-bold text-center hover:shadow-lg transition-all mt-2 uppercase tracking-wide"
+                className="inline-flex items-center justify-center gap-2.5 bg-accent text-accent-foreground px-5 py-3.5 rounded-lg text-sm font-bold text-center hover:shadow-lg transition-all mt-2 uppercase tracking-wide active:scale-[0.97]"
               >
+                <MessageCircle size={18} className="shrink-0" />
                 Falar no WhatsApp
               </a>
             </nav>

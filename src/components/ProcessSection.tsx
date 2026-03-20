@@ -68,7 +68,7 @@ const ProcessSection = () => {
               <div className="text-5xl sm:text-8xl font-extrabold text-accent/5 absolute -top-4 sm:-top-8 -left-1 sm:-left-2 select-none group-hover:text-accent/10 transition-colors duration-500">
                 {step.step}
               </div>
-              <div className="relative pt-12 pl-1">
+              <div className="relative pt-8 sm:pt-12 pl-1">
                 <div className="w-12 h-12 rounded-xl bg-accent/8 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:shadow-lg group-hover:shadow-accent/20 transition-all duration-500">
                   <step.icon
                     className="text-accent group-hover:text-accent-foreground transition-colors duration-300"

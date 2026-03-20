@@ -81,7 +81,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-8"
+            className="flex flex-col sm:flex-row gap-2.5 sm:gap-8"
           >
             {highlights.map((item) => (
               <div

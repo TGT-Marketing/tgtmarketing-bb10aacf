@@ -66,7 +66,7 @@ const AboutSection = () => {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {[
                 { number: "+200", label: "Empresas atendidas" },
                 { number: "+1 década", label: "de mercado" },

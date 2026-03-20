@@ -58,7 +58,7 @@ const AboutSection = () => {
             className="space-y-6"
           >
             {/* Logo display */}
-            <div className="bg-secondary rounded-2xl p-12 flex items-center justify-center border border-border">
+            <div className="bg-secondary rounded-2xl p-8 sm:p-12 flex items-center justify-center border border-border">
               <img
                 src={logoTgt}
                 alt="TGT Marketing & Comunicação"
@@ -66,7 +66,7 @@ const AboutSection = () => {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {[
                 { number: "+200", label: "Empresas atendidas" },
                 { number: "+1 década", label: "de mercado" },
@@ -78,9 +78,9 @@ const AboutSection = () => {
                   initial={{ opacity: 0, y: 15 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-                  className="card-premium p-5 text-center"
+                  className="card-premium p-3.5 sm:p-5 text-center"
                 >
-                  <div className="text-2xl font-extrabold text-accent mb-1">
+                  <div className="text-xl sm:text-2xl font-extrabold text-accent mb-1">
                     {stat.number}
                   </div>
                   <div className="text-xs text-muted-foreground font-medium">

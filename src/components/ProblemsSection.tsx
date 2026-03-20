@@ -70,14 +70,14 @@ const ProblemsSection = ({
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10">
           {problems.map((problem, i) => (
             <motion.div
               key={problem.title}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-primary/60 border-2 border-section-dark-foreground/8 rounded-2xl p-7 hover:border-accent/50 transition-all duration-500 hover:bg-primary/80"
+              className="group bg-primary/60 border-2 border-section-dark-foreground/8 rounded-2xl p-5 sm:p-7 hover:border-accent/50 transition-all duration-500 hover:bg-primary/80"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
                 <problem.icon

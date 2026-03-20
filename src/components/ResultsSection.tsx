@@ -119,19 +119,19 @@ const ResultsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="text-center bg-primary/50 rounded-2xl p-8 border-2 border-section-dark-foreground/5 hover:border-accent/50 transition-all duration-500 group"
+              className="text-center bg-primary/50 rounded-2xl p-4 sm:p-8 border-2 border-section-dark-foreground/5 hover:border-accent/50 transition-all duration-500 group"
             >
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors duration-500">
-                <stat.icon className="text-accent" size={28} />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-xl sm:rounded-2xl bg-accent/8 flex items-center justify-center mb-3 sm:mb-5 group-hover:bg-accent/15 transition-colors duration-500">
+                <stat.icon className="text-accent" size={22} />
               </div>
-              <div className="text-4xl font-extrabold text-accent mb-2">
+              <div className="text-2xl sm:text-4xl font-extrabold text-accent mb-1 sm:mb-2">
                 <CountUpNumber
                   value={stat.numericValue}
                   prefix={stat.prefix}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoTgt from "@/assets/logo-tgt.png";
 
@@ -53,8 +53,9 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             href="https://wa.me/5519992795271"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-[13px] font-bold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 uppercase tracking-wide"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-[13px] font-bold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 uppercase tracking-wide active:scale-[0.97]"
           >
+            <MessageCircle size={15} className="shrink-0" />
             Falar no WhatsApp
           </a>
         </nav>
@@ -93,8 +94,9 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                 href="https://wa.me/5519992795271"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent text-accent-foreground px-5 py-3 rounded-lg text-sm font-bold text-center hover:shadow-lg transition-all mt-2 uppercase tracking-wide"
+                className="inline-flex items-center justify-center gap-2.5 bg-accent text-accent-foreground px-5 py-3.5 rounded-lg text-sm font-bold text-center hover:shadow-lg transition-all mt-2 uppercase tracking-wide active:scale-[0.97]"
               >
+                <MessageCircle size={18} className="shrink-0" />
                 Falar no WhatsApp
               </a>
             </nav>

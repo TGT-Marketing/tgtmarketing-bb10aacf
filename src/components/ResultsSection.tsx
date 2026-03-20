@@ -126,7 +126,7 @@ const ResultsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="text-center bg-primary/50 rounded-2xl p-8 border-2 border-section-dark-foreground/5 hover:border-accent/50 transition-all duration-500 group"
+              className="text-center bg-primary/50 rounded-2xl p-4 sm:p-8 border-2 border-section-dark-foreground/5 hover:border-accent/50 transition-all duration-500 group"
             >
               <div className="w-16 h-16 mx-auto rounded-2xl bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors duration-500">
                 <stat.icon className="text-accent" size={28} />

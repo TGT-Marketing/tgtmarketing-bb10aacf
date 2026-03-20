@@ -11,7 +11,7 @@ const highlights = [
 
 const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pb-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden pb-12 sm:pb-16">
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover" />

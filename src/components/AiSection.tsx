@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { BrainCircuit, BarChart3, Target, Zap } from "lucide-react";
+import { BrainCircuit, BarChart3, Target, Zap, MessageCircle } from "lucide-react";
 import aiImage from "@/assets/ai-intelligence.jpg";
 
 const highlights = [

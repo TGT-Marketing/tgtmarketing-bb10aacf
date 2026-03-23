@@ -33,7 +33,7 @@ const AiSection = () => {
       style={{ background: "hsl(0 0% 14%)" }}
     >
       <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}

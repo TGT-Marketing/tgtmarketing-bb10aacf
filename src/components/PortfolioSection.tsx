@@ -122,7 +122,7 @@ const PortfolioSection = () => {
           <span className="section-label justify-center mb-4 block">
             Portfólio
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
             Projetos que <span className="text-accent">falam por si</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />

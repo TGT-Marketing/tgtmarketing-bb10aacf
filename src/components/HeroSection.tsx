@@ -11,7 +11,7 @@ const highlights = [
 
 const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pb-12 sm:pb-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden pb-8 sm:pb-16">
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover" />
@@ -19,7 +19,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         <TargetAnimation />
       </div>
 
-      <div className="container-main relative z-10 pt-24 sm:pt-32 pb-12 sm:pb-20">
+      <div className="container-main relative z-10 pt-20 sm:pt-32 pb-8 sm:pb-20">
         <div className="max-w-3xl">
           <motion.button
             onClick={onOpenContact}
@@ -38,7 +38,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-[1.75rem] sm:text-5xl lg:text-7xl font-extrabold leading-[1.1] sm:leading-[1.05] text-primary-foreground mb-5 sm:mb-8 tracking-tight"
+            className="text-[1.6rem] sm:text-5xl lg:text-7xl font-extrabold leading-[1.12] sm:leading-[1.05] text-primary-foreground mb-4 sm:mb-8 tracking-tight"
           >
             Sua agência de marketing
             <br />
@@ -53,7 +53,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-[15px] sm:text-lg lg:text-xl text-primary-foreground/65 mb-8 sm:mb-12 max-w-2xl leading-relaxed"
+            className="text-[14px] sm:text-lg lg:text-xl text-primary-foreground/65 mb-6 sm:mb-12 max-w-2xl leading-relaxed"
           >
             Há mais de 14 anos, a TGT transforma a comunicação de empresas em
             estratégia real de crescimento. Mais de 200 empresas no Brasil e na
@@ -64,13 +64,13 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-14"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-14"
           >
             <a
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center gap-2.5 whitespace-nowrap text-base sm:text-lg border-2 border-accent-foreground/30 hover:border-accent-foreground/80 w-full sm:w-auto py-3.5 sm:py-4"
+              className="btn-primary inline-flex items-center justify-center gap-2.5 whitespace-nowrap text-[15px] sm:text-lg border-2 border-accent-foreground/30 hover:border-accent-foreground/80 w-full sm:w-auto py-3 sm:py-4"
             >
               <MessageCircle size={20} className="shrink-0" />
               Quero vender mais!
@@ -103,7 +103,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         transition={{ delay: 1.5 }}
         className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10"
       >
-        <a href="#sobre" className="flex flex-col items-center gap-1 group">
+        <a href="#sobre" className="hidden sm:flex flex-col items-center gap-1 group">
           <div className="border border-primary-foreground/20 rounded-full p-2 group-hover:border-primary-foreground/50 transition-all duration-500 cursor-pointer">
             <Mouse size={24} className="text-primary-foreground/40" strokeWidth={1.5} />
           </div>

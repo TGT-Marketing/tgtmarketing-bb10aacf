@@ -33,7 +33,7 @@ const AiSection = () => {
       style={{ background: "hsl(0 0% 14%)" }}
     >
       <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -61,7 +61,7 @@ const AiSection = () => {
             <span className="section-label mb-4 block text-accent">
               Inteligência Artificial
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-6 leading-[1.1]"
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-5 leading-[1.15]"
               style={{ color: "hsl(0 0% 95%)" }}
             >
               Tecnologia aliada à{" "}

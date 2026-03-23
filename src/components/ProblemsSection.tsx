@@ -57,13 +57,13 @@ const ProblemsSection = ({
           <span className="section-label text-accent justify-center mb-4 block">
             Isso parece familiar?
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-section-dark-foreground mt-3 mb-4 tracking-tight">
+          <h2 className="text-[1.4rem] sm:text-4xl lg:text-5xl font-extrabold text-section-dark-foreground mt-3 mb-4 tracking-tight leading-tight">
             Se sua empresa enfrenta esses problemas,
             <br className="hidden sm:block" />
             <span className="text-accent">você está perdendo dinheiro.</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />
-          <p className="text-section-dark-foreground/50 max-w-2xl mx-auto mb-14 text-[15px]">
+          <p className="text-section-dark-foreground/50 max-w-2xl mx-auto mb-8 sm:mb-14 text-[14px] sm:text-[15px]">
             A maioria das empresas que nos procura tinha pelo menos 3 desses
             problemas. Todas conseguiram resolver e escalar de forma
             direcionada.
@@ -77,7 +77,7 @@ const ProblemsSection = ({
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-primary/60 border-2 border-section-dark-foreground/8 rounded-2xl p-5 sm:p-7 hover:border-accent/50 transition-all duration-500 hover:bg-primary/80"
+              className="group bg-primary/60 border-2 border-section-dark-foreground/8 rounded-xl sm:rounded-2xl p-4 sm:p-7 hover:border-accent/50 transition-all duration-500 hover:bg-primary/80"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
                 <problem.icon
@@ -99,7 +99,7 @@ const ProblemsSection = ({
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="bg-accent/10 border-2 border-section-dark-foreground/10 rounded-2xl p-7 flex flex-col items-center justify-center gap-3 text-center cursor-pointer hover:bg-accent/20 hover:border-section-dark-foreground/50 transition-all duration-500 group"
+            className="bg-accent/10 border-2 border-section-dark-foreground/10 rounded-xl sm:rounded-2xl p-5 sm:p-7 flex flex-col items-center justify-center gap-3 text-center cursor-pointer hover:bg-accent/20 hover:border-section-dark-foreground/50 transition-all duration-500 group"
           >
             <span className="text-accent font-extrabold text-xl">
               Chega de perder tempo.

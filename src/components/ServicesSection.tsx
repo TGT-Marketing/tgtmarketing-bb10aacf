@@ -66,7 +66,7 @@ const ServicesSection = () => {
           <span className="section-label justify-center mb-4 block">
             O que fazemos
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
             Soluções que geram{" "}
             <span className="text-accent">resultado real</span>
           </h2>
@@ -84,7 +84,7 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group card-premium p-5 sm:p-8"
+              className="group card-premium p-4 sm:p-8"
             >
               <div className="w-14 h-14 rounded-2xl bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:shadow-lg group-hover:shadow-accent/20 transition-all duration-500">
                 <service.icon

@@ -37,19 +37,19 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             </span>
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground mt-2 mb-8 leading-tight tracking-tight">
+          <h2 className="text-[1.4rem] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground mt-2 mb-6 sm:mb-8 leading-tight tracking-tight">
             Sua empresa merece ser vista,
             <br />
             lembrada e <span className="text-accent">escolhida.</span>
           </h2>
-          <p className="text-primary-foreground/50 text-lg mb-6 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-primary-foreground/50 text-[14px] sm:text-lg mb-5 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
             Pare de desperdiçar tempo e dinheiro com marketing que não funciona.
             Agende um diagnóstico gratuito e descubra exatamente o que fazer
             para crescer.
           </p>
 
           {/* Trust badges */}
-          <div className="flex flex-wrap items-center justify-center gap-8 mb-12 text-primary-foreground/40 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-8 sm:mb-12 text-primary-foreground/40 text-xs sm:text-sm">
             <div className="flex items-center gap-2">
               <Clock size={16} className="text-accent" />
               <span>Resposta em até 24h</span>
@@ -63,7 +63,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <button
               onClick={onOpenContact}
-              className="btn-primary inline-flex items-center justify-center gap-2.5 text-base sm:text-lg flex-nowrap w-full sm:w-auto"
+              className="btn-primary inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
             >
               <span>Quero meu diagnóstico gratuito</span>
               <ArrowRight size={20} className="shrink-0" />
@@ -72,7 +72,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-light inline-flex items-center justify-center gap-2.5 text-base sm:text-lg flex-nowrap w-full sm:w-auto"
+              className="btn-outline-light inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
             >
               <MessageCircle size={20} className="shrink-0" />
               <span>Falar no WhatsApp</span>

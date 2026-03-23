@@ -9,14 +9,14 @@ const AboutSection = () => {
   return (
     <section id="sobre" className="section-padding bg-background">
       <div className="container-main" ref={ref}>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
             <span className="section-label mb-4 block">Quem somos</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-6 leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 leading-tight tracking-tight">
               Não somos mais uma agência.
               <br />
               Somos sua{" "}
@@ -58,7 +58,7 @@ const AboutSection = () => {
             className="space-y-6"
           >
             {/* Logo display */}
-            <div className="bg-secondary rounded-2xl p-8 sm:p-12 flex items-center justify-center border border-border">
+            <div className="bg-secondary rounded-2xl p-6 sm:p-12 flex items-center justify-center border border-border">
               <img
                 src={logoTgt}
                 alt="TGT Marketing & Comunicação"

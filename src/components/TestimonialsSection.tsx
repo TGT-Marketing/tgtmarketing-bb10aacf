@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
           <span className="section-label justify-center mb-4 block">
             Prova social
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
             Quem trabalhou com a TGT{" "}
             <span className="text-accent">recomenda.</span>
           </h2>
@@ -63,7 +63,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="card-premium p-5 sm:p-8 relative group border-2 border-border hover:border-accent/50 transition-all duration-500"
+              className="card-premium p-4 sm:p-8 relative group border-2 border-border hover:border-accent/50 transition-all duration-500"
             >
               <Quote
                 className="text-accent/8 absolute top-6 right-6 group-hover:text-accent/15 transition-colors duration-500"

@@ -19,7 +19,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         <TargetAnimation />
       </div>
 
-      <div className="container-main relative z-10 pt-24 sm:pt-32 pb-12 sm:pb-20">
+      <div className="container-main relative z-10 pt-20 sm:pt-32 pb-8 sm:pb-20">
         <div className="max-w-3xl">
           <motion.button
             onClick={onOpenContact}

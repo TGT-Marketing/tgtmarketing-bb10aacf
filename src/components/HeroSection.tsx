@@ -64,7 +64,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-14"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-14"
           >
             <a
               href="https://wa.me/5519992795271"

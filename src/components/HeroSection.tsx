@@ -70,7 +70,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center gap-2.5 whitespace-nowrap text-base sm:text-lg border-2 border-accent-foreground/30 hover:border-accent-foreground/80 w-full sm:w-auto py-3.5 sm:py-4"
+              className="btn-primary inline-flex items-center justify-center gap-2.5 whitespace-nowrap text-[15px] sm:text-lg border-2 border-accent-foreground/30 hover:border-accent-foreground/80 w-full sm:w-auto py-3 sm:py-4"
             >
               <MessageCircle size={20} className="shrink-0" />
               Quero vender mais!

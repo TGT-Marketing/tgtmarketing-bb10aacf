@@ -63,7 +63,7 @@ const ProblemsSection = ({
             <span className="text-accent">você está perdendo dinheiro.</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />
-          <p className="text-section-dark-foreground/50 max-w-2xl mx-auto mb-14 text-[15px]">
+          <p className="text-section-dark-foreground/50 max-w-2xl mx-auto mb-8 sm:mb-14 text-[14px] sm:text-[15px]">
             A maioria das empresas que nos procura tinha pelo menos 3 desses
             problemas. Todas conseguiram resolver e escalar de forma
             direcionada.

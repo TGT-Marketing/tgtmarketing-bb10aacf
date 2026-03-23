@@ -103,7 +103,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         transition={{ delay: 1.5 }}
         className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10"
       >
-        <a href="#sobre" className="flex flex-col items-center gap-1 group">
+        <a href="#sobre" className="hidden sm:flex flex-col items-center gap-1 group">
           <div className="border border-primary-foreground/20 rounded-full p-2 group-hover:border-primary-foreground/50 transition-all duration-500 cursor-pointer">
             <Mouse size={24} className="text-primary-foreground/40" strokeWidth={1.5} />
           </div>

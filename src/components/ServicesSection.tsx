@@ -84,7 +84,7 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group card-premium p-5 sm:p-8"
+              className="group card-premium p-4 sm:p-8"
             >
               <div className="w-14 h-14 rounded-2xl bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:shadow-lg group-hover:shadow-accent/20 transition-all duration-500">
                 <service.icon

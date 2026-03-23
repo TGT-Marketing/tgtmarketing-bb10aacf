@@ -58,7 +58,7 @@ const AboutSection = () => {
             className="space-y-6"
           >
             {/* Logo display */}
-            <div className="bg-secondary rounded-2xl p-8 sm:p-12 flex items-center justify-center border border-border">
+            <div className="bg-secondary rounded-2xl p-6 sm:p-12 flex items-center justify-center border border-border">
               <img
                 src={logoTgt}
                 alt="TGT Marketing & Comunicação"

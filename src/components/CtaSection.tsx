@@ -42,7 +42,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             <br />
             lembrada e <span className="text-accent">escolhida.</span>
           </h2>
-          <p className="text-primary-foreground/50 text-lg mb-6 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-primary-foreground/50 text-[14px] sm:text-lg mb-5 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
             Pare de desperdiçar tempo e dinheiro com marketing que não funciona.
             Agende um diagnóstico gratuito e descubra exatamente o que fazer
             para crescer.

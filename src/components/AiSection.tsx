@@ -42,10 +42,15 @@ const AiSection = () => {
             className="order-2 lg:order-1"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
+              <motion.img
                 src={aiImage}
                 alt="Inteligência Artificial aplicada ao marketing"
                 className="w-full h-auto object-cover"
+                loading="lazy"
+                width={1024}
+                height={768}
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
             </div>

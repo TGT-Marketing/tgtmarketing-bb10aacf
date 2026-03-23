@@ -57,7 +57,7 @@ const ProblemsSection = ({
           <span className="section-label text-accent justify-center mb-4 block">
             Isso parece familiar?
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-section-dark-foreground mt-3 mb-4 tracking-tight">
+          <h2 className="text-[1.4rem] sm:text-4xl lg:text-5xl font-extrabold text-section-dark-foreground mt-3 mb-4 tracking-tight leading-tight">
             Se sua empresa enfrenta esses problemas,
             <br className="hidden sm:block" />
             <span className="text-accent">você está perdendo dinheiro.</span>

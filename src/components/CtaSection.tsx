@@ -49,7 +49,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           </p>
 
           {/* Trust badges */}
-          <div className="flex flex-wrap items-center justify-center gap-8 mb-12 text-primary-foreground/40 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-8 sm:mb-12 text-primary-foreground/40 text-xs sm:text-sm">
             <div className="flex items-center gap-2">
               <Clock size={16} className="text-accent" />
               <span>Resposta em até 24h</span>

@@ -29,7 +29,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             className="group relative inline-flex items-center gap-2.5 sm:gap-3 rounded-full px-5 sm:px-7 py-2.5 sm:py-3 mb-6 sm:mb-8 cursor-pointer overflow-hidden"
             style={{
               background: "linear-gradient(135deg, hsl(0 0% 100% / 0.12), hsl(0 0% 100% / 0.04))",
-              border: "1px solid hsl(0 0% 100% / 0.2)",
+              border: "1.5px solid hsl(0 78% 48% / 0.6)",
               backdropFilter: "blur(12px)",
               boxShadow: "0 0 24px hsl(0 78% 48% / 0.15), inset 0 1px 0 hsl(0 0% 100% / 0.1)",
             }}
@@ -48,7 +48,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               style={{ boxShadow: "0 0 8px hsl(0 78% 48% / 0.8), 0 0 20px hsl(0 78% 48% / 0.4)" }}
             />
             <span className="text-primary-foreground text-sm sm:text-base font-bold tracking-wide relative z-10">
-              🎯 Diagnóstico gratuito disponível
+              Diagnóstico gratuito disponível
             </span>
             <motion.span
               className="text-accent text-lg relative z-10"

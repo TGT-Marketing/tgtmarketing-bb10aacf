@@ -87,7 +87,7 @@ const AiSection = () => {
               Isso significa campanhas mais eficientes, investimentos otimizados e ações baseadas em evidências, não em suposições. A cada interação, a tecnologia aprende, ajusta rotas e potencializa resultados, garantindo que sua marca esteja sempre um passo à frente da concorrência.
             </p>
             <p
-              className="text-sm sm:text-[15px] leading-relaxed mb-8 font-semibold"
+              className="text-sm sm:text-[15px] leading-relaxed mb-6 sm:mb-8 font-semibold"
               style={{ color: "hsl(0 0% 80%)" }}
             >
               Com a combinação entre inteligência humana e capacidade analítica da IA, transformamos dados em decisões estratégicas e decisões em crescimento sustentável.

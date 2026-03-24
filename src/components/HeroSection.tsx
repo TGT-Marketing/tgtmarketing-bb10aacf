@@ -26,12 +26,37 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 sm:gap-2.5 bg-accent border-2 border-accent-foreground/30 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 mb-6 sm:mb-8 cursor-pointer hover:border-accent-foreground/80 hover:bg-accent/90 transition-all shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 hover:scale-105"
+            className="group relative inline-flex items-center gap-2.5 sm:gap-3 rounded-full px-5 sm:px-7 py-2.5 sm:py-3 mb-6 sm:mb-8 cursor-pointer overflow-hidden"
+            style={{
+              background: "linear-gradient(135deg, hsl(0 0% 100% / 0.12), hsl(0 0% 100% / 0.04))",
+              border: "1px solid hsl(0 0% 100% / 0.2)",
+              backdropFilter: "blur(12px)",
+              boxShadow: "0 0 24px hsl(0 78% 48% / 0.15), inset 0 1px 0 hsl(0 0% 100% / 0.1)",
+            }}
+            whileHover={{
+              scale: 1.06,
+              boxShadow: "0 0 36px hsl(0 78% 48% / 0.35), inset 0 1px 0 hsl(0 0% 100% / 0.15)",
+            }}
+            whileTap={{ scale: 0.97 }}
           >
-            <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-accent-foreground animate-pulse-glow" />
-            <span className="text-accent-foreground text-sm sm:text-base font-bold tracking-wide">
-              Diagnóstico gratuito disponível
+            {/* Shine sweep */}
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
+            <motion.span
+              className="w-2.5 h-2.5 rounded-full bg-accent shrink-0 relative z-10"
+              animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+              style={{ boxShadow: "0 0 8px hsl(0 78% 48% / 0.8), 0 0 20px hsl(0 78% 48% / 0.4)" }}
+            />
+            <span className="text-primary-foreground text-sm sm:text-base font-bold tracking-wide relative z-10">
+              🎯 Diagnóstico gratuito disponível
             </span>
+            <motion.span
+              className="text-accent text-lg relative z-10"
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              →
+            </motion.span>
           </motion.button>
 
           <motion.h1

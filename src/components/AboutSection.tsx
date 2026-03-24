@@ -62,7 +62,7 @@ const AboutSection = () => {
               <img
                 src={logoTgt}
                 alt="TGT Marketing & Comunicação"
-                className="max-w-[280px] w-full transition-transform duration-500 hover:scale-110 cursor-pointer"
+                className="shine-effect max-w-[280px] w-full transition-transform duration-500 hover:scale-110 cursor-pointer rounded-lg"
               />
             </div>
 

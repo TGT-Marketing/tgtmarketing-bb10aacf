@@ -33,7 +33,7 @@ const AiSection = () => {
       style={{ background: "hsl(0 0% 14%)" }}
     >
       <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -41,11 +41,11 @@ const AiSection = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="order-2 lg:order-1"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl max-h-[280px] sm:max-h-[360px] lg:max-h-none">
               <motion.img
                 src={aiImage}
                 alt="Inteligência Artificial aplicada ao marketing"
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
                 loading="lazy"
                 width={1024}
                 height={768}
@@ -66,13 +66,13 @@ const AiSection = () => {
             <span className="section-label mb-4 block text-accent">
               Inteligência Artificial
             </span>
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-5 leading-[1.15]"
+            <h2 className="text-lg sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-4 sm:mb-5 leading-[1.15]"
               style={{ color: "hsl(0 0% 95%)" }}
             >
               Tecnologia aliada à{" "}
               <span className="text-accent">inteligência dos resultados</span>
             </h2>
-            <div className="divider-accent mb-6" />
+            <div className="divider-accent mb-4 sm:mb-6" />
 
             <p
               className="text-sm sm:text-[15px] leading-relaxed mb-4"
@@ -87,7 +87,7 @@ const AiSection = () => {
               Isso significa campanhas mais eficientes, investimentos otimizados e ações baseadas em evidências, não em suposições. A cada interação, a tecnologia aprende, ajusta rotas e potencializa resultados, garantindo que sua marca esteja sempre um passo à frente da concorrência.
             </p>
             <p
-              className="text-sm sm:text-[15px] leading-relaxed mb-8 font-semibold"
+              className="text-sm sm:text-[15px] leading-relaxed mb-6 sm:mb-8 font-semibold"
               style={{ color: "hsl(0 0% 80%)" }}
             >
               Com a combinação entre inteligência humana e capacidade analítica da IA, transformamos dados em decisões estratégicas e decisões em crescimento sustentável.

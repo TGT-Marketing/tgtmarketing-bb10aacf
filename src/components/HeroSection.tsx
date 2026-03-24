@@ -66,15 +66,28 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-14"
           >
-            <a
+            <motion.a
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center gap-2.5 whitespace-nowrap text-[15px] sm:text-lg border-2 border-accent-foreground/30 hover:border-accent-foreground/80 w-full sm:w-auto py-3 sm:py-4"
+              className="group relative inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground font-extrabold text-[15px] sm:text-lg px-8 sm:px-10 py-3.5 sm:py-5 rounded-xl w-full sm:w-auto whitespace-nowrap overflow-hidden"
+              style={{
+                boxShadow: "0 0 20px hsl(0 78% 48% / 0.5), 0 0 60px hsl(0 78% 48% / 0.2), 0 8px 32px hsl(0 0% 0% / 0.3)",
+              }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 30px hsl(0 78% 48% / 0.7), 0 0 80px hsl(0 78% 48% / 0.3), 0 12px 40px hsl(0 0% 0% / 0.4)",
+              }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
             >
-              <MessageCircle size={20} className="shrink-0" />
-              Quero vender mais!
-            </a>
+              {/* Animated shine sweep */}
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
+              {/* Pulse ring */}
+              <span className="absolute inset-0 rounded-xl animate-ping opacity-20 bg-accent pointer-events-none" style={{ animationDuration: "2.5s" }} />
+              <MessageCircle size={20} className="shrink-0 relative z-10" />
+              <span className="relative z-10">Quero vender mais!</span>
+            </motion.a>
           </motion.div>
 
           <motion.div

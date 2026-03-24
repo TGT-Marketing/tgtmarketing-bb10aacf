@@ -119,7 +119,7 @@ const AiSection = () => {
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 bg-accent text-accent-foreground font-bold text-[14px] sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-0.5 transition-all duration-300 mt-8 w-full sm:w-auto whitespace-nowrap"
+              className="shine-effect inline-flex items-center justify-center gap-2.5 bg-accent text-accent-foreground font-bold text-[14px] sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-0.5 transition-all duration-300 mt-8 w-full sm:w-auto whitespace-nowrap"
             >
               <MessageCircle size={18} className="shrink-0" />
               Quero vender mais!

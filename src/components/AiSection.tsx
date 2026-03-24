@@ -33,7 +33,7 @@ const AiSection = () => {
       style={{ background: "hsl(0 0% 14%)" }}
     >
       <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -41,11 +41,11 @@ const AiSection = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="order-2 lg:order-1"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl max-h-[280px] sm:max-h-[360px] lg:max-h-none">
               <motion.img
                 src={aiImage}
                 alt="Inteligência Artificial aplicada ao marketing"
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
                 loading="lazy"
                 width={1024}
                 height={768}

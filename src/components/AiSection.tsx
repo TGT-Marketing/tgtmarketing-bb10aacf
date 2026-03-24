@@ -66,13 +66,13 @@ const AiSection = () => {
             <span className="section-label mb-4 block text-accent">
               Inteligência Artificial
             </span>
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-5 leading-[1.15]"
+            <h2 className="text-lg sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-4 sm:mb-5 leading-[1.15]"
               style={{ color: "hsl(0 0% 95%)" }}
             >
               Tecnologia aliada à{" "}
               <span className="text-accent">inteligência dos resultados</span>
             </h2>
-            <div className="divider-accent mb-6" />
+            <div className="divider-accent mb-4 sm:mb-6" />
 
             <p
               className="text-sm sm:text-[15px] leading-relaxed mb-4"

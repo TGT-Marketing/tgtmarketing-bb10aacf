@@ -63,7 +63,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <button
               onClick={onOpenContact}
-              className="btn-primary inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
+              className="shine-effect btn-primary inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
             >
               <span>Quero meu diagnóstico gratuito</span>
               <ArrowRight size={20} className="shrink-0" />

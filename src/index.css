@@ -81,6 +81,19 @@
 }
 
 @layer utilities {
+  /* Shine sweep effect for CTAs */
+  .shine-effect {
+    @apply relative overflow-hidden;
+  }
+  .shine-effect::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full pointer-events-none;
+    background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.2), transparent);
+    transition: transform 0.7s ease-in-out;
+  }
+  .shine-effect:hover::after {
+    @apply translate-x-full;
+  }
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, hsl(0 78% 48%), hsl(0 45% 32%));

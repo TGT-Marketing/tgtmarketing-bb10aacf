@@ -48,7 +48,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               style={{ boxShadow: "0 0 8px hsl(0 78% 48% / 0.8), 0 0 20px hsl(0 78% 48% / 0.4)" }}
             />
             <span className="text-primary-foreground text-sm sm:text-base font-bold tracking-wide relative z-10">
-              🎯 Diagnóstico gratuito disponível
+              Diagnóstico gratuito disponível
             </span>
             <motion.span
               className="text-accent text-lg relative z-10"

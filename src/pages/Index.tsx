@@ -19,7 +19,7 @@ const Index = () => {
   const [contactOpen, setContactOpen] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-section-dark">
       <Header onOpenContact={() => setContactOpen(true)} />
       <HeroSection onOpenContact={() => setContactOpen(true)} />
       <AboutSection />

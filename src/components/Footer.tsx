@@ -120,9 +120,6 @@ const Footer = () => {
           <span className="text-section-dark-foreground/25 text-sm">
             © TGT Marketing & Comunicação. Todos os direitos reservados.
           </span>
-          <span className="text-section-dark-foreground/20 text-xs">
-            Feito com estratégia e performance.
-          </span>
         </div>
       </div>
     </footer>);

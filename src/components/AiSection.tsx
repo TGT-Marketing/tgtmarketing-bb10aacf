@@ -30,7 +30,7 @@ const AiSection = () => {
     <section
       ref={ref}
       className="section-padding"
-      style={{ background: "hsl(0 0% 14%)" }}
+      style={{ background: "hsl(0 0% 8%)" }}
     >
       <div className="container-main">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">

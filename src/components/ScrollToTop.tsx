@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { createPortal } from "react-dom";
 
 const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -11,7 +12,9 @@ const ScrollToTop = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <AnimatePresence>
       {visible && (
         <motion.button
@@ -25,7 +28,8 @@ const ScrollToTop = () => {
           <ArrowUp className="w-6 h-6" />
         </motion.button>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 };
 

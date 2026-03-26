@@ -11,8 +11,7 @@ import ResultsSection from "@/components/ResultsSection";
 import ProcessSection from "@/components/ProcessSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
-import ScrollToTop from "@/components/ScrollToTop";
+import FloatingActions from "@/components/FloatingActions";
 import ContactFormDialog from "@/components/ContactFormDialog";
 
 const Index = () => {
@@ -32,8 +31,7 @@ const Index = () => {
       <ProcessSection />
       <CtaSection onOpenContact={() => setContactOpen(true)} />
       <Footer />
-      <WhatsAppFloat />
-      <ScrollToTop />
+      <FloatingActions />
       <ContactFormDialog open={contactOpen} onOpenChange={setContactOpen} />
     </div>
   );

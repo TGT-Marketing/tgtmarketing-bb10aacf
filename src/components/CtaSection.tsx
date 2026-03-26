@@ -38,9 +38,8 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           </motion.div>
 
           <h2 className="text-[1.4rem] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground mt-2 mb-6 sm:mb-8 leading-tight tracking-tight">
-            Sua empresa merece ser vista,
-            <br />
-            lembrada e <span className="text-accent">escolhida.</span>
+            Sua empresa merece ser vista, lembrada e{" "}
+            <span className="text-accent">escolhida.</span>
           </h2>
           <p className="text-primary-foreground/50 text-[14px] sm:text-lg mb-5 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
             Pare de desperdiçar tempo e dinheiro com marketing que não funciona.

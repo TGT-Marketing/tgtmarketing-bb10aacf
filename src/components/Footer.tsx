@@ -4,7 +4,7 @@ import logoTgt from "@/assets/logo-tgt.png";
 const Footer = () => {
   return (
     <footer className="bg-section-dark border-t border-section-dark-foreground/5">
-      <div className="container-main section-padding pb-8">
+      <div className="container-main pt-12 sm:pt-16 pb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-14">
           {/* Brand */}
           <div>

@@ -17,7 +17,7 @@ const portfolioItems = [
     image: portfolioTraffic,
   },
   {
-    title: "Produção de Conteúdos",
+    title: "Produção de Conteúdo",
     category: "Conteúdo",
     image: portfolioContent,
   },

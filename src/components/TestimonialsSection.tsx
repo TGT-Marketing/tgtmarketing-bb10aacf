@@ -4,25 +4,25 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Carlos Mendes",
-    role: "CEO, Tech Solutions",
-    text: "Essa agência é a melhor!      Guilherme é um profissional ímpar",
+    name: "Francine Ferreira Pessoa",
+    role: "Diretora e Fonoaudióloga, Audfran Centro Auditivo",
+    text: "Essa agência é a melhor! Guilherme é um profissional ímpar. Eles entendem simplesmente sobre tudo na área de marketing, além de serem seres humanos que ultrapassam limites de atenção com seus clientes. Super indico!",
     rating: 5,
-    initials: "CM",
+    initials: "FF",
   },
   {
-    name: "Ana Paula Silva",
-    role: "Diretora, Studio AP",
-    text: "Finalmente uma agência que entende de RESULTADO. Antes gastávamos com marketing sem saber se funcionava. Com a TGT, cada real foi investido e não mais gasto, gerando retorno mensurável para nós.",
+    name: "Andréa Palharini",
+    role: "Diretora e Engenheira de Alimentos, Equalisa Consultoria e Treinamentos de Alimentos",
+    text: "Excelente experiência do início ao fim! Atendimento atencioso, condução super profissional durante o evento e uma entrega final impecável. As fotos, vídeos e depoimentos captaram perfeitamente a essência do evento e fortaleceram muito o posicionamento da minha marca. Recomendo sem hesitar!",
     rating: 5,
     initials: "AP",
   },
   {
-    name: "Roberto Fernandes",
-    role: "Fundador, RF Consultoria",
-    text: "A identidade visual que criaram para nós mudou a percepção dos nossos clientes. Passamos a cobrar 60% mais caro e fechar mais contratos. O branding fez toda diferença e atingiu o sucesso da minha marca.",
+    name: "Vinicius Ribeiro",
+    role: "Diretor Executivo, Max Limp Produtos de Limpeza, Higiene e Descartáveis",
+    text: "A TGT não é só uma agência, é parceira de verdade. Eles entendem o negócio, propõem solução inteligentes e acompanham tudo de perto. O nível de estratégia e execução, são outros níveis, totalmente diferenciados!",
     rating: 5,
-    initials: "RF",
+    initials: "VR",
   },
 ];
 

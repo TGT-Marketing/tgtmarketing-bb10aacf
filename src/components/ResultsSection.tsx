@@ -6,7 +6,7 @@ import {
   animate,
 } from "framer-motion";
 import { useRef, useEffect } from "react";
-import { Building2, Clock, Globe2, Target } from "lucide-react";
+import { Building2, Clock, Globe2, TrendingUp } from "lucide-react";
 
 const stats = [
   {
@@ -34,7 +34,7 @@ const stats = [
     sub: "Brasil e Europa",
   },
   {
-    icon: Target,
+    icon: TrendingUp,
     numericValue: 100,
     prefix: "",
     suffix: "%",

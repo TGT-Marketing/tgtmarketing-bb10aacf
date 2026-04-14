@@ -1,9 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import portfolioBranding from "@/assets/portfolio-branding.jpg";
-import portfolioTraffic from "@/assets/portfolio-traffic.jpg";
+import portfolioTraffic from "@/assets/portfolio-performance.jpg";
 import portfolioContent from "@/assets/portfolio-content.jpg";
-import portfolioWeb from "@/assets/portfolio-web.jpg";
+import portfolioWeb from "@/assets/portfolio-webdesign.jpg";
 
 const portfolioItems = [
   {

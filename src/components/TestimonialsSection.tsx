@@ -4,18 +4,18 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Francine Ferreira Pessoa",
-    role: "Diretora e Fonoaudióloga, Audfran Centro Auditivo",
-    text: "Essa agência é a melhor! Guilherme é um profissional ímpar. Eles entendem simplesmente sobre tudo na área de marketing, além de serem seres humanos que ultrapassam limites de atenção com seus clientes. Super indico!",
-    rating: 5,
-    initials: "FF",
-  },
-  {
     name: "Andréa Palharini",
     role: "Diretora e Engenheira de Alimentos, Equalisa Consultoria e Treinamentos de Alimentos",
     text: "Excelente experiência do início ao fim! Atendimento atencioso, condução super profissional durante o evento e uma entrega final impecável. As fotos, vídeos e depoimentos captaram perfeitamente a essência do evento e fortaleceram muito o posicionamento da minha marca. Recomendo sem hesitar!",
     rating: 5,
     initials: "AP",
+  },
+  {
+    name: "Francine Ferreira Pessoa",
+    role: "Diretora e Fonoaudióloga, Audfran Centro Auditivo",
+    text: "Essa agência é a melhor! Guilherme é um profissional ímpar. Eles entendem simplesmente sobre tudo na área de marketing, além de serem seres humanos que ultrapassam limites de atenção com seus clientes. Super indico!",
+    rating: 5,
+    initials: "FF",
   },
   {
     name: "Vinicius Ribeiro",

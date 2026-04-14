@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
+import testimonialAndrea from "@/assets/testimonial-andrea.jpg";
 
 const testimonials = [
   {
@@ -9,6 +10,7 @@ const testimonials = [
     text: "Excelente experiência do início ao fim! Atendimento atencioso, condução super profissional durante o evento e uma entrega final impecável. As fotos, vídeos e depoimentos captaram perfeitamente a essência do evento e fortaleceram muito o posicionamento da minha marca. Recomendo sem hesitar!",
     rating: 5,
     initials: "AP",
+    photo: testimonialAndrea,
   },
   {
     name: "Francine Ferreira Pessoa",
@@ -82,9 +84,13 @@ const TestimonialsSection = () => {
                 "{t.text}"
               </p>
               <div className="border-t border-border pt-5 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">
-                  {t.initials}
-                </div>
+                {t.photo ? (
+                  <img src={t.photo} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">
+                    {t.initials}
+                  </div>
+                )}
                 <div>
                   <div className="font-bold text-foreground text-sm">
                     {t.name}

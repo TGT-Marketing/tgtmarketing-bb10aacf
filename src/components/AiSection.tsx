@@ -101,12 +101,18 @@ const AiSection = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.4 + i * 0.08 }}
-                  className="flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300 hover:scale-[1.02]"
+                  whileHover={{ scale: 1.05, y: -4 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex items-center gap-3 rounded-xl px-4 py-3 cursor-pointer group/card transition-all duration-300"
                   style={{ background: "hsl(0 0% 18%)", border: "1px solid hsl(0 0% 22%)" }}
                 >
-                  <item.icon className="text-accent shrink-0" size={20} />
+                  <motion.div
+                    className="shrink-0 flex items-center justify-center w-9 h-9 rounded-lg transition-all duration-300 group-hover/card:bg-accent/15 group-hover/card:shadow-[0_0_12px_hsl(var(--accent)/0.3)]"
+                  >
+                    <item.icon className="text-accent shrink-0 transition-transform duration-300 group-hover/card:scale-110" size={20} />
+                  </motion.div>
                   <span
-                    className="text-sm font-medium"
+                    className="text-sm font-medium transition-colors duration-300 group-hover/card:text-white"
                     style={{ color: "hsl(0 0% 85%)" }}
                   >
                     {item.text}

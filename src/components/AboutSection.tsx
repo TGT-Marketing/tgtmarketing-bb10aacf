@@ -58,13 +58,23 @@ const AboutSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="space-y-6"
           >
-            {/* Logo display */}
-            <div className="bg-secondary rounded-2xl p-6 sm:p-12 flex items-center justify-center border border-border">
+            {/* Photo + Logo */}
+            <div className="relative bg-secondary rounded-2xl overflow-hidden border border-border">
               <img
-                src={logoTgt}
-                alt="TGT Marketing & Comunicação"
-                className="shine-effect max-w-[280px] w-full transition-transform duration-500 hover:scale-110 cursor-pointer rounded-lg"
+                src={guilhermeTgt}
+                alt="Guilherme - CEO da TGT Marketing & Comunicação"
+                className="w-full h-[360px] sm:h-[420px] object-cover object-top"
               />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 sm:p-6">
+                <img
+                  src={logoTgt}
+                  alt="TGT Marketing & Comunicação"
+                  className="h-8 sm:h-10 mb-2 brightness-200"
+                />
+                <p className="text-white/90 text-sm font-medium">
+                  Guilherme Teixeira — CEO & Fundador
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-3 sm:gap-4">

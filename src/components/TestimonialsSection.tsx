@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
 import testimonialAndrea from "@/assets/testimonial-andrea.jpg";
 import testimonialFrancine from "@/assets/testimonial-francine.jpg";
+import testimonialVinicius from "@/assets/testimonial-vinicius.jpg";
 
 const testimonials = [
   {
@@ -27,6 +28,7 @@ const testimonials = [
     text: "A TGT não é só uma agência, é parceira de verdade. Eles entendem o negócio, propõem solução inteligentes e acompanham tudo de perto. O nível de estratégia e execução, são outros níveis, totalmente diferenciados!",
     rating: 5,
     initials: "VR",
+    photo: testimonialVinicius,
   },
 ];
 

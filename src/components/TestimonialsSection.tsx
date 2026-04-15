@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
 import testimonialAndrea from "@/assets/testimonial-andrea.jpg";
+import testimonialFrancine from "@/assets/testimonial-francine.jpg";
 
 const testimonials = [
   {
@@ -18,6 +19,7 @@ const testimonials = [
     text: "Essa agência é a melhor! Guilherme é um profissional ímpar. Eles entendem simplesmente sobre tudo na área de marketing, além de serem seres humanos que ultrapassam limites de atenção com seus clientes. Super indico!",
     rating: 5,
     initials: "FF",
+    photo: testimonialFrancine,
   },
   {
     name: "Vinicius Ribeiro",

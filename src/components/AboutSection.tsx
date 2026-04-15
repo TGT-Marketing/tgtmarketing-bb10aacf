@@ -66,11 +66,6 @@ const AboutSection = () => {
                 className="w-full h-[360px] sm:h-[420px] object-cover object-top"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 sm:p-6">
-                <img
-                  src={logoTgt}
-                  alt="TGT Marketing & Comunicação"
-                  className="h-8 sm:h-10 mb-2 brightness-200"
-                />
                 <p className="text-white/90 text-sm font-medium">
                   Guilherme Teixeira — CEO & Fundador
                 </p>

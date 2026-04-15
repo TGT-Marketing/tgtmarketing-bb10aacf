@@ -17,7 +17,7 @@ const testimonials = [
   {
     name: "Francine Ferreira Pessoa",
     role: "Diretora e Fonoaudióloga, Audfran Centro Auditivo",
-    text: "Essa agência é a melhor! Guilherme é um profissional ímpar. Eles entendem simplesmente sobre tudo na área de marketing, além de serem seres humanos que ultrapassam limites de atenção com seus clientes. Super indico!\n\n\n\n",
+    text: "Essa agência é a melhor! Guilherme é um profissional ímpar. Eles entendem simplesmente sobre tudo na área de marketing, além de serem seres humanos que ultrapassam limites de atenção com seus clientes. Super indico!",
     rating: 5,
     initials: "FF",
     photo: testimonialFrancine,
@@ -25,7 +25,7 @@ const testimonials = [
   {
     name: "Vinicius Ribeiro",
     role: "Diretor Executivo, Max Limp Produtos de Limpeza, Higiene e Descartáveis",
-    text: "A TGT não é só uma agência, é parceira de verdade. Eles entendem o negócio, propõem solução inteligentes e acompanham tudo de perto. O nível de estratégia e execução, são outros níveis, totalmente diferenciados!\n\n\n\n\n\n",
+    text: "A TGT não é só uma agência, é parceira de verdade. Eles entendem o negócio, propõem solução inteligentes e acompanham tudo de perto. O nível de estratégia e execução, são outros níveis, totalmente diferenciados!",
     rating: 5,
     initials: "VR",
     photo: testimonialVinicius,

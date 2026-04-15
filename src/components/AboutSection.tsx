@@ -70,8 +70,8 @@ const AboutSection = () => {
               {[
                 { number: "+200", label: "Empresas atendidas" },
                 { number: "+1 década", label: "de mercado" },
-                { number: "Brasil & Europa", label: "Atuação internacional" },
-                { number: "100%", label: "Estratégia sob medida" },
+                { number: "Brasil & Europa", label: "Atuação nacional e internacional" },
+                { number: "100%", label: "Estratégia sob medida, sem fórmulas prontas ou padrão" },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}

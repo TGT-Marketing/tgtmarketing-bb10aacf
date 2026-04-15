@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
 import testimonialAndrea from "@/assets/testimonial-andrea.jpg";
+import testimonialFrancine from "@/assets/testimonial-francine.jpg";
 
 const testimonials = [
   {

@@ -6,7 +6,7 @@ import {
   animate,
 } from "framer-motion";
 import { useRef, useEffect } from "react";
-import { Building2, Clock, Globe2, TrendingUp } from "lucide-react";
+import { Building2, Clock, Percent, TrendingUp } from "lucide-react";
 
 const stats = [
   {
@@ -26,7 +26,7 @@ const stats = [
     sub: "desde 2012 no mercado",
   },
   {
-    icon: Globe2,
+    icon: Percent,
     numericValue: 2,
     prefix: "",
     suffix: "",

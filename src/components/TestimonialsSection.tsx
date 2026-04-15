@@ -17,7 +17,7 @@ const testimonials = [
   {
     name: "Francine Ferreira Pessoa",
     role: "Diretora e Fonoaudióloga, Audfran Centro Auditivo",
-    text: "Essa agência é a melhor! Guilherme é um profissional ímpar. Eles entendem simplesmente sobre tudo na área de marketing, além de serem seres humanos que ultrapassam limites de atenção com seus clientes. Super indico!",
+    text: "Essa agência é a melhor! Guilherme é um profissional ímpar. Eles entendem simplesmente sobre tudo na área de marketing, além de serem seres humanos que ultrapassam limites de atenção com seus clientes. Super indico!\n\n\n\n",
     rating: 5,
     initials: "FF",
     photo: testimonialFrancine,
@@ -25,7 +25,7 @@ const testimonials = [
   {
     name: "Vinicius Ribeiro",
     role: "Diretor Executivo, Max Limp Produtos de Limpeza, Higiene e Descartáveis",
-    text: "A TGT não é só uma agência, é parceira de verdade. Eles entendem o negócio, propõem solução inteligentes e acompanham tudo de perto. O nível de estratégia e execução, são outros níveis, totalmente diferenciados!",
+    text: "A TGT não é só uma agência, é parceira de verdade. Eles entendem o negócio, propõem solução inteligentes e acompanham tudo de perto. O nível de estratégia e execução, são outros níveis, totalmente diferenciados!\n\n\n\n\n\n",
     rating: 5,
     initials: "VR",
     photo: testimonialVinicius,
@@ -84,7 +84,7 @@ const TestimonialsSection = () => {
                   />
                 ))}
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-8 relative z-10 text-[15px]">
+              <p className="text-muted-foreground leading-relaxed mb-8 relative z-10 text-[15px] whitespace-pre-wrap">
                 "{t.text}"
               </p>
               <div className="border-t border-border pt-5 flex items-center gap-3">

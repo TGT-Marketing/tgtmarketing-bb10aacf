@@ -20,6 +20,7 @@ const testimonials = [
     rating: 5,
     initials: "FF",
     photo: testimonialFrancine,
+  },
   {
     name: "Vinicius Ribeiro",
     role: "Diretor Executivo, Max Limp Produtos de Limpeza, Higiene e Descartáveis",

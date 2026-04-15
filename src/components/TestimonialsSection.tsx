@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
               </p>
               <div className="border-t border-border pt-5 flex items-center gap-3">
                 {t.photo ? (
-                  <img src={t.photo} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
+                  <img src={t.photo} alt={t.name} className="w-12 h-12 rounded-full object-cover object-top" />
                 ) : (
                   <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">
                     {t.initials}

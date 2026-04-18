@@ -67,7 +67,7 @@ const AboutSection = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 sm:p-6">
                 <p className="text-white/90 text-sm font-medium">
-                  Guilherme Teixeira — CEO & Fundador
+                  Guilherme Teixeira
                 </p>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import { MapPin, Phone, Instagram, Facebook } from "lucide-react";
-import logoTgt from "@/assets/logo-tgt.png";
+import logoTgt from "@/assets/logo-tgt.webp";
 
 const Footer = () => {
   return (
@@ -12,6 +12,10 @@ const Footer = () => {
               <img
                 src={logoTgt}
                 alt="TGT Marketing & Comunicação"
+                width={400}
+                height={160}
+                loading="lazy"
+                decoding="async"
                 className="h-12 w-auto brightness-0 invert mb-5" />
               
             </a>

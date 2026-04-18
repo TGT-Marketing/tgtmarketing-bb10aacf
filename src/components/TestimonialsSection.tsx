@@ -1,9 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
-import testimonialAndrea from "@/assets/testimonial-andrea.jpg";
-import testimonialFrancine from "@/assets/testimonial-francine.jpg";
-import testimonialVinicius from "@/assets/testimonial-vinicius.jpg";
+import testimonialAndrea from "@/assets/testimonial-andrea.webp";
+import testimonialFrancine from "@/assets/testimonial-francine.webp";
+import testimonialVinicius from "@/assets/testimonial-vinicius.webp";
 
 const testimonials = [
   {
@@ -89,7 +89,15 @@ const TestimonialsSection = () => {
               </p>
               <div className="border-t border-border pt-5 flex items-center gap-3">
                 {t.photo ? (
-                  <img src={t.photo} alt={t.name} className="w-12 h-12 rounded-full object-cover object-top" />
+                  <img
+                    src={t.photo}
+                    alt={t.name}
+                    width={48}
+                    height={48}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-12 h-12 rounded-full object-cover object-top"
+                  />
                 ) : (
                   <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">
                     {t.initials}

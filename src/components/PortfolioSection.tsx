@@ -1,9 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import portfolioBranding from "@/assets/portfolio-branding.jpg";
-import portfolioTraffic from "@/assets/portfolio-performance.jpg";
-import portfolioContent from "@/assets/portfolio-content.jpg";
-import portfolioWeb from "@/assets/portfolio-webdesign.jpg";
+import portfolioBranding from "@/assets/portfolio-branding.webp";
+import portfolioTraffic from "@/assets/portfolio-performance.webp";
+import portfolioContent from "@/assets/portfolio-content.webp";
+import portfolioWeb from "@/assets/portfolio-webdesign.webp";
 
 const portfolioItems = [
   {
@@ -63,6 +63,10 @@ const PortfolioSection = () => {
                 <img
                   src={item.image}
                   alt={item.title}
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>

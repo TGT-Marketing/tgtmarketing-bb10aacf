@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, MessageCircle, Mouse, ChevronDown } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.webp";
 import TargetAnimation from "./TargetAnimation";
 
 const highlights = [
@@ -14,7 +14,15 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
     <section className="relative min-h-screen flex items-center overflow-hidden pb-8 sm:pb-16">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <img
+          src={heroBg}
+          alt=""
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          decoding="async"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/98 via-primary/90 to-primary/70" />
         <TargetAnimation />
       </div>

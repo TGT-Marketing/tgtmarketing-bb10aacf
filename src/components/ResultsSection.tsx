@@ -18,14 +18,6 @@ const stats = [
     sub: "em mais de uma década",
   },
   {
-    icon: Clock,
-    numericValue: 14,
-    prefix: "",
-    suffix: "",
-    label: "anos de experiência",
-    sub: "desde 2012 no mercado",
-  },
-  {
     icon: Percent,
     numericValue: 2,
     prefix: "",
@@ -40,6 +32,14 @@ const stats = [
     suffix: "%",
     label: "Personalizado",
     sub: "zero fórmulas prontas",
+  },
+  {
+    icon: Clock,
+    numericValue: 14,
+    prefix: "",
+    suffix: "",
+    label: "anos de experiência",
+    sub: "desde 2012 no mercado",
   },
 ];
 

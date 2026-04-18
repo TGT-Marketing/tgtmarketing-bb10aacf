@@ -25,12 +25,12 @@ const Index = () => {
       <ProblemsSection onOpenContact={() => setContactOpen(true)} />
       <ServicesSection />
       <AiSection />
-        <PortfolioSection />
-        <TestimonialsSection />
-        <ProcessSection />
-        <CtaSection onOpenContact={() => setContactOpen(true)} />
-        <ResultsSection />
-        <Footer />
+      <PortfolioSection />
+      <TestimonialsSection />
+      <ResultsSection />
+      <ProcessSection />
+      <CtaSection onOpenContact={() => setContactOpen(true)} />
+      <Footer />
       <FloatingActions />
       <ContactFormDialog open={contactOpen} onOpenChange={setContactOpen} />
     </div>

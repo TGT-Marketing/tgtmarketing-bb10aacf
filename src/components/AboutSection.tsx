@@ -63,7 +63,7 @@ const AboutSection = () => {
               <img
                 src={guilhermeTgt}
                 alt="Guilherme - CEO da TGT Marketing & Comunicação"
-                className="w-full h-[360px] sm:h-[420px] object-cover object-top"
+                className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%]"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 sm:p-6">
                 <p className="text-white/90 text-sm font-medium">

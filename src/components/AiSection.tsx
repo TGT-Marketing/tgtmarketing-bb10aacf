@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { BrainCircuit, BarChart3, Target, Zap, MessageCircle } from "lucide-react";
-import aiImage from "@/assets/ai-intelligence.jpg";
+import aiImage from "@/assets/ai-intelligence.webp";
 
 const highlights = [
   {
@@ -47,8 +47,9 @@ const AiSection = () => {
                 alt="Inteligência Artificial aplicada ao marketing"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                decoding="async"
                 width={1024}
-                height={768}
+                height={1024}
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoTgt from "@/assets/logo-tgt.png";
+import logoTgt from "@/assets/logo-tgt.webp";
 
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
@@ -34,6 +34,10 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           <img
             src={logoTgt}
             alt="TGT Marketing & Comunicação"
+            width={400}
+            height={160}
+            decoding="async"
+            fetchPriority="high"
             className={`transition-all duration-500 ${scrolled ? "h-9" : "h-11"} w-auto brightness-0 invert`}
           />
         </a>

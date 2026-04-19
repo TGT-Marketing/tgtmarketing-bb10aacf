@@ -41,11 +41,11 @@ const AiSection = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="order-2 lg:order-1"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl max-h-[280px] sm:max-h-[360px] lg:max-h-none">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-[220px] sm:max-w-[300px] lg:max-w-[380px] mx-auto">
               <motion.img
                 src={aiImage}
                 alt="Inteligência Artificial aplicada ao marketing"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-cover"
                 loading="lazy"
                 decoding="async"
                 width={1024}

@@ -20,7 +20,8 @@ type PortfolioProject = {
   description: string;
   results: string[];
   gallery: string[];
-  videoUrl?: string; // YouTube or Vimeo embed URL
+  videoUrl?: string; // YouTube or Vimeo embed URL (single, legacy)
+  videoUrls?: string[]; // Multiple YouTube or Vimeo embed URLs
 };
 
 type PortfolioItem = {

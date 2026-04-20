@@ -20,7 +20,8 @@ type PortfolioProject = {
   description: string;
   results: string[];
   gallery: string[];
-  videoUrl?: string; // YouTube or Vimeo embed URL
+  videoUrl?: string; // YouTube or Vimeo embed URL (single, legacy)
+  videoUrls?: string[]; // Multiple YouTube or Vimeo embed URLs
 };
 
 type PortfolioItem = {
@@ -89,7 +90,10 @@ const portfolioItems: PortfolioItem[] = [
           "+15 mil novos seguidores qualificados",
         ],
         gallery: [portfolioContent, portfolioContent, portfolioContent],
-        videoUrl: "https://www.youtube.com/embed/-O33RMVZN6k",
+        videoUrls: [
+          "https://www.youtube.com/embed/-O33RMVZN6k",
+          "https://www.youtube.com/embed/Sen_t5TeVLU",
+        ],
       },
     ],
   },
@@ -233,15 +237,30 @@ const PortfolioSection = () => {
                       </Carousel>
                     )}
 
-                    {project.videoUrl && (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-muted mb-5">
-                        <iframe
-                          src={project.videoUrl}
-                          title={`${project.client} - vídeo`}
-                          className="w-full h-full"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
+                    {(project.videoUrl || project.videoUrls) && (
+                      <div className="space-y-4 mb-5">
+                        {project.videoUrl && (
+                          <div className="aspect-video overflow-hidden rounded-lg bg-muted">
+                            <iframe
+                              src={project.videoUrl}
+                              title={`${project.client} - vídeo`}
+                              className="w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          </div>
+                        )}
+                        {project.videoUrls?.map((url, vIdx) => (
+                          <div key={vIdx} className="aspect-video overflow-hidden rounded-lg bg-muted">
+                            <iframe
+                              src={url}
+                              title={`${project.client} - vídeo ${vIdx + 1}`}
+                              className="w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          </div>
+                        ))}
                       </div>
                     )}
 

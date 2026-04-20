@@ -12,7 +12,7 @@ import {
 import { MessageCircle, CheckCircle2 } from "lucide-react";
 import portfolioBranding from "@/assets/portfolio-branding.webp";
 import portfolioTraffic from "@/assets/portfolio-performance.webp";
-import portfolioContent from "@/assets/portfolio-content.webp";
+import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "@/assets/portfolio-webdesign.webp";
 
 type PortfolioProject = {

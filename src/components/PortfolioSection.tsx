@@ -237,15 +237,30 @@ const PortfolioSection = () => {
                       </Carousel>
                     )}
 
-                    {project.videoUrl && (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-muted mb-5">
-                        <iframe
-                          src={project.videoUrl}
-                          title={`${project.client} - vídeo`}
-                          className="w-full h-full"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
+                    {(project.videoUrl || project.videoUrls) && (
+                      <div className="space-y-4 mb-5">
+                        {project.videoUrl && (
+                          <div className="aspect-video overflow-hidden rounded-lg bg-muted">
+                            <iframe
+                              src={project.videoUrl}
+                              title={`${project.client} - vídeo`}
+                              className="w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          </div>
+                        )}
+                        {project.videoUrls?.map((url, vIdx) => (
+                          <div key={vIdx} className="aspect-video overflow-hidden rounded-lg bg-muted">
+                            <iframe
+                              src={url}
+                              title={`${project.client} - vídeo ${vIdx + 1}`}
+                              className="w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          </div>
+                        ))}
                       </div>
                     )}
 

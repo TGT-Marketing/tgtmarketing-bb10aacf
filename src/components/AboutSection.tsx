@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import guilhermeTgt from "@/assets/guilherme-tgt.webp";
+import tgtOfficeLogo from "@/assets/tgt-office-logo.jpg";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -58,20 +59,38 @@ const AboutSection = () => {
             className="space-y-6"
           >
             {/* Photo + Logo */}
-            <div className="relative bg-secondary rounded-2xl overflow-hidden border border-border">
-              <img
-                src={guilhermeTgt}
-                alt="Guilherme - CEO da TGT Marketing & Comunicação"
-                width={900}
-                height={1350}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%]"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 sm:p-6">
-                <p className="text-white/90 text-sm font-medium">
-                  Guilherme Santos, diretor de comunicação e equipe TGT.
-                </p>
+            <div className="grid grid-cols-5 gap-3">
+              <div className="col-span-3 relative bg-secondary rounded-2xl overflow-hidden border border-border">
+                <img
+                  src={guilhermeTgt}
+                  alt="Guilherme - CEO da TGT Marketing & Comunicação"
+                  width={900}
+                  height={1350}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%]"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 sm:p-5">
+                  <p className="text-white/90 text-xs sm:text-sm font-medium">
+                    Guilherme Santos, diretor de comunicação e equipe TGT.
+                  </p>
+                </div>
+              </div>
+              <div className="col-span-2 relative bg-secondary rounded-2xl overflow-hidden border border-border">
+                <img
+                  src={tgtOfficeLogo}
+                  alt="Logo TGT em destaque na parede do escritório da agência"
+                  width={800}
+                  height={1200}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-[360px] sm:h-[420px] object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 sm:p-5">
+                  <p className="text-white/90 text-xs sm:text-sm font-medium">
+                    Nossa sede em Americana – SP.
+                  </p>
+                </div>
               </div>
             </div>
 

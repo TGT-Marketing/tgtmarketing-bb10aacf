@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { MessageCircle, CheckCircle2 } from "lucide-react";
 import portfolioBranding from "@/assets/portfolio-branding.webp";
-import portfolioTraffic from "@/assets/portfolio-traffic-cover.png";
+import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "@/assets/portfolio-webdesign.webp";
 

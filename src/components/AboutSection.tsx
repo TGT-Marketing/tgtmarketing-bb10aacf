@@ -76,7 +76,7 @@ const AboutSection = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-span-2 relative bg-secondary rounded-2xl overflow-hidden border border-border">
+              <div className="col-span-2 relative bg-black rounded-2xl overflow-hidden border border-border flex items-center justify-center">
                 <img
                   src={tgtOfficeLogo}
                   alt="Logo TGT em destaque na parede do escritório da agência"
@@ -84,7 +84,7 @@ const AboutSection = () => {
                   height={1200}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-[360px] sm:h-[420px] object-cover"
+                  className="w-full h-[360px] sm:h-[420px] object-contain"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 sm:p-5">
                   <p className="text-white/90 text-xs sm:text-sm font-medium">

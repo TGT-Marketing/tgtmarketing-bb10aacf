@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import guilhermeTgt from "@/assets/guilherme-tgt.webp";
-import tgtOfficeLogo from "@/assets/tgt-office-logo.jpg";
 
 const AboutSection = () => {
   const ref = useRef(null);

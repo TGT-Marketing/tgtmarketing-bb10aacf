@@ -89,7 +89,7 @@ const portfolioItems: PortfolioItem[] = [
           "+15 mil novos seguidores qualificados",
         ],
         gallery: [portfolioContent, portfolioContent, portfolioContent],
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        videoUrl: "https://www.youtube.com/embed/-O33RMVZN6k",
       },
     ],
   },

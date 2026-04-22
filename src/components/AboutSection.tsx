@@ -77,10 +77,10 @@ const AboutSection = () => {
 
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {[
-                { number: "+200", label: "Empresas atendidas" },
-                { number: "+1 década", label: "de mercado" },
-                { number: "Brasil & Europa", label: "Atuação nacional e internacional" },
-                { number: "100%", label: "Estratégia sob medida, sem fórmulas prontas ou padrão" },
+                { number: "+500 projetos", label: "entregues com sucesso" },
+                { number: "+1000 campanhas", label: "gerenciadas e convertidas" },
+                { number: "150% conversão", label: "como aumento médio" },
+                { number: "+90% retenção", label: "dos clientes convertidos" },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}

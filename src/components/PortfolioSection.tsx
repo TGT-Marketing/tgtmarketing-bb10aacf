@@ -217,7 +217,7 @@ const PortfolioSection = () => {
               onClick={() => setContactOpen(true)}
               className="font-bold text-base border-accent text-accent hover:bg-accent hover:text-accent-foreground"
             >
-              <Sparkles className="w-5 h-5" />
+              <SparklesIcon className="w-5 h-5" />
               Solicitar diagnóstico gratuito
             </Button>
           </div>

@@ -127,6 +127,7 @@ const PortfolioSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeItem, setActiveItem] = useState<PortfolioItem | null>(null);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <section id="portfolio" className="section-padding bg-background" ref={ref}>

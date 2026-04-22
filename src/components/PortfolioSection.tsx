@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import ContactFormDialog from "@/components/ContactFormDialog";
 import {
   Carousel,
   CarouselContent,
@@ -9,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { MessageCircle, CheckCircle2 } from "lucide-react";
+import { MessageCircle, CheckCircle2, Sparkles } from "lucide-react";
 import portfolioBranding from "@/assets/portfolio-branding.webp";
 import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
@@ -126,6 +127,7 @@ const PortfolioSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeItem, setActiveItem] = useState<PortfolioItem | null>(null);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <section id="portfolio" className="section-padding bg-background" ref={ref}>
@@ -181,7 +183,48 @@ const PortfolioSection = () => {
             </motion.button>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-14 sm:mt-20 max-w-3xl mx-auto text-center bg-card/40 backdrop-blur-sm border border-border rounded-2xl p-8 sm:p-10"
+        >
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mb-3 tracking-tight">
+            Quer resultados como esses na <span className="text-accent">sua empresa</span>?
+          </h3>
+          <p className="text-muted-foreground text-base sm:text-lg mb-6">
+            Fale com a gente agora ou solicite um diagnóstico gratuito do seu negócio.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center">
+            <Button
+              asChild
+              size="lg"
+              className="shine-effect font-bold text-base"
+              style={{
+                backgroundColor: "hsl(var(--whatsapp))",
+                color: "hsl(var(--whatsapp-foreground))",
+              }}
+            >
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5" />
+                Falar no WhatsApp
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => setContactOpen(true)}
+              className="font-bold text-base border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+            >
+              <Sparkles className="w-5 h-5" />
+              Solicitar diagnóstico gratuito
+            </Button>
+          </div>
+        </motion.div>
       </div>
+
+      <ContactFormDialog open={contactOpen} onOpenChange={setContactOpen} />
 
       <Dialog open={!!activeItem} onOpenChange={(open) => !open && setActiveItem(null)}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">

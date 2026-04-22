@@ -142,7 +142,7 @@ const PortfolioSection = () => {
             Portfólio
           </span>
           <h2 className="text-[1.4rem] sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
-            Nossos <span className="text-accent">TRABALHOS</span>
+            Nossos <span className="text-accent">trabalhos!</span>
           </h2>
           <div className="divider-accent mx-auto" />
         </motion.div>

@@ -87,12 +87,19 @@ const AboutSection = () => {
                   initial={{ opacity: 0, y: 15 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-                  className="card-premium p-3.5 sm:p-5 text-center"
+                  whileHover={{ y: -6, scale: 1.03 }}
+                  className="card-premium p-3.5 sm:p-5 text-center group relative overflow-hidden cursor-pointer transition-all duration-300 hover:border-accent hover:shadow-[0_10px_40px_-10px_hsl(var(--accent)/0.5)]"
                 >
-                  <div className="text-xl sm:text-2xl font-extrabold text-accent mb-1">
+                  {/* Shine sweep effect */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-accent/10 to-transparent pointer-events-none" />
+                  
+                  {/* Glow background on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-accent/10 transition-all duration-500 pointer-events-none" />
+                  
+                  <div className="relative text-xl sm:text-2xl font-extrabold text-accent mb-1 transition-transform duration-300 group-hover:scale-110">
                     {stat.number}
                   </div>
-                  <div className="text-xs text-muted-foreground font-medium">
+                  <div className="relative text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">
                     {stat.label}
                   </div>
                 </motion.div>

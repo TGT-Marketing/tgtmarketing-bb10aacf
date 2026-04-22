@@ -34,7 +34,7 @@ type PortfolioItem = {
 
 const portfolioItems: PortfolioItem[] = [
   {
-    title: "Branding Estratégico",
+    title: "Criação de Marca | Branding",
     category: "Identidade",
     image: portfolioBranding,
     intro:
@@ -98,7 +98,7 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    title: "Web Design & UX",
+    title: "Site e E-commerce",
     category: "Digital",
     image: portfolioWeb,
     intro:

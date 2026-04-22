@@ -108,6 +108,39 @@ const AboutSection = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Logo wall - identidade física TGT */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group"
+        >
+          <div className="aspect-[21/9] sm:aspect-[21/8] overflow-hidden bg-secondary">
+            <img
+              src={tgtLogoWall}
+              alt="Logo TGT em destaque na sede da agência — identidade visual e presença física da marca"
+              width={1600}
+              height={685}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60 pointer-events-none" />
+
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10">
+            <div className="max-w-2xl">
+              <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block">
+                Nossa marca
+              </span>
+              <p className="text-white text-lg sm:text-2xl font-bold tracking-tight leading-snug">
+                Identidade que se faz <span className="text-accent">presente</span> — no digital e no físico.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

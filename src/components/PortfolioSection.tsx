@@ -34,7 +34,7 @@ type PortfolioItem = {
 
 const portfolioItems: PortfolioItem[] = [
   {
-    title: "Criação de Marca | Branding",
+    title: "Criação de Marca [Branding]",
     category: "Identidade",
     image: portfolioBranding,
     intro:

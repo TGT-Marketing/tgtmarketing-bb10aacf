@@ -41,11 +41,21 @@ const AiSection = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="order-2 lg:order-1"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-[220px] sm:max-w-[300px] lg:max-w-[380px] mx-auto">
+            <motion.div
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl max-w-[220px] sm:max-w-[300px] lg:max-w-[380px] mx-auto group cursor-pointer border border-border transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)]"
+            >
+              {/* Shine sweep effect - white reflection */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20" />
+
+              {/* Subtle white glow on hover */}
+              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-500 pointer-events-none z-10" />
+
               <motion.img
                 src={aiImage}
                 alt="Inteligência Artificial aplicada ao marketing"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 loading="lazy"
                 decoding="async"
                 width={1024}
@@ -53,8 +63,8 @@ const AiSection = () => {
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
-            </div>
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 z-10 pointer-events-none" />
+            </motion.div>
           </motion.div>
 
           {/* Content */}

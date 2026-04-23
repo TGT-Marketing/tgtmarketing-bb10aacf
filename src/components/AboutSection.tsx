@@ -59,7 +59,17 @@ const AboutSection = () => {
             className="space-y-6"
           >
             {/* Photo */}
-            <div className="relative bg-secondary rounded-2xl overflow-hidden border border-border">
+            <motion.div
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="relative bg-secondary rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)]"
+            >
+              {/* Shine sweep effect */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-accent/20 to-transparent pointer-events-none z-20" />
+
+              {/* Glow overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/10 group-hover:to-accent/20 transition-all duration-500 pointer-events-none z-10" />
+
               <img
                 src={guilhermeTgt}
                 alt="Guilherme - CEO da TGT Marketing & Comunicação"
@@ -67,14 +77,14 @@ const AboutSection = () => {
                 height={1350}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%]"
+                className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-110"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 sm:p-5">
-                <p className="text-white/90 text-xs sm:text-sm font-medium">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 sm:p-5 z-10 transition-all duration-500 group-hover:from-black/90">
+                <p className="text-white/90 text-xs sm:text-sm font-medium transition-transform duration-500 group-hover:translate-y-[-2px]">
                   Guilherme Santos, diretor de comunicação e equipe TGT.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {[

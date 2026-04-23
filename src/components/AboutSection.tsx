@@ -144,14 +144,14 @@ const AboutSection = () => {
               className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
             />
           </div>
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/90 via-background/40 to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none z-10" />
 
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10">
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 z-20">
             <div className="max-w-2xl">
-              <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block">
+              <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Nossa marca
               </span>
-              <p className="text-foreground text-lg sm:text-2xl font-bold tracking-tight leading-snug">
+              <p className="text-white text-lg sm:text-2xl font-bold tracking-tight leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
                 Identidade que se faz <span className="text-accent">presente</span> — no digital e no físico.
               </p>
             </div>

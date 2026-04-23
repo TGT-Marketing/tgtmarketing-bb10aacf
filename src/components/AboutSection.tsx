@@ -134,7 +134,7 @@ const AboutSection = () => {
               <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block">
                 Nossa marca
               </span>
-              <p className="text-white text-lg sm:text-2xl font-bold tracking-tight leading-snug">
+              <p className="text-foreground text-lg sm:text-2xl font-bold tracking-tight leading-snug">
                 Identidade que se faz <span className="text-accent">presente</span> — no digital e no físico.
               </p>
             </div>

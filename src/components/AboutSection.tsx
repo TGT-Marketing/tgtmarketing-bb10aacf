@@ -64,11 +64,11 @@ const AboutSection = () => {
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="relative bg-secondary rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)]"
             >
-              {/* Shine sweep effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-accent/20 to-transparent pointer-events-none z-20" />
+              {/* Shine sweep effect - white reflection */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20" />
 
-              {/* Glow overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/10 group-hover:to-accent/20 transition-all duration-500 pointer-events-none z-10" />
+              {/* Subtle white glow on hover */}
+              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-500 pointer-events-none z-10" />
 
               <img
                 src={guilhermeTgt}

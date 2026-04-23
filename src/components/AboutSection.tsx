@@ -124,8 +124,15 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group"
+          whileHover={{ y: -6 }}
+          className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)]"
         >
+          {/* Shine sweep effect - white reflection */}
+          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20" />
+
+          {/* Subtle white glow on hover */}
+          <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-500 pointer-events-none z-10" />
+
           <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/10] overflow-hidden bg-secondary">
             <img
               src={tgtLogoWall}
@@ -134,10 +141,10 @@ const AboutSection = () => {
               height={900}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
             />
           </div>
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/90 via-background/40 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/90 via-background/40 to-transparent pointer-events-none z-10" />
 
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10">
             <div className="max-w-2xl">

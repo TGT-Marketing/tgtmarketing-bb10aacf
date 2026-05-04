@@ -48,7 +48,7 @@ const portfolioItems: PortfolioItem[] = [
       {
         client: "Cliente: Multi Malte Chopp | Criação de Nome e Identidade Visual da Marca",
         description:
-          "A marca Multi Malte apresenta uma identidade visual forte, autêntica e muito bem alinhada ao universo cervejeiro artesanal.\n\nO nome transmite variedade, sabor e qualidade, enquanto os elementos visuais, como o lúpulo, o trigo, o barril e o chopp, reforçam a conexão com tradição, experiência e produção artesanal.\n\nA combinação tipográfica também se destaca: “MULTI” traz força e presença, enquanto “Malte” adiciona personalidade, sofisticação e um toque premium.\n\nResumo final:\nUma marca bem construída, marcante e estratégica, com grande potencial de reconhecimento e posicionamento no mercado cervejeiro.",
+          "A marca Multi Malte apresenta uma identidade visual forte, marcante e autêntica, construída para se destacar no mercado cervejeiro.\n\nCom uma comunicação visual alinhada ao universo da cerveja artesanal, a marca transmite qualidade, tradição e experiência, criando conexão imediata com o público e fortalecendo seu posicionamento comercial.",
         results: [
           "Aumento de 80% no reconhecimento de marca",
           "Padronização visual completa (on e offline)",

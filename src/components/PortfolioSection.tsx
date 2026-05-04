@@ -56,6 +56,17 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777925637700-sefsq-ChatGPT_Image_30_de_abr._de_2026__08_13_55.png"],
       },
+      {
+        client: "Cliente: Queijaria Três Saltos | Criação de Identidade Visual da Marca",
+        description:
+          "A marca Queijaria Três Saltos apresenta uma identidade visual acolhedora, artesanal e muito bem conectada ao universo rural.\n\nCom elementos que remetem à fazenda, natureza e produção caseira, a marca transmite tradição, qualidade e origem, criando uma percepção de produto autêntico, regional e de alto valor.",
+        results: [
+          "Identidade visual artesanal e acolhedora",
+          "Conexão imediata com o universo rural e de fazenda",
+          "Fortalecimento da percepção de valor do produto",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777927952222-jbi04-ChatGPT_Image_30_de_abr._de_2026__08_23_48.png"],
+      },
     ],
   },
   {

@@ -404,7 +404,9 @@ const PortfolioSection = () => {
                     {project.results.length > 0 && (
                       <div className="bg-muted/40 rounded-lg p-4 mb-5">
                         <p className="text-sm font-bold text-foreground mb-2">
-                          Resultados:
+                          {activeItem.title === "Produção de Conteúdo" 
+                            ? "Resultados que uma captação profissional pode gerar:" 
+                            : "Resultados:"}
                         </p>
                         <ul className="space-y-2">
                           {project.results.map((r, rIdx) => (

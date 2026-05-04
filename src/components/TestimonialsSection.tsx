@@ -43,6 +43,7 @@ const testimonials = [
 const TestimonialsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
     <section className="section-padding bg-background" ref={ref}>
@@ -77,7 +78,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="card-premium p-4 sm:p-8 relative group border-2 border-border hover:border-accent/50 transition-all duration-500"
+              className="card-premium p-4 sm:p-8 relative group border-2 border-border hover:border-accent/50 transition-all duration-500 flex flex-col h-full"
             >
               <Quote
                 className="text-accent/8 absolute top-6 right-6 group-hover:text-accent/15 transition-colors duration-500"
@@ -92,9 +93,22 @@ const TestimonialsSection = () => {
                   />
                 ))}
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-8 relative z-10 text-[15px] whitespace-pre-wrap">
+              <p className="text-muted-foreground leading-relaxed mb-6 relative z-10 text-[15px] whitespace-pre-wrap flex-grow">
                 "{t.text}"
               </p>
+              
+              {t.videoUrl && (
+                <button 
+                  onClick={() => setSelectedVideo(t.videoUrl!)}
+                  className="flex items-center gap-2 text-accent font-semibold text-sm mb-6 hover:text-accent/80 transition-colors group/btn"
+                >
+                  <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center group-hover/btn:bg-accent/20 transition-colors">
+                    <Play size={14} className="fill-accent ml-0.5" />
+                  </div>
+                  Assistir depoimento em vídeo
+                </button>
+              )}
+
               <div className="border-t border-border pt-5 flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-border shadow-sm">
                   {t.photo ? (
@@ -127,6 +141,28 @@ const TestimonialsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
+          <DialogContent className="max-w-4xl p-0 bg-black border-none overflow-hidden aspect-video">
+            <DialogHeader className="sr-only">
+              <DialogTitle>Depoimento em Vídeo</DialogTitle>
+            </DialogHeader>
+            {selectedVideo && (
+              <iframe
+                src={`${selectedVideo}?autoplay=1`}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
+            <button 
+              onClick={() => setSelectedVideo(null)}
+              className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            >
+              <X size={20} />
+            </button>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

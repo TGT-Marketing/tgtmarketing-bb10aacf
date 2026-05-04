@@ -15,7 +15,7 @@ import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon } from "lucide-re
 import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
-import portfolioWeb from "@/assets/portfolio-webdesign.webp";
+import portfolioWeb from "/portfolio-web-new.png";
 
 type PortfolioProject = {
   client: string;
@@ -105,7 +105,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Site e E-commerce",
     category: "Digital",
     image: portfolioWeb,
-    imageClassName: "scale-[1.6] -translate-y-[15%] origin-top group-hover:scale-[1.7]",
+    imageClassName: "scale-[1.1] origin-top group-hover:scale-[1.15]",
     intro:
       "Sites e landing pages que convertem visitantes em clientes — rápidos, responsivos e otimizados.",
     projects: [

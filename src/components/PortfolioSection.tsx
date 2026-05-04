@@ -289,11 +289,11 @@ const PortfolioSection = () => {
                         <CarouselContent>
                           {project.gallery.map((src, gIdx) => (
                             <CarouselItem key={gIdx}>
-                              <div className="aspect-video overflow-hidden rounded-lg bg-muted">
+                              <div className="aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img">
                                 <img
                                   src={src}
                                   alt={`${project.client} - imagem ${gIdx + 1}`}
-                                  className="w-full h-full object-cover"
+                                  className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
                                   loading="lazy"
                                 />
                               </div>

@@ -123,15 +123,17 @@ const portfolioItems: PortfolioItem[] = [
         link: "https://www.rochacontabil.com.br/",
       },
       {
-        client: "Design de Interface e Experiência",
+        client: "Cliente: Claudio Poços Artesianos | https://claudiopocosartesianos.com.br/",
         description:
-          "Concepção de interfaces modernas para plataformas digitais, garantindo que a identidade da marca seja aplicada com perfeição no ambiente web e mobile, focando em usabilidade.",
+          "O site da Claudio Poços Artesianos apresenta uma construção bem direcionada para captação de clientes, com layout objetivo, navegação simples e foco total em conversão.\n\nDo ponto de vista de desenvolvimento, o grande diferencial está na estrutura direta e funcional: o visitante entende rapidamente o que a empresa oferece e encontra com facilidade os canais de contato. Isso é essencial para sites de serviços, onde o usuário geralmente busca uma solução rápida e quer falar com a empresa sem dificuldade.\n\nO site também se destaca por ter uma organização visual limpa, com seções bem separadas, botões de ação visíveis e informações distribuídas de forma estratégica. Essa estrutura melhora a experiência do usuário e evita que o visitante se perca durante a navegação.\n\nOutro ponto positivo é o uso de chamadas para orçamento e contato, que tornam o site mais comercial. Em vez de ser apenas uma página institucional, ele funciona como uma ferramenta de vendas, conduzindo o usuário para uma ação clara.\n\nTambém vale destacar a adaptação para navegação mobile, já que grande parte dos acessos hoje vem pelo celular. Um site responsivo, com botões acessíveis e leitura rápida, aumenta muito as chances de conversão.\n\nResumo final:\nO diferencial do site está na sua construção objetiva, comercial e funcional: layout limpo, navegação fácil, boa hierarquia visual, foco em contato rápido e estrutura pensada para transformar visitantes em potenciais clientes.",
         results: [
-          "Interface intuitiva e focada no usuário",
-          "Consistência visual entre marca e produto digital",
-          "Design responsivo de alta performance"
+          "Foco total em conversão e captação de leads",
+          "Layout objetivo e navegação simplificada",
+          "Estrutura otimizada para dispositivos móveis",
+          "Fácil acesso aos canais de contato"
         ],
         gallery: ["/branding-project-2.png"],
+        link: "https://claudiopocosartesianos.com.br/",
       },
       {
         client: "Posicionamento de Marca Digital",

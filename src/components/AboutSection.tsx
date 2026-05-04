@@ -141,7 +141,7 @@ const AboutSection = () => {
               height={900}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110 aspect-video sm:aspect-auto"
             />
           </div>
           <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none z-10" />

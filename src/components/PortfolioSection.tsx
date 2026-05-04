@@ -104,6 +104,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Site e E-commerce",
     category: "Digital",
     image: portfolioWeb,
+    imageClassName: "scale-[1.25] origin-top",
     intro:
       "Sites e landing pages que convertem visitantes em clientes — rápidos, responsivos e otimizados.",
     projects: [

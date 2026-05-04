@@ -280,7 +280,22 @@ const PortfolioSection = () => {
                     className="border-t border-border pt-6 first:border-t-0 first:pt-0"
                   >
                     <h4 className="text-lg font-bold text-foreground mb-2">
-                      {project.client}
+                      {project.link ? (
+                        <>
+                          {project.client.split('|')[0]}
+                          {project.client.includes('|') && ' | '}
+                          <a 
+                            href={project.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-accent hover:underline break-all"
+                          >
+                            {project.link}
+                          </a>
+                        </>
+                      ) : (
+                        project.client
+                      )}
                     </h4>
                     <p className="text-muted-foreground mb-5">
                       {project.description}

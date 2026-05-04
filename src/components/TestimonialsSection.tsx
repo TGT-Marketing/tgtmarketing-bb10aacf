@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
+import { cn } from "@/lib/utils";
 import testimonialAndrea from "@/assets/testimonial-andrea.webp";
 import testimonialFrancine from "@/assets/testimonial-francine.webp";
 import testimonialVinicius from "@/assets/testimonial-vinicius.webp";
@@ -97,7 +98,10 @@ const TestimonialsSection = () => {
                       height={48}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover object-top"
+                      className={cn(
+                        "w-full h-full object-cover object-top",
+                        t.name === "Andréa Palharini" && "scale-150"
+                      )}
                     />
                   ) : (
                     <div className="w-full h-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">

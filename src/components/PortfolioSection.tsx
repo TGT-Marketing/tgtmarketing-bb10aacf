@@ -40,6 +40,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Criação de Marca [Branding]",
     category: "Identidade",
     image: portfolioBranding,
+    imageClassName: "scale-[1.2] group-hover:scale-[1.3]",
     intro:
       "Construímos marcas memoráveis, com identidade visual coerente e posicionamento que vende.",
     projects: [

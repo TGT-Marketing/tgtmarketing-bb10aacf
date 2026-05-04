@@ -77,7 +77,7 @@ const AboutSection = () => {
                 height={1350}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-110"
+                className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-110 aspect-[3/4] sm:aspect-auto"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 sm:p-5 z-10 transition-all duration-500 group-hover:from-black/90">
                 <p className="text-white/90 text-xs sm:text-sm font-medium transition-transform duration-500 group-hover:translate-y-[-2px]">
@@ -125,7 +125,7 @@ const AboutSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
           whileHover={{ y: -6 }}
-          className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)]"
+          className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)] bg-secondary"
         >
           {/* Shine sweep effect - white reflection */}
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20" />
@@ -141,7 +141,7 @@ const AboutSection = () => {
               height={900}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110 aspect-video sm:aspect-auto"
             />
           </div>
           <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none z-10" />

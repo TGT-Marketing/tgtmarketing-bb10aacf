@@ -200,7 +200,7 @@ const PortfolioSection = () => {
                   loading="lazy"
                   decoding="async"
                   className={cn(
-                    "w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110",
+                    "w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 aspect-[3/4]",
                     item.imageClassName
                   )}
                 />
@@ -324,7 +324,7 @@ const PortfolioSection = () => {
                                     <img
                                       src={src}
                                       alt={`${project.client} - imagem ${gIdx + 1}`}
-                                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
                                       loading="lazy"
                                     />
                                   </a>
@@ -332,7 +332,7 @@ const PortfolioSection = () => {
                                   <img
                                     src={src}
                                     alt={`${project.client} - imagem ${gIdx + 1}`}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
                                     loading="lazy"
                                   />
                                 )}

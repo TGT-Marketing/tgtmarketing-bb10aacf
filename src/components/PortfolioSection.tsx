@@ -15,7 +15,7 @@ import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon } from "lucide-re
 import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
-import portfolioWeb from "@/assets/portfolio-webdesign.webp";
+import portfolioWeb from "/portfolio-web-new.png";
 
 type PortfolioProject = {
   client: string;

@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import ContactFormDialog from "@/components/ContactFormDialog";
+import { cn } from "@/lib/utils";
 import {
   Carousel,
   CarouselContent,
@@ -31,6 +32,7 @@ type PortfolioItem = {
   image: string;
   intro: string;
   projects: PortfolioProject[];
+  imageClassName?: string;
 };
 
 const portfolioItems: PortfolioItem[] = [
@@ -102,6 +104,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Site e E-commerce",
     category: "Digital",
     image: portfolioWeb,
+    imageClassName: "scale-[1.4] -translate-y-[5%] origin-top group-hover:scale-[1.5]",
     intro:
       "Sites e landing pages que convertem visitantes em clientes — rápidos, responsivos e otimizados.",
     projects: [
@@ -167,7 +170,10 @@ const PortfolioSection = () => {
                   height={800}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                  className={cn(
+                    "w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110",
+                    item.imageClassName
+                  )}
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity duration-300" />

@@ -49,11 +49,7 @@ const portfolioItems: PortfolioItem[] = [
         client: "Cliente: Multi Malte Chopp | Criação de Nome e Identidade Visual da Marca",
         description:
           "A marca Multi Malte apresenta uma identidade visual forte, marcante e autêntica, construída para se destacar no mercado cervejeiro.\n\nCom uma comunicação visual alinhada ao universo da cerveja artesanal, a marca transmite qualidade, tradição e experiência, criando conexão imediata com o público e fortalecendo seu posicionamento comercial.",
-        results: [
-          "Aumento de 80% no reconhecimento de marca",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777925637700-sefsq-ChatGPT_Image_30_de_abr._de_2026__08_13_55.png"],
       },
       {
@@ -64,6 +60,8 @@ const portfolioItems: PortfolioItem[] = [
           "Identidade visual artesanal e acolhedora",
           "Conexão imediata com o universo rural e de fazenda",
           "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777927952222-jbi04-ChatGPT_Image_30_de_abr._de_2026__08_23_48.png"],
       },
@@ -417,12 +415,12 @@ const PortfolioSection = () => {
                       </div>
                     )}
 
-                    {project.results.length > 0 && (
+                    {project.results.length > 0 && idx === activeItem.projects.length - 1 && (
                       <div className="bg-muted/40 rounded-lg p-4 mb-5">
                         <p className="text-sm font-bold text-foreground mb-2">
                           {activeItem.title === "Produção de Conteúdo" 
                             ? "Resultados que uma captação profissional pode gerar:" 
-                            : activeItem.title === "Gestão de Tráfego"
+                            : activeItem.title === "Gestão de Tráfego Estratégica"
                             ? "Resultados que podem ser alcançados:"
                             : "Resultados:"}
                         </p>

@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Star, Quote } from "lucide-react";
+import { cn } from "@/lib/utils";
 import testimonialAndrea from "@/assets/testimonial-andrea.webp";
 import testimonialFrancine from "@/assets/testimonial-francine.webp";
 import testimonialVinicius from "@/assets/testimonial-vinicius.webp";

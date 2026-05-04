@@ -60,6 +60,8 @@ const portfolioItems: PortfolioItem[] = [
           "Identidade visual artesanal e acolhedora",
           "Conexão imediata com o universo rural e de fazenda",
           "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777927952222-jbi04-ChatGPT_Image_30_de_abr._de_2026__08_23_48.png"],
       },

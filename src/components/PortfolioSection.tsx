@@ -66,9 +66,9 @@ const portfolioItems: PortfolioItem[] = [
       "Campanhas pagas com foco em ROI e conversão real, não em métricas de vaidade.",
     projects: [
       {
-        client: "A Gestão de Tráfego Pago da TGT Marketing posiciona sua empresa na frente das pessoas certas, no momento certo, com campanhas estratégicas para gerar mais visibilidade, leads, mensagens e vendas.",
+        client: "Gestão de Tráfego Estratégica",
         description:
-          "Com análise de público, criação de campanhas, segmentação, otimização constante e acompanhamento de métricas, transformamos investimento em mídia em oportunidades reais de negócio.",
+          "A Gestão de Tráfego Pago da TGT Marketing posiciona sua empresa na frente das pessoas certas, no momento certo, com campanhas estratégicas para gerar mais visibilidade, leads, mensagens e vendas.\n\nCom análise de público, criação de campanhas, segmentação, otimização constante e acompanhamento de métricas, transformamos investimento em mídia em oportunidades reais de negócio.",
         results: [
           "Mais pessoas qualificadas conhecendo sua empresa",
           "Aumento no volume de leads, mensagens e orçamentos",

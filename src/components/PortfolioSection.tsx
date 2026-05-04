@@ -66,13 +66,18 @@ const portfolioItems: PortfolioItem[] = [
       "Campanhas pagas com foco em ROI e conversão real, não em métricas de vaidade.",
     projects: [
       {
-        client: "Projeto exemplo — substitua pelo nome do cliente",
+        client: "A Gestão de Tráfego Pago da TGT Marketing posiciona sua empresa na frente das pessoas certas, no momento certo, com campanhas estratégicas para gerar mais visibilidade, leads, mensagens e vendas.",
         description:
-          "Estruturação completa de campanhas no Meta Ads e Google Ads, com pixel, públicos personalizados e funil de conversão.",
+          "Com análise de público, criação de campanhas, segmentação, otimização constante e acompanhamento de métricas, transformamos investimento em mídia em oportunidades reais de negócio.",
         results: [
-          "ROI de 12x em 90 dias",
-          "Custo por lead reduzido em 65%",
-          "+1.200 leads qualificados/mês",
+          "Mais pessoas qualificadas conhecendo sua empresa",
+          "Aumento no volume de leads, mensagens e orçamentos",
+          "Campanhas direcionadas para o público certo",
+          "Melhor aproveitamento do investimento em anúncios",
+          "Mais visibilidade para produtos, serviços e ofertas",
+          "Dados claros para decisões mais estratégicas",
+          "Fortalecimento da presença digital da marca",
+          "Maior potencial de conversão e vendas",
         ],
         gallery: [portfolioTraffic, portfolioTraffic, portfolioTraffic],
       },
@@ -406,6 +411,8 @@ const PortfolioSection = () => {
                         <p className="text-sm font-bold text-foreground mb-2">
                           {activeItem.title === "Produção de Conteúdo" 
                             ? "Resultados que uma captação profissional pode gerar:" 
+                            : activeItem.title === "Gestão de Tráfego"
+                            ? "Resultados que podem ser alcançados:"
                             : "Resultados:"}
                         </p>
                         <ul className="space-y-2">

@@ -200,7 +200,7 @@ const PortfolioSection = () => {
                   loading="lazy"
                   decoding="async"
                   className={cn(
-                    "w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110",
+                    "w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 aspect-[3/4]",
                     item.imageClassName
                   )}
                 />

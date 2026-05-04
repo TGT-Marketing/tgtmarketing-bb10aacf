@@ -49,33 +49,11 @@ const portfolioItems: PortfolioItem[] = [
         description:
           "Desenvolvimento de identidade visual premium com foco em autoridade e presença de mercado. Criamos um sistema visual que comunica profissionalismo e confiança em todos os pontos de contato.",
         results: [
-          "Aumento significativo na percepção de valor da marca",
+          "Aumento de 80% no reconhecimento de marca",
           "Padronização visual completa (on e offline)",
-          "Identidade visual memorável e exclusiva"
+          "Manual de marca completo entregue",
         ],
-        gallery: ["/branding-project-1.png"],
-      },
-      {
-        client: "Design de Interface e Experiência",
-        description:
-          "Concepção de interfaces modernas para plataformas digitais, garantindo que a identidade da marca seja aplicada com perfeição no ambiente web e mobile, focando em usabilidade.",
-        results: [
-          "Interface intuitiva e focada no usuário",
-          "Consistência visual entre marca e produto digital",
-          "Design responsivo de alta performance"
-        ],
-        gallery: ["/branding-project-2.png"],
-      },
-      {
-        client: "Posicionamento de Marca Digital",
-        description:
-          "Estratégia de branding aplicada a sites e e-commerces de alta conversão. Transformamos a essência do negócio em um design que guia o cliente na jornada de compra.",
-        results: [
-          "Maior engajamento visual com o público-alvo",
-          "Taxa de retenção no site aumentada pelo design",
-          "Fortalecimento da autoridade digital"
-        ],
-        gallery: ["/branding-project-3.png"],
+        gallery: [portfolioBranding],
       },
     ],
   },
@@ -132,15 +110,37 @@ const portfolioItems: PortfolioItem[] = [
       "Sites e landing pages que convertem visitantes em clientes — rápidos, responsivos e otimizados.",
     projects: [
       {
-        client: "Projeto exemplo — substitua pelo nome do cliente",
+        client: "Estratégia Visual Corporativa",
         description:
-          "Site institucional completo com foco em conversão, performance e SEO técnico.",
+          "Desenvolvimento de identidade visual premium com foco em autoridade e presença de mercado. Criamos um sistema visual que comunica profissionalismo e confiança em todos os pontos de contato.",
         results: [
-          "Taxa de conversão de 6,8%",
-          "Tempo de carregamento abaixo de 2s",
-          "Primeiras posições no Google em palavras-chave estratégicas",
+          "Aumento significativo na percepção de valor da marca",
+          "Padronização visual completa (on e offline)",
+          "Identidade visual memorável e exclusiva"
         ],
-        gallery: [portfolioWeb, portfolioWeb, portfolioWeb],
+        gallery: ["/branding-project-1.png"],
+      },
+      {
+        client: "Design de Interface e Experiência",
+        description:
+          "Concepção de interfaces modernas para plataformas digitais, garantindo que a identidade da marca seja aplicada com perfeição no ambiente web e mobile, focando em usabilidade.",
+        results: [
+          "Interface intuitiva e focada no usuário",
+          "Consistência visual entre marca e produto digital",
+          "Design responsivo de alta performance"
+        ],
+        gallery: ["/branding-project-2.png"],
+      },
+      {
+        client: "Posicionamento de Marca Digital",
+        description:
+          "Estratégia de branding aplicada a sites e e-commerces de alta conversão. Transformamos a essência do negócio em um design que guia o cliente na jornada de compra.",
+        results: [
+          "Maior engajamento visual com o público-alvo",
+          "Taxa de retenção no site aumentada pelo design",
+          "Fortalecimento da autoridade digital"
+        ],
+        gallery: ["/branding-project-3.png"],
       },
     ],
   },

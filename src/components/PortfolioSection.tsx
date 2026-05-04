@@ -353,6 +353,19 @@ const PortfolioSection = () => {
                             </>
                           )}
                         </Carousel>
+                        
+                        {activeItem.title === "Produção de Conteúdo" && (
+                          <div className="mt-6 p-5 bg-accent/5 rounded-xl border border-accent/10">
+                            <p className="text-sm sm:text-base text-foreground leading-relaxed">
+                              <span className="font-bold text-accent">Nossos Projetos:</span> Explore abaixo uma seleção de nossos conteúdos finalizados. 
+                              Cada material reflete nosso compromisso com a <span className="font-semibold text-accent">alta qualidade cinematográfica</span> e direção criativa estratégica.
+                            </p>
+                            <p className="text-sm font-bold text-accent mt-3 flex items-center gap-2">
+                              <SparklesIcon className="w-4 h-4" />
+                              Clique nos vídeos abaixo para dar o play e conferir a qualidade premium do nosso trabalho.
+                            </p>
+                          </div>
+                        )}
                       </div>
                     )}
 

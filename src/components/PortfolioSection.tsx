@@ -153,7 +153,7 @@ const portfolioItems: PortfolioItem[] = [
 ];
 
 const WHATSAPP_URL =
-  "https://wa.me/5511999999999?text=Quero%20um%20trabalho%20assim%20para%20minha%20empresa!";
+  "https://wa.me/5519992795271?text=Quero%20um%20trabalho%20assim%20para%20minha%20empresa!";
 
 const PortfolioSection = () => {
   const ref = useRef(null);

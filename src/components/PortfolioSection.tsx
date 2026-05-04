@@ -32,6 +32,7 @@ type PortfolioItem = {
   image: string;
   intro: string;
   projects: PortfolioProject[];
+  imageClassName?: string;
 };
 
 const portfolioItems: PortfolioItem[] = [

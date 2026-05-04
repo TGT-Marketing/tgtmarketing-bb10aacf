@@ -22,6 +22,7 @@ type PortfolioProject = {
   description: string;
   results: string[];
   gallery: string[];
+  link?: string;
   videoUrl?: string; // YouTube or Vimeo embed URL (single, legacy)
   videoUrls?: string[]; // Multiple YouTube or Vimeo embed URLs
 };
@@ -110,15 +111,16 @@ const portfolioItems: PortfolioItem[] = [
       "Sites e landing pages que convertem visitantes em clientes — rápidos, responsivos e otimizados.",
     projects: [
       {
-        client: "Estratégia Visual Corporativa",
+        client: "Cliente: Rocha Assessoria Contábil | https://www.rochacontabil.com.br/",
         description:
-          "Desenvolvimento de identidade visual premium com foco em autoridade e presença de mercado. Criamos um sistema visual que comunica profissionalismo e confiança em todos os pontos de contato.",
+          "O site da Rocha Assessoria Contábil transmite confiança, tradição e profissionalismo, destacando seus mais de 40 anos de experiência como um forte diferencial competitivo.\n\nA estrutura é clara e estratégica, apresentando os principais serviços — contábil, fiscal, trabalhista, societário e consultoria empresarial — de forma objetiva, facilitando a navegação e a tomada de decisão do cliente.\n\nComo agência especialista em criação de sites, destacamos que o projeto valoriza bem a autoridade da marca, reforça credibilidade e conduz o visitante ao contato de forma prática, com chamadas comerciais bem posicionadas.\n\nResumo final:\nUm site institucional bem construído, com foco em autoridade, confiança e conversão, ideal para fortalecer a presença digital da Rocha Contábil e atrair novos clientes.",
         results: [
-          "Aumento significativo na percepção de valor da marca",
-          "Padronização visual completa (on e offline)",
-          "Identidade visual memorável e exclusiva"
+          "Destaque para os 40 anos de experiência",
+          "Navegação clara e estratégica dos serviços",
+          "Foco total em autoridade e conversão"
         ],
         gallery: ["/branding-project-1.png"],
+        link: "https://www.rochacontabil.com.br/",
       },
       {
         client: "Design de Interface e Experiência",
@@ -289,13 +291,32 @@ const PortfolioSection = () => {
                         <CarouselContent>
                           {project.gallery.map((src, gIdx) => (
                             <CarouselItem key={gIdx}>
-                              <div className="aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img">
-                                <img
-                                  src={src}
-                                  alt={`${project.client} - imagem ${gIdx + 1}`}
-                                  className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
-                                  loading="lazy"
-                                />
+                              <div className={cn(
+                                "aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img",
+                                project.link && "cursor-pointer"
+                              )}>
+                                {project.link ? (
+                                  <a 
+                                    href={project.link} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="block w-full h-full"
+                                  >
+                                    <img
+                                      src={src}
+                                      alt={`${project.client} - imagem ${gIdx + 1}`}
+                                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                      loading="lazy"
+                                    />
+                                  </a>
+                                ) : (
+                                  <img
+                                    src={src}
+                                    alt={`${project.client} - imagem ${gIdx + 1}`}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                    loading="lazy"
+                                  />
+                                )}
                               </div>
                             </CarouselItem>
                           ))}

@@ -88,21 +88,23 @@ const TestimonialsSection = () => {
                 "{t.text}"
               </p>
               <div className="border-t border-border pt-5 flex items-center gap-3">
-                {t.photo ? (
-                  <img
-                    src={t.photo}
-                    alt={t.name}
-                    width={48}
-                    height={48}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-12 h-12 rounded-full object-cover object-top"
-                  />
-                ) : (
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">
-                    {t.initials}
-                  </div>
-                )}
+                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-border shadow-sm">
+                  {t.photo ? (
+                    <img
+                      src={t.photo}
+                      alt={t.name}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">
+                      {t.initials}
+                    </div>
+                  )}
+                </div>
                 <div>
                   <div className="font-bold text-foreground text-sm">
                     {t.name}

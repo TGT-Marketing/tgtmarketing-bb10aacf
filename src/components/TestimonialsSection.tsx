@@ -97,7 +97,10 @@ const TestimonialsSection = () => {
                       height={48}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover object-top"
+                      className={cn(
+                        "w-full h-full object-cover object-top",
+                        t.name === "Andréa Palharini" && "scale-150"
+                      )}
                     />
                   ) : (
                     <div className="w-full h-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm">

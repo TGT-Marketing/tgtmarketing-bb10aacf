@@ -99,8 +99,9 @@ const TestimonialsSection = () => {
                       loading="lazy"
                       decoding="async"
                       className={cn(
-                        "w-full h-full object-cover object-top",
-                        t.name === "Andréa Palharini" && "scale-150"
+                        "w-full h-full object-cover",
+                        t.name === "Andréa Palharini" ? "scale-[1.8] object-[center_75%]" : 
+                        t.name === "Vinicius Ribeiro" ? "scale-[1.4] object-top" : "object-top"
                       )}
                     />
                   ) : (

@@ -45,15 +45,37 @@ const portfolioItems: PortfolioItem[] = [
       "Construímos marcas memoráveis, com identidade visual coerente e posicionamento que vende.",
     projects: [
       {
-        client: "Projeto exemplo — substitua pelo nome do cliente",
+        client: "Estratégia Visual Corporativa",
         description:
-          "Reposicionamento de marca completo, com nova identidade visual, manual de marca e aplicações em todos os pontos de contato.",
+          "Desenvolvimento de identidade visual premium com foco em autoridade e presença de mercado. Criamos um sistema visual que comunica profissionalismo e confiança em todos os pontos de contato.",
         results: [
-          "Aumento de 80% no reconhecimento de marca",
-          "Padronização visual em todos os canais",
-          "Manual de marca completo entregue",
+          "Aumento significativo na percepção de valor da marca",
+          "Padronização visual completa (on e offline)",
+          "Identidade visual memorável e exclusiva"
         ],
-        gallery: [portfolioBranding, portfolioBranding, portfolioBranding],
+        gallery: ["/branding-project-1.png"],
+      },
+      {
+        client: "Design de Interface e Experiência",
+        description:
+          "Concepção de interfaces modernas para plataformas digitais, garantindo que a identidade da marca seja aplicada com perfeição no ambiente web e mobile, focando em usabilidade.",
+        results: [
+          "Interface intuitiva e focada no usuário",
+          "Consistência visual entre marca e produto digital",
+          "Design responsivo de alta performance"
+        ],
+        gallery: ["/branding-project-2.png"],
+      },
+      {
+        client: "Posicionamento de Marca Digital",
+        description:
+          "Estratégia de branding aplicada a sites e e-commerces de alta conversão. Transformamos a essência do negócio em um design que guia o cliente na jornada de compra.",
+        results: [
+          "Maior engajamento visual com o público-alvo",
+          "Taxa de retenção no site aumentada pelo design",
+          "Fortalecimento da autoridade digital"
+        ],
+        gallery: ["/branding-project-3.png"],
       },
     ],
   },
@@ -267,11 +289,11 @@ const PortfolioSection = () => {
                         <CarouselContent>
                           {project.gallery.map((src, gIdx) => (
                             <CarouselItem key={gIdx}>
-                              <div className="aspect-video overflow-hidden rounded-lg bg-muted">
+                              <div className="aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img">
                                 <img
                                   src={src}
                                   alt={`${project.client} - imagem ${gIdx + 1}`}
-                                  className="w-full h-full object-cover"
+                                  className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
                                   loading="lazy"
                                 />
                               </div>

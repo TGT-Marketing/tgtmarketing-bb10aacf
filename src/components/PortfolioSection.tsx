@@ -411,6 +411,8 @@ const PortfolioSection = () => {
                         <p className="text-sm font-bold text-foreground mb-2">
                           {activeItem.title === "Produção de Conteúdo" 
                             ? "Resultados que uma captação profissional pode gerar:" 
+                            : activeItem.title === "Gestão de Tráfego"
+                            ? "Resultados que podem ser alcançados:"
                             : "Resultados:"}
                         </p>
                         <ul className="space-y-2">

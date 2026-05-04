@@ -306,47 +306,54 @@ const PortfolioSection = () => {
                     </p>
 
                     {project.gallery.length > 0 && (
-                      <Carousel className="w-full mb-5">
-                        <CarouselContent>
-                          {project.gallery.map((src, gIdx) => (
-                            <CarouselItem key={gIdx}>
-                              <div className={cn(
-                                "aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img",
-                                project.link && "cursor-pointer"
-                              )}>
-                                {project.link ? (
-                                  <a 
-                                    href={project.link} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="block w-full h-full"
-                                  >
+                      <div className="mb-5">
+                        {activeItem.title === "Produção de Conteúdo" && (
+                          <p className="text-sm font-medium text-foreground mb-3 italic">
+                            Equipe TGT realizando captação de conteúdos em evento com gravação em tempo real LIVE AO VIVO
+                          </p>
+                        )}
+                        <Carousel className="w-full">
+                          <CarouselContent>
+                            {project.gallery.map((src, gIdx) => (
+                              <CarouselItem key={gIdx}>
+                                <div className={cn(
+                                  "aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img",
+                                  project.link && "cursor-pointer"
+                                )}>
+                                  {project.link ? (
+                                    <a 
+                                      href={project.link} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="block w-full h-full"
+                                    >
+                                      <img
+                                        src={src}
+                                        alt={`${project.client} - imagem ${gIdx + 1}`}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
+                                        loading="lazy"
+                                      />
+                                    </a>
+                                  ) : (
                                     <img
                                       src={src}
                                       alt={`${project.client} - imagem ${gIdx + 1}`}
                                       className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
                                       loading="lazy"
                                     />
-                                  </a>
-                                ) : (
-                                  <img
-                                    src={src}
-                                    alt={`${project.client} - imagem ${gIdx + 1}`}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
-                                    loading="lazy"
-                                  />
-                                )}
-                              </div>
-                            </CarouselItem>
-                          ))}
-                        </CarouselContent>
-                        {project.gallery.length > 1 && (
-                          <>
-                            <CarouselPrevious />
-                            <CarouselNext />
-                          </>
-                        )}
-                      </Carousel>
+                                  )}
+                                </div>
+                              </CarouselItem>
+                            ))}
+                          </CarouselContent>
+                          {project.gallery.length > 1 && (
+                            <>
+                              <CarouselPrevious />
+                              <CarouselNext />
+                            </>
+                          )}
+                        </Carousel>
+                      </div>
                     )}
 
                     {(project.videoUrl || project.videoUrls) && (

@@ -12,7 +12,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon } from "lucide-react";
-import portfolioBranding from "@/assets/portfolio-branding.webp";
+import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "@/assets/portfolio-webdesign.webp";

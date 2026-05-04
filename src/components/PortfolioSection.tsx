@@ -12,7 +12,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon } from "lucide-react";
-import portfolioBranding from "@/assets/portfolio-branding.webp";
+import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "@/assets/portfolio-webdesign.webp";
@@ -40,6 +40,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Criação de Marca [Branding]",
     category: "Identidade",
     image: portfolioBranding,
+    imageClassName: "scale-[1.2] group-hover:scale-[1.3]",
     intro:
       "Construímos marcas memoráveis, com identidade visual coerente e posicionamento que vende.",
     projects: [

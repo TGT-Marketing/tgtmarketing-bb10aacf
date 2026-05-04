@@ -43,7 +43,7 @@ const portfolioItems: PortfolioItem[] = [
     image: portfolioBranding,
     imageClassName: "scale-[1.2] group-hover:scale-[1.3]",
     intro:
-      "Construímos marcas memoráveis, com identidade visual coerente e posicionamento que vende.",
+      "Construímos marcas memoráveis, com identidade visual estratégica, comunicação direcionada e posicionamento forte para gerar reconhecimento, autoridade e vendas.",
     projects: [
       {
         client: "Estratégia Visual Corporativa",

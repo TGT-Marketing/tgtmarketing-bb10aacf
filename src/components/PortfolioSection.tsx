@@ -306,7 +306,13 @@ const PortfolioSection = () => {
                     </p>
 
                     {project.gallery.length > 0 && (
-                      <Carousel className="w-full mb-5">
+                      <div className="mb-5">
+                        {activeItem.title === "Produção de Conteúdo" && (
+                          <p className="text-sm font-medium text-foreground mb-3 italic">
+                            Equipe TGT realizando captação de conteúdos em evento com gravação em tempo real LIVE AO VIVO
+                          </p>
+                        )}
+                        <Carousel className="w-full">
                         <CarouselContent>
                           {project.gallery.map((src, gIdx) => (
                             <CarouselItem key={gIdx}>

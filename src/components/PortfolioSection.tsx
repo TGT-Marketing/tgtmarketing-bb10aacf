@@ -90,9 +90,14 @@ const portfolioItems: PortfolioItem[] = [
         description:
           "Planejamento editorial mensal, produção de fotos, vídeos curtos e copywriting estratégico para redes sociais.",
         results: [
-          "Crescimento de 220% em alcance orgânico",
-          "Engajamento médio acima de 8%",
-          "+15 mil novos seguidores qualificados",
+          "Conteúdos com mais qualidade visual e credibilidade",
+          "Vídeos mais atrativos para redes sociais, anúncios e campanhas",
+          "Fortalecimento da imagem profissional da empresa",
+          "Maior potencial de alcance, engajamento e conversão",
+          "Mais autoridade para a marca no digital",
+          "Melhor apresentação de produtos, serviços, equipe e estrutura",
+          "Conteúdos prontos para usar em Instagram, Reels, TikTok, YouTube e Tráfego Pago",
+          "Aumento da percepção de valor do público sobre a empresa"
         ],
         gallery: [portfolioContent, portfolioContent, portfolioContent],
         videoUrls: [
@@ -399,7 +404,9 @@ const PortfolioSection = () => {
                     {project.results.length > 0 && (
                       <div className="bg-muted/40 rounded-lg p-4 mb-5">
                         <p className="text-sm font-bold text-foreground mb-2">
-                          Resultados:
+                          {activeItem.title === "Produção de Conteúdo" 
+                            ? "Resultados que uma captação profissional pode gerar:" 
+                            : "Resultados:"}
                         </p>
                         <ul className="space-y-2">
                           {project.results.map((r, rIdx) => (

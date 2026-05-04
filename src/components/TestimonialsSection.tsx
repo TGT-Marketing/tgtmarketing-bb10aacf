@@ -1,7 +1,13 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Star, Quote } from "lucide-react";
+import { useRef, useState } from "react";
+import { Star, Quote, Play, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import testimonialAndrea from "@/assets/testimonial-andrea.webp";
 import testimonialFrancine from "@/assets/testimonial-francine.webp";
 import testimonialVinicius from "@/assets/testimonial-vinicius.webp";
@@ -26,10 +32,11 @@ const testimonials = [
   {
     name: "Vinicius Ribeiro",
     role: "Diretor Executivo, Max Limp Produtos de Limpeza, Higiene e Descartáveis",
-    text: "A TGT não é só uma agência, é parceira de verdade. Eles entendem o negócio, propõem solução inteligentes e acompanham tudo de perto. O nível de estratégia e execução, são outros níveis, totalmente diferenciados!",
+    text: "As ideias que nós passamos para a TGT sempre se encaixava, casou muito essa questão das ideias e fez com que essa parceria se tornasse um sucesso. Eu agradeço muito a toda a equipe TGT, à todos os colaboradores, ao time. Toda equipe tem toda paciência para que as coisas aconteçam e espero que continuemos sendo parceiros por muitos e muitos anos...",
     rating: 5,
     initials: "VR",
     photo: testimonialVinicius,
+    videoUrl: "https://www.youtube.com/embed/vUUIUwri964",
   },
 ];
 

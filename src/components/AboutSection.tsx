@@ -125,7 +125,7 @@ const AboutSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
           whileHover={{ y: -6 }}
-          className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)]"
+          className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)] bg-secondary"
         >
           {/* Shine sweep effect - white reflection */}
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20" />

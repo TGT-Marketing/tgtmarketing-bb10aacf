@@ -136,15 +136,17 @@ const portfolioItems: PortfolioItem[] = [
         link: "https://claudiopocosartesianos.com.br/",
       },
       {
-        client: "Posicionamento de Marca Digital",
+        client: "Cliente: Ricks Medicina Ocupacional | https://www.ricksocupacional.com.br/",
         description:
-          "Estratégia de branding aplicada a sites e e-commerces de alta conversão. Transformamos a essência do negócio em um design que guia o cliente na jornada de compra.",
+          "O site da Ricks Ocupacional apresenta uma construção moderna, objetiva e bem direcionada para empresas que buscam serviços de medicina ocupacional e segurança do trabalho. A proposta visual transmite credibilidade, organização e profissionalismo, pontos essenciais para um segmento que exige confiança e segurança.\n\nDo ponto de vista de desenvolvimento, o site se destaca por ter uma estrutura clara e comercial, com navegação simples e foco em facilitar o acesso às principais informações. A organização das seções ajuda o visitante a entender rapidamente a atuação da empresa e avançar para o contato sem dificuldade.\n\nUm diferencial importante é a hierarquia visual bem aplicada: títulos objetivos, textos diretos, blocos de conteúdo organizados e chamadas que conduzem o usuário pela página. Isso melhora a experiência de navegação e torna o site mais eficiente para conversão.\n\nTambém chama atenção o posicionamento digital do projeto. O site não funciona apenas como uma apresentação institucional; ele atua como uma ferramenta estratégica de captação, fortalecendo a autoridade da marca e transmitindo uma imagem de empresa preparada, atualizada e confiável.\n\nOutro ponto positivo é a proposta de comunicação mais humanizada, alinhando tecnologia, atendimento e cuidado com a saúde dos colaboradores — uma abordagem importante para diferenciar o site de páginas genéricas do setor.\n\nResumo final:\nO diferencial do site está em sua construção profissional, limpa e estratégica: layout bem organizado, navegação intuitiva, boa hierarquia visual, comunicação confiável e estrutura pensada para gerar credibilidade e transformar visitantes em potenciais clientes.",
         results: [
-          "Maior engajamento visual com o público-alvo",
-          "Taxa de retenção no site aumentada pelo design",
+          "Construção moderna e estratégica",
+          "Hierarquia visual focada em conversão",
+          "Comunicação humanizada e profissional",
           "Fortalecimento da autoridade digital"
         ],
         gallery: ["/branding-project-3.png"],
+        link: "https://www.ricksocupacional.com.br/",
       },
     ],
   },

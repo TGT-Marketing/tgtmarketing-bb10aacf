@@ -29,7 +29,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="container-main flex items-center justify-between">
+      <div className="container-main px-4 sm:px-6 flex items-center justify-between">
         <a href="#" className="relative z-10">
           <img
             src={logoTgt}

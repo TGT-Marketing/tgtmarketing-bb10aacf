@@ -348,12 +348,17 @@ const PortfolioSection = () => {
                               loop
                               muted
                               playsInline
+                              preload="metadata"
                               className="w-full h-full object-cover transition-transform duration-500 group-hover/video:scale-105"
                             />
-                            <div className="absolute inset-0 bg-black/0 group-hover/video:bg-black/10 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover/video:opacity-100">
-                              <span className="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transform translate-y-4 group-hover/video:translate-y-0 transition-transform duration-300">
+                            <div className="absolute inset-0 bg-black/0 sm:group-hover/video:bg-black/10 transition-colors duration-300 flex items-center justify-center opacity-0 sm:group-hover/video:opacity-100">
+                              <span className="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transform translate-y-4 sm:group-hover/video:translate-y-0 transition-transform duration-300">
                                 Visitar Site →
                               </span>
+                            </div>
+                            {/* Mobile-only indicator */}
+                            <div className="absolute bottom-3 right-3 sm:hidden bg-accent/90 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow-md animate-pulse">
+                              TOQUE PARA VER SITE
                             </div>
                           </a>
                         ) : (

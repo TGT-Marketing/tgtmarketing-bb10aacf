@@ -198,15 +198,18 @@ const PortfolioSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-20"
+          className="text-center mb-16 sm:mb-24"
         >
-          <span className="section-label justify-center mb-4 block">
-            Portfólio
+          <span className="section-label justify-center mb-6 block">
+            Nossa Expertise
           </span>
-          <h2 className="text-[1.4rem] sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
-            Nossos <span className="text-accent">trabalhos</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-[900] text-foreground mt-3 mb-8 tracking-tighter leading-none">
+            Projetos que <br className="hidden sm:block" /><span className="text-gradient">fazem história</span>
           </h2>
-          <div className="divider-accent mx-auto" />
+          <div className="divider-accent mx-auto mb-10" />
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed px-4">
+            Cada trabalho é uma união entre criatividade e estratégia de alto nível para gerar resultados exponenciais.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">

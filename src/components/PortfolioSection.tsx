@@ -163,9 +163,9 @@ const portfolioItems: PortfolioItem[] = [
         link: "https://claudiopocosartesianos.com.br/",
       },
       {
-        client: "Cliente: Ricks Medicina Ocupacional | https://www.ricksocupacional.com.br/",
+        client: "Cliente: Rick Medicina Ocupacional | https://www.ricksocupacional.com.br/",
         description:
-          "O site da Ricks Ocupacional apresenta uma construção moderna, objetiva e profissional, transmitindo credibilidade, organização e confiança para empresas que buscam serviços de medicina ocupacional e segurança do trabalho.\n\nDo ponto de vista de desenvolvimento, o site se destaca pela navegação simples, layout limpo, boa hierarquia visual e estrutura comercial, facilitando o acesso às informações e conduzindo o visitante ao contato.\n\nResumo final:\nUm site bem estruturado, estratégico e funcional, pensado para fortalecer a autoridade da marca e transformar visitantes em potenciais clientes.",
+          "O site da Rick Medicina Ocupacional apresenta uma construção moderna, objetiva e profissional, transmitindo credibilidade, organização e confiança para empresas que buscam serviços de medicina ocupacional e segurança do trabalho.\n\nDo ponto de vista de desenvolvimento, o site se destaca pela navegação simples, layout limpo, boa hierarquia visual e estrutura comercial, facilitando o acesso às informações e conduzindo o visitante ao contato.\n\nResumo final:\nUm site bem estruturado, estratégico e funcional, pensado para fortalecer a autoridade da marca e transformar visitantes em potenciais clientes.",
         results: [
           "Construção moderna e estratégica",
           "Hierarquia visual focada em conversão",
@@ -173,7 +173,7 @@ const portfolioItems: PortfolioItem[] = [
           "Fortalecimento da autoridade digital"
         ],
         gallery: [],
-        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778004476123-imfku-Design_sem_nome.mp4",
+        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778005777476-4788w-ESSE.mp4",
         link: "https://www.ricksocupacional.com.br/",
       },
     ],

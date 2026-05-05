@@ -9,14 +9,17 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
     <section
       id="contato"
-      className="section-padding bg-primary relative overflow-hidden"
+      className="section-padding bg-[#0a0a0a] relative overflow-hidden"
       ref={ref}
     >
       {/* Premium decorative elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
-      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent via-marsala to-transparent" />
-      <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-marsala to-accent" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-[120px] pointer-events-none opacity-50" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-[100px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(223,26,26,0.1),transparent_50%)]" />
+      
+      {/* Decorative vertical lines */}
+      <div className="absolute top-0 left-0 w-[1px] h-full bg-gradient-to-b from-accent/50 via-accent/5 to-transparent opacity-30" />
+      <div className="absolute top-0 right-0 w-[1px] h-full bg-gradient-to-b from-accent/50 via-accent/5 to-transparent opacity-30" />
 
       <div className="container-main relative z-10">
         <motion.div

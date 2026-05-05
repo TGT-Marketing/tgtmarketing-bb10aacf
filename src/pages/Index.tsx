@@ -13,27 +13,34 @@ import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import ContactFormDialog from "@/components/ContactFormDialog";
+import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   const [contactOpen, setContactOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-section-dark">
-      <Header onOpenContact={() => setContactOpen(true)} />
-      <HeroSection onOpenContact={() => setContactOpen(true)} />
-      <AboutSection />
-      <ProblemsSection onOpenContact={() => setContactOpen(true)} />
-      <ServicesSection />
-      <AiSection />
-      <PortfolioSection />
-      <TestimonialsSection />
-      <ResultsSection />
-      <ProcessSection />
-      <CtaSection onOpenContact={() => setContactOpen(true)} />
-      <Footer />
-      <FloatingActions />
-      <ContactFormDialog open={contactOpen} onOpenChange={setContactOpen} />
-    </div>
+    <SmoothScroll>
+      <div className="min-h-screen bg-section-dark selection:bg-accent/30 selection:text-white">
+        <CustomCursor />
+        <Header onOpenContact={() => setContactOpen(true)} />
+        <main>
+          <HeroSection onOpenContact={() => setContactOpen(true)} />
+          <AboutSection />
+          <ProblemsSection onOpenContact={() => setContactOpen(true)} />
+          <ServicesSection />
+          <AiSection />
+          <PortfolioSection />
+          <TestimonialsSection />
+          <ResultsSection />
+          <ProcessSection />
+          <CtaSection onOpenContact={() => setContactOpen(true)} />
+        </main>
+        <Footer />
+        <FloatingActions />
+        <ContactFormDialog open={contactOpen} onOpenChange={setContactOpen} />
+      </div>
+    </SmoothScroll>
   );
 };
 

@@ -11,7 +11,7 @@ const highlights = [
 
 const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pb-8 sm:pb-16">
+    <section className="relative min-h-[100dvh] flex items-center overflow-hidden pb-8 sm:pb-16">
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -21,9 +21,10 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           height={1080}
           fetchPriority="high"
           decoding="async"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105 animate-[pulse-glow_10s_ease-in-out_infinite]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/98 via-primary/90 to-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary via-primary/95 to-primary/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(223,26,26,0.1),transparent_70%)]" />
         <TargetAnimation />
       </div>
 
@@ -146,32 +147,19 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10"
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 hidden sm:block"
       >
-        <a href="#sobre" className="hidden sm:flex flex-col items-center gap-1 group">
-          <div className="border border-primary-foreground/20 rounded-full p-2 group-hover:border-primary-foreground/50 transition-all duration-500 cursor-pointer">
-            <Mouse size={24} className="text-primary-foreground/40" strokeWidth={1.5} />
-          </div>
-          <div className="flex flex-col items-center -space-y-1.5">
+        <a href="#sobre" className="flex flex-col items-center gap-3 group">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-primary-foreground/40 font-bold group-hover:text-accent transition-colors duration-500">
+            Explorar
+          </span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-accent to-transparent relative overflow-hidden">
             <motion.div
-              animate={{ y: [0, 4, 0], opacity: [0.2, 0.6, 0.2] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <ChevronDown size={16} className="text-primary-foreground/50" strokeWidth={2.5} />
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, 4, 0], opacity: [0.15, 0.5, 0.15] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.15 }}
-            >
-              <ChevronDown size={16} className="text-primary-foreground/40" strokeWidth={2.5} />
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, 4, 0], opacity: [0.1, 0.4, 0.1] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-            >
-              <ChevronDown size={16} className="text-primary-foreground/30" strokeWidth={2.5} />
-            </motion.div>
+              className="absolute top-0 left-0 w-full h-full bg-white/40"
+              animate={{ y: ['-100%', '100%'] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
           </div>
         </a>
       </motion.div>

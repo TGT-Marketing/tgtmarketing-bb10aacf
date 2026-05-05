@@ -23,13 +23,13 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-primary/95 backdrop-blur-md shadow-lg py-2"
-          : "bg-transparent py-5"
+          ? "bg-primary/80 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.5)] border-b border-white/5 py-2.5"
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="container-main flex items-center justify-between">
+      <div className="container-main px-4 sm:px-6 flex items-center justify-between">
         <a href="#" className="relative z-10">
           <img
             src={logoTgt}

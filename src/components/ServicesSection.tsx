@@ -84,29 +84,37 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group card-premium p-4 sm:p-8"
+              whileHover={{ y: -8 }}
+              className="group relative overflow-hidden card-premium p-6 sm:p-10 transition-all duration-500 hover:shadow-premium-accent"
             >
-              <div className="w-14 h-14 rounded-2xl bg-accent/8 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:shadow-lg group-hover:shadow-accent/20 transition-all duration-500">
+              {/* Glass reflection effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
+              
+              <div className="relative w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent group-hover:shadow-2xl group-hover:shadow-accent/40 transition-all duration-500 transform group-hover:-rotate-3 group-hover:scale-110">
                 <service.icon
                   className="text-accent group-hover:text-accent-foreground transition-colors duration-300"
-                  size={26}
+                  size={32}
                 />
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-accent/80 mb-2">
+              <div className="relative text-[11px] font-bold uppercase tracking-[0.2em] text-accent/70 mb-3">
                 {service.highlight}
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">
+              <h3 className="relative text-xl sm:text-2xl font-extrabold text-foreground mb-4 tracking-tight leading-tight">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed text-sm mb-5">
+              <p className="relative text-muted-foreground leading-relaxed text-[15px] mb-8 group-hover:text-foreground/80 transition-colors">
                 {service.desc}
               </p>
-              <a
-                href="#contato"
-                className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm group-hover:gap-2.5 transition-all duration-300"
-              >
-                Saiba mais <ArrowRight size={14} />
-              </a>
+              <div className="relative mt-auto">
+                <a
+                  href="#contato"
+                  className="inline-flex items-center gap-2 text-accent font-bold text-sm uppercase tracking-wider group-hover:gap-4 transition-all duration-300"
+                >
+                  Saber mais
+                  <span className="w-8 h-px bg-accent scale-x-50 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                  <ArrowRight size={14} />
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -11,7 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon } from "lucide-react";
+import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight } from "lucide-react";
 import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
@@ -198,54 +198,68 @@ const PortfolioSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-20"
+          className="text-center mb-16 sm:mb-24"
         >
-          <span className="section-label justify-center mb-4 block">
-            Portfólio
+          <span className="section-label justify-center mb-6 block">
+            Nossa Expertise
           </span>
-          <h2 className="text-[1.4rem] sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
-            Nossos <span className="text-accent">trabalhos</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-[900] text-foreground mt-3 mb-8 tracking-tighter leading-none">
+            Projetos que <br className="hidden sm:block" /><span className="text-gradient">fazem história</span>
           </h2>
-          <div className="divider-accent mx-auto" />
+          <div className="divider-accent mx-auto mb-10" />
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed px-4">
+            Cada trabalho é uma união entre criatividade e estratégia de alto nível para gerar resultados exponenciais.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
           {portfolioItems.map((item, i) => (
-            <motion.button
-              type="button"
-              onClick={() => setActiveItem(item)}
+            <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-accent"
-              aria-label={`Ver trabalhos de ${item.title}`}
+              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
             >
-              <div className="aspect-[3/4] overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  width={800}
-                  height={800}
-                  loading="lazy"
-                  decoding="async"
-                  className={cn(
-                    "w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 aspect-[3/4]",
-                    item.imageClassName
-                  )}
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 p-6">
-                <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block">
-                  {item.category}
-                </span>
-                <h3 className="text-white font-bold text-xl">{item.title}</h3>
-                <span className="mt-3 inline-block text-white/80 text-xs font-medium underline-offset-4 group-hover:underline">
-                  Ver trabalhos →
-                </span>
-              </div>
-            </motion.button>
+              <motion.button
+                type="button"
+                onClick={() => setActiveItem(item)}
+                whileHover={{ y: -10 }}
+                className="group relative w-full aspect-[3/4.5] overflow-hidden rounded-[2rem] cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-accent shadow-2xl transition-all duration-500 hover:shadow-premium-accent"
+                aria-label={`Ver trabalhos de ${item.title}`}
+              >
+                <div className="absolute inset-0 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    decoding="async"
+                    className={cn(
+                      "w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110",
+                      item.imageClassName
+                    )}
+                  />
+                </div>
+                
+                {/* Overlay with glass effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500" />
+                
+                {/* Content */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <span className="text-accent text-[10px] font-black uppercase tracking-[0.3em] mb-3 block transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    {item.category}
+                  </span>
+                  <h3 className="text-white font-extrabold text-2xl mb-4 leading-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    {item.title}
+                  </h3>
+                  <div className="h-px w-0 bg-accent group-hover:w-full transition-all duration-700 delay-100" />
+                  <span className="mt-4 inline-flex items-center gap-2 text-white/60 text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+                    Ver detalhes <ArrowRight size={14} className="text-accent" />
+                  </span>
+                </div>
+              </motion.button>
+            </motion.div>
           ))}
         </div>
 

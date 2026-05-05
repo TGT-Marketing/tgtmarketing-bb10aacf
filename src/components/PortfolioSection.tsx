@@ -333,15 +333,38 @@ const PortfolioSection = () => {
                     </p>
 
                     {project.directVideoUrl && (
-                      <div className="mb-5 aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner">
-                        <video
-                          src={project.directVideoUrl}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="mb-5 aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/video">
+                        {project.link ? (
+                          <a 
+                            href={project.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="block w-full h-full relative"
+                          >
+                            <video
+                              src={project.directVideoUrl}
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover/video:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover/video:bg-black/10 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover/video:opacity-100">
+                              <span className="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transform translate-y-4 group-hover/video:translate-y-0 transition-transform duration-300">
+                                Visitar Site →
+                              </span>
+                            </div>
+                          </a>
+                        ) : (
+                          <video
+                            src={project.directVideoUrl}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover"
+                          />
+                        )}
                       </div>
                     )}
 

@@ -25,6 +25,7 @@ type PortfolioProject = {
   link?: string;
   videoUrl?: string; // YouTube or Vimeo embed URL (single, legacy)
   videoUrls?: string[]; // Multiple YouTube or Vimeo embed URLs
+  directVideoUrl?: string;
 };
 
 type PortfolioItem = {
@@ -158,7 +159,8 @@ const portfolioItems: PortfolioItem[] = [
           "Estrutura otimizada para dispositivos móveis",
           "Fácil acesso aos canais de contato"
         ],
-        gallery: ["/branding-project-2.png"],
+        gallery: [],
+        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777999863979-56nwp-Watermark_Remover-Remove_Text__Auto_-Shots_-_Create_Amazing_Mockups_-_Google_Chrome_2026-05-05_10-05-59.mp4",
         link: "https://claudiopocosartesianos.com.br/",
       },
       {
@@ -330,6 +332,19 @@ const PortfolioSection = () => {
                     <p className="text-muted-foreground mb-5 whitespace-pre-line">
                       {project.description}
                     </p>
+
+                    {project.directVideoUrl && (
+                      <div className="mb-5 aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner">
+                        <video
+                          src={project.directVideoUrl}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
 
                     {project.gallery.length > 0 && (
                       <div className="mb-5">

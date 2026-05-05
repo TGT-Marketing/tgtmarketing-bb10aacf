@@ -25,6 +25,7 @@ type PortfolioProject = {
   link?: string;
   videoUrl?: string; // YouTube or Vimeo embed URL (single, legacy)
   videoUrls?: string[]; // Multiple YouTube or Vimeo embed URLs
+  directVideoUrl?: string;
 };
 
 type PortfolioItem = {

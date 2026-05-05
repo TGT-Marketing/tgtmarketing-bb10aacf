@@ -69,6 +69,13 @@
 
   body {
     @apply bg-section-dark text-foreground font-sans antialiased;
+    cursor: none; /* Hide default cursor for custom one */
+  }
+
+  @media (max-width: 768px) {
+    body {
+      cursor: auto; /* Show default cursor on mobile */
+    }
   }
 
   h1, h2, h3, h4 {
@@ -102,7 +109,7 @@
   }
 
   .section-padding {
-    @apply py-14 sm:py-20 md:py-28 px-4 sm:px-6 md:px-8;
+    @apply py-20 sm:py-32 px-4 sm:px-6 md:px-8;
   }
 
   .container-main {
@@ -130,44 +137,67 @@
 
   /* Premium section label */
   .section-label {
-    @apply text-accent font-semibold text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2;
+    @apply text-accent font-semibold text-xs uppercase tracking-[0.3em] inline-flex items-center gap-4;
   }
   .section-label::before {
     content: '';
-    @apply w-8 h-px bg-accent inline-block;
+    @apply w-12 h-px bg-accent/40 inline-block;
   }
 
   /* Premium card style */
   .card-premium {
-    @apply bg-card border border-border rounded-2xl transition-all duration-500;
+    @apply bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl transition-all duration-500;
     box-shadow: 0 1px 3px hsl(0 0% 0% / 0.04);
   }
   .card-premium:hover {
-    box-shadow: 0 20px 40px -15px hsl(0 0% 0% / 0.1);
-    @apply border-accent/20 -translate-y-1;
+    box-shadow: 0 30px 60px -15px hsl(0 0% 0% / 0.2);
+    @apply border-accent/30 -translate-y-2;
   }
 
   /* Divider line accent */
   .divider-accent {
-    @apply w-12 h-1 bg-accent rounded-full;
+    @apply w-16 h-1 bg-accent rounded-full;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+/* Lenis CSS */
+html.lenis, html.lenis body {
+  height: auto;
 }
 
-/* Smooth scrollbar styling */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom transitions */
+.page-transition {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Scrollbar refinement */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(0 0% 95%);
+  background: hsl(var(--primary));
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(0 0% 70%);
-  border-radius: 4px;
+  background: hsl(0 0% 20%);
+  border: 2px solid hsl(var(--primary));
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(0 0% 50%);
+  background: hsl(0 78% 48%);
 }

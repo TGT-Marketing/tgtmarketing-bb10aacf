@@ -159,7 +159,8 @@ const portfolioItems: PortfolioItem[] = [
           "Estrutura otimizada para dispositivos móveis",
           "Fácil acesso aos canais de contato"
         ],
-        gallery: ["/branding-project-2.png"],
+        gallery: [],
+        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777999863979-56nwp-Watermark_Remover-Remove_Text__Auto_-Shots_-_Create_Amazing_Mockups_-_Google_Chrome_2026-05-05_10-05-59.mp4",
         link: "https://claudiopocosartesianos.com.br/",
       },
       {

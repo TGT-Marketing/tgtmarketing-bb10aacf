@@ -333,6 +333,19 @@ const PortfolioSection = () => {
                       {project.description}
                     </p>
 
+                    {project.directVideoUrl && (
+                      <div className="mb-5 aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner">
+                        <video
+                          src={project.directVideoUrl}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+
                     {project.gallery.length > 0 && (
                       <div className="mb-5">
                         {activeItem.title === "Produção de Conteúdo" && (

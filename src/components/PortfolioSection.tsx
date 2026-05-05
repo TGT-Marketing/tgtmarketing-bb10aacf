@@ -108,9 +108,8 @@ const portfolioItems: PortfolioItem[] = [
       "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdo da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
     projects: [
       {
-        client: "Projeto exemplo — substitua pelo nome do cliente",
-        description:
-          "Planejamento editorial mensal, produção de fotos, vídeos curtos e copywriting estratégico para redes sociais.",
+        client: "",
+        description: "",
         results: [
           "Conteúdos com mais qualidade visual e credibilidade",
           "Vídeos mais atrativos para redes sociais, anúncios e campanhas",
@@ -160,7 +159,7 @@ const portfolioItems: PortfolioItem[] = [
           "Fácil acesso aos canais de contato"
         ],
         gallery: [],
-        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777999863979-56nwp-Watermark_Remover-Remove_Text__Auto_-Shots_-_Create_Amazing_Mockups_-_Google_Chrome_2026-05-05_10-05-59.mp4",
+        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778001726442-quuxq-download.mp4",
         link: "https://claudiopocosartesianos.com.br/",
       },
       {

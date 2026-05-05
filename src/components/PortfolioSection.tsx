@@ -72,8 +72,8 @@ const portfolioItems: PortfolioItem[] = [
         description:
           "A marca Alma & Afeto Semijoias apresenta uma identidade visual sofisticada, elegante e muito bem posicionada para o mercado de acessórios premium.\n\nCom uma paleta refinada, acabamento em dourado e comunicação delicada, a marca transmite exclusividade, cuidado e valorização pessoal, criando uma percepção de desejo, beleza e alto valor.",
         results: [
-          "Identidade visual artesanal e acolhedora",
-          "Conexão imediata com o universo rural e de fazenda",
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
           "Fortalecimento da percepção de valor do produto",
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",

@@ -145,7 +145,8 @@ const portfolioItems: PortfolioItem[] = [
           "Navegação clara e estratégica dos serviços",
           "Foco total em autoridade e conversão"
         ],
-        gallery: ["/branding-project-1.png"],
+        gallery: [],
+        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778006473251-gx70g-esse_aqui.mp4",
         link: "https://www.rochacontabil.com.br/",
       },
       {

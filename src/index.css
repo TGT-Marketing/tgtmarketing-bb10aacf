@@ -74,7 +74,7 @@
 
   @media (max-width: 768px) {
     body {
-      cursor: auto; /* Show default cursor on mobile */
+      cursor: auto !important; /* Show default cursor on mobile */
     }
   }
 
@@ -179,6 +179,11 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* Fix for Radix Dialog and Lenis */
+body[data-radix-scroll-lock] {
+  overflow: hidden !important;
 }
 
 /* Custom transitions */

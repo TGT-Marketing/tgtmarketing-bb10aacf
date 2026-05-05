@@ -108,8 +108,8 @@ const portfolioItems: PortfolioItem[] = [
       "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdo da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
     projects: [
       {
-        client: "",
-        description: "",
+        client: "TGT Marketing — Produção de Conteúdo",
+        description: "Planejamento editorial, produção de fotos e vídeos curtos com copywriting estratégico para redes sociais.",
         results: [
           "Conteúdos com mais qualidade visual e credibilidade",
           "Vídeos mais atrativos para redes sociais, anúncios e campanhas",

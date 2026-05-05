@@ -21,8 +21,25 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
 
     requestAnimationFrame(raf);
 
+    // Watch for modal open (Radix)
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-radix-scroll-lock') {
+          const isLocked = document.body.hasAttribute('data-radix-scroll-lock');
+          if (isLocked) {
+            lenis.stop();
+          } else {
+            lenis.start();
+          }
+        }
+      });
+    });
+
+    observer.observe(document.body, { attributes: true });
+
     return () => {
       lenis.destroy();
+      observer.disconnect();
     };
   }, []);
 

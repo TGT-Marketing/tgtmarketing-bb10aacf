@@ -168,10 +168,11 @@ const portfolioItems: PortfolioItem[] = [
         description:
           "O site da Rick Medicina Ocupacional apresenta uma construção moderna, objetiva e profissional, transmitindo credibilidade, organização e confiança para empresas que buscam serviços de medicina ocupacional e segurança do trabalho.\n\nDo ponto de vista de desenvolvimento, o site se destaca pela navegação simples, layout limpo, boa hierarquia visual e estrutura comercial, facilitando o acesso às informações e conduzindo o visitante ao contato.\n\nResumo final:\nUm site bem estruturado, estratégico e funcional, pensado para fortalecer a autoridade da marca e transformar visitantes em potenciais clientes.",
         results: [
-          "Construção moderna e estratégica",
-          "Hierarquia visual focada em conversão",
-          "Comunicação humanizada e profissional",
-          "Fortalecimento da autoridade digital"
+          "Sua empresa aberta 24 horas por dia na internet",
+          "Mais credibilidade e confiança para o cliente comprar",
+          "Mais chances de aparecer no Google e ser encontrado",
+          "Alcance além da sua região",
+          "Mais contatos e pedidos"
         ],
         gallery: [],
         directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778005777476-4788w-ESSE.mp4",

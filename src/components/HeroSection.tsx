@@ -11,7 +11,7 @@ const highlights = [
 
 const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pb-8 sm:pb-16">
+    <section className="relative min-h-[100dvh] flex items-center overflow-hidden pb-8 sm:pb-16">
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -21,9 +21,10 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           height={1080}
           fetchPriority="high"
           decoding="async"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105 animate-[pulse-glow_10s_ease-in-out_infinite]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/98 via-primary/90 to-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary via-primary/95 to-primary/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(223,26,26,0.1),transparent_70%)]" />
         <TargetAnimation />
       </div>
 

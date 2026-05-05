@@ -172,7 +172,8 @@ const portfolioItems: PortfolioItem[] = [
           "Comunicação humanizada e profissional",
           "Fortalecimento da autoridade digital"
         ],
-        gallery: ["/branding-project-3.png"],
+        gallery: [],
+        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778004476123-imfku-Design_sem_nome.mp4",
         link: "https://www.ricksocupacional.com.br/",
       },
     ],

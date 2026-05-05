@@ -143,7 +143,7 @@ const TestimonialsSection = () => {
         </div>
 
         <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-          <DialogContent className="max-w-4xl p-0 bg-black border-none overflow-hidden aspect-video">
+          <DialogContent className="max-w-4xl p-0 bg-black border-none overflow-hidden aspect-video" data-lenis-prevent>
             <DialogHeader className="sr-only">
               <DialogTitle>Depoimento em Vídeo</DialogTitle>
             </DialogHeader>

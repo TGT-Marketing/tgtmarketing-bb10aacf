@@ -368,6 +368,7 @@ const PortfolioSection = () => {
                             loop
                             muted
                             playsInline
+                            preload="metadata"
                             className="w-full h-full object-cover"
                           />
                         )}

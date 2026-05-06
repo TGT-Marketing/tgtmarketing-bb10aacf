@@ -6,7 +6,7 @@ import logoTgt from "@/assets/logo-tgt.webp";
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
   { label: "Serviços", href: "#servicos" },
-  { label: "TRABALHOS", href: "#portfolio" },
+  { label: "TRABALHOS", href: "#trabalhos" },
   { label: "Resultados", href: "#resultados" },
   { label: "Contato", href: "#contato" },
 ];

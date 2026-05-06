@@ -407,7 +407,7 @@ const PortfolioSection = () => {
   const [contactOpen, setContactOpen] = useState(false);
 
   return (
-    <section id="portfolio" className="section-padding bg-background" ref={ref}>
+    <section id="trabalhos" className="section-padding bg-background scroll-mt-20" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

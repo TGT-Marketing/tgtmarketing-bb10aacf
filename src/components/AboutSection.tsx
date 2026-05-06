@@ -8,7 +8,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre" className="section-padding bg-background">
+    <section id="sobre" className="section-padding bg-background scroll-mt-20">
       <div className="container-main" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           <motion.div
@@ -45,10 +45,10 @@ const AboutSection = () => {
               </p>
             </div>
             <a
-              href="#contato"
+              href="#trabalhos"
               className="inline-block mt-8 btn-primary text-base py-3.5 px-7"
             >
-              Conheça nosso trabalho
+              Conheça nossos trabalhos
             </a>
           </motion.div>
 

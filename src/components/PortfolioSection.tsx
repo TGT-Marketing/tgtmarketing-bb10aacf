@@ -406,6 +406,35 @@ const PortfolioSection = () => {
   const [activeItem, setActiveItem] = useState<PortfolioItem | null>(null);
   const [contactOpen, setContactOpen] = useState(false);
 
+  useEffect(() => {
+    // Add YouTube API script
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+    }
+
+    const onMessage = (event: MessageEvent) => {
+      if (typeof event.data === 'string' && event.data.includes('infoDelivery')) {
+        const data = JSON.parse(event.data);
+        // event 1 is play, 2 is pause, 3 is buffering
+        if (data.event === 'infoDelivery' && data.info && data.info.playerState === 1) {
+          const iframes = document.querySelectorAll('.youtube-video-iframe');
+          iframes.forEach((iframe: any) => {
+            // If it's not the video that just started playing, pause it
+            if (iframe.contentWindow && iframe !== event.source) {
+              iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            }
+          });
+        }
+      }
+    };
+
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
+  }, []);
+
   return (
     <section id="trabalhos" className="section-padding bg-background scroll-mt-20" ref={ref}>
       <div className="container-main">

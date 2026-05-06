@@ -60,7 +60,7 @@ const CustomCursor = () => {
           scale: isHovering ? 2 : 1,
           backgroundColor: isHovering ? 'hsl(0 78% 48% / 0.1)' : 'transparent',
         }}
-        transition={{ type: 'tween', ease: 'linear', duration: 0.1 }}
+        transition={{ type: 'spring', damping: 20, stiffness: 300 }}
       />
       <motion.div
         className="w-1 h-1 rounded-full bg-accent absolute top-0 left-0"

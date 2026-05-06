@@ -93,6 +93,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778072361401-4uxi6-ChatGPT_Image_5_de_mai._de_2026__17_09_29.png"],
       },
+      {
+        client: "Cliente: Lumarchi Embalagens | Rebranding da Marca - 40 anos de Mercado",
+        description:
+          "A marca Lumarchi Embalagens apresenta uma identidade visual sólida, profissional e muito bem alinhada ao segmento industrial.\n\nCom símbolo marcante, tipografia forte e paleta em azul, a marca transmite confiança, organização e credibilidade, criando uma percepção de empresa estruturada, segura e preparada para atender o mercado de embalagens.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778072883028-vccsp-ChatGPT_Image_6_de_mai._de_2026__10_07_29.png"],
+      },
     ],
   },
   {

@@ -275,6 +275,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778090277555-8jndt-ChatGPT_Image_6_de_mai._de_2026__14_57_40.png"],
       },
+      {
+        client: "Cliente: My Porto Ecologia Urbana - Portugal | Criação de Identidade Visual de Marca",
+        description:
+          "A marca My Porto Ecologia Urbana apresenta uma identidade visual leve, sustentável e muito bem alinhada ao segmento de preservação urbana.\n\nCom símbolo orgânico, paleta em azul e verde e comunicação ambiental, a marca transmite limpeza, responsabilidade e cuidado com a cidade, criando uma percepção de empresa moderna, consciente e preparada para atuar por um Porto mais sustentável.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778090761663-t19x8-ChatGPT_Image_6_de_mai._de_2026__15_03_43.png"],
+      },
     ],
   },
   {

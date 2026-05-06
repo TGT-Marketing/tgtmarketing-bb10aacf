@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import guilhermeTgt from "@/assets/guilherme-tgt.webp";
+const guilhermeTgt = "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778096057487-9g4xn-Design_sem_nome.jpg";
 import tgtLogoWall from "@/assets/tgt-logo-wall.png";
 
 const AboutSection = () => {

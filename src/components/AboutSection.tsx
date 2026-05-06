@@ -152,7 +152,7 @@ const AboutSection = () => {
                 Nossa marca
               </span>
               <p className="text-white text-lg sm:text-2xl font-bold tracking-tight leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-                Identidade que se faz <span className="text-accent">presente</span> — no digital e no físico.
+                Clique na imagem e confira a <span className="text-accent">Linha do Tempo</span> da marca TGT.
               </p>
             </div>
           </div>

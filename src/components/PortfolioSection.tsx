@@ -17,6 +17,14 @@ import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "/portfolio-web-new.png";
 
+// Preload critical images
+if (typeof window !== 'undefined') {
+  [portfolioBranding, portfolioTraffic, portfolioContent, portfolioWeb].forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
 type PortfolioProject = {
   client: string;
   description: string;

@@ -76,7 +76,7 @@ const AboutSection = () => {
                 alt="Guilherme - CEO da TGT Marketing & Comunicação"
                 width={900}
                 height={1350}
-                loading="lazy"
+                fetchPriority="high"
                 decoding="async"
                 className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-110 aspect-[3/4] sm:aspect-auto"
               />
@@ -143,7 +143,8 @@ const AboutSection = () => {
                   alt="Logo TGT em destaque na sede da agência — identidade visual e presença física da marca"
                   width={1600}
                   height={900}
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 aspect-video sm:aspect-auto"
                 />
@@ -170,6 +171,8 @@ const AboutSection = () => {
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 src="https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778097120020-rhqx5-linha-do-tempo-atualizadaFeed.png"
                 alt="Linha do Tempo TGT"
+                loading="eager"
+                fetchPriority="high"
                 className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
               />
             </div>

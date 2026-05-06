@@ -80,6 +80,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778010820224-gzh50-ChatGPT_Image_30_de_abr._de_2026__16_24_13.png"],
       },
+      {
+        client: "Cliente: Studio Evolua | Criação de Nome e Identidade Visual da Marca",
+        description:
+          "A marca Studio Evolua by Lu Longo apresenta uma identidade visual leve, moderna e muito bem conectada ao universo fitness feminino.\n\nCom cores vibrantes, símbolo em movimento e comunicação acolhedora, a marca transmite energia, evolução e bem-estar, criando uma percepção de cuidado, motivação e transformação pessoal.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778072361401-4uxi6-ChatGPT_Image_5_de_mai._de_2026__17_09_29.png"],
+      },
     ],
   },
   {

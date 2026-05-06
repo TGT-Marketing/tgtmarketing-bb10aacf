@@ -171,6 +171,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778086865463-ppowz-ChatGPT_Image_6_de_mai._de_2026__13_58_43.png"],
       },
+      {
+        client: "Cliente: SS Assessoria de Seguros | Criação de Identidade Visual de Marca",
+        description:
+          "A marca SS Assessoria de Seguros apresenta uma identidade visual elegante, séria e muito bem alinhada ao mercado de seguros.\n\nCom monograma sofisticado, paleta sóbria e composição minimalista, a marca transmite segurança, confiança e credibilidade, criando uma percepção de empresa profissional, estratégica e preparada para proteger seus clientes.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087117829-trgud-ChatGPT_Image_6_de_mai._de_2026__14_03_57.png"],
+      },
     ],
   },
   {

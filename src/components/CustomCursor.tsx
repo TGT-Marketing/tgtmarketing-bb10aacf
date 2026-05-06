@@ -5,11 +5,11 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
-  const cursorX = useSpring(0, { damping: 25, stiffness: 500 });
-  const cursorY = useSpring(0, { damping: 25, stiffness: 500 });
+  const cursorX = useSpring(0, { damping: 40, stiffness: 1000, mass: 0.1 });
+  const cursorY = useSpring(0, { damping: 40, stiffness: 1000, mass: 0.1 });
 
-  const dotX = useSpring(0, { damping: 20, stiffness: 800 });
-  const dotY = useSpring(0, { damping: 20, stiffness: 800 });
+  const dotX = useSpring(0, { damping: 30, stiffness: 1500, mass: 0.1 });
+  const dotY = useSpring(0, { damping: 30, stiffness: 1500, mass: 0.1 });
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {

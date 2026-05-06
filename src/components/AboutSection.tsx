@@ -171,6 +171,8 @@ const AboutSection = () => {
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 src="https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778097120020-rhqx5-linha-do-tempo-atualizadaFeed.png"
                 alt="Linha do Tempo TGT"
+                loading="eager"
+                fetchPriority="high"
                 className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
               />
             </div>

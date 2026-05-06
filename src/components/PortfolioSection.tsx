@@ -236,6 +236,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088536903-k9woy-ChatGPT_Image_6_de_mai._de_2026__14_27_30.png"],
       },
+      {
+        client: "Cliente: Dona Dora Bar| Criação de Identidade Visual de Marca",
+        description:
+          "A marca Dona Dora Bar apresenta uma identidade visual acolhedora, rústica e muito bem alinhada ao universo de bar de esquina.\n\nCom tipografia marcante, elementos dourados e estética tradicional, a marca transmite proximidade, descontração e autenticidade, criando uma percepção de ambiente convidativo, popular e perfeito para bons encontros.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088734395-9lb2n-ChatGPT_Image_6_de_mai._de_2026__14_30_58.png"],
+      },
     ],
   },
   {

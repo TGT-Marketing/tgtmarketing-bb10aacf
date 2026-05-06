@@ -197,6 +197,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087627621-9dmzl-ChatGPT_Image_6_de_mai._de_2026__14_13_25.png"],
       },
+      {
+        client: "Cliente: Prime Montagens & Planejados | Criação de Nome e Identidade Visual de Marca",
+        description:
+          "A marca Prime Montagens apresenta uma identidade visual forte, sofisticada e muito bem alinhada ao segmento de móveis planejados.\n\nCom símbolo marcante, coroa em destaque e paleta em vermelho, preto e dourado, a marca transmite qualidade, precisão e exclusividade, criando uma percepção de empresa premium, profissional e preparada para entregar montagens com alto padrão.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087978969-c1e4v-ChatGPT_Image_6_de_mai._de_2026__14_19_21.png"],
+      },
     ],
   },
   {

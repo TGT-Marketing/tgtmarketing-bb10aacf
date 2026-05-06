@@ -117,7 +117,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: [],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778073471739-ng3x5-ChatGPT_Image_6_de_mai._de_2026__10_14_39.png"],
       },
     ],
   },

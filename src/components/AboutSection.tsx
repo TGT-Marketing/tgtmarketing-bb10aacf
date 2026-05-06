@@ -143,7 +143,8 @@ const AboutSection = () => {
                   alt="Logo TGT em destaque na sede da agência — identidade visual e presença física da marca"
                   width={1600}
                   height={900}
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 aspect-video sm:aspect-auto"
                 />

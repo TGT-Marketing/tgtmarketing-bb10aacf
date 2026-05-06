@@ -249,6 +249,32 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088734395-9lb2n-ChatGPT_Image_6_de_mai._de_2026__14_30_58.png"],
       },
+      {
+        client: "Cliente: Quintal019 Bar & Restaurante | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Quintal 019 apresenta uma identidade visual descontraída, moderna e muito bem alinhada ao universo de barzinho.\n\nCom tipografia marcante, elementos tropicais e paleta em preto, branco e dourado, a marca transmite estilo, proximidade e experiência, criando uma percepção de ambiente jovem, acolhedor e ideal para bons encontros.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778089821331-zpxq1-ChatGPT_Image_6_de_mai._de_2026__14_49_57.png"],
+      },
+      {
+        client: "Cliente: JR Fortunato | Criação de Identidade Visual de Marca",
+        description:
+          "A marca J.R Fortunato Empreendimentos apresenta uma identidade visual sofisticada, moderna e muito bem alinhada ao mercado imobiliário.\n\nCom símbolo minimalista, paleta em azul e dourado e composição corporativa, a marca transmite solidez, confiança e valorização, criando uma percepção de empresa estratégica, premium e preparada para desenvolver grandes empreendimentos.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778090277555-8jndt-ChatGPT_Image_6_de_mai._de_2026__14_57_40.png"],
+      },
     ],
   },
   {

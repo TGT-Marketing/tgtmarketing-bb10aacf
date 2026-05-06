@@ -223,6 +223,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088236968-ga30o-ChatGPT_Image_6_de_mai._de_2026__14_22_33.png"],
       },
+      {
+        client: "Cliente: Point Pizzaria | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Point Pizzaria Delivery apresenta uma identidade visual vibrante, comercial e muito bem alinhada ao segmento de alimentação rápida.\n\nCom ícone de pizza, cores fortes e comunicação direta, a marca transmite sabor, praticidade e desejo, criando uma percepção de pizzaria moderna, acessível e preparada para entregar uma experiência marcante no delivery.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088536903-k9woy-ChatGPT_Image_6_de_mai._de_2026__14_27_30.png"],
+      },
     ],
   },
   {

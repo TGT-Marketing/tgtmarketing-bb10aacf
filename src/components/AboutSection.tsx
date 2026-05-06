@@ -120,43 +120,60 @@ const AboutSection = () => {
         </div>
 
         {/* Logo wall - identidade física TGT */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          whileHover={{ y: -6 }}
-          className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)] bg-secondary"
-        >
-          {/* Shine sweep effect - white reflection */}
-          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20" />
+        <Dialog>
+          <DialogTrigger asChild>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              whileHover={{ y: -6, scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
+              className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)] bg-secondary"
+            >
+              {/* Shine sweep effect - white reflection */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20" />
 
-          {/* Subtle white glow on hover */}
-          <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-500 pointer-events-none z-10" />
+              {/* Subtle white glow on hover */}
+              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-500 pointer-events-none z-10" />
 
-          <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/10] overflow-hidden bg-secondary">
-            <img
-              src={tgtLogoWall}
-              alt="Logo TGT em destaque na sede da agência — identidade visual e presença física da marca"
-              width={1600}
-              height={900}
-              loading="lazy"
-              decoding="async"
-              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110 aspect-video sm:aspect-auto"
-            />
-          </div>
-          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none z-10" />
+              <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/10] overflow-hidden bg-secondary">
+                <img
+                  src={tgtLogoWall}
+                  alt="Logo TGT em destaque na sede da agência — identidade visual e presença física da marca"
+                  width={1600}
+                  height={900}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 aspect-video sm:aspect-auto"
+                />
+              </div>
+              <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none z-10" />
 
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 z-20">
-            <div className="max-w-2xl">
-              <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                Nossa marca
-              </span>
-              <p className="text-white text-lg sm:text-2xl font-bold tracking-tight leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-                Clique na imagem e confira a <span className="text-accent">Linha do Tempo</span> da marca TGT.
-              </p>
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 z-20">
+                <div className="max-w-2xl">
+                  <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                    Nossa marca
+                  </span>
+                  <p className="text-white text-lg sm:text-2xl font-bold tracking-tight leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+                    Clique na imagem e confira a <span className="text-accent">Linha do Tempo</span> da marca TGT.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </DialogTrigger>
+          <DialogContent className="max-w-[95vw] lg:max-w-[80vw] p-0 overflow-hidden bg-transparent border-none shadow-none">
+            <div className="relative w-full h-full flex items-center justify-center p-4">
+              <motion.img
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                src="https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778097120020-rhqx5-linha-do-tempo-atualizadaFeed.png"
+                alt="Linha do Tempo TGT"
+                className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
+              />
             </div>
-          </div>
-        </motion.div>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

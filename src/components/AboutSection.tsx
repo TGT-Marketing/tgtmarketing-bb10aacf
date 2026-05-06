@@ -45,10 +45,10 @@ const AboutSection = () => {
               </p>
             </div>
             <a
-              href="#contato"
+              href="#trabalhos"
               className="inline-block mt-8 btn-primary text-base py-3.5 px-7"
             >
-              Conheça nosso trabalho
+              Conheça nossos trabalhos
             </a>
           </motion.div>
 

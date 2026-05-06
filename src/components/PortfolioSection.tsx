@@ -683,17 +683,22 @@ const PortfolioSection = () => {
                             />
                           </div>
                         )}
-                        {project.videoUrls?.map((url, vIdx) => (
-                          <div key={vIdx} className="aspect-video overflow-hidden rounded-lg bg-muted">
-                            <iframe
-                              src={url}
-                              title={`${project.client} - vídeo ${vIdx + 1}`}
-                              className="w-full h-full"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            />
-                          </div>
-                        ))}
+                        {project.videoUrls?.map((url, vIdx) => {
+                          const videoId = url.split('/').pop()?.split('?')[0];
+                          const playerUrl = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&version=3&playerapiid=ytplayer`;
+                          
+                          return (
+                            <div key={vIdx} className="aspect-video overflow-hidden rounded-lg bg-muted">
+                              <iframe
+                                src={playerUrl}
+                                title={`${project.client} - vídeo ${vIdx + 1}`}
+                                className="w-full h-full youtube-video-iframe"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              />
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
 

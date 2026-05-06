@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import ContactFormDialog from "@/components/ContactFormDialog";
@@ -406,6 +406,35 @@ const PortfolioSection = () => {
   const [activeItem, setActiveItem] = useState<PortfolioItem | null>(null);
   const [contactOpen, setContactOpen] = useState(false);
 
+  useEffect(() => {
+    // Add YouTube API script
+    if (!(window as any).YT) {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+    }
+
+    const onMessage = (event: MessageEvent) => {
+      if (typeof event.data === 'string' && event.data.includes('infoDelivery')) {
+        const data = JSON.parse(event.data);
+        // event 1 is play, 2 is pause, 3 is buffering
+        if (data.event === 'infoDelivery' && data.info && data.info.playerState === 1) {
+          const iframes = document.querySelectorAll('.youtube-video-iframe');
+          iframes.forEach((iframe: any) => {
+            // If it's not the video that just started playing, pause it
+            if (iframe.contentWindow && iframe !== event.source) {
+              iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            }
+          });
+        }
+      }
+    };
+
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
+  }, []);
+
   return (
     <section id="trabalhos" className="section-padding bg-background scroll-mt-20" ref={ref}>
       <div className="container-main">
@@ -683,17 +712,22 @@ const PortfolioSection = () => {
                             />
                           </div>
                         )}
-                        {project.videoUrls?.map((url, vIdx) => (
-                          <div key={vIdx} className="aspect-video overflow-hidden rounded-lg bg-muted">
-                            <iframe
-                              src={url}
-                              title={`${project.client} - vídeo ${vIdx + 1}`}
-                              className="w-full h-full"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            />
-                          </div>
-                        ))}
+                        {project.videoUrls?.map((url, vIdx) => {
+                          const videoId = url.split('/').pop()?.split('?')[0];
+                          const playerUrl = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&version=3&playerapiid=ytplayer`;
+                          
+                          return (
+                            <div key={vIdx} className="aspect-video overflow-hidden rounded-lg bg-muted">
+                              <iframe
+                                src={playerUrl}
+                                title={`${project.client} - vídeo ${vIdx + 1}`}
+                                className="w-full h-full youtube-video-iframe"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              />
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
 

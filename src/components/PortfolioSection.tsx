@@ -210,6 +210,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087978969-c1e4v-ChatGPT_Image_6_de_mai._de_2026__14_19_21.png"],
       },
+      {
+        client: "Cliente: Contabilidade a 1 Clique | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Contabilidade a 1 Clique apresenta uma identidade visual moderna, limpa e muito bem alinhada ao universo digital.\n\nCom símbolo minimalista, formas conectadas e paleta em azul e cinza, a marca transmite tecnologia, praticidade e confiança, criando uma percepção de assessoria contábil online, ágil e preparada para atender empresas de forma simples e eficiente.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088236968-ga30o-ChatGPT_Image_6_de_mai._de_2026__14_22_33.png"],
+      },
     ],
   },
   {

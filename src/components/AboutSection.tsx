@@ -8,7 +8,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre" className="section-padding bg-background">
+    <section id="sobre" className="section-padding bg-background scroll-mt-20">
       <div className="container-main" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           <motion.div

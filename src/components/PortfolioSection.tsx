@@ -158,6 +158,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778086334651-ke64u-ChatGPT_Image_6_de_mai._de_2026__13_50_43.png"],
       },
+      {
+        client: "Cliente: Anjos de Patas | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Anjos de Patas apresenta uma identidade visual sensível, acolhedora e muito bem alinhada ao universo da equoterapia.\n\nCom ilustração do cavalo, cores suaves e proposta humanizada, a marca transmite cuidado, inclusão e desenvolvimento, criando uma percepção de instituição afetiva, confiável e preparada para transformar vidas por meio da equitação.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778086865463-ppowz-ChatGPT_Image_6_de_mai._de_2026__13_58_43.png"],
+      },
     ],
   },
   {

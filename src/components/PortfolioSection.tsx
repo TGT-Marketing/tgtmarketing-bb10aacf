@@ -15,10 +15,11 @@ import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight } fro
 import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "/portfolio-web-new.png";
+import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 
 // Preload critical images
 if (typeof window !== 'undefined') {
-  [portfolioBranding, portfolioContent, portfolioWeb].forEach(src => {
+  [portfolioBranding, portfolioContent, portfolioWeb, portfolioTraffic].forEach(src => {
     const img = new Image();
     img.src = src;
   });
@@ -69,7 +70,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Gestão de Tráfego Pago",
     category: "Performance",
-    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173895883-mttgx-ChatGPT_Image_7_de_mai._de_2026__14_10_44.png",
+    image: portfolioTraffic,
     intro:
       "Campanhas pagas com foco em ROI e conversão real, não em métricas de vaidade.",
     projects: [
@@ -87,7 +88,7 @@ const portfolioItems: PortfolioItem[] = [
           "Fortalecimento da presença digital da marca",
           "Maior potencial de conversão e vendas",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173895883-mttgx-ChatGPT_Image_7_de_mai._de_2026__14_10_44.png"],
+        gallery: [portfolioTraffic],
       },
     ],
   },

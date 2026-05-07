@@ -50,7 +50,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Gestão de Mídias Sociais [Posts e Estratégias]",
     category: "Social",
-    image: portfolioSocial,
+    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173610398-ac02q-Beige_Tan_Elegant_Neutral_Brand_Feature_Instagram_Post.jpg",
     intro:
       "Gestão profissional de redes sociais com foco em posicionamento, engajamento e conversão de seguidores em clientes.\\n\\nA TGT Marketing cuida de tudo: do planejamento estratégico à criação de conteúdos que conectam sua marca ao público certo.",
     projects: [
@@ -64,7 +64,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual e de comunicação",
           "Transformação de seguidores em leads qualificados",
         ],
-        gallery: [portfolioSocial],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173610398-ac02q-Beige_Tan_Elegant_Neutral_Brand_Feature_Instagram_Post.jpg"],
       },
     ],
   },

@@ -908,7 +908,7 @@ const PortfolioSection = () => {
               <img
                 src={selectedImage}
                 alt="Visualização ampliada"
-                className="w-full h-full object-contain rounded-2xl shadow-[0_0_50px_-12px_rgba(var(--accent-rgb),0.5)] border border-white/10"
+                className="w-full h-full object-contain rounded-2xl shadow-[0_0_50px_-12px_rgba(255,0,0,0.5)] border border-white/10"
               />
             </motion.div>
           </motion.div>

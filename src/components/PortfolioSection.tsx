@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight } from "lucide-react";
 import portfolioBranding from "/portfolio-branding-new.png";
-import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
+// portfolioTraffic imported but not used directly in common way anymore
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "/portfolio-web-new.png";
 

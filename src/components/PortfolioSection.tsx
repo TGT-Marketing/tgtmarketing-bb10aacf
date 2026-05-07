@@ -785,7 +785,7 @@ const PortfolioSection = () => {
                     {project.results.length > 0 && idx === activeItem.projects.length - 1 && (
                       <div className="bg-muted/40 rounded-lg p-4 mb-5">
                         <p className="text-sm font-bold text-foreground mb-2">
-                          {activeItem.title === "Produção de Conteúdos [Foto & Filme]" 
+                          {activeItem.title === "Produção de Conteúdos [Foto & Vídeo]" 
                             ? "Resultados que uma captação profissional pode gerar:" 
                             : activeItem.title === "Gestão de Tráfego Estratégica"
                             ? "Resultados que podem ser alcançados:"

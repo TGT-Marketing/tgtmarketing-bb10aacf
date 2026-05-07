@@ -721,7 +721,8 @@ const PortfolioSection = () => {
                               {project.gallery.map((img, gIdx) => (
                                 <div 
                                   key={gIdx} 
-                                  className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20 group/social"
+                                  className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20 group/social cursor-zoom-in"
+                                  onClick={() => setSelectedImage(img)}
                                 >
                                   <img
                                     src={img}
@@ -730,6 +731,11 @@ const PortfolioSection = () => {
                                     loading="lazy"
                                   />
                                   <div className="absolute inset-0 bg-black/20 group-hover/social:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/social:opacity-100 transition-opacity duration-300">
+                                    <div className="p-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                                      <Maximize2 className="w-4 h-4 text-white" />
+                                    </div>
+                                  </div>
                                 </div>
                               ))}
                             </div>

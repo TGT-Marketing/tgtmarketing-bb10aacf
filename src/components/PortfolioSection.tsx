@@ -88,7 +88,7 @@ const portfolioItems: PortfolioItem[] = [
           "Fortalecimento da presença digital da marca",
           "Maior potencial de conversão e vendas",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173895883-mttgx-ChatGPT_Image_7_de_mai._de_2026__14_10_44.png"],
+        gallery: [portfolioTraffic],
       },
     ],
   },

@@ -16,6 +16,7 @@ import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "/portfolio-web-new.png";
+import portfolioSocial from "@/assets/portfolio-social.webp";
 
 // Preload critical images
 if (typeof window !== 'undefined') {

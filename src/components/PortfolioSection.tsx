@@ -453,7 +453,7 @@ const portfolioItems: PortfolioItem[] = [
           "Valorização do patrimônio da empresa",
           "Segurança jurídica para expansão do negócio",
         ],
-        gallery: ["https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778174354076-wswtx-ChatGPT_Image_7_de_mai._de_2026__14_19_00.png"],
       },
     ],
   },

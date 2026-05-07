@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/carousel";
 import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight } from "lucide-react";
 import portfolioBranding from "/portfolio-branding-new.png";
+import portfolioContent from "@/assets/portfolio-content-cover.png";
+import portfolioWeb from "/portfolio-web-new.png";
 
 // Preload critical images
 if (typeof window !== 'undefined') {

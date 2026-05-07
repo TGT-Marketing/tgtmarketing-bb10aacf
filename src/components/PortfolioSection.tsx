@@ -753,7 +753,7 @@ const PortfolioSection = () => {
                                   <div className={cn(
                                     "aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img",
                                     project.link && "cursor-pointer"
-                                   )}>
+                                 )}>
                                     {project.link ? (
                                       <a 
                                         href={project.link} 
@@ -769,12 +769,17 @@ const PortfolioSection = () => {
                                         />
                                       </a>
                                     ) : (
-                                      <img
-                                        src={src}
-                                        alt={`${project.client} - imagem ${gIdx + 1}`}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
-                                        loading="lazy"
-                                      />
+                                      <div 
+                                        className="w-full h-full cursor-zoom-in"
+                                        onClick={() => setSelectedImage(src)}
+                                      >
+                                        <img
+                                          src={src}
+                                          alt={`${project.client} - imagem ${gIdx + 1}`}
+                                          className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
+                                          loading="lazy"
+                                        />
+                                      </div>
                                     )}
                                   </div>
                                 </CarouselItem>

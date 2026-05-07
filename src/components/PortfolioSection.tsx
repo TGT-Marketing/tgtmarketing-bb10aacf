@@ -70,7 +70,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Gestão de Tráfego Pago",
     category: "Performance",
-    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173895883-mttgx-ChatGPT_Image_7_de_mai._de_2026__14_10_44.png",
+    image: portfolioTraffic,
     intro:
       "Campanhas pagas com foco em ROI e conversão real, não em métricas de vaidade.",
     projects: [

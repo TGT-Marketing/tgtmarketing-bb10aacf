@@ -808,7 +808,7 @@ const PortfolioSection = () => {
                       </div>
                     )}
 
-                    {project.results.length > 0 && idx === activeItem.projects.length - 1 && (
+                    {project.results.length > 0 && (
                       <div className="bg-muted/40 rounded-lg p-4 mb-5">
                         <p className="text-sm font-bold text-foreground mb-2">
                           {activeItem.title === "Produção de Conteúdos [Foto & Vídeo]" 

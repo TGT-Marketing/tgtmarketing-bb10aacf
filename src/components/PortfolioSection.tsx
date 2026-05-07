@@ -15,6 +15,7 @@ import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight } fro
 import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "/portfolio-web-new.png";
+import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 
 // Preload critical images
 if (typeof window !== 'undefined') {

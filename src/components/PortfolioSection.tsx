@@ -346,9 +346,9 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    title: "Produção de Conteúdo",
+    title: "Produção de Conteúdos [Foto & Filme]",
     category: "Conteúdo",
-    image: portfolioContent,
+    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778153801353-0tj8x-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png",
     intro:
       "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdo da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
     projects: [

@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight } from "lucide-react";
+import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight, X, Maximize2 } from "lucide-react";
 import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "/portfolio-web-new.png";

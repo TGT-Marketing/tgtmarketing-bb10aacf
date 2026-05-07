@@ -365,7 +365,7 @@ const portfolioItems: PortfolioItem[] = [
           "Conteúdos prontos para usar em Instagram, Reels, TikTok, YouTube e Tráfego Pago",
           "Aumento da percepção de valor do público sobre a empresa"
         ],
-        gallery: [portfolioContent, portfolioContent, portfolioContent],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778154008666-4l8uz-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png"],
         videoUrls: [
           "https://www.youtube.com/embed/-O33RMVZN6k",
           "https://www.youtube.com/embed/Sen_t5TeVLU",

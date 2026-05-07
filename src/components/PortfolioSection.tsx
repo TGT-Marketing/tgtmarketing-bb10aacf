@@ -346,14 +346,14 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    title: "Produção de Conteúdo",
+    title: "Produção de Conteúdos [Foto & Filme]",
     category: "Conteúdo",
-    image: portfolioContent,
+    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778153801353-0tj8x-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png",
     intro:
-      "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdo da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
+      "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdos [Foto & Filme] da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
     projects: [
       {
-        client: "TGT Marketing — Produção de Conteúdo",
+        client: "TGT Marketing — Produção de Conteúdos [Foto & Filme]",
         description: "Planejamento editorial, produção de fotos e vídeos curtos com copywriting estratégico para redes sociais.",
         results: [
           "Conteúdos com mais qualidade visual e credibilidade",
@@ -688,7 +688,7 @@ const PortfolioSection = () => {
 
                     {project.gallery.length > 0 && (
                       <div className="mb-5">
-                        {activeItem.title === "Produção de Conteúdo" && (
+                        {activeItem.title === "Produção de Conteúdos [Foto & Filme]" && (
                           <p className="text-sm font-medium text-foreground mb-3 italic">
                             Equipe TGT realizando captação de conteúdos em evento com gravação em tempo real LIVE AO VIVO
                           </p>
@@ -735,7 +735,7 @@ const PortfolioSection = () => {
                           )}
                         </Carousel>
                         
-                        {activeItem.title === "Produção de Conteúdo" && (
+                        {activeItem.title === "Produção de Conteúdos [Foto & Filme]" && (
                           <div className="mt-6 p-5 bg-accent/5 rounded-xl border border-accent/10">
                             <p className="text-sm sm:text-base text-foreground leading-relaxed">
                               <span className="font-bold text-accent">Nossos Projetos:</span> Explore abaixo uma seleção de nossos conteúdos finalizados. 
@@ -785,7 +785,7 @@ const PortfolioSection = () => {
                     {project.results.length > 0 && idx === activeItem.projects.length - 1 && (
                       <div className="bg-muted/40 rounded-lg p-4 mb-5">
                         <p className="text-sm font-bold text-foreground mb-2">
-                          {activeItem.title === "Produção de Conteúdo" 
+                          {activeItem.title === "Produção de Conteúdos [Foto & Filme]" 
                             ? "Resultados que uma captação profissional pode gerar:" 
                             : activeItem.title === "Gestão de Tráfego Estratégica"
                             ? "Resultados que podem ser alcançados:"

@@ -54,13 +54,6 @@ const portfolioItems: PortfolioItem[] = [
       "Gestão profissional de redes sociais com foco em posicionamento, engajamento e conversão de seguidores em clientes. A TGT Marketing cuida de tudo: do planejamento estratégico à criação de conteúdos que conectam sua marca ao público certo.",
     projects: [
       {
-        client: "Muito mais do que posts, estratégias com direcionamento de público!",
-        description:
-          "Desenvolvimento de estratégias personalizadas para as mídias como: Instagram, Facebook, Linkedin e demais mídias. Com foco em crescimento orgânico, unificado ao Tráfego Pago e autoridade de marca.",
-        results: [],
-        gallery: [],
-      },
-      {
         client: "CLIENTE: BRAZA BAR & RESTAURANTE",
         description:
           "Elaboração de posts com aspecto visual forte, ofertas diretas, frases que geram identificação e CTA para pedidos no WhatsApp.\n\nCom essa estratégia somada ao tráfego pago, o restaurante pode atrair mais clientes, aumentar pedidos e vender mais todos os dias.",

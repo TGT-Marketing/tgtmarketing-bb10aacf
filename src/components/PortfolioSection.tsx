@@ -19,7 +19,7 @@ import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 
 // Preload critical images
 if (typeof window !== 'undefined') {
-  [portfolioBranding, portfolioContent, portfolioWeb].forEach(src => {
+  [portfolioBranding, portfolioContent, portfolioWeb, portfolioTraffic].forEach(src => {
     const img = new Image();
     img.src = src;
   });

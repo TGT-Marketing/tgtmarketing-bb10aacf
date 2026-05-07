@@ -75,10 +75,10 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778181872111-w25uc-O-verdadeiro-significado-de-amizade-verdadeiraFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778187990303-bzhzj-670181640_122178236666834302_7456115394013555943_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778187990305-pae73-672088487_122178547760834302_4138360703695770976_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778187990308-y9bm5-679760497_122179753940834302_2488337138745105770_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778187990312-9zsfp-684942112_122180455880834302_7969995090522368855_n__1_.jpg"
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140174-7u2hh-670181640_122178236666834302_7456115394013555943_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140175-ix9b1-672088487_122178547760834302_4138360703695770976_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140195-ecw8r-679760497_122179753940834302_2488337138745105770_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140199-rizcm-684942112_122180455880834302_7969995090522368855_n__1_.jpg"
         ],
       },
     ],
@@ -721,61 +721,73 @@ const PortfolioSection = () => {
                             Equipe TGT realizando captação de conteúdos em evento com gravação em tempo real LIVE AO VIVO
                           </p>
                         )}
-                        <Carousel className="w-full">
-                          <CarouselContent>
-                            {project.gallery.map((src, gIdx) => (
-                              <CarouselItem key={gIdx}>
-                                <div className={cn(
-                                  "aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img",
-                                  project.link && "cursor-pointer"
-                                 )}>
-                                  {activeItem.title.includes("Mídias Sociais") ? (
-                                    <div className="relative p-2 sm:p-4 bg-white/5 border border-white/10 rounded-xl overflow-hidden">
-                                      <div className="absolute top-0 left-0 w-full h-8 bg-black/10 flex items-center px-4 gap-1 z-10">
-                                        <div className="w-2 h-2 rounded-full bg-white/20" />
-                                        <div className="w-2 h-2 rounded-full bg-white/20" />
-                                        <div className="w-2 h-2 rounded-full bg-white/20" />
-                                      </div>
-                                      <img
-                                        src={src}
-                                        alt={`${project.client} ${gIdx + 1}`}
-                                        className="w-full h-auto object-contain max-h-[60vh] mx-auto rounded-lg shadow-2xl pt-8"
-                                        loading="lazy"
-                                      />
-                                    </div>
-                                  ) : project.link ? (
-                                    <a 
-                                      href={project.link} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer"
-                                      className="block w-full h-full"
-                                    >
+                        {activeItem.title.includes("Mídias Sociais") ? (
+                          <div className="w-full">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                              {project.gallery.map((img, gIdx) => (
+                                <div 
+                                  key={gIdx} 
+                                  className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20 group/social"
+                                >
+                                  <img
+                                    src={img}
+                                    alt={`${project.client} ${gIdx + 1}`}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover/social:scale-110"
+                                    loading="lazy"
+                                  />
+                                  <div className="absolute inset-0 bg-black/20 group-hover/social:bg-transparent transition-colors duration-300" />
+                                </div>
+                              ))}
+                            </div>
+                            <div className="mt-4 flex justify-center">
+                              <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-accent/60">
+                                Conteúdo Estratégico & Design para Feed
+                              </p>
+                            </div>
+                          </div>
+                        ) : (
+                          <Carousel className="w-full">
+                            <CarouselContent>
+                              {project.gallery.map((src, gIdx) => (
+                                <CarouselItem key={gIdx}>
+                                  <div className={cn(
+                                    "aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img",
+                                    project.link && "cursor-pointer"
+                                   )}>
+                                    {project.link ? (
+                                      <a 
+                                        href={project.link} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="block w-full h-full"
+                                      >
+                                        <img
+                                          src={src}
+                                          alt={`${project.client} - imagem ${gIdx + 1}`}
+                                          className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
+                                          loading="lazy"
+                                        />
+                                      </a>
+                                    ) : (
                                       <img
                                         src={src}
                                         alt={`${project.client} - imagem ${gIdx + 1}`}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
                                         loading="lazy"
                                       />
-                                    </a>
-                                  ) : (
-                                    <img
-                                      src={src}
-                                      alt={`${project.client} - imagem ${gIdx + 1}`}
-                                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
-                                      loading="lazy"
-                                    />
-                                  )}
-                                </div>
-                              </CarouselItem>
-                            ))}
-                          </CarouselContent>
-                          {project.gallery.length > 1 && (
-                            <>
-                              <CarouselPrevious />
-                              <CarouselNext />
-                            </>
-                          )}
-                        </Carousel>
+                                    )}
+                                  </div>
+                                </CarouselItem>
+                              ))}
+                            </CarouselContent>
+                            {project.gallery.length > 1 && (
+                              <>
+                                <CarouselPrevious />
+                                <CarouselNext />
+                              </>
+                            )}
+                          </Carousel>
+                        )}
                         
                         {activeItem.title === "Produção de Conteúdos [Foto & Vídeo]" && (
                           <div className="mt-6 p-5 bg-accent/5 rounded-xl border border-accent/10">

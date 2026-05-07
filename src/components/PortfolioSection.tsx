@@ -58,7 +58,7 @@ const portfolioItems: PortfolioItem[] = [
         description:
           "Desenvolvimento de estratégias personalizadas para as mídias como: Instagram, Facebook, Linkedin e demais mídias. Com foco em crescimento orgânico, unificado ao Tráfego Pago e autoridade de marca.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173610398-ac02q-Beige_Tan_Elegant_Neutral_Brand_Feature_Instagram_Post.jpg"],
+        gallery: [],
       },
       {
         client: "CLIENTE: BRAZA BAR & RESTAURANTE",

@@ -341,6 +341,19 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778090761663-t19x8-ChatGPT_Image_6_de_mai._de_2026__15_03_43.png"],
       },
+      {
+        client: "Cliente: DGL Eletrônica Têxtil | Criação de Identidade Visual da Marca",
+        description:
+          "A marca DGL Eletrônica Têxtil apresenta uma identidade visual tecnológica, moderna e muito bem alinhada ao segmento industrial.\n\nCom símbolo inspirado em circuitos, paleta em azul e roxo e tipografia forte, a marca transmite inovação, precisão e confiança, criando uma percepção de empresa especializada, técnica e preparada para atender o setor têxtil com soluções eletrônicas.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778174211841-ry4h3-ChatGPT_Image_7_de_mai._de_2026__14_16_19.png"],
+      },
     ],
   },
   {

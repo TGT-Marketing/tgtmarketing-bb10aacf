@@ -58,10 +58,13 @@ const portfolioItems: PortfolioItem[] = [
         description:
           "Desenvolvimento de estratégias personalizadas para Instagram, Facebook e LinkedIn, com foco em crescimento orgânico e autoridade de marca.",
         results: [
-          "Aumento significativo no engajamento e alcance",
-          "Criação de comunidade ativa e fiel",
-          "Padronização visual e de comunicação",
           "Transformação de seguidores em leads qualificados",
+          "Aumento significativo no engajamento e alcance",
+          "Mais visibilidade e destaque para a marca",
+          "Mais engajamentos e seguidores qualificados",
+          "Relacionamento constante e direto com os clientes",
+          "Crescimento previsível da presença digital",
+          "Postura profissional com posicionamento estratégico",
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173610398-ac02q-Beige_Tan_Elegant_Neutral_Brand_Feature_Instagram_Post.jpg"],
       },

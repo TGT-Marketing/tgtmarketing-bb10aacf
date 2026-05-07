@@ -688,7 +688,7 @@ const PortfolioSection = () => {
 
                     {project.gallery.length > 0 && (
                       <div className="mb-5">
-                        {activeItem.title === "Produção de Conteúdos [Foto & Filme]" && (
+                        {activeItem.title === "Produção de Conteúdos [Foto & Vídeo]" && (
                           <p className="text-sm font-medium text-foreground mb-3 italic">
                             Equipe TGT realizando captação de conteúdos em evento com gravação em tempo real LIVE AO VIVO
                           </p>

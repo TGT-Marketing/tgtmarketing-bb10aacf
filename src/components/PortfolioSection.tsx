@@ -730,18 +730,25 @@ const PortfolioSection = () => {
                                   project.link && "cursor-pointer"
                                  )}>
                                   {activeItem.title.includes("Mídias Sociais") ? (
-                                    <div className="relative p-2 sm:p-4 bg-white/5 border border-white/10 rounded-xl overflow-hidden">
-                                      <div className="absolute top-0 left-0 w-full h-8 bg-black/10 flex items-center px-4 gap-1 z-10">
-                                        <div className="w-2 h-2 rounded-full bg-white/20" />
-                                        <div className="w-2 h-2 rounded-full bg-white/20" />
-                                        <div className="w-2 h-2 rounded-full bg-white/20" />
+                                    <div className="relative group/social overflow-hidden rounded-xl border border-white/10 bg-black/20">
+                                      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-2">
+                                        {project.gallery.map((img, gIdx) => (
+                                          <div key={gIdx} className="relative aspect-square overflow-hidden rounded-lg bg-muted">
+                                            <img
+                                              src={img}
+                                              alt={`${project.client} ${gIdx + 1}`}
+                                              className="w-full h-full object-cover transition-transform duration-500 group-hover/social:scale-110"
+                                              loading="lazy"
+                                            />
+                                          </div>
+                                        ))}
                                       </div>
-                                      <img
-                                        src={src}
-                                        alt={`${project.client} ${gIdx + 1}`}
-                                        className="w-full h-auto object-contain max-h-[60vh] mx-auto rounded-lg shadow-2xl pt-8"
-                                        loading="lazy"
-                                      />
+                                      {/* Mobile-friendly overlay text */}
+                                      <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center">
+                                        <p className="text-[10px] uppercase tracking-widest font-bold text-white/50">
+                                          Grid de Conteúdo Estratégico
+                                        </p>
+                                      </div>
                                     </div>
                                   ) : project.link ? (
                                     <a 

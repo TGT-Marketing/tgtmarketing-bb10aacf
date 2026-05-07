@@ -68,6 +68,17 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173610398-ac02q-Beige_Tan_Elegant_Neutral_Brand_Feature_Instagram_Post.jpg"],
       },
+      {
+        client: "CLIENTE: BRAZA BAR & RESTAURANTE",
+        description:
+          "Elaboração de posts com aspecto visual forte, ofertas diretas, frases que geram identificação e CTA para pedidos no WhatsApp.\n\nCom essa estratégia somada ao tráfego pago, o restaurante pode atrair mais clientes, aumentar pedidos e vender mais todos os dias.",
+        results: [
+          "Resultado potencial em 30 dias: até 165 mil pessoas alcançadas",
+          "2.250 cliques no WhatsApp",
+          "250 novas oportunidades de venda",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778181872111-w25uc-O-verdadeiro-significado-de-amizade-verdadeiraFeed.png"],
+      },
     ],
   },
   {

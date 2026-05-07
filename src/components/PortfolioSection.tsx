@@ -880,6 +880,40 @@ const PortfolioSection = () => {
           )}
         </DialogContent>
       </Dialog>
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-background/95 backdrop-blur-xl"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute -top-4 -right-4 z-[101] rounded-full bg-background/50 backdrop-blur-md border-white/10 hover:bg-white/20 transition-all shadow-xl"
+                onClick={() => setSelectedImage(null)}
+              >
+                <X className="w-5 h-5" />
+              </Button>
+              <img
+                src={selectedImage}
+                alt="Visualização ampliada"
+                className="w-full h-full object-contain rounded-2xl shadow-[0_0_50px_-12px_rgba(var(--accent-rgb),0.5)] border border-white/10"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

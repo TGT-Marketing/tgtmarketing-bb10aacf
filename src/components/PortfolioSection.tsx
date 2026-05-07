@@ -101,7 +101,235 @@ const portfolioItems: PortfolioItem[] = [
     intro:
       "Construímos marcas memoráveis, com identidade visual estratégica, comunicação direcionada e posicionamento forte para gerar reconhecimento, autoridade e vendas.",
     projects: [
-...
+      {
+        client: "Cliente: Multi Malte Chopp | Criação de Nome e Identidade Visual da Marca",
+        description:
+          "A marca Multi Malte apresenta uma identidade visual forte, marcante e autêntica, construída para se destacar no mercado cervejeiro.\n\nCom uma comunicação visual alinhada ao universo da cerveja artesanal, a marca transmite qualidade, tradição e experiência, criando conexão imediata com o público e fortalecendo seu posicionamento comercial.",
+        results: [],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777925637700-sefsq-ChatGPT_Image_30_de_abr._de_2026__08_13_55.png"],
+      },
+      {
+        client: "Cliente: Queijaria Três Saltos | Criação de Identidade Visual da Marca",
+        description:
+          "A marca Queijaria Três Saltos apresenta uma identidade visual acolhedora, artesanal e muito bem conectada ao universo rural.\n\nCom elementos que remetem à fazenda, natureza e produção caseira, a marca transmite tradição, qualidade e origem, criando uma percepção de produto autêntico, regional e de alto valor.",
+        results: [],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777927952222-jbi04-ChatGPT_Image_30_de_abr._de_2026__08_23_48.png"],
+      },
+      {
+        client: "Cliente: Droga Única Popular | Criação de Identidade Visual da Marca",
+        description:
+          "A marca Droga Única Popular apresenta uma identidade visual forte, direta e altamente comercial, muito bem alinhada ao segmento farmacêutico popular.\nCom cores de alto impacto, comunicação objetiva e elementos ligados à saúde e economia, a marca transmite confiança, acessibilidade e conveniência, criando uma presença visual marcante e fácil de reconhecer.",
+        results: [],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777928466120-l5onc-ChatGPT_Image_30_de_abr._de_2026__08_51_04.png"],
+      },
+      {
+        client: "Cliente: Alma & Afeto Semijoias | Criação de Identidade Visual da Marca",
+        description:
+          "A marca Alma & Afeto Semijoias apresenta uma identidade visual sofisticada, elegante e muito bem posicionada para o mercado de acessórios premium.\n\nCom uma paleta refinada, acabamento em dourado e comunicação delicada, a marca transmite exclusividade, cuidado e valorização pessoal, criando uma percepção de desejo, beleza e alto valor.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778010820224-gzh50-ChatGPT_Image_30_de_abr._de_2026__16_24_13.png"],
+      },
+      {
+        client: "Cliente: Studio Evolua | Criação de Nome e Identidade Visual da Marca",
+        description:
+          "A marca Studio Evolua by Lu Longo apresenta uma identidade visual leve, moderna e muito bem conectada ao universo fitness feminino.\n\nCom cores vibrantes, símbolo em movimento e comunicação acolhedora, a marca transmite energia, evolução e bem-estar, criando uma percepção de cuidado, motivação e transformação pessoal.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778072361401-4uxi6-ChatGPT_Image_5_de_mai._de_2026__17_09_29.png"],
+      },
+      {
+        client: "Cliente: Lumarchi Embalagens | Rebranding da Marca - 40 anos de Mercado",
+        description:
+          "A marca Lumarchi Embalagens apresenta uma identidade visual sólida, profissional e muito bem alinhada ao segmento industrial.\n\nCom símbolo marcante, tipografia forte e paleta em azul, a marca transmite confiança, organização e credibilidade, criando uma percepção de empresa estruturada, segura e preparada para atender o mercado de embalagens.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778072883028-vccsp-ChatGPT_Image_6_de_mai._de_2026__10_07_29.png"],
+      },
+      {
+        client: "Cliente: Rocha Assessoria de Contabilidade | Rebranding da Marca - 40 anos de Mercado",
+        description:
+          "A marca Rocha Contábil apresenta uma identidade visual elegante, sólida e muito bem alinhada ao mercado contábil.\n\nCom monograma sofisticado, tipografia forte e paleta em azul e cinza, a marca transmite confiança, credibilidade e profissionalismo, criando uma percepção de empresa séria, estruturada e preparada para atender com segurança.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778073471739-ng3x5-ChatGPT_Image_6_de_mai._de_2026__10_14_39.png"],
+      },
+      {
+        client: "Cliente: Vision Merchandising | Criação de Nome e Identidade Visual de Marca",
+        description:
+          "A marca Vision Merchandising apresenta uma identidade visual forte, moderna e altamente conectada ao universo do varejo.\n\nCom cores marcantes, ícone de carrinho e composição direta, a marca transmite organização, presença e eficiência, criando uma percepção de empresa estratégica, preparada para destacar produtos e potencializar resultados dentro dos supermercados.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778079403849-f1lbk-ChatGPT_Image_6_de_mai._de_2026__11_55_16.png"],
+      },
+      {
+        client: "Cliente: Global Serviços | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Global Serviços apresenta uma identidade visual forte, tecnológica e muito bem alinhada ao segmento de segurança.\n\nCom símbolo marcante, paleta em azul e presença corporativa, a marca transmite proteção, confiança e monitoramento, criando uma percepção de empresa moderna, preparada e eficiente para atender condomínios com vigilância e portaria remota.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778079694917-ni8wo-ChatGPT_Image_6_de_mai._de_2026__12_01_18.png"],
+      },
+      {
+        client: "Cliente: Gigi´s House - Recreação Bilíngue e Inglês para Crianças | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Gigi’s House apresenta uma identidade visual lúdica, acolhedora e muito bem alinhada ao universo infantil.\n\nCom cores vibrantes, personagem carismático e comunicação educativa, a marca transmite alegria, confiança e aprendizado, criando uma percepção de escola divertida, segura e preparada para ensinar inglês de forma leve e envolvente.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778086334651-ke64u-ChatGPT_Image_6_de_mai._de_2026__13_50_43.png"],
+      },
+      {
+        client: "Cliente: Anjos de Patas | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Anjos de Patas apresenta uma identidade visual sensível, acolhedora e muito bem alinhada ao universo da equoterapia.\n\nCom ilustração do cavalo, cores suaves e proposta humanizada, a marca transmite cuidado, inclusão e desenvolvimento, criando uma percepção de institution afetiva, confiável e preparada para transformar vidas por meio da equitação.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778086865463-ppowz-ChatGPT_Image_6_de_mai._de_2026__13_58_43.png"],
+      },
+      {
+        client: "Cliente: SS Assessoria de Seguros | Criação de Identidade Visual de Marca",
+        description:
+          "A marca SS Assessoria de Seguros apresenta uma identidade visual elegante, séria e muito bem alinhada ao mercado de seguros.\n\nCom monograma sofisticado, paleta sóbria e composição minimalista, a marca transmite segurança, confiança e credibilidade, criando uma percepção de empresa profissional, estratégica e preparada para proteger seus clientes.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087117829-trgud-ChatGPT_Image_6_de_mai._de_2026__14_03_57.png"],
+      },
+      {
+        client: "Cliente: STT Segurança Tática | Criação de Identidade Visual de Marca",
+        description:
+          "A marca STT Segurança Tática apresenta uma identidade visual forte, imponente e muito bem alinhada ao segmento de segurança patrimonial.\n\nCom símbolo tático, cores intensas e presença visual robusta, a marca transmite proteção, autoridade e confiança, criando uma percepção de empresa preparada, estratégica e altamente capacitada para atuar com vigilância armada.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087627621-9dmzl-ChatGPT_Image_6_de_mai._de_2026__14_13_25.png"],
+      },
+      {
+        client: "Cliente: Prime Montagens & Planejados | Criação de Nome e Identidade Visual de Marca",
+        description:
+          "A marca Prime Montagens apresenta uma identidade visual forte, sofisticada e muito bem alinhada ao segmento de móveis planejados.\n\nCom símbolo marcante, coroa em destaque e paleta em vermelho, preto e dourado, a marca transmite qualidade, precisão e exclusividade, criando uma percepção de empresa premium, profissional e preparada para entregar montagens com alto padrão.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087978969-c1e4v-ChatGPT_Image_6_de_mai._de_2026__14_19_21.png"],
+      },
+      {
+        client: "Cliente: Contabilidade a 1 Clique | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Contabilidade a 1 Clique apresenta uma identidade visual moderna, limpa e muito bem alinhada ao universo digital.\n\nCom símbolo minimalista, formas conectadas e paleta em azul e cinza, a marca transmite tecnologia, praticidade e confiança, criando uma percepção de assessoria contábil online, ágil e preparada para atender empresas de forma simples e eficiente.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088236968-ga30o-ChatGPT_Image_6_de_mai._de_2026__14_22_33.png"],
+      },
+      {
+        client: "Cliente: Point Pizzaria | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Point Pizzaria Delivery apresenta uma identidade visual vibrante, comercial e muito bem alinhada ao segmento de alimentação rápida.\n\nCom ícone de pizza, cores fortes e comunicação direta, a marca transmite sabor, praticidade e desejo, criando uma percepção de pizzaria moderna, acessível e preparada para entregar uma experiência marcante no delivery.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088536903-k9woy-ChatGPT_Image_6_de_mai._de_2026__14_27_30.png"],
+      },
+      {
+        client: "Cliente: Dona Dora Bar| Criação de Identidade Visual de Marca",
+        description:
+          "A marca Dona Dora Bar apresenta uma identidade visual acolhedora, rústica e muito bem alinhada ao universo de bar de esquina.\n\nCom tipografia marcante, elementos dourados e estética tradicional, a marca transmite proximidade, descontração e autenticidade, criando uma percepção de ambiente convidativo, popular e perfeito para bons encontros.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088734395-9lb2n-ChatGPT_Image_6_de_mai._de_2026__14_30_58.png"],
+      },
+      {
+        client: "Cliente: Quintal019 Bar & Restaurante | Criação de Identidade Visual de Marca",
+        description:
+          "A marca Quintal 019 apresenta uma identidade visual descontraída, moderna e muito bem alinhada ao universo de barzinho.\n\nCom tipografia marcante, elementos tropicais e paleta em preto, branco e dourado, a marca transmite estilo, proximidade e experiência, criando uma percepção de ambiente jovem, acolhedor e ideal para bons encontros.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778089821331-zpxq1-ChatGPT_Image_6_de_mai._de_2026__14_49_57.png"],
+      },
+      {
+        client: "Cliente: JR Fortunato | Criação de Identidade Visual de Marca",
+        description:
+          "A marca J.R Fortunato Empreendimentos apresenta uma identidade visual sofisticada, moderna e muito bem alinhada ao mercado imobiliário.\n\nCom símbolo minimalista, paleta em azul e dourado e composição corporativa, a marca transmite solidez, confiança e valorização, criando uma percepção de empresa estratégica, premium e preparada para desenvolver grandes empreendimentos.",
+        results: [
+          "Identidade visual alinhada aos conceitos do negócio",
+          "Conexão imediata com o público",
+          "Fortalecimento da percepção de valor do produto",
+          "Padronização visual completa (on e offline)",
+          "Manual de marca completo entregue",
+        ],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778090277555-8jndt-ChatGPT_Image_6_de_mai._de_2026__14_57_40.png"],
+      },
       {
         client: "Cliente: My Porto Ecologia Urbana - Portugal | Criação de Identidade Visual de Marca",
         description:
@@ -118,14 +346,14 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    title: "Produção de Conteúdos [Foto & Filme]",
+    title: "Produção de Conteúdos [Foto & Vídeo]",
     category: "Conteúdo",
-    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778153801353-0tj8x-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png",
+    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778154287641-p2qfp-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png",
     intro:
-      "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdos [Foto & Filme] da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
+      "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdos [Foto & Vídeo] da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
     projects: [
       {
-        client: "TGT Marketing — Produção de Conteúdos [Foto & Filme]",
+        client: "TGT Marketing — Produção de Conteúdos [Foto & Vídeo]",
         description: "Planejamento editorial, produção de fotos e vídeos curtos com copywriting estratégico para redes sociais.",
         results: [
           "Conteúdos com mais qualidade visual e credibilidade",
@@ -137,7 +365,7 @@ const portfolioItems: PortfolioItem[] = [
           "Conteúdos prontos para usar em Instagram, Reels, TikTok, YouTube e Tráfego Pago",
           "Aumento da percepção de valor do público sobre a empresa"
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778154008666-4l8uz-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png"],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778154287641-p2qfp-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png"],
         videoUrls: [
           "https://www.youtube.com/embed/-O33RMVZN6k",
           "https://www.youtube.com/embed/Sen_t5TeVLU",
@@ -460,7 +688,7 @@ const PortfolioSection = () => {
 
                     {project.gallery.length > 0 && (
                       <div className="mb-5">
-                        {activeItem.title === "Produção de Conteúdos [Foto & Filme]" && (
+                        {activeItem.title === "Produção de Conteúdos [Foto & Vídeo]" && (
                           <p className="text-sm font-medium text-foreground mb-3 italic">
                             Equipe TGT realizando captação de conteúdos em evento com gravação em tempo real LIVE AO VIVO
                           </p>
@@ -507,7 +735,7 @@ const PortfolioSection = () => {
                           )}
                         </Carousel>
                         
-                        {activeItem.title === "Produção de Conteúdos [Foto & Filme]" && (
+                        {activeItem.title === "Produção de Conteúdos [Foto & Vídeo]" && (
                           <div className="mt-6 p-5 bg-accent/5 rounded-xl border border-accent/10">
                             <p className="text-sm sm:text-base text-foreground leading-relaxed">
                               <span className="font-bold text-accent">Nossos Projetos:</span> Explore abaixo uma seleção de nossos conteúdos finalizados. 
@@ -557,7 +785,7 @@ const PortfolioSection = () => {
                     {project.results.length > 0 && idx === activeItem.projects.length - 1 && (
                       <div className="bg-muted/40 rounded-lg p-4 mb-5">
                         <p className="text-sm font-bold text-foreground mb-2">
-                          {activeItem.title === "Produção de Conteúdos [Foto & Filme]" 
+                          {activeItem.title === "Produção de Conteúdos [Foto & Vídeo]" 
                             ? "Resultados que uma captação profissional pode gerar:" 
                             : activeItem.title === "Gestão de Tráfego Estratégica"
                             ? "Resultados que podem ser alcançados:"

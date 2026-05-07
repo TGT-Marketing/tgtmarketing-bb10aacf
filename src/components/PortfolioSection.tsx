@@ -425,6 +425,27 @@ const portfolioItems: PortfolioItem[] = [
       },
     ],
   },
+  {
+    title: "Registro de Marca INPI",
+    category: "Proteção",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    intro:
+      "Proteja o maior patrimônio da sua empresa. Realizamos todo o processo de registro de marca no INPI com segurança e agilidade.\\n\\nTer uma marca registrada é garantir a exclusividade do seu nome e logotipo em todo o território nacional, evitando cópias e problemas jurídicos.",
+    projects: [
+      {
+        client: "TGT Marketing — Assessoria de Registro de Marca",
+        description:
+          "Acompanhamento completo de processos de registro no INPI, desde a pesquisa de viabilidade até a concessão do certificado de registro.",
+        results: [
+          "Garantia de exclusividade da marca",
+          "Proteção contra uso indevido por terceiros",
+          "Valorização do patrimônio da empresa",
+          "Segurança jurídica para expansão do negócio",
+        ],
+        gallery: ["https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"],
+      },
+    ],
+  },
 ];
 
 const WHATSAPP_URL =

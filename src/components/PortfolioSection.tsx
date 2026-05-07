@@ -13,13 +13,10 @@ import {
 } from "@/components/ui/carousel";
 import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight } from "lucide-react";
 import portfolioBranding from "/portfolio-branding-new.png";
-// portfolioTraffic imported but not used directly in common way anymore
-import portfolioContent from "@/assets/portfolio-content-cover.png";
-import portfolioWeb from "/portfolio-web-new.png";
 
 // Preload critical images
 if (typeof window !== 'undefined') {
-  [portfolioBranding, portfolioTraffic, portfolioContent, portfolioWeb].forEach(src => {
+  [portfolioBranding, portfolioContent, portfolioWeb].forEach(src => {
     const img = new Image();
     img.src = src;
   });

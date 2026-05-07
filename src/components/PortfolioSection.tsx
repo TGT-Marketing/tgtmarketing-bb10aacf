@@ -735,7 +735,7 @@ const PortfolioSection = () => {
                           )}
                         </Carousel>
                         
-                        {activeItem.title === "Produção de Conteúdo" && (
+                        {activeItem.title === "Produção de Conteúdos [Foto & Filme]" && (
                           <div className="mt-6 p-5 bg-accent/5 rounded-xl border border-accent/10">
                             <p className="text-sm sm:text-base text-foreground leading-relaxed">
                               <span className="font-bold text-accent">Nossos Projetos:</span> Explore abaixo uma seleção de nossos conteúdos finalizados. 

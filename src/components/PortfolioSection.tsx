@@ -321,7 +321,7 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    title: "Gestão de Tráfego Estratégica",
+    title: "Gestão de Tráfego Pago",
     category: "Performance",
     image: portfolioTraffic,
     intro:

@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight } from "lucide-react";
+import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight, X, Maximize2 } from "lucide-react";
 import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "/portfolio-web-new.png";
@@ -477,6 +477,7 @@ const PortfolioSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeItem, setActiveItem] = useState<PortfolioItem | null>(null);
   const [contactOpen, setContactOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     // Add YouTube API script
@@ -720,7 +721,8 @@ const PortfolioSection = () => {
                               {project.gallery.map((img, gIdx) => (
                                 <div 
                                   key={gIdx} 
-                                  className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20 group/social"
+                                  className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20 group/social cursor-zoom-in"
+                                  onClick={() => setSelectedImage(img)}
                                 >
                                   <img
                                     src={img}
@@ -729,6 +731,11 @@ const PortfolioSection = () => {
                                     loading="lazy"
                                   />
                                   <div className="absolute inset-0 bg-black/20 group-hover/social:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/social:opacity-100 transition-opacity duration-300">
+                                    <div className="p-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                                      <Maximize2 className="w-4 h-4 text-white" />
+                                    </div>
+                                  </div>
                                 </div>
                               ))}
                             </div>
@@ -746,7 +753,7 @@ const PortfolioSection = () => {
                                   <div className={cn(
                                     "aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img",
                                     project.link && "cursor-pointer"
-                                   )}>
+                                 )}>
                                     {project.link ? (
                                       <a 
                                         href={project.link} 
@@ -762,12 +769,17 @@ const PortfolioSection = () => {
                                         />
                                       </a>
                                     ) : (
-                                      <img
-                                        src={src}
-                                        alt={`${project.client} - imagem ${gIdx + 1}`}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
-                                        loading="lazy"
-                                      />
+                                      <div 
+                                        className="w-full h-full cursor-zoom-in"
+                                        onClick={() => setSelectedImage(src)}
+                                      >
+                                        <img
+                                          src={src}
+                                          alt={`${project.client} - imagem ${gIdx + 1}`}
+                                          className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
+                                          loading="lazy"
+                                        />
+                                      </div>
                                     )}
                                   </div>
                                 </CarouselItem>
@@ -868,6 +880,40 @@ const PortfolioSection = () => {
           )}
         </DialogContent>
       </Dialog>
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-background/95 backdrop-blur-xl"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute -top-4 -right-4 z-[101] rounded-full bg-background/50 backdrop-blur-md border-white/10 hover:bg-white/20 transition-all shadow-xl"
+                onClick={() => setSelectedImage(null)}
+              >
+                <X className="w-5 h-5" />
+              </Button>
+              <img
+                src={selectedImage}
+                alt="Visualização ampliada"
+                className="w-full h-full object-contain rounded-2xl shadow-[0_0_50px_-12px_rgba(255,0,0,0.5)] border border-white/10"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

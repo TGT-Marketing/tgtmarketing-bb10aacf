@@ -57,6 +57,13 @@ const portfolioItems: PortfolioItem[] = [
         client: "Muito mais do que posts, estratégias com direcionamento de público!",
         description:
           "Desenvolvimento de estratégias personalizadas para as mídias como: Instagram, Facebook, Linkedin e demais mídias. Com foco em crescimento orgânico, unificado ao Tráfego Pago e autoridade de marca.",
+        results: [],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173610398-ac02q-Beige_Tan_Elegant_Neutral_Brand_Feature_Instagram_Post.jpg"],
+      },
+      {
+        client: "CLIENTE: BRAZA BAR & RESTAURANTE",
+        description:
+          "Elaboração de posts com aspecto visual forte, ofertas diretas, frases que geram identificação e CTA para pedidos no WhatsApp.\n\nCom essa estratégia somada ao tráfego pago, o restaurante pode atrair mais clientes, aumentar pedidos e vender mais todos os dias.",
         results: [
           "Transformação de seguidores em leads qualificados",
           "Aumento significativo no engajamento e alcance",
@@ -65,17 +72,6 @@ const portfolioItems: PortfolioItem[] = [
           "Relacionamento constante e direto com os clientes",
           "Crescimento previsível da presença digital",
           "Postura profissional com posicionamento estratégico",
-        ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173610398-ac02q-Beige_Tan_Elegant_Neutral_Brand_Feature_Instagram_Post.jpg"],
-      },
-      {
-        client: "CLIENTE: BRAZA BAR & RESTAURANTE",
-        description:
-          "Elaboração de posts com aspecto visual forte, ofertas diretas, frases que geram identificação e CTA para pedidos no WhatsApp.\n\nCom essa estratégia somada ao tráfego pago, o restaurante pode atrair mais clientes, aumentar pedidos e vender mais todos os dias.",
-        results: [
-          "Resultado potencial em 30 dias: até 165 mil pessoas alcançadas",
-          "2.250 cliques no WhatsApp",
-          "250 novas oportunidades de venda",
         ],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778181872111-w25uc-O-verdadeiro-significado-de-amizade-verdadeiraFeed.png"],
       },

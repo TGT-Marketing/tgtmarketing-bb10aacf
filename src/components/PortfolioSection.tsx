@@ -477,6 +477,7 @@ const PortfolioSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeItem, setActiveItem] = useState<PortfolioItem | null>(null);
   const [contactOpen, setContactOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     // Add YouTube API script

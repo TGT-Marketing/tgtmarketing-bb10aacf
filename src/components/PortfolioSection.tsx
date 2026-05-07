@@ -20,7 +20,7 @@ import portfolioSocial from "@/assets/portfolio-social.webp";
 
 // Preload critical images
 if (typeof window !== 'undefined') {
-  [portfolioBranding, portfolioTraffic, portfolioContent, portfolioWeb].forEach(src => {
+  [portfolioBranding, portfolioTraffic, portfolioContent, portfolioWeb, portfolioSocial].forEach(src => {
     const img = new Image();
     img.src = src;
   });

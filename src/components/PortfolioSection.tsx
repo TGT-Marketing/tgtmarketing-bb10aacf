@@ -51,12 +51,12 @@ const portfolioItems: PortfolioItem[] = [
     category: "Social",
     image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173610398-ac02q-Beige_Tan_Elegant_Neutral_Brand_Feature_Instagram_Post.jpg",
     intro:
-      "Gestão profissional de redes sociais com foco em posicionamento, engajamento e conversão de seguidores em clientes.\\n\\nA TGT Marketing cuida de tudo: do planejamento estratégico à criação de conteúdos que conectam sua marca ao público certo.",
+      "Gestão profissional de redes sociais com foco em posicionamento, engajamento e conversão de seguidores em clientes. A TGT Marketing cuida de tudo: do planejamento estratégico à criação de conteúdos que conectam sua marca ao público certo.",
     projects: [
       {
-        client: "TGT Marketing — Gestão de Redes Sociais",
+        client: "Muito mais do que posts, estratégias com direcionamento de público!",
         description:
-          "Desenvolvimento de estratégias personalizadas para Instagram, Facebook e LinkedIn, com foco em crescimento orgânico e autoridade de marca.",
+          "Desenvolvimento de estratégias personalizadas para as mídias como: Instagram, Facebook, Linkedin e demais mídias. Com foco em crescimento orgânico, unificado ao Tráfego Pago e autoridade de marca.",
         results: [
           "Transformação de seguidores em leads qualificados",
           "Aumento significativo no engajamento e alcance",

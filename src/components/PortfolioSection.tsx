@@ -118,14 +118,14 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    title: "Produção de Conteúdos [Foto & Filme]",
+    title: "Produção de Conteúdos [Foto & Vídeo]",
     category: "Conteúdo",
-    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778153801353-0tj8x-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png",
+    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778154287641-p2qfp-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png",
     intro:
-      "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdos [Foto & Filme] da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
+      "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdos [Foto & Vídeo] da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
     projects: [
       {
-        client: "TGT Marketing — Produção de Conteúdos [Foto & Filme]",
+        client: "TGT Marketing — Produção de Conteúdos [Foto & Vídeo]",
         description: "Planejamento editorial, produção de fotos e vídeos curtos com copywriting estratégico para redes sociais.",
         results: [
           "Conteúdos com mais qualidade visual e credibilidade",
@@ -137,7 +137,7 @@ const portfolioItems: PortfolioItem[] = [
           "Conteúdos prontos para usar em Instagram, Reels, TikTok, YouTube e Tráfego Pago",
           "Aumento da percepção de valor do público sobre a empresa"
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778154008666-4l8uz-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png"],
+        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778154287641-p2qfp-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png"],
         videoUrls: [
           "https://www.youtube.com/embed/-O33RMVZN6k",
           "https://www.youtube.com/embed/Sen_t5TeVLU",

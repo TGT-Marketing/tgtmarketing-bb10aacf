@@ -728,8 +728,22 @@ const PortfolioSection = () => {
                                 <div className={cn(
                                   "aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/img",
                                   project.link && "cursor-pointer"
-                                )}>
-                                  {project.link ? (
+                                 )}>
+                                  {activeItem.title.includes("Mídias Sociais") ? (
+                                    <div className="relative p-2 sm:p-4 bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                                      <div className="absolute top-0 left-0 w-full h-8 bg-black/10 flex items-center px-4 gap-1 z-10">
+                                        <div className="w-2 h-2 rounded-full bg-white/20" />
+                                        <div className="w-2 h-2 rounded-full bg-white/20" />
+                                        <div className="w-2 h-2 rounded-full bg-white/20" />
+                                      </div>
+                                      <img
+                                        src={src}
+                                        alt={`${project.client} ${gIdx + 1}`}
+                                        className="w-full h-auto object-contain max-h-[60vh] mx-auto rounded-lg shadow-2xl pt-8"
+                                        loading="lazy"
+                                      />
+                                    </div>
+                                  ) : project.link ? (
                                     <a 
                                       href={project.link} 
                                       target="_blank" 

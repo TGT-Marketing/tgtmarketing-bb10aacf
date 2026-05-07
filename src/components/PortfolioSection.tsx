@@ -48,6 +48,27 @@ type PortfolioItem = {
 
 const portfolioItems: PortfolioItem[] = [
   {
+    title: "Gestão de Mídias Sociais [Posts e Estratégias]",
+    category: "Social",
+    image: portfolioSocial,
+    intro:
+      "Gestão profissional de redes sociais com foco em posicionamento, engajamento e conversão de seguidores em clientes.\\n\\nA TGT Marketing cuida de tudo: do planejamento estratégico à criação de conteúdos que conectam sua marca ao público certo.",
+    projects: [
+      {
+        client: "TGT Marketing — Gestão de Redes Sociais",
+        description:
+          "Desenvolvimento de estratégias personalizadas para Instagram, Facebook e LinkedIn, com foco em crescimento orgânico e autoridade de marca.",
+        results: [
+          "Aumento significativo no engajamento e alcance",
+          "Criação de comunidade ativa e fiel",
+          "Padronização visual e de comunicação",
+          "Transformação de seguidores em leads qualificados",
+        ],
+        gallery: [portfolioSocial],
+      },
+    ],
+  },
+  {
     title: "Criação de Marca [Branding]",
     category: "Identidade",
     image: portfolioBranding,

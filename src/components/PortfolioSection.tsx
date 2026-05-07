@@ -16,10 +16,11 @@ import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "/portfolio-web-new.png";
+import portfolioSocial from "@/assets/portfolio-social.webp";
 
 // Preload critical images
 if (typeof window !== 'undefined') {
-  [portfolioBranding, portfolioTraffic, portfolioContent, portfolioWeb].forEach(src => {
+  [portfolioBranding, portfolioTraffic, portfolioContent, portfolioWeb, portfolioSocial].forEach(src => {
     const img = new Image();
     img.src = src;
   });
@@ -46,6 +47,27 @@ type PortfolioItem = {
 };
 
 const portfolioItems: PortfolioItem[] = [
+  {
+    title: "Gestão de Mídias Sociais [Posts e Estratégias]",
+    category: "Social",
+    image: portfolioSocial,
+    intro:
+      "Gestão profissional de redes sociais com foco em posicionamento, engajamento e conversão de seguidores em clientes.\\n\\nA TGT Marketing cuida de tudo: do planejamento estratégico à criação de conteúdos que conectam sua marca ao público certo.",
+    projects: [
+      {
+        client: "TGT Marketing — Gestão de Redes Sociais",
+        description:
+          "Desenvolvimento de estratégias personalizadas para Instagram, Facebook e LinkedIn, com foco em crescimento orgânico e autoridade de marca.",
+        results: [
+          "Aumento significativo no engajamento e alcance",
+          "Criação de comunidade ativa e fiel",
+          "Padronização visual e de comunicação",
+          "Transformação de seguidores em leads qualificados",
+        ],
+        gallery: [portfolioSocial],
+      },
+    ],
+  },
   {
     title: "Criação de Marca [Branding]",
     category: "Identidade",
@@ -299,7 +321,7 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    title: "Gestão de Tráfego Estratégica",
+    title: "Gestão de Tráfego Pago",
     category: "Performance",
     image: portfolioTraffic,
     intro:
@@ -352,7 +374,7 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    title: "Site e E-commerce",
+    title: "Desenvolvimento de Site e E-commerce",
     category: "Digital",
     image: portfolioWeb,
     imageClassName: "scale-[1.2] -translate-y-[8%] origin-top group-hover:scale-[1.25]",
@@ -400,6 +422,27 @@ const portfolioItems: PortfolioItem[] = [
         gallery: [],
         directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778005777476-4788w-ESSE.mp4",
         link: "https://www.ricksocupacional.com.br/",
+      },
+    ],
+  },
+  {
+    title: "Registro de Marca INPI",
+    category: "Proteção",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    intro:
+      "Proteja o maior patrimônio da sua empresa. Realizamos todo o processo de registro de marca no INPI com segurança e agilidade.\\n\\nTer uma marca registrada é garantir a exclusividade do seu nome e logotipo em todo o território nacional, evitando cópias e problemas jurídicos.",
+    projects: [
+      {
+        client: "TGT Marketing — Assessoria de Registro de Marca",
+        description:
+          "Acompanhamento completo de processos de registro no INPI, desde a pesquisa de viabilidade até a concessão do certificado de registro.",
+        results: [
+          "Garantia de exclusividade da marca",
+          "Proteção contra uso indevido por terceiros",
+          "Valorização do patrimônio da empresa",
+          "Segurança jurídica para expansão do negócio",
+        ],
+        gallery: ["https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"],
       },
     ],
   },
@@ -464,7 +507,7 @@ const PortfolioSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
           {portfolioItems.map((item, i) => (
             <motion.div
               key={item.title}

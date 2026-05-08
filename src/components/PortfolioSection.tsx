@@ -740,8 +740,8 @@ const PortfolioSection = () => {
                               ))}
                             </div>
                             <div className="mt-4 flex justify-center">
-                              <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-accent/60">
-                                Conteúdo Estratégico & Design para Feed
+                              <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-accent/60 text-center">
+                                Conteúdos Estratégicos & Design para Feed e Stories
                               </p>
                             </div>
                           </div>

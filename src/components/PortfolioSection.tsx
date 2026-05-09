@@ -896,11 +896,7 @@ const PortfolioSection = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-background/95 backdrop-blur-xl cursor-zoom-out"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              setSelectedImage(null);
-            }}
+            onClick={() => setSelectedImage(null)}
           >
             <Button
               variant="ghost"

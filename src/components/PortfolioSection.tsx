@@ -769,7 +769,7 @@ const PortfolioSection = () => {
                             Equipe TGT realizando captação de conteúdos em evento com gravação em tempo real LIVE AO VIVO
                           </p>
                         )}
-                        {activeItem.title.includes("Mídias Sociais") ? (
+                        {activeItem.title.includes("Mídias Sociais") || activeItem.title.includes("Branding") ? (
                           <div className="w-full">
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                               {project.gallery.map((img, gIdx) => (
@@ -793,11 +793,13 @@ const PortfolioSection = () => {
                                 </div>
                               ))}
                             </div>
-                            <div className="mt-4 flex justify-center">
-                              <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-accent/60 text-center">
-                                Conteúdos Estratégicos & Design para Feed e Stories
-                              </p>
-                            </div>
+                            {activeItem.title.includes("Mídias Sociais") && (
+                              <div className="mt-4 flex justify-center">
+                                <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-accent/60 text-center">
+                                  Conteúdos Estratégicos & Design para Feed e Stories
+                                </p>
+                              </div>
+                            )}
                           </div>
                         ) : (
                           <Carousel className="w-full">

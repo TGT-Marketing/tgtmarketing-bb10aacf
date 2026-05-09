@@ -932,51 +932,48 @@ const PortfolioSection = () => {
               </div>
             </>
           )}
-          <AnimatePresence>
-            {selectedImage && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-background/95 backdrop-blur-xl cursor-zoom-out"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImage(null);
-                }}
-              >
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="icon"
-                  className="fixed top-6 right-6 z-[110] rounded-full bg-red-600 hover:bg-red-700 text-white transition-all duration-300 shadow-2xl hover:scale-110 border-2 border-white/20 group/close cursor-pointer pointer-events-auto w-12 h-12"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setSelectedImage(null);
-                  }}
-                >
-                  <X className="w-8 h-8 group-hover/close:rotate-90 transition-transform duration-300" />
-                </Button>
-                
-                <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.9, opacity: 0 }}
-                  transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                  className="relative w-full h-full flex items-center justify-center pointer-events-none"
-                >
-                  <img
-                    src={selectedImage}
-                    alt="Visualização ampliada"
-                    className="max-w-full max-h-full object-contain rounded-lg sm:rounded-2xl shadow-[0_0_50px_-12px_rgba(255,0,0,0.5)] border border-white/10 pointer-events-auto"
-                  />
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </DialogContent>
-      </Dialog>
-      
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-md cursor-zoom-out"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedImage(null);
+            }}
+          >
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              className="fixed top-6 right-6 z-[110] rounded-full bg-red-600 hover:bg-red-700 text-white transition-all duration-300 shadow-2xl hover:scale-110 border-2 border-white/20 group/close cursor-pointer pointer-events-auto w-12 h-12"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+            >
+              <X className="w-8 h-8 group-hover/close:rotate-90 transition-transform duration-300" />
+            </Button>
+            
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full h-full flex items-center justify-center pointer-events-none"
+            >
+              <img
+                src={selectedImage}
+                alt="Visualização ampliada"
+                className="max-w-full max-h-full object-contain rounded-lg sm:rounded-2xl shadow-2xl border border-white/10 pointer-events-auto"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

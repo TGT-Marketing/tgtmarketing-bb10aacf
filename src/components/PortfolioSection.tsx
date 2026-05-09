@@ -932,6 +932,9 @@ const PortfolioSection = () => {
               </div>
             </>
           )}
+        </DialogContent>
+      </Dialog>
+
       <AnimatePresence>
         {selectedImage && (
           <motion.div

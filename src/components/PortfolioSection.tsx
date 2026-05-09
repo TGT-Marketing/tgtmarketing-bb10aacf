@@ -622,8 +622,17 @@ const PortfolioSection = () => {
 
       <ContactFormDialog open={contactOpen} onOpenChange={setContactOpen} />
 
-      <Dialog open={!!activeItem} onOpenChange={(open) => !open && setActiveItem(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto" data-lenis-prevent>
+      <Dialog open={!!activeItem} onOpenChange={(open) => {
+        if (selectedImage) return;
+        if (!open) setActiveItem(null);
+      }}>
+        <DialogContent 
+          className="max-w-4xl max-h-[90vh] overflow-y-auto" 
+          data-lenis-prevent
+          onInteractOutside={(e) => {
+            if (selectedImage) e.preventDefault();
+          }}
+        >
           {activeItem && (
             <>
               <DialogHeader>

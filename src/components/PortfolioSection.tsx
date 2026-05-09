@@ -73,12 +73,12 @@ const portfolioItems: PortfolioItem[] = [
           "Postura profissional com posicionamento estratégico",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856509-pgpoj-Pe_as-prontas_-brilho-impec_vel-e-entrega-garantidaFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856503-fgfwo-627678523_122123943117117447_3270420552538723139_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856505-5wysg-641634784_122127880917117447_9071547022214512582_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856511-93qqu-Por-que-o-corte-perde-precis_o-mesmo-com-l_mina-novaFEED.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856506-jlynd-679170175_122138262801117447_8229563020474506300_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856507-a21bm-691745657_122140277919117447_7687120502705712289_n.jpg"
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289474561-4xj4e-Pe_as-prontas_-brilho-impec_vel-e-entrega-garantidaFeed.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289486334-tcdth-691745657_122140277919117447_7687120502705712289_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289495281-x9igw-679170175_122138262801117447_8229563020474506300_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289548218-u4i42-Por-que-o-corte-perde-precis_o-mesmo-com-l_mina-novaFEED.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289556719-9kx1n-641634784_122127880917117447_9071547022214512582_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289560655-8unrq-627678523_122123943117117447_3270420552538723139_n.jpg"
         ],
       },
       {

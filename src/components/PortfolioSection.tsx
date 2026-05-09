@@ -75,6 +75,27 @@ const portfolioItems: PortfolioItem[] = [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778287532636-h6nek-690747193_122181512162834302_7014447445182412673_n.jpg"
         ],
       },
+      {
+        client: "CLIENTE: GRUPO GERBELLI - INDÚSTRIA",
+        description:
+          "Estratégia de mídias sociais focada em autoridade industrial, apresentando processos, tecnologia e precisão técnica.\n\nA gestão de conteúdo para indústrias exige uma abordagem que transmita confiança e expertise, destacando diferenciais competitivos e a qualidade impecável de cada peça produzida.",
+        results: [
+          "Fortalecimento da autoridade no setor industrial",
+          "Destaque para a precisão técnica e qualidade das peças",
+          "Comunicação direta com o mercado B2B",
+          "Mais visibilidade para a infraestrutura e tecnologia",
+          "Posicionamento profissional e moderno no LinkedIn e Instagram",
+          "Geração de valor através de conteúdos educativos e técnicos",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856503-fgfwo-627678523_122123943117117447_3270420552538723139_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856505-5wysg-641634784_122127880917117447_9071547022214512582_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856506-jlynd-679170175_122138262801117447_8229563020474506300_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856507-a21bm-691745657_122140277919117447_7687120502705712289_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856509-pgpoj-Pe_as-prontas_-brilho-impec_vel-e-entrega-garantidaFeed.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856511-93qqu-Por-que-o-corte-perde-precis_o-mesmo-com-l_mina-novaFEED.png"
+        ],
+      },
     ],
   },
   {

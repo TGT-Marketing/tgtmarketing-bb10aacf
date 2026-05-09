@@ -769,35 +769,37 @@ const PortfolioSection = () => {
                             Equipe TGT realizando captação de conteúdos em evento com gravação em tempo real LIVE AO VIVO
                           </p>
                         )}
-                        {activeItem.title.includes("Mídias Sociais") ? (
-                          <div className="w-full">
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        {activeItem.title.includes(\"Mídias Sociais\") || activeItem.title.includes(\"Branding\") ? (
+                          <div className=\"w-full\">
+                            <div className=\"grid grid-cols-2 sm:grid-cols-3 gap-3\">
                               {project.gallery.map((img, gIdx) => (
                                 <div 
                                   key={gIdx} 
-                                  className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20 group/social cursor-zoom-in"
+                                  className=\"relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20 group/social cursor-zoom-in\"
                                   onClick={() => setSelectedImage(img)}
                                 >
                                   <img
                                     src={img}
                                     alt={`${project.client} ${gIdx + 1}`}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover/social:scale-110"
-                                    loading="lazy"
+                                    className=\"w-full h-full object-cover transition-transform duration-500 group-hover/social:scale-110\"
+                                    loading=\"lazy\"
                                   />
-                                  <div className="absolute inset-0 bg-black/20 group-hover/social:bg-transparent transition-colors duration-300" />
-                                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/social:opacity-100 transition-opacity duration-300">
-                                    <div className="p-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-                                      <Maximize2 className="w-4 h-4 text-white" />
+                                  <div className=\"absolute inset-0 bg-black/20 group-hover/social:bg-transparent transition-colors duration-300\" />
+                                  <div className=\"absolute inset-0 flex items-center justify-center opacity-0 group-hover/social:opacity-100 transition-opacity duration-300\">
+                                    <div className=\"p-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20\">
+                                      <Maximize2 className=\"w-4 h-4 text-white\" />
                                     </div>
                                   </div>
                                 </div>
                               ))}
                             </div>
-                            <div className="mt-4 flex justify-center">
-                              <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-accent/60 text-center">
-                                Conteúdos Estratégicos & Design para Feed e Stories
-                              </p>
-                            </div>
+                            {activeItem.title.includes(\"Mídias Sociais\") && (
+                              <div className=\"mt-4 flex justify-center\">
+                                <p className=\"text-[11px] uppercase tracking-[0.2em] font-bold text-accent/60 text-center\">
+                                  Conteúdos Estratégicos & Design para Feed e Stories
+                                </p>
+                              </div>
+                            )}
                           </div>
                         ) : (
                           <Carousel className="w-full">

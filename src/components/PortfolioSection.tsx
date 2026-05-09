@@ -60,16 +60,10 @@ const portfolioItems: PortfolioItem[] = [
         results: [
           "Fortalecimento da autoridade no setor industrial",
           "Destaque para a precisão técnica e qualidade das peças",
-          "Comunicação direta com o mercado B2B",
+          "Comunicação direta com oportunidades reais no mercado B2B",
           "Mais visibilidade para a infraestrutura e tecnologia",
-          "Posicionamento profissional e moderno no LinkedIn e Instagram",
-          "Geração de valor através de conteúdos educativos e técnicos",
-          "Transformação de seguidores em leads qualificados",
-          "Aumento significativo no engajamento e alcance",
+          "Posicionamento profissional e moderno no Facebook e Instagram",
           "Mais visibilidade e destaque para a marca",
-          "Mais engajamentos e seguidores qualificados",
-          "Relacionamento constante e direto com os clientes",
-          "Crescimento previsível da presença digital",
           "Postura profissional com posicionamento estratégico",
         ],
         gallery: [

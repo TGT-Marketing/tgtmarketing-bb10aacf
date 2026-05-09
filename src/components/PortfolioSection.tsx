@@ -54,6 +54,34 @@ const portfolioItems: PortfolioItem[] = [
       "Gestão profissional de redes sociais com foco em posicionamento, engajamento e conversão de seguidores em clientes. A TGT Marketing cuida de tudo: do planejamento estratégico à criação de conteúdos que conectam sua marca ao público certo.",
     projects: [
       {
+        client: "CLIENTE: GRUPO GERBELLI - INDÚSTRIA",
+        description:
+          "Estratégia de mídias sociais focada em autoridade industrial, apresentando processos, tecnologia e precisão técnica.\n\nA gestão de conteúdo para indústrias exige uma abordagem que transmita confiança e expertise, destacando diferenciais competitivos e a qualidade impecável de cada peça produzida.",
+        results: [
+          "Fortalecimento da autoridade no setor industrial",
+          "Destaque para a precisão técnica e qualidade das peças",
+          "Comunicação direta com o mercado B2B",
+          "Mais visibilidade para a infraestrutura e tecnologia",
+          "Posicionamento profissional e moderno no LinkedIn e Instagram",
+          "Geração de valor através de conteúdos educativos e técnicos",
+          "Transformação de seguidores em leads qualificados",
+          "Aumento significativo no engajamento e alcance",
+          "Mais visibilidade e destaque para a marca",
+          "Mais engajamentos e seguidores qualificados",
+          "Relacionamento constante e direto com os clientes",
+          "Crescimento previsível da presença digital",
+          "Postura profissional com posicionamento estratégico",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856503-fgfwo-627678523_122123943117117447_3270420552538723139_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856505-5wysg-641634784_122127880917117447_9071547022214512582_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856506-jlynd-679170175_122138262801117447_8229563020474506300_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856507-a21bm-691745657_122140277919117447_7687120502705712289_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856509-pgpoj-Pe_as-prontas_-brilho-impec_vel-e-entrega-garantidaFeed.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856511-93qqu-Por-que-o-corte-perde-precis_o-mesmo-com-l_mina-novaFEED.png"
+        ],
+      },
+      {
         client: "CLIENTE: BRAZA BAR & RESTAURANTE",
         description:
           "Elaboração de posts com aspecto visual forte, ofertas diretas, frases que geram identificação e CTA para pedidos no WhatsApp.\n\nCom essa estratégia somada ao tráfego pago, o restaurante pode atrair mais clientes, aumentar pedidos e vender mais todos os dias.",
@@ -73,27 +101,6 @@ const portfolioItems: PortfolioItem[] = [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140195-ecw8r-679760497_122179753940834302_2488337138745105770_n.jpg",
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140199-rizcm-684942112_122180455880834302_7969995090522368855_n__1_.jpg",
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778287532636-h6nek-690747193_122181512162834302_7014447445182412673_n.jpg"
-        ],
-      },
-      {
-        client: "CLIENTE: GRUPO GERBELLI - INDÚSTRIA",
-        description:
-          "Estratégia de mídias sociais focada em autoridade industrial, apresentando processos, tecnologia e precisão técnica.\n\nA gestão de conteúdo para indústrias exige uma abordagem que transmita confiança e expertise, destacando diferenciais competitivos e a qualidade impecável de cada peça produzida.",
-        results: [
-          "Fortalecimento da autoridade no setor industrial",
-          "Destaque para a precisão técnica e qualidade das peças",
-          "Comunicação direta com o mercado B2B",
-          "Mais visibilidade para a infraestrutura e tecnologia",
-          "Posicionamento profissional e moderno no LinkedIn e Instagram",
-          "Geração de valor através de conteúdos educativos e técnicos",
-        ],
-        gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856503-fgfwo-627678523_122123943117117447_3270420552538723139_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856505-5wysg-641634784_122127880917117447_9071547022214512582_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856506-jlynd-679170175_122138262801117447_8229563020474506300_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856507-a21bm-691745657_122140277919117447_7687120502705712289_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856509-pgpoj-Pe_as-prontas_-brilho-impec_vel-e-entrega-garantidaFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778288856511-93qqu-Por-que-o-corte-perde-precis_o-mesmo-com-l_mina-novaFEED.png"
         ],
       },
     ],

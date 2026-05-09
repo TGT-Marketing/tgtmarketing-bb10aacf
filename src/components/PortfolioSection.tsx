@@ -931,7 +931,7 @@ const PortfolioSection = () => {
           </AnimatePresence>
         </DialogContent>
       </Dialog>
-      {/* Zoomed image overlay moved into separate portal or handled inside Dialog */}
+      
     </section>
   );
 };

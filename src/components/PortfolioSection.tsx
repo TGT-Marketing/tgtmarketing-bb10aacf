@@ -71,7 +71,8 @@ const portfolioItems: PortfolioItem[] = [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140174-7u2hh-670181640_122178236666834302_7456115394013555943_n.jpg",
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140175-ix9b1-672088487_122178547760834302_4138360703695770976_n.jpg",
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140195-ecw8r-679760497_122179753940834302_2488337138745105770_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140199-rizcm-684942112_122180455880834302_7969995090522368855_n__1_.jpg"
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140199-rizcm-684942112_122180455880834302_7969995090522368855_n__1_.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778287532636-h6nek-690747193_122181512162834302_7014447445182412673_n.jpg"
         ],
       },
     ],

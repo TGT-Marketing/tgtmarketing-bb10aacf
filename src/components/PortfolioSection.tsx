@@ -97,6 +97,28 @@ const portfolioItems: PortfolioItem[] = [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778287532636-h6nek-690747193_122181512162834302_7014447445182412673_n.jpg"
         ],
       },
+      {
+        client: "CLIENTE: MOVOTEC MÓVEIS PARA ESCRITÓRIO",
+        description:
+          "Estratégia de marketing digital focada em móveis corporativos, destacando design, ergonomia e funcionalidade para ambientes de trabalho modernos.\n\nA presença digital da Movotec foi estruturada para atrair empresas e profissionais que buscam transformar seus escritórios, unindo estética e produtividade por meio de soluções inteligentes em mobiliário.",
+        results: [
+          "Aumento expressivo na conversão de orçamentos via canais digitais",
+          "Fortalecimento do posicionamento como referência em móveis corporativos",
+          "Destaque visual para a ergonomia e durabilidade dos produtos",
+          "Comunicação estratégica direcionada ao público B2B e arquitetos",
+          "Mais visibilidade para soluções de reforma e renovação de ambientes",
+          "Crescimento constante do engajamento com profissionais do setor",
+          "Geração de leads qualificados com alto potencial de fechamento",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917931-fjwo6-616805785_1469535471844131_6141252066559969670_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917934-xrnen-649746563_1519685110162500_2559229668752246722_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917936-u80cb-657262324_1532092848921726_3648576694463748583_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917937-d4goj-683400859_1563232529141091_3421082289211447923_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917938-h1h2j-Prateleira-de-a_o-resist_ncia-e-robustezFeed.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917941-16qjb-Quando-reformar-compensa-mais-do-que-trocar-e-comprar-uma-cadeira-novaaFeed.png"
+        ],
+      },
     ],
   },
   {

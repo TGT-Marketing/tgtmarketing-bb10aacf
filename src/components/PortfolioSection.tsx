@@ -899,6 +899,7 @@ const PortfolioSection = () => {
             onClick={() => setSelectedImage(null)}
           >
             <Button
+              type="button"
               variant="ghost"
               size="icon"
               className="absolute top-6 right-6 z-[102] rounded-full bg-red-600/20 hover:bg-red-600/40 text-red-500 transition-all duration-300 shadow-2xl hover:scale-110 border border-red-500/30 group/close cursor-pointer"

@@ -163,6 +163,28 @@ const portfolioItems: PortfolioItem[] = [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523323335-vj289-653926315_122172405860868384_6093467671984733436_n.jpg"
         ],
       },
+      {
+        client: "CLIENTE: BMV ESTÉTICA AUTOMOTIVA PREMIUM",
+        description:
+          "Estratégia de mídias sociais desenvolvida para a BMV Estética Automotiva, focada em transformar a presença digital de um centro de estética automotiva premium em uma vitrine de luxo e desejo.\n\nCom conteúdos que destacam o brilho impecável, o cuidado minucioso em cada detalhe e o uso de produtos de alta performance, conseguimos elevar a percepção de valor dos serviços, atraindo proprietários de veículos que não abrem mão do melhor tratamento para suas máquinas.",
+        results: [
+          "Recorde de conversão de agendamentos via direct e WhatsApp",
+          "Aumento significativo no ticket médio através da venda de pacotes premium",
+          "Fortalecimento da autoridade como referência em estética automotiva de luxo",
+          "Mais visibilidade para processos exclusivos de polimento e proteção",
+          "Engajamento qualificado com proprietários de veículos de alto padrão",
+          "Posicionamento visual impecável que reflete o cuidado e a qualidade BMV",
+          "Transformação de seguidores em clientes fiéis e promotores da marca",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240190-zpjgj-653876049_122153539118971914_1127253856516598276_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240194-6pxhk-653883713_122154118952971914_1204500173646539272_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240197-vni0f-677608012_122158746578971914_1890888369597635411_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240198-isanf-683762100_122159714330971914_8541895814565481454_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240200-025e9-Conhe_a-nossos-servi_os-que-v_o-al_m-da-lavagemFeed01.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240203-a1zkk-Quem-confia-na-BMVFeed.png"
+        ],
+      },
     ],
   },
   {

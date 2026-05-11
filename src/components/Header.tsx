@@ -33,7 +33,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         <a href="#" className="relative z-10">
           <img
             src={logoTgt}
-            alt="TGT Marketing & Comunicação"
+            alt="TGT Marketing Digital Americana SP"
             width={400}
             height={160}
             decoding="async"

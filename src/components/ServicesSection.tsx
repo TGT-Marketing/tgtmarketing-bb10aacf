@@ -67,8 +67,7 @@ const ServicesSection = () => {
             O que fazemos
           </span>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
-            Soluções que geram{" "}
-            <span className="text-accent">resultado real</span>
+            Marketing e Vendas: Soluções que geram <span className="text-accent">resultado real</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-[15px]">

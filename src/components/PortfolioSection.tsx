@@ -264,13 +264,7 @@ const portfolioItems: PortfolioItem[] = [
         client: "Cliente: Global Serviços | Criação de Identidade Visual de Marca",
         description:
           "A marca Global Serviços apresenta uma identidade visual forte, tecnológica e muito bem alinhada ao segmento de segurança.\n\nCom símbolo marcante, paleta em azul e presença corporativa, a marca transmite proteção, confiança e monitoramento, criando uma percepção de empresa moderna, preparada e eficiente para atender condomínios com vigilância e portaria remota.",
-        results: [
-          "Identidade visual alinhada aos conceitos do negócio",
-          "Conexão imediata com o público",
-          "Fortalecimento da percepção de valor do produto",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778079694917-ni8wo-ChatGPT_Image_6_de_mai._de_2026__12_01_18.png"],
       },
       {

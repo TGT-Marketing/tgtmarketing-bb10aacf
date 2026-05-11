@@ -185,6 +185,28 @@ const portfolioItems: PortfolioItem[] = [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240203-a1zkk-Quem-confia-na-BMVFeed.png"
         ],
       },
+      {
+        client: \"CLIENTE: INOVA CAR CENTRO AUTOMOTIVO\",
+        description:
+          \"Estratégia de posicionamento digital para a Inova Car Centro Automotivo, transformando a percepção de uma oficina mecânica em um centro de soluções automotivas de confiança e tecnologia.\\n\\nCom conteúdos educativos sobre manutenção preventiva, demonstração de diagnósticos precisos e transparência nos processos, conseguimos quebrar objeções comuns do setor e gerar um fluxo constante de orçamentos qualificados, posicionando a marca como a primeira escolha de quem busca segurança e cuidado para seu veículo.\",
+        results: [
+          \"Aumento expressivo na conversão de orçamentos via WhatsApp e Direct\",
+          \"Geração constante de agendamentos para manutenção preventiva e corretiva\",
+          \"Fortalecimento da autoridade como centro automotivo especializado e confiável\",
+          \"Mais visibilidade para serviços de diagnóstico computadorizado e precisão técnica\",
+          \"Engajamento estratégico com conteúdos educativos que geram necessidade de serviço\",
+          \"Redução drástica no ciclo de venda através de provas sociais e transparência\",
+          \"Posicionamento digital profissional que transmite segurança e alta tecnologia\",
+        ],
+        gallery: [
+          \"https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529303140-t7hdd-625411031_122120678901074388_4638513374126777075_n.jpg\",
+          \"https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529310873-7uktt-649263441_122124853209074388_2134566509739938299_n.jpg\",
+          \"https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529317890-kextl-Se-os-seus-pneus-est_o-carecasFeed.png\",
+          \"https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529323674-myr0u-673596735_122129280765074388_5055005283054981723_n.jpg\",
+          \"https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529330540-l3nev-Se-voc_-s_-pudesse-escolher-um_-qual-seriaFeed.png\",
+          \"https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529336396-0w354-A-manuten__o-que-voc_-evitaFeed.png\"
+        ],
+      },
     ],
   },
   {

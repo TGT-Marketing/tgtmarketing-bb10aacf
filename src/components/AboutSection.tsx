@@ -31,7 +31,7 @@ const AboutSection = () => {
                 <strong className="text-foreground">
                   TGT Marketing & Comunicação
                 </strong>{" "}
-                nasceu em 2012 em Americana – SP com um propósito claro: ajudar
+                nasceu em 2011 em Americana – SP com um propósito claro: ajudar
                 empresas a serem vistas, lembradas e escolhidas.
               </p>
               <p>

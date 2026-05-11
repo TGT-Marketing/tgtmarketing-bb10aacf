@@ -27,7 +27,7 @@ const stats = [
   },
   {
     icon: TrendingUp,
-    numericValue: 1000,
+    numericValue: 1200,
     prefix: "+",
     suffix: "",
     label: "campanhas gerenciadas",

@@ -85,7 +85,7 @@ const ProblemsSection = ({
                   size={24}
                 />
               </div>
-              <h3 className="text-section-dark-foreground font-bold text-lg mb-2">
+              <h4 className="text-section-dark-foreground font-bold text-lg mb-2">
                 {problem.title}
               </h3>
               <p className="text-section-dark-foreground/50 text-sm leading-relaxed">

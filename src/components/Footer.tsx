@@ -14,7 +14,7 @@ const Footer = () => {
             <a href="#" className="inline-block mb-8 group">
               <img
                 src={logoTgt}
-                alt="TGT Marketing & Comunicação"
+                alt="Logo TGT Marketing Digital Americana SP"
                 width={400}
                 height={160}
                 loading="lazy"

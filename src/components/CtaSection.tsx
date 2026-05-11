@@ -63,22 +63,22 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <button
-              onClick={onOpenContact}
-              className="shine-effect btn-primary inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
-            >
-              <span>Quero meu diagnóstico gratuito</span>
-              <ArrowRight size={20} className="shrink-0" />
-            </button>
             <a
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
-              className="shine-effect btn-outline-light inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
+              className="shine-effect btn-primary inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
             >
               <MessageCircle size={20} className="shrink-0" />
-              <span>Falar no WhatsApp</span>
+              <span>Quero meu diagnóstico gratuito</span>
+              <ArrowRight size={20} className="shrink-0" />
             </a>
+            <button
+              onClick={onOpenContact}
+              className="shine-effect btn-outline-light inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
+            >
+              <span>Enviar uma mensagem</span>
+            </button>
           </div>
         </motion.div>
       </div>

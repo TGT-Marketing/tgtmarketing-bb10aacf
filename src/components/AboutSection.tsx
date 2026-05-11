@@ -19,10 +19,10 @@ const AboutSection = () => {
           >
             <span className="section-label mb-4 block">Quem somos</span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 leading-tight tracking-tight">
-              Não somos mais uma agência.
+              Estratégia de Marketing Digital:
               <br />
               Somos sua{" "}
-              <span className="text-accent">parceira estratégica.</span>
+              <span className="text-accent">parceira de crescimento.</span>
             </h2>
             <div className="divider-accent mb-8" />
             <div className="space-y-5 text-muted-foreground leading-relaxed text-[15px]">
@@ -140,7 +140,7 @@ const AboutSection = () => {
               <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/10] overflow-hidden bg-secondary">
                 <img
                   src={tgtLogoWall}
-                  alt="Logo TGT em destaque na sede da agência — identidade visual e presença física da marca"
+                  alt="Sede TGT Marketing Digital Americana SP - Presença Física"
                   width={1600}
                   height={900}
                   loading="lazy"
@@ -170,7 +170,7 @@ const AboutSection = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 src="https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778097120020-rhqx5-linha-do-tempo-atualizadaFeed.png"
-                alt="Linha do Tempo TGT"
+                alt="Trajetória TGT Marketing - 15 Anos de História"
                 loading="lazy"
                 fetchPriority="low"
                 className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"

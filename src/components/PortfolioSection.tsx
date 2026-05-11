@@ -826,7 +826,7 @@ const PortfolioSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-14 sm:mt-20 max-w-3xl mx-auto text-center bg-primary/40 backdrop-blur-sm border border-section-dark-foreground/10 rounded-2xl p-8 sm:p-10"
+          className="mt-14 sm:mt-20 max-w-3xl mx-auto text-center bg-card/40 backdrop-blur-sm border border-border rounded-2xl p-8 sm:p-10"
         >
           <h3 className="text-2xl sm:text-3xl font-extrabold text-section-dark-foreground mb-3 tracking-tight">
             Quer resultados como esses na <span className="text-accent">sua empresa</span>?

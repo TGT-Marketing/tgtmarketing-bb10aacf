@@ -862,6 +862,8 @@ const PortfolioSection = () => {
         </motion.div>
       </div>
 
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50 mt-20" />
+
       <ContactFormDialog open={contactOpen} onOpenChange={setContactOpen} />
 
       <Dialog open={!!activeItem} onOpenChange={(open) => {

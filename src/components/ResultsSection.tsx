@@ -110,7 +110,7 @@ const ResultsSection = () => {
           <span className="section-label text-accent justify-center mb-4 block">
             Resultados
           </span>
-          <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-section-dark-foreground mt-3 mb-4 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-section-dark-foreground mt-3 mb-4 tracking-tight">
             Marketing Digital: Números que <span className="text-accent">comprovam!</span>
           </h3>
           <div className="divider-accent mx-auto mb-6" />

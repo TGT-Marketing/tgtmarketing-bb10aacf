@@ -252,6 +252,28 @@ const portfolioItems: PortfolioItem[] = [
         ],
       },
       {
+        client: "CLIENTE: BARBEARIA PIEMONTE",
+        description:
+          "Estratégia de mídias sociais para a Barbearia Piemonte, focada em elevar o posicionamento da marca e transformar o perfil em uma vitrine de estilo e lifestyle masculino.\n\nCom conteúdos que destacam a técnica impecável dos cortes, o ambiente premium e a experiência exclusiva de cuidado, conseguimos atrair o público que valoriza a autoimagem, resultando em uma agenda lotada e um aumento significativo no ticket médio através de serviços agregados.",
+        results: [
+          "Recorde de agendamentos diretos via link na bio e WhatsApp",
+          "Aumento significativo na conversão de novos clientes e fidelização",
+          "Fortalecimento do posicionamento como barbearia referência em estilo",
+          "Destaque visual para a excelência técnica em cortes e barbas",
+          "Engajamento massivo com conteúdos de lifestyle e dicas de autocuidado",
+          "Crescimento constante da autoridade e desejo pela experiência Piemonte",
+          "Transformação da presença digital em uma ferramenta poderosa de vendas diárias",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532309124-h3xj2-592534881_1436331228501640_3701314169288317674_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532320258-w39qo-670640606_1555655623235866_4519767485197009256_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532326728-odst7-690783234_1573356691465759_8879674165552660891_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532332124-5g7uu-Seu-compromisso-com-a-apar_ncia-come_a-por-aquifeed.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532338596-izds6-601031075_1448813700586726_6987031387439350393_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532344976-fx2l0-666233146_1549509060517189_5719883050776475607_n.jpg"
+        ],
+      },
+      {
         client: "CLIENTE: MED.KAL PET - CLÍNICA VETERINÁRIA E PETSHOP",
         description:
           "Estratégia de mídias sociais desenvolvida para a Med.Kal Pet, focada em humanizar a marca e destacar a excelência no cuidado animal.\n\nCom conteúdos que unem informação técnica veterinária, demonstração de carinho no petshop e transparência nos procedimentos clínicos, conseguimos construir uma relação de profunda confiança com os tutores. O resultado foi uma presença digital que não apenas educa, mas converte o amor pelos pets em agendamentos constantes de consultas, vacinas e serviços de estética.",

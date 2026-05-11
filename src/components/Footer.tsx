@@ -59,7 +59,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="md:col-span-2 md:col-start-7">
-            <h4 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Navegação</h4>
+            <h3 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Navegação</h3>
             <ul className="space-y-4">
               {[
                 { label: "Sobre", href: "#sobre" },

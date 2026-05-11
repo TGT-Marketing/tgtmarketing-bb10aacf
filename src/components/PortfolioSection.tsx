@@ -98,6 +98,28 @@ const portfolioItems: PortfolioItem[] = [
         ],
       },
       {
+        client: "CLIENTE: VIVA LEVE - EVENTO VIDA SAUDÁVEL",
+        description:
+          "Estratégia de comunicação e marketing para o evento Viva Leve, focada em promover saúde, bem-estar e qualidade de vida.\n\nCom uma abordagem vibrante e inspiradora, desenvolvemos conteúdos que conectam pessoas a um estilo de vida mais saudável, destacando cronogramas oficiais, sorteios exclusivos e momentos de interação. O resultado foi uma presença digital engajadora que transformou o interesse pelo evento em participação ativa e conversão de vendas de ingressos e produtos parceiros.",
+        results: [
+          "Conversão recorde de inscrições e vendas de ingressos para o evento",
+          "Engajamento massivo em sorteios estratégicos de itens exclusivos",
+          "Aumento significativo na visibilidade das marcas parceiras e patrocinadores",
+          "Comunicação clara e eficiente do cronograma oficial das atividades",
+          "Fortalecimento da comunidade interessada em vida saudável e bem-estar",
+          "Geração de autoridade e reconhecimento para o evento Viva Leve",
+          "Transformação de seguidores em participantes ativos e promotores da marca",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531384892-mpn2i-CRONOGRAMA-OFICALFEED04.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531394214-x8yeq-SORTEIO-TENIS---FEED.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531403376-x1cg2-SORTEIO-ITENS-EXCLUSIVOS---FEED.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531409868-5ccb5-POSTS-DO-VIVA-LEVESORTEIO-ESTETICA---FEED.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531420254-fw6mq-SORTEIO-CESTA--FEED.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531433710-20rp9-POSTS-VIVA-LEVEPRESSAO-FEED.png"
+        ],
+      },
+      {
         client: "CLIENTE: BRAZA BAR & RESTAURANTE",
         description:
           "Elaboração de posts com aspecto visual forte, ofertas diretas, frases que geram identificação e CTA para pedidos no WhatsApp.\n\nCom essa estratégia somada ao tráfego pago, o restaurante pode atrair mais clientes, aumentar pedidos e vender mais todos os dias.",

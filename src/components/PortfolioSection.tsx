@@ -751,7 +751,7 @@ const PortfolioSection = () => {
   }, []);
 
   return (
-    <section id="trabalhos" className="section-padding bg-section-dark scroll-mt-20 overflow-hidden" ref={ref}>
+    <section id="trabalhos" className="section-padding bg-background scroll-mt-20" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -762,11 +762,11 @@ const PortfolioSection = () => {
           <span className="section-label justify-center mb-6 block">
             Nossa Expertise
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-[900] text-section-dark-foreground mt-3 mb-8 tracking-tighter leading-none">
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-[900] text-foreground mt-3 mb-8 tracking-tighter leading-none">
             Projetos que <br className="hidden sm:block" /><span className="text-gradient">fazem história</span>
           </h2>
           <div className="divider-accent mx-auto mb-10" />
-          <p className="text-section-dark-foreground/60 max-w-2xl mx-auto text-lg leading-relaxed px-4">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed px-4">
             Cada trabalho é uma união entre criatividade e estratégia de alto nível para gerar resultados exponenciais.
           </p>
         </motion.div>
@@ -826,12 +826,12 @@ const PortfolioSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-14 sm:mt-20 max-w-3xl mx-auto text-center bg-primary/40 backdrop-blur-sm border border-section-dark-foreground/10 rounded-2xl p-8 sm:p-10"
+          className="mt-14 sm:mt-20 max-w-3xl mx-auto text-center bg-card/40 backdrop-blur-sm border border-border rounded-2xl p-8 sm:p-10"
         >
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-section-dark-foreground mb-3 tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mb-3 tracking-tight">
             Quer resultados como esses na <span className="text-accent">sua empresa</span>?
           </h3>
-          <p className="text-section-dark-foreground/60 text-base sm:text-lg mb-6">
+          <p className="text-muted-foreground text-base sm:text-lg mb-6">
             Fale com a gente agora ou solicite um diagnóstico gratuito do seu negócio.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center">

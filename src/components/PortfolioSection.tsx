@@ -775,7 +775,7 @@ const PortfolioSection = () => {
                 {activeItem.projects.map((project, idx) => (
                   <article
                     key={idx}
-                    className="relative pt-6 first:pt-0 before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-[hsl(var(--brand-red-dark))] before:via-[hsl(var(--brand-red))] before:to-[hsl(var(--brand-red-light))] first:before:hidden"
+                    className="relative pt-6 first:pt-0 before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-[hsl(0_78%_28%)] before:via-[hsl(0_78%_48%)] before:to-[hsl(0_85%_65%)] first:before:hidden"
                   >
                     <h4 className="text-lg font-bold text-foreground mb-2">
                       {project.link ? (

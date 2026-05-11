@@ -762,9 +762,9 @@ const PortfolioSection = () => {
           <span className="section-label justify-center mb-6 block">
             Nossa Expertise
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-[900] text-foreground mt-3 mb-8 tracking-tighter leading-none">
+          <h3 className="text-3xl sm:text-5xl lg:text-7xl font-[900] text-foreground mt-3 mb-8 tracking-tighter leading-none">
             Projetos que <br className="hidden sm:block" /><span className="text-gradient">fazem história</span>
-          </h2>
+          </h3>
           <div className="divider-accent mx-auto mb-10" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed px-4">
             Cada trabalho é uma união entre criatividade e estratégia de alto nível para gerar resultados exponenciais.

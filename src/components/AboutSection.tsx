@@ -23,7 +23,7 @@ const AboutSection = () => {
               <br />
               Somos sua{" "}
               <span className="text-accent">parceira de crescimento.</span>
-            </h3>
+            </h2>
             <div className="divider-accent mb-8" />
             <div className="space-y-5 text-muted-foreground leading-relaxed text-[15px]">
               <p>

@@ -87,7 +87,7 @@ const ProblemsSection = ({
               </div>
               <h4 className="text-section-dark-foreground font-bold text-lg mb-2">
                 {problem.title}
-              </h3>
+              </h4>
               <p className="text-section-dark-foreground/50 text-sm leading-relaxed">
                 {problem.text}
               </p>

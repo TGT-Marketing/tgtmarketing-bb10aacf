@@ -76,6 +76,28 @@ const portfolioItems: PortfolioItem[] = [
         ],
       },
       {
+        client: "CLIENTE: CLAUDIO POÇOS ARTESIANOS",
+        description:
+          "Estratégia de mídias sociais desenvolvida para Claudio Poços Artesianos, focada em transformar a presença digital de uma empresa de perfuração em uma referência de autoridade e confiança.\n\nCom conteúdos que demonstram a complexidade técnica, o uso de maquinário moderno e a garantia de água de qualidade, conseguimos conectar a marca a proprietários rurais e empresas que buscam soluções definitivas, impulsionando a conversão de orçamentos e fechamento de novos projetos.",
+        results: [
+          "Destaque absoluto na conversão de novos orçamentos via canais digitais",
+          "Aumento significativo no fechamento de vendas através de leads qualificados",
+          "Fortalecimento da autoridade e confiança no setor de perfuração",
+          "Mais visibilidade para a tecnologia e precisão das perfurações",
+          "Comunicação direta com proprietários rurais e mercado B2B",
+          "Posicionamento profissional e moderno que gera valor à marca",
+          "Geração constante de oportunidades reais de negócio",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778524833559-mrcda-658775806_1351949186953319_161827266595207215_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778524881750-y4b6c-649556301_1333256088822629_5154231053455871792_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778525714891-9mbsa-feed01.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778525727354-02dd8-631361658_1309686674512904_173969759776589160_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778525727368-ox71t-641493569_1321506236664281_8839569345727818433_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778525735571-skaaj-626799498_1303474051800833_3396260069711442477_n.jpg"
+        ],
+      },
+      {
         client: "CLIENTE: BRAZA BAR & RESTAURANTE",
         description:
           "Elaboração de posts com aspecto visual forte, ofertas diretas, frases que geram identificação e CTA para pedidos no WhatsApp.\n\nCom essa estratégia somada ao tráfego pago, o restaurante pode atrair mais clientes, aumentar pedidos e vender mais todos os dias.",

@@ -18,7 +18,7 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="section-label mb-4 block">Quem somos</span>
-            <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 leading-tight tracking-tight">
               Estratégia de Marketing Digital:
               <br />
               Somos sua{" "}

@@ -131,14 +131,14 @@ const ResultsSection = () => {
               <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-xl sm:rounded-2xl bg-accent/8 flex items-center justify-center mb-3 sm:mb-5 group-hover:bg-accent/15 transition-colors duration-500">
                 <stat.icon className="text-accent" size={22} />
               </div>
-              <div className="text-2xl sm:text-4xl font-extrabold text-accent mb-1 sm:mb-2">
+              <h4 className="text-2xl sm:text-4xl font-extrabold text-accent mb-1 sm:mb-2">
                 <CountUpNumber
                   value={stat.numericValue}
                   prefix={stat.prefix}
                   suffix={stat.suffix}
                   isInView={isInView}
                 />
-              </div>
+              </h4>
               <div className="text-section-dark-foreground font-semibold text-sm mb-1">
                 {stat.label}
               </div>

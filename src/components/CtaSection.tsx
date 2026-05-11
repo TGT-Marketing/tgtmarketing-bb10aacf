@@ -40,10 +40,10 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             </span>
           </motion.div>
 
-          <h2 className="text-[1.4rem] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground mt-2 mb-6 sm:mb-8 leading-[1.2] sm:leading-tight tracking-tight px-2">
+          <h3 className="text-[1.4rem] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground mt-2 mb-6 sm:mb-8 leading-[1.2] sm:leading-tight tracking-tight px-2">
             Sua empresa merece ser vista, lembrada e{" "}
             <span className="text-accent">escolhida.</span>
-          </h2>
+          </h3>
           <p className="text-primary-foreground/50 text-[14px] sm:text-lg mb-5 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
             Pare de desperdiçar tempo e dinheiro com marketing que não funciona.
             Agende um diagnóstico gratuito e descubra exatamente o que fazer

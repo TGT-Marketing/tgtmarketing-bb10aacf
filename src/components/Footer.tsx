@@ -15,8 +15,8 @@ const Footer = () => {
               <img
                 src={logoTgt}
                 alt="Logo TGT Marketing Digital Americana SP"
-                width={400}
-                height={160}
+                width={160}
+                height={40}
                 loading="lazy"
                 decoding="async"
                 className="h-10 sm:h-12 w-auto brightness-0 invert transition-transform duration-500 group-hover:scale-105"
@@ -59,7 +59,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="md:col-span-2 md:col-start-7">
-            <h4 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Navegação</h4>
+            <h3 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Navegação</h3>
             <ul className="space-y-4">
               {[
                 { label: "Sobre", href: "#sobre" },
@@ -80,7 +80,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="md:col-span-3 md:col-start-10">
-            <h4 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Onde estamos</h4>
+            <h3 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Onde estamos</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4 text-white/40 text-[15px]">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">

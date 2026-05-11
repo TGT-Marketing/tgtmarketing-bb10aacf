@@ -57,10 +57,10 @@ const TestimonialsSection = () => {
           <span className="section-label justify-center mb-4 block">
             Prova social
           </span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
+          <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
             Quem trabalhou com a TGT{" "}
             <span className="text-accent">recomenda.</span>
-          </h2>
+          </h3>
           <div className="flex items-center justify-center gap-1 mb-3">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="text-accent fill-accent" size={20} />

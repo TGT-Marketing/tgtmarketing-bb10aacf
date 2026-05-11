@@ -15,8 +15,8 @@ const Footer = () => {
               <img
                 src={logoTgt}
                 alt="Logo TGT Marketing Digital Americana SP"
-                width={400}
-                height={160}
+                width={160}
+                height={40}
                 loading="lazy"
                 decoding="async"
                 className="h-10 sm:h-12 w-auto brightness-0 invert transition-transform duration-500 group-hover:scale-105"

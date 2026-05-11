@@ -751,7 +751,7 @@ const PortfolioSection = () => {
   }, []);
 
   return (
-    <section id="trabalhos" className="section-padding bg-background scroll-mt-20" ref={ref}>
+    <section id="trabalhos" className="pt-20 pb-10 sm:pt-32 sm:pb-16 bg-background scroll-mt-20" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

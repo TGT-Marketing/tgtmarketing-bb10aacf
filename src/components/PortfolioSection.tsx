@@ -223,13 +223,7 @@ const portfolioItems: PortfolioItem[] = [
         client: "Cliente: Alma & Afeto Semijoias | Criação de Identidade Visual da Marca",
         description:
           "A marca Alma & Afeto Semijoias apresenta uma identidade visual sofisticada, elegante e muito bem posicionada para o mercado de acessórios premium.\n\nCom uma paleta refinada, acabamento em dourado e comunicação delicada, a marca transmite exclusividade, cuidado e valorização pessoal, criando uma percepção de desejo, beleza e alto valor.",
-        results: [
-          "Identidade visual alinhada aos conceitos do negócio",
-          "Conexão imediata com o público",
-          "Fortalecimento da percepção de valor do produto",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778010820224-gzh50-ChatGPT_Image_30_de_abr._de_2026__16_24_13.png"],
       },
       {
@@ -249,65 +243,35 @@ const portfolioItems: PortfolioItem[] = [
         client: "Cliente: Lumarchi Embalagens | Rebranding da Marca - 40 anos de Mercado",
         description:
           "A marca Lumarchi Embalagens apresenta uma identidade visual sólida, profissional e muito bem alinhada ao segmento industrial.\n\nCom símbolo marcante, tipografia forte e paleta em azul, a marca transmite confiança, organização e credibilidade, criando uma percepção de empresa estruturada, segura e preparada para atender o mercado de embalagens.",
-        results: [
-          "Identidade visual alinhada aos conceitos do negócio",
-          "Conexão imediata com o público",
-          "Fortalecimento da percepção de valor do produto",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778072883028-vccsp-ChatGPT_Image_6_de_mai._de_2026__10_07_29.png"],
       },
       {
         client: "Cliente: Rocha Assessoria de Contabilidade | Rebranding da Marca - 40 anos de Mercado",
         description:
           "A marca Rocha Contábil apresenta uma identidade visual elegante, sólida e muito bem alinhada ao mercado contábil.\n\nCom monograma sofisticado, tipografia forte e paleta em azul e cinza, a marca transmite confiança, credibilidade e profissionalismo, criando uma percepção de empresa séria, estruturada e preparada para atender com segurança.",
-        results: [
-          "Identidade visual alinhada aos conceitos do negócio",
-          "Conexão imediata com o público",
-          "Fortalecimento da percepção de valor do produto",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778073471739-ng3x5-ChatGPT_Image_6_de_mai._de_2026__10_14_39.png"],
       },
       {
         client: "Cliente: Vision Merchandising | Criação de Nome e Identidade Visual de Marca",
         description:
           "A marca Vision Merchandising apresenta uma identidade visual forte, moderna e altamente conectada ao universo do varejo.\n\nCom cores marcantes, ícone de carrinho e composição direta, a marca transmite organização, presença e eficiência, criando uma percepção de empresa estratégica, preparada para destacar produtos e potencializar resultados dentro dos supermercados.",
-        results: [
-          "Identidade visual alinhada aos conceitos do negócio",
-          "Conexão imediata com o público",
-          "Fortalecimento da percepção de valor do produto",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778079403849-f1lbk-ChatGPT_Image_6_de_mai._de_2026__11_55_16.png"],
       },
       {
         client: "Cliente: Global Serviços | Criação de Identidade Visual de Marca",
         description:
           "A marca Global Serviços apresenta uma identidade visual forte, tecnológica e muito bem alinhada ao segmento de segurança.\n\nCom símbolo marcante, paleta em azul e presença corporativa, a marca transmite proteção, confiança e monitoramento, criando uma percepção de empresa moderna, preparada e eficiente para atender condomínios com vigilância e portaria remota.",
-        results: [
-          "Identidade visual alinhada aos conceitos do negócio",
-          "Conexão imediata com o público",
-          "Fortalecimento da percepção de valor do produto",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778079694917-ni8wo-ChatGPT_Image_6_de_mai._de_2026__12_01_18.png"],
       },
       {
         client: "Cliente: Gigi´s House - Recreação Bilíngue e Inglês para Crianças | Criação de Identidade Visual de Marca",
         description:
           "A marca Gigi’s House apresenta uma identidade visual lúdica, acolhedora e muito bem alinhada ao universo infantil.\n\nCom cores vibrantes, personagem carismático e comunicação educativa, a marca transmite alegria, confiança e aprendizado, criando uma percepção de escola divertida, segura e preparada para ensinar inglês de forma leve e envolvente.",
-        results: [
-          "Identidade visual alinhada aos conceitos do negócio",
-          "Conexão imediata com o público",
-          "Fortalecimento da percepção de valor do produto",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778086334651-ke64u-ChatGPT_Image_6_de_mai._de_2026__13_50_43.png"],
       },
       {
@@ -768,6 +732,25 @@ const PortfolioSection = () => {
                 </DialogTitle>
                 <DialogDescription className="text-base whitespace-pre-line">
                   {activeItem.intro}
+                  {activeItem.title === "Criação de Marca [Branding]" && (
+                    <div className="bg-muted/40 rounded-lg p-4 mt-6 text-left">
+                      <p className="text-sm font-bold text-foreground mb-3">Resultados:</p>
+                      <ul className="space-y-2">
+                        {[
+                          "Identidade visual alinhada aos conceitos do negócio",
+                          "Conexão imediata com o público",
+                          "Fortalecimento da percepção de valor do produto",
+                          "Padronização visual completa (on e offline)",
+                          "Manual de marca completo entregue"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-foreground font-normal">
+                            <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </DialogDescription>
               </DialogHeader>
 

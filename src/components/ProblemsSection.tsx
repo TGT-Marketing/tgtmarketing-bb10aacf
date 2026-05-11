@@ -94,8 +94,10 @@ const ProblemsSection = ({
             </motion.div>
           ))}
 
-          <motion.div
-            onClick={onOpenContact}
+          <motion.a
+            href="https://wa.me/5519992795271"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -105,12 +107,12 @@ const ProblemsSection = ({
               Chega de perder tempo.
             </span>
             <span className="text-section-dark-foreground/60 text-sm">
-              Solicite seu diagnóstico gratuito agora
+              Solicite seu diagnóstico gratuito via WhatsApp
             </span>
             <span className="inline-flex items-center gap-2 text-accent font-bold group-hover:gap-3 transition-all">
-              Começar <ArrowRight size={18} />
+              Começar agora <ArrowRight size={18} />
             </span>
-          </motion.div>
+          </motion.a>
         </div>
       </div>
     </section>

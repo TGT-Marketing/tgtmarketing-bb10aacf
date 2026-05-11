@@ -838,15 +838,11 @@ const PortfolioSection = () => {
             <Button
               asChild
               size="lg"
-              className="shine-effect font-bold text-base"
-              style={{
-                backgroundColor: "hsl(var(--whatsapp))",
-                color: "hsl(var(--whatsapp-foreground))",
-              }}
+              className="shine-effect font-bold text-base bg-accent hover:bg-accent/90 text-accent-foreground"
             >
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5" />
-                Falar no WhatsApp
+                <SparklesIcon className="w-5 h-5" />
+                Solicitar diagnóstico gratuito
               </a>
             </Button>
             <Button
@@ -855,8 +851,8 @@ const PortfolioSection = () => {
               onClick={() => setContactOpen(true)}
               className="font-bold text-base border-accent text-accent hover:bg-accent hover:text-accent-foreground"
             >
-              <SparklesIcon className="w-5 h-5" />
-              Solicitar diagnóstico gratuito
+              <MessageCircle className="w-5 h-5" />
+              Enviar uma mensagem
             </Button>
           </div>
         </motion.div>

@@ -831,7 +831,7 @@ const PortfolioSection = () => {
           <h3 className="text-2xl sm:text-3xl font-extrabold text-section-dark-foreground mb-3 tracking-tight">
             Quer resultados como esses na <span className="text-accent">sua empresa</span>?
           </h3>
-          <p className="text-muted-foreground text-base sm:text-lg mb-6">
+          <p className="text-section-dark-foreground/60 text-base sm:text-lg mb-6">
             Fale com a gente agora ou solicite um diagnóstico gratuito do seu negócio.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center">

@@ -1054,6 +1054,8 @@ const PortfolioSection = () => {
                                           alt={`${project.client} - imagem ${gIdx + 1}`}
                                           className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
                                           loading="lazy"
+                                          decoding="async"
+                                          fetchPriority="low"
                                         />
                                       </div>
                                     )}

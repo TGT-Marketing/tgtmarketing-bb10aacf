@@ -11,7 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight, X, Maximize2 } from "lucide-react";
+import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight, X, Maximize2, ChevronLeft, ChevronRight } from "lucide-react";
 import portfolioBranding from "/portfolio-branding-new.png";
 import portfolioContent from "@/assets/portfolio-content-cover.png";
 import portfolioWeb from "/portfolio-web-new.png";
@@ -523,6 +523,41 @@ const PortfolioSection = () => {
   const [activeItem, setActiveItem] = useState<PortfolioItem | null>(null);
   const [contactOpen, setContactOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentGallery, setCurrentGallery] = useState<string[]>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openImageModal = (image: string, gallery: string[]) => {
+    setSelectedImage(image);
+    setCurrentGallery(gallery);
+    setCurrentImageIndex(gallery.indexOf(image));
+  };
+
+  const nextImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (currentGallery.length === 0) return;
+    const nextIdx = (currentImageIndex + 1) % currentGallery.length;
+    setCurrentImageIndex(nextIdx);
+    setSelectedImage(currentGallery[nextIdx]);
+  };
+
+  const prevImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (currentGallery.length === 0) return;
+    const prevIdx = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+    setCurrentImageIndex(prevIdx);
+    setSelectedImage(currentGallery[prevIdx]);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedImage) return;
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImage, currentImageIndex, currentGallery]);
 
   useEffect(() => {
     // Add YouTube API script
@@ -776,7 +811,7 @@ const PortfolioSection = () => {
                                 <div 
                                   key={gIdx} 
                                   className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20 group/social cursor-zoom-in"
-                                  onClick={() => setSelectedImage(img)}
+                                  onClick={() => openImageModal(img, project.gallery)}
                                 >
                                   <img
                                     src={img}
@@ -827,7 +862,7 @@ const PortfolioSection = () => {
                                     ) : (
                                       <div 
                                         className="w-full h-full cursor-zoom-in"
-                                        onClick={() => setSelectedImage(src)}
+                                        onClick={() => openImageModal(src, project.gallery)}
                                       >
                                         <img
                                           src={src}
@@ -963,18 +998,47 @@ const PortfolioSection = () => {
               <X className="w-8 h-8 group-hover/close:rotate-90 transition-transform duration-300" />
             </Button>
             
+            {currentGallery.length > 1 && (
+              <>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="fixed left-4 sm:left-10 z-[110] rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 shadow-2xl hover:scale-110 border border-white/20 w-12 h-12 pointer-events-auto"
+                  onClick={prevImage}
+                >
+                  <ChevronLeft className="w-8 h-8" />
+                </Button>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="fixed right-4 sm:right-10 z-[110] rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 shadow-2xl hover:scale-110 border border-white/20 w-12 h-12 pointer-events-auto"
+                  onClick={nextImage}
+                >
+                  <ChevronRight className="w-8 h-8" />
+                </Button>
+              </>
+            )}
+
             <motion.div
+              key={selectedImage}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full h-full flex items-center justify-center pointer-events-none"
+              className="relative w-full h-full flex flex-col items-center justify-center pointer-events-none"
             >
               <img
                 src={selectedImage}
                 alt="Visualização ampliada"
-                className="max-w-full max-h-full object-contain rounded-lg sm:rounded-2xl shadow-2xl border border-white/10 pointer-events-auto"
+                className="max-w-full max-h-[85vh] object-contain rounded-lg sm:rounded-2xl shadow-2xl border border-white/10 pointer-events-auto"
               />
+              {currentGallery.length > 1 && (
+                <div className="mt-4 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/80 text-sm font-medium pointer-events-none">
+                  {currentImageIndex + 1} / {currentGallery.length}
+                </div>
+              )}
             </motion.div>
           </motion.div>
         )}

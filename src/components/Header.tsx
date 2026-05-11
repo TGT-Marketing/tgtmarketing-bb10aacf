@@ -81,7 +81,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-primary/98 backdrop-blur-md border-t border-primary-foreground/5"
+            className="md:hidden bg-primary shadow-2xl border-t border-primary-foreground/5 overflow-hidden"
           >
             <nav className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (

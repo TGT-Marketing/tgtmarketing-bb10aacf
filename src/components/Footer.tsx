@@ -80,7 +80,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="md:col-span-3 md:col-start-10">
-            <h4 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Onde estamos</h4>
+            <h3 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Onde estamos</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4 text-white/40 text-[15px]">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">

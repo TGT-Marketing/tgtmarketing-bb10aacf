@@ -273,6 +273,28 @@ const portfolioItems: PortfolioItem[] = [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531701424-9tucv-Feliz-PascoaFEED.png"
         ],
       },
+      {
+        client: "CLIENTE: UNI CLÍNICA DE PSICOLOGIA INTEGRADA",
+        description:
+          "Estratégia de posicionamento e marketing digital para a Uni Clínica, focada em humanizar o atendimento psicológico e destacar a abordagem integrada de saúde mental.\n\nCom conteúdos que abordam temas sensíveis com profissionalismo e acolhimento, conseguimos quebrar o estigma em torno da terapia e aproximar a clínica de pessoas que buscam equilíbrio e bem-estar. O resultado foi uma presença digital que gera autoridade, confiança e um fluxo constante de novos agendamentos e pacientes.",
+        results: [
+          "Recorde absoluto de agendamentos e novos pacientes via direct e WhatsApp",
+          "Conversão de seguidores em agendamentos recorrentes de terapia e avaliações",
+          "Fortalecimento da autoridade como clínica referência em psicologia integrada",
+          "Mais visibilidade para a equipe multidisciplinar e áreas de especialização",
+          "Engajamento qualificado com conteúdos sobre saúde mental e autocuidado",
+          "Aumento significativo na busca por consultas e acompanhamentos especializados",
+          "Posicionamento digital humanizado que transmite segurança e acolhimento",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532228431-mc20g-652787626_122173779788875994_5604786247441520785_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532242393-8ge3l-625963460_122166992642875994_7603116155984567083_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532248722-2g6ba-656100364_122175198950875994_3514353214040532152_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532248754-masxb-663254576_122176192778875994_3045299159000078796_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532248758-yiwfn-673643612_122178037364875994_7141081123530115360_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532228431-mc20g-652787626_122173779788875994_5604786247441520785_n.jpg"
+        ],
+      },
     ],
   },
   {

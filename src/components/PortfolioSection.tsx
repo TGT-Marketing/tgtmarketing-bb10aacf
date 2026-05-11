@@ -766,7 +766,7 @@ const PortfolioSection = () => {
             Projetos que <br className="hidden sm:block" /><span className="text-gradient">fazem história</span>
           </h2>
           <div className="divider-accent mx-auto mb-10" />
-          <p className="text-section-dark-foreground/60 max-w-2xl mx-auto text-lg leading-relaxed px-4">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed px-4">
             Cada trabalho é uma união entre criatividade e estratégia de alto nível para gerar resultados exponenciais.
           </p>
         </motion.div>

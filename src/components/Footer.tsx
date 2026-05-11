@@ -3,7 +3,7 @@ import logoTgt from "@/assets/logo-tgt.webp";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#050505] pt-24 pb-12 overflow-hidden relative border-t border-white/5">
+    <footer className="bg-[#050505] pt-16 sm:pt-24 pb-12 overflow-hidden relative border-t border-white/5">
       {/* Background Decorative element */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
       

@@ -73,10 +73,10 @@ const AboutSection = () => {
 
               <img
                 src={guilhermeTgt}
-                alt="Guilherme - CEO da TGT Marketing & Comunicação"
+                alt="Guilherme - Diretor TGT Marketing Digital"
                 width={900}
                 height={1350}
-                fetchPriority="high"
+                loading="lazy"
                 decoding="async"
                 className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-110 aspect-[3/4] sm:aspect-auto"
               />

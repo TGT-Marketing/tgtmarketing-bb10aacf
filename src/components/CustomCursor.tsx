@@ -13,10 +13,13 @@ const CustomCursor = () => {
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 16);
-      cursorY.set(e.clientY - 16);
-      dotX.set(e.clientX - 2);
-      dotY.set(e.clientY - 2);
+      const x = e.clientX;
+      const y = e.clientY;
+      
+      cursorX.set(x - 16);
+      cursorY.set(y - 16);
+      dotX.set(x - 2);
+      dotY.set(y - 2);
       
       if (!isVisible) setIsVisible(true);
     };

@@ -34,11 +34,12 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           <img
             src={logoTgt}
             alt="TGT Marketing Digital Americana SP"
-            width={400}
-            height={160}
+            width={180}
+            height={45}
+            loading="eager"
             decoding="async"
             fetchPriority="high"
-            className={`transition-all duration-500 ${scrolled ? "h-9" : "h-11"} w-auto brightness-0 invert`}
+            className={`transition-all duration-500 ${scrolled ? "h-8" : "h-10"} w-auto brightness-0 invert`}
           />
         </a>
 

@@ -223,13 +223,7 @@ const portfolioItems: PortfolioItem[] = [
         client: "Cliente: Alma & Afeto Semijoias | Criação de Identidade Visual da Marca",
         description:
           "A marca Alma & Afeto Semijoias apresenta uma identidade visual sofisticada, elegante e muito bem posicionada para o mercado de acessórios premium.\n\nCom uma paleta refinada, acabamento em dourado e comunicação delicada, a marca transmite exclusividade, cuidado e valorização pessoal, criando uma percepção de desejo, beleza e alto valor.",
-        results: [
-          "Identidade visual alinhada aos conceitos do negócio",
-          "Conexão imediata com o público",
-          "Fortalecimento da percepção de valor do produto",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778010820224-gzh50-ChatGPT_Image_30_de_abr._de_2026__16_24_13.png"],
       },
       {

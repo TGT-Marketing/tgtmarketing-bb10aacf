@@ -999,6 +999,8 @@ const PortfolioSection = () => {
                                     alt={`${project.client} ${gIdx + 1}`}
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover/social:scale-110"
                                     loading="lazy"
+                                    decoding="async"
+                                    fetchPriority="low"
                                   />
                                   <div className="absolute inset-0 bg-black/20 group-hover/social:bg-transparent transition-colors duration-300" />
                                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/social:opacity-100 transition-opacity duration-300">

@@ -170,7 +170,7 @@ const AboutSection = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 src="https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778097120020-rhqx5-linha-do-tempo-atualizadaFeed.png"
-                alt="Linha do Tempo TGT"
+                alt="Trajetória TGT Marketing - 15 Anos de História"
                 loading="lazy"
                 fetchPriority="low"
                 className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"

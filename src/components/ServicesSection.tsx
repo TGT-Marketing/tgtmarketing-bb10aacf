@@ -66,9 +66,9 @@ const ServicesSection = () => {
           <span className="section-label justify-center mb-4 block">
             O que fazemos
           </span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
+          <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
             Marketing e Vendas: Soluções que geram <span className="text-accent">resultado real</span>
-          </h2>
+          </h3>
           <div className="divider-accent mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-[15px]">
             Cada serviço é uma peça estratégica. Juntos, formam um ecossistema

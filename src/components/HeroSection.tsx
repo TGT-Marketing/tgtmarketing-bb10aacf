@@ -16,7 +16,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
       <div className="absolute inset-0">
         <img
           src={heroBg}
-          alt=""
+          alt="Fundo agência de marketing estratégico"
           width={1920}
           height={1080}
           fetchPriority="high"

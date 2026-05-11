@@ -104,14 +104,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6 px-4">
-          <p className="text-white/20 text-xs font-medium tracking-wide text-center sm:text-left">
-            © {new Date().getFullYear()} TGT Marketing & Comunicação. Todos os direitos reservados.
+        <div className="pt-12 border-t border-white/5 flex justify-center items-center px-4">
+          <p className="text-white/20 text-xs font-medium tracking-wide text-center">
+            © TGT Marketing & Comunicação. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-8">
-            <a href="#" className="text-white/20 hover:text-white transition-colors text-xs font-medium">Privacidade</a>
-            <a href="#" className="text-white/20 hover:text-white transition-colors text-xs font-medium">Termos</a>
-          </div>
         </div>
       </div>
     </footer>

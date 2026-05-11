@@ -35,11 +35,11 @@ const stats = [
   },
   {
     icon: Clock,
-    numericValue: 14,
+    numericValue: 15,
     prefix: "",
     suffix: "",
     label: "anos de experiência",
-    sub: "desde 2012 no mercado",
+    sub: "desde 2011 no mercado",
   },
 ];
 

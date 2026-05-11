@@ -31,7 +31,7 @@ const AboutSection = () => {
                 <strong className="text-foreground">
                   TGT Marketing & Comunicação
                 </strong>{" "}
-                nasceu em 2012 em Americana – SP com um propósito claro: ajudar
+                nasceu em 2011 em Americana – SP com um propósito claro: ajudar
                 empresas a serem vistas, lembradas e escolhidas.
               </p>
               <p>
@@ -143,8 +143,8 @@ const AboutSection = () => {
                   alt="Logo TGT em destaque na sede da agência — identidade visual e presença física da marca"
                   width={1600}
                   height={900}
-                  loading="eager"
-                  fetchPriority="high"
+                  loading="lazy"
+                  fetchPriority="low"
                   decoding="async"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 aspect-video sm:aspect-auto"
                 />
@@ -171,8 +171,8 @@ const AboutSection = () => {
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 src="https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778097120020-rhqx5-linha-do-tempo-atualizadaFeed.png"
                 alt="Linha do Tempo TGT"
-                loading="eager"
-                fetchPriority="high"
+                loading="lazy"
+                fetchPriority="low"
                 className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
               />
             </div>

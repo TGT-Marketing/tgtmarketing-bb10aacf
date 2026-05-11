@@ -54,12 +54,12 @@ const AiSection = () => {
 
               <motion.img
                 src={aiImage}
-                alt="Inteligência Artificial aplicada ao marketing"
+                alt="Inteligência Artificial aplicada ao marketing estratégico"
                 className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 loading="lazy"
                 decoding="async"
-                width={1024}
-                height={1024}
+                width={512}
+                height={512}
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />

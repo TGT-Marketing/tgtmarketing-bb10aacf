@@ -120,6 +120,28 @@ const portfolioItems: PortfolioItem[] = [
         ],
       },
       {
+        client: "CLIENTE: QUINTAL 019 BAR E RESTAURANTE",
+        description:
+          "Estratégia de marketing digital focada em gastronomia e entretenimento, transformando a presença online do Quintal 019 em um convite irresistível para o público.\n\nCom conteúdos que exploram o visual apetitoso dos pratos, a atmosfera vibrante do bar e a experiência única de lazer, conseguimos criar um desejo imediato nos seguidores, resultando em um fluxo constante de novos clientes e fidelização dos frequentadores.",
+        results: [
+          "Recorde absoluto de reservas e pedidos via direct e WhatsApp",
+          "Aumento significativo no fluxo de clientes presenciais durante a semana",
+          "Fortalecimento da marca como referência em lazer e gastronomia regional",
+          "Mais visibilidade para promoções estratégicas de happy hour e eventos",
+          "Engajamento qualificado com público local interessado em experiências gastronômicas",
+          "Transformação de posts em ferramentas diretas de conversão de vendas diárias",
+          "Posicionamento digital profissional que destaca a qualidade e o ambiente único",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530602030-9jjbj-660128867_122126511615027172_7181486853950673380_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530611198-zjm3s-645224562_122123398125027172_7758422421863180841_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530618277-uso6p-630408837_122121400617027172_7855154179457873359_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530625376-03ids-650272318_122124526527027172_7918758654754351238_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530633358-8bnvi-649965760_122124102489027172_693835564554407905_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530643393-8xmju-641515891_122122637571027172_1083553411909082118_n.jpg"
+        ],
+      },
+      {
         client: "CLIENTE: MOVOTEC MÓVEIS PARA ESCRITÓRIO",
         description:
           "Estratégia de marketing digital focada em móveis corporativos, destacando design, ergonomia e funcionalidade para ambientes de trabalho modernos.\n\nA presença digital da Movotec foi estruturada para atrair empresas e profissionais que buscam transformar seus escritórios, unindo estética e produtividade por meio de soluções inteligentes em mobiliário.",

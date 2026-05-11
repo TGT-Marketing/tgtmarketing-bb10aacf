@@ -140,7 +140,7 @@ const AboutSection = () => {
               <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/10] overflow-hidden bg-secondary">
                 <img
                   src={tgtLogoWall}
-                  alt="Logo TGT em destaque na sede da agência — identidade visual e presença física da marca"
+                  alt="Sede TGT Marketing Digital Americana SP - Presença Física"
                   width={1600}
                   height={900}
                   loading="lazy"

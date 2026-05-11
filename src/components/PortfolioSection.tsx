@@ -251,6 +251,28 @@ const portfolioItems: PortfolioItem[] = [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529336396-0w354-A-manuten__o-que-voc_-evitaFeed.png"
         ],
       },
+      {
+        client: "CLIENTE: MED.KAL PET - CLÍNICA VETERINÁRIA E PETSHOP",
+        description:
+          "Estratégia de mídias sociais desenvolvida para a Med.Kal Pet, focada em humanizar a marca e destacar a excelência no cuidado animal.\n\nCom conteúdos que unem informação técnica veterinária, demonstração de carinho no petshop e transparência nos procedimentos clínicos, conseguimos construir uma relação de profunda confiança com os tutores. O resultado foi uma presença digital que não apenas educa, mas converte o amor pelos pets em agendamentos constantes de consultas, vacinas e serviços de estética.",
+        results: [
+          "Aumento significativo no volume de agendamentos via direct e WhatsApp",
+          "Conversão recorde de novos clientes para serviços de petshop e estética",
+          "Fortalecimento da autoridade clínica e confiança junto aos tutores",
+          "Mais visibilidade para pacotes de saúde preventiva e vacinação",
+          "Engajamento qualificado com dicas de cuidados e bem-estar animal",
+          "Fidelização de clientes através de uma comunicação humanizada e próxima",
+          "Posicionamento digital como referência em medicina veterinária regional",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531665219-5jw98-FEED_01.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531673189-foj38-Tudo-que-o-seu-pet-precisaFeed.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531682719-qo8x7-679394154_1794481971946977_2144743752380283482_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531689043-lzsob-688789617_1803615867700254_7001099313163050659_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531695549-7o96a-690806351_1800714904657017_4202914202453555253_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531701424-9tucv-Feliz-PascoaFEED.png"
+        ],
+      },
     ],
   },
   {

@@ -732,6 +732,25 @@ const PortfolioSection = () => {
                 </DialogTitle>
                 <DialogDescription className="text-base whitespace-pre-line">
                   {activeItem.intro}
+                  {activeItem.title === "Criação de Marca [Branding]" && (
+                    <div className="bg-muted/40 rounded-lg p-4 mt-6 text-left">
+                      <p className="text-sm font-bold text-foreground mb-3">Resultados:</p>
+                      <ul className="space-y-2">
+                        {[
+                          "Identidade visual alinhada aos conceitos do negócio",
+                          "Conexão imediata com o público",
+                          "Fortalecimento da percepção de valor do produto",
+                          "Padronização visual completa (on e offline)",
+                          "Manual de marca completo entregue"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-foreground font-normal">
+                            <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </DialogDescription>
               </DialogHeader>
 

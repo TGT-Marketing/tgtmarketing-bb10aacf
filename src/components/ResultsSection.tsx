@@ -35,7 +35,7 @@ const stats = [
   },
   {
     icon: Clock,
-    numericValue: 14,
+    numericValue: 15,
     prefix: "",
     suffix: "",
     label: "anos de experiência",

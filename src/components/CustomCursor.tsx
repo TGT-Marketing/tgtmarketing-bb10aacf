@@ -51,7 +51,7 @@ const CustomCursor = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9999] hidden md:block">
+    <div className="fixed inset-0 pointer-events-none z-[9999] hidden lg:block">
       <motion.div
         className="w-8 h-8 rounded-full border border-accent/50 mix-blend-difference"
         style={{

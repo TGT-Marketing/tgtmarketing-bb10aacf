@@ -119,6 +119,28 @@ const portfolioItems: PortfolioItem[] = [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917941-16qjb-Quando-reformar-compensa-mais-do-que-trocar-e-comprar-uma-cadeira-novaaFeed.png"
         ],
       },
+      {
+        client: "CLIENTE: MAX LIMP - LOJA E DISTRIBUIDORA DE PRODUTOS DE LIMPEZA",
+        description:
+          "Estratégia completa de mídias sociais para a Max Limp, focada em transformar a presença digital de uma distribuidora de produtos de limpeza em uma máquina de vendas.\n\nCom conteúdos que educam o consumidor, demonstram a eficiência dos produtos e destacam a conveniência de encontrar tudo em um só lugar, conseguimos aproximar a marca tanto do público doméstico quanto do corporativo, gerando um fluxo constante de orçamentos e pedidos diretos.",
+        results: [
+          "Aumento expressivo na conversão direta de vendas via direct e WhatsApp",
+          "Geração constante de orçamentos qualificados para o setor B2B",
+          "Posicionamento estratégico como autoridade em higiene e limpeza",
+          "Destaque visual para a variedade e qualidade dos produtos em estoque",
+          "Redução no custo de aquisição de clientes através de conteúdo orgânico de valor",
+          "Mais visibilidade e alcance para as ofertas e promoções semanais",
+          "Fortalecimento da marca no mercado regional como distribuidora de confiança",
+        ],
+        gallery: [
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523275745-iwjut-682374950_122177598974868384_2429669155329707505_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523287265-xtgkw-628907704_122166324260868384_7537452365478158545_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523296693-7j0di-653712442_122171516978868384_6280650583696313743_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523310570-ihh9b-Pare-de-comprar-em-v_rios-lugaresFEED.png",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523318014-spgsh-645706279_122169593912868384_3007976163592112103_n.jpg",
+          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523323335-vj289-653926315_122172405860868384_6093467671984733436_n.jpg"
+        ],
+      },
     ],
   },
   {

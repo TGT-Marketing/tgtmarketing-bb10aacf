@@ -751,7 +751,7 @@ const PortfolioSection = () => {
   }, []);
 
   return (
-    <section id="trabalhos" className="section-padding bg-background scroll-mt-20" ref={ref}>
+    <section id="trabalhos" className="pt-20 pb-10 sm:pt-32 sm:pb-16 bg-background scroll-mt-20" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -862,7 +862,7 @@ const PortfolioSection = () => {
         </motion.div>
       </div>
 
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50 mt-20" />
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent opacity-40 mt-12 sm:mt-16" />
 
       <ContactFormDialog open={contactOpen} onOpenChange={setContactOpen} />
 

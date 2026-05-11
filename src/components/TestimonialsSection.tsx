@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
-    <section className="section-padding bg-background" ref={ref}>
+    <section className="pt-10 pb-20 sm:pt-16 sm:pb-32 bg-background" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

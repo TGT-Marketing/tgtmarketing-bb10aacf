@@ -5,7 +5,7 @@ import TargetAnimation from "./TargetAnimation";
 
 const highlights = [
   "+200 empresas atendidas",
-  "Desde 2012 no mercado",
+  "Desde 2011 no mercado",
   "Clientes no Brasil e Europa",
 ];
 

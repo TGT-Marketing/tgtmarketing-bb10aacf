@@ -20,6 +20,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           width={1920}
           height={1080}
           fetchPriority="high"
+          loading="eager"
           decoding="async"
           className="w-full h-full object-cover scale-105 animate-[pulse-glow_10s_ease-in-out_infinite]"
         />

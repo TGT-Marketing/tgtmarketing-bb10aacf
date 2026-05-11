@@ -257,13 +257,7 @@ const portfolioItems: PortfolioItem[] = [
         client: "Cliente: Vision Merchandising | Criação de Nome e Identidade Visual de Marca",
         description:
           "A marca Vision Merchandising apresenta uma identidade visual forte, moderna e altamente conectada ao universo do varejo.\n\nCom cores marcantes, ícone de carrinho e composição direta, a marca transmite organização, presença e eficiência, criando uma percepção de empresa estratégica, preparada para destacar produtos e potencializar resultados dentro dos supermercados.",
-        results: [
-          "Identidade visual alinhada aos conceitos do negócio",
-          "Conexão imediata com o público",
-          "Fortalecimento da percepção de valor do produto",
-          "Padronização visual completa (on e offline)",
-          "Manual de marca completo entregue",
-        ],
+        results: [],
         gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778079403849-f1lbk-ChatGPT_Image_6_de_mai._de_2026__11_55_16.png"],
       },
       {

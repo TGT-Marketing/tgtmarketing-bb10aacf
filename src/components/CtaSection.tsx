@@ -2,6 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, MessageCircle, Clock, Shield, Sparkles } from "lucide-react";
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -67,6 +73,14 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (window.dataLayer) {
+                  window.dataLayer.push({
+                    event: "whatsapp_click",
+                    button_location: "cta_section"
+                  });
+                }
+              }}
               className="shine-effect btn-primary inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
             >
               <MessageCircle size={20} className="shrink-0" />

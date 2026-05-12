@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import { CheckCircle, MessageCircle, Mouse, ChevronDown } from "lucide-react";
+
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
 import heroBg from "@/assets/hero-bg.webp";
 import TargetAnimation from "./TargetAnimation";
 
@@ -105,6 +111,14 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               href="https://wa.me/5519992795271"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (window.dataLayer) {
+                  window.dataLayer.push({
+                    event: "whatsapp_click",
+                    button_location: "hero_section"
+                  });
+                }
+              }}
               className="group relative inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground font-extrabold text-[15px] sm:text-lg px-8 sm:px-10 py-3.5 sm:py-5 rounded-xl w-full sm:w-auto whitespace-nowrap overflow-hidden"
               style={{
                 boxShadow: "0 0 20px hsl(0 78% 48% / 0.5), 0 0 60px hsl(0 78% 48% / 0.2), 0 8px 32px hsl(0 0% 0% / 0.3)",

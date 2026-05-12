@@ -174,8 +174,8 @@ const AboutSection = () => {
                   <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                     Nossa marca
                   </span>
-                  <p className="text-white text-lg sm:text-2xl font-bold tracking-tight leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-                    Clique na imagem e confira a <span className="text-accent">Linha do Tempo</span> da marca TGT.
+                  <p className="text-white text-xl sm:text-3xl font-black tracking-tight leading-[1.1] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-500">
+                    Clique na imagem e confira a <span className="text-gradient">Linha do Tempo</span> da marca TGT.
                   </p>
                 </div>
               </div>

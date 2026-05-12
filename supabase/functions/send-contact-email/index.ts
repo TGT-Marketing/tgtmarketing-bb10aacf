@@ -16,7 +16,15 @@ serve(async (req) => {
 
     // Normalize WhatsApp (remove all non-digits)
     const whatsappNormalized = whatsapp.replace(/\D/g, "");
-    const whatsappLink = `https://wa.me/55${whatsappNormalized}`;
+    
+    // Add 55 prefix if it's a Brazilian number (10 or 11 digits) and doesn't have it
+    let whatsappWithCountry = whatsappNormalized;
+    if ((whatsappNormalized.length === 10 || whatsappNormalized.length === 11) && !whatsappNormalized.startsWith("55")) {
+      whatsappWithCountry = "55" + whatsappNormalized;
+    }
+    
+    const message = encodeURIComponent(`Olá ${nome}, tudo bem? Sou da TGT Marketing. Recebi sua solicitação de diagnóstico para a ${empresa} e gostaria de agendar nossa conversa.`);
+    const whatsappLink = `https://wa.me/${whatsappWithCountry}?text=${message}`;
 
     // Validate inputs
     if (!nome || !empresa || !email || !whatsapp || !faturamento || !objetivo) {

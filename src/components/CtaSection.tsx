@@ -70,7 +70,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
-              href="https://wa.me/5519992795271"
+              href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa."
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
@@ -88,7 +88,15 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               <ArrowRight size={20} className="shrink-0" />
             </a>
             <button
-              onClick={onOpenContact}
+              onClick={() => {
+                if (window.dataLayer) {
+                  window.dataLayer.push({
+                    event: "diagnosis_button_click",
+                    button_location: "cta_section"
+                  });
+                }
+                onOpenContact?.();
+              }}
               className="shine-effect btn-outline-light inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4"
             >
               <span>Enviar uma mensagem</span>

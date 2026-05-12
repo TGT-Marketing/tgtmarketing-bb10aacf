@@ -38,7 +38,15 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
       <div className="container-main relative z-10 pt-20 sm:pt-32 pb-8 sm:pb-20">
         <div className="max-w-3xl">
           <motion.button
-            onClick={onOpenContact}
+            onClick={() => {
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  event: "diagnosis_pill_click",
+                  button_location: "hero_section"
+                });
+              }
+              onOpenContact?.();
+            }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -138,7 +146,15 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               </motion.a>
 
               <motion.button
-                onClick={onOpenContact}
+                onClick={() => {
+                  if (window.dataLayer) {
+                    window.dataLayer.push({
+                      event: "diagnosis_button_click",
+                      button_location: "hero_section"
+                    });
+                  }
+                  onOpenContact?.();
+                }}
                 className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-5 rounded-xl border-2 border-primary-foreground/20 hover:border-accent/50 hover:bg-accent/5 text-primary-foreground font-bold text-[15px] sm:text-lg transition-all duration-300 w-full sm:w-auto"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

@@ -85,7 +85,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             >
               <MessageCircle size={20} className="shrink-0" />
               <span>Quero meu diagnóstico gratuito</span>
-              <ArrowRight size={20} className="shrink-0" />
+              <ArrowRight size={14} className="shrink-0" />
             </a>
             <button
               onClick={() => {

@@ -77,7 +77,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="card-premium p-6 sm:p-8 relative group border-2 border-border hover:border-accent/50 transition-all duration-500 flex flex-col h-full"
+              className="card-premium p-6 sm:p-10 relative group transition-all duration-500 flex flex-col h-full"
             >
               <Quote
                 className="text-accent/8 absolute top-6 right-6 group-hover:text-accent/15 transition-colors duration-500"

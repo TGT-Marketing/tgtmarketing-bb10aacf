@@ -91,7 +91,7 @@ const ServicesSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -8 }}
-              className="group relative overflow-hidden card-premium p-6 sm:p-10 transition-all duration-500 hover:shadow-premium-accent"
+              className="group relative overflow-hidden card-premium p-6 sm:p-12 transition-all duration-700"
             >
               {/* Glass reflection effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />

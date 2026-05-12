@@ -178,7 +178,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-xl max-h-[95vh] overflow-y-auto bg-primary border-accent/20 mx-3 sm:mx-auto rounded-xl sm:rounded-[2.5rem] p-4 sm:p-8" data-lenis-prevent>
+      <DialogContent className="w-[calc(100%-1.5rem)] sm:max-w-xl max-h-[92vh] overflow-y-auto bg-primary border-accent/20 mx-auto rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8" data-lenis-prevent>
         <DialogHeader className="mb-4 sm:mb-6">
           <DialogTitle className="text-2xl sm:text-3xl font-black text-primary-foreground leading-tight">
             Agendar Diagnóstico <span className="text-gradient">Gratuito.</span>

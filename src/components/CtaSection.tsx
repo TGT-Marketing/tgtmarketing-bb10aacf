@@ -78,9 +78,9 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                   }
                   onOpenContact?.();
                 }}
-                className="shine-effect btn-primary inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4 order-1 sm:order-2"
+                className="shine-effect btn-primary inline-flex items-center justify-center gap-2.5 text-[15px] sm:text-lg flex-nowrap w-full sm:w-auto py-4 sm:py-5 px-10 order-1 sm:order-2 shadow-2xl"
               >
-                <ArrowRight size={20} className="shrink-0" />
+                <ArrowRight size={22} className="shrink-0" />
                 <span>Agendar diagnóstico gratuito</span>
               </button>
               

@@ -73,7 +73,7 @@ const ServicesSection = () => {
           <span className="section-label justify-center mb-4 block">
             O que fazemos
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 tracking-tight leading-[1.1]">
+          <h2 className="text-2xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 tracking-tight leading-[1.2] sm:leading-[1.1]">
             Marketing e Vendas: Soluções que geram <span className="text-gradient">resultado real.</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />

@@ -57,9 +57,8 @@ const TestimonialsSection = () => {
           <span className="section-label justify-center mb-4 block">
             Prova social
           </span>
-          <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
-            Quem trabalhou com a TGT{" "}
-            <span className="text-accent">recomenda.</span>
+          <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.1] tracking-tight">
+            Quem trabalhou com a TGT <span className="text-gradient">recomenda.</span>
           </h3>
           <div className="flex items-center justify-center gap-1 mb-3">
             {[...Array(5)].map((_, i) => (

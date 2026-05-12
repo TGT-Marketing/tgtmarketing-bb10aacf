@@ -106,11 +106,6 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     }
 
     const whatsappDigits = form.whatsapp.replace(/\D/g, "");
-    
-    // Brazilian number rules:
-    // 1. Must have 10 or 11 digits
-    // 2. DDD must be valid (between 11 and 99)
-    // 3. If 11 digits, must be a mobile number (starts with 9)
     const ddd = parseInt(whatsappDigits.slice(0, 2));
     const isValidDDD = ddd >= 11 && ddd <= 99;
     const isMobile = whatsappDigits.length === 11 && whatsappDigits[2] === "9";
@@ -183,17 +178,17 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-primary border-accent/20 mx-3 sm:mx-auto rounded-xl sm:rounded-2xl p-4 sm:p-6" data-lenis-prevent>
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-extrabold text-primary-foreground">
-            Agendar Diagnóstico <span className="text-accent">Gratuito</span>
+      <DialogContent className="sm:max-w-xl max-h-[95vh] overflow-y-auto bg-primary border-accent/20 mx-3 sm:mx-auto rounded-xl sm:rounded-[2.5rem] p-4 sm:p-8" data-lenis-prevent>
+        <DialogHeader className="mb-4 sm:mb-6">
+          <DialogTitle className="text-2xl sm:text-4xl font-black text-primary-foreground leading-tight">
+            Agendar Diagnóstico <span className="text-gradient">Gratuito.</span>
           </DialogTitle>
-          <DialogDescription className="text-primary-foreground/60">
-            Escolha um horário para conversarmos sobre o crescimento do seu negócio.
+          <DialogDescription className="text-primary-foreground/60 text-sm sm:text-base mt-2">
+            Preencha os campos abaixo e escolha um horário para conversarmos sobre o crescimento do seu negócio.
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-5 mt-2">
+        <form onSubmit={handleSubmit} className="space-y-6">
           {/* Honeypot field - hidden from users */}
           <div className="hidden" aria-hidden="true">
             <Input
@@ -206,79 +201,81 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="nome" className="text-primary-foreground/80">Nome completo *</Label>
-            <Input
-              id="nome"
-              placeholder="Ex: João Silva"
-              value={form.nome}
-              onChange={(e) => setForm({ ...form, nome: e.target.value })}
-              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent/50 transition-colors"
-              required
-              minLength={3}
-              maxLength={100}
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="space-y-2">
+              <Label htmlFor="nome" className="text-primary-foreground/80 font-bold text-[10px] uppercase tracking-[0.2em] ml-1">Nome completo *</Label>
+              <Input
+                id="nome"
+                placeholder="Ex: João Silva"
+                value={form.nome}
+                onChange={(e) => setForm({ ...form, nome: e.target.value })}
+                className="bg-white/5 border-white/10 text-primary-foreground placeholder:text-primary-foreground/30 focus:border-accent/50 transition-all h-12 sm:h-14 rounded-xl sm:rounded-2xl"
+                required
+                minLength={3}
+                maxLength={100}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-primary-foreground/80 font-bold text-[10px] uppercase tracking-[0.2em] ml-1">E-mail corporativo *</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Ex: joao@empresa.com.br"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className="bg-white/5 border-white/10 text-primary-foreground placeholder:text-primary-foreground/30 focus:border-accent/50 transition-all h-12 sm:h-14 rounded-xl sm:rounded-2xl"
+                required
+              />
+            </div>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-primary-foreground/80">E-mail corporativo *</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="Ex: joao@empresa.com.br"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent/50 transition-colors"
-              required
-            />
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="space-y-2">
+              <Label htmlFor="empresa" className="text-primary-foreground/80 font-bold text-[10px] uppercase tracking-[0.2em] ml-1">Nome da empresa *</Label>
+              <Input
+                id="empresa"
+                placeholder="Ex: Minha Empresa Ltda"
+                value={form.empresa}
+                onChange={(e) => setForm({ ...form, empresa: e.target.value })}
+                className="bg-white/5 border-white/10 text-primary-foreground placeholder:text-primary-foreground/30 focus:border-accent/50 transition-all h-12 sm:h-14 rounded-xl sm:rounded-2xl"
+                required
+                minLength={2}
+                maxLength={100}
+              />
+            </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="empresa" className="text-primary-foreground/80">Nome da empresa *</Label>
-            <Input
-              id="empresa"
-              placeholder="Ex: Minha Empresa Ltda"
-              value={form.empresa}
-              onChange={(e) => setForm({ ...form, empresa: e.target.value })}
-              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent/50 transition-colors"
-              required
-              minLength={2}
-              maxLength={100}
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="whatsapp" className="text-primary-foreground/80">Contato WhatsApp *</Label>
-            <Input
-              id="whatsapp"
-              type="tel"
-              placeholder="(00) 00000-0000"
-              value={form.whatsapp}
-              onChange={(e) => {
-                const val = e.target.value.replace(/\D/g, "");
-                let formatted = "";
-                if (val.length > 0) formatted = `(${val.slice(0, 2)}`;
-                if (val.length > 2) formatted += `) ${val.slice(2, 7)}`;
-                if (val.length > 7) {
-                  // If it's a mobile number (11 digits), format with hyphen after 5th digit
-                  // If it's a landline (10 digits), format with hyphen after 4th digit
-                  if (val.length === 11) {
-                    formatted = `(${val.slice(0, 2)}) ${val.slice(2, 7)}-${val.slice(7, 11)}`;
-                  } else {
-                    formatted = `(${val.slice(0, 2)}) ${val.slice(2, 6)}-${val.slice(6, 10)}`;
+            <div className="space-y-2">
+              <Label htmlFor="whatsapp" className="text-primary-foreground/80 font-bold text-[10px] uppercase tracking-[0.2em] ml-1">Seu WhatsApp *</Label>
+              <Input
+                id="whatsapp"
+                type="tel"
+                placeholder="(00) 00000-0000"
+                value={form.whatsapp}
+                onChange={(e) => {
+                  const val = e.target.value.replace(/\D/g, "");
+                  let formatted = "";
+                  if (val.length > 0) formatted = `(${val.slice(0, 2)}`;
+                  if (val.length > 2) formatted += `) ${val.slice(2, 7)}`;
+                  if (val.length > 7) {
+                    if (val.length === 11) {
+                      formatted = `(${val.slice(0, 2)}) ${val.slice(2, 7)}-${val.slice(7, 11)}`;
+                    } else {
+                      formatted = `(${val.slice(0, 2)}) ${val.slice(2, 6)}-${val.slice(6, 10)}`;
+                    }
                   }
-                }
-                setForm({ ...form, whatsapp: formatted });
-              }}
-              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent/50 transition-colors"
-              required
-            />
+                  setForm({ ...form, whatsapp: formatted });
+                }}
+                className="bg-white/5 border-white/10 text-primary-foreground placeholder:text-primary-foreground/30 focus:border-accent/50 transition-all h-12 sm:h-14 rounded-xl sm:rounded-2xl"
+                required
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
-            <Label className="text-primary-foreground/80">Média de faturamento *</Label>
+            <Label className="text-primary-foreground/80 font-bold text-[10px] uppercase tracking-[0.2em] ml-1">Média de faturamento mensal *</Label>
             <Select value={form.faturamento} onValueChange={(val) => setForm({ ...form, faturamento: val })}>
-              <SelectTrigger className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground">
+              <SelectTrigger className="bg-white/5 border-white/10 text-primary-foreground h-12 sm:h-14 rounded-xl sm:rounded-2xl">
                 <SelectValue placeholder="Selecione uma opção" />
               </SelectTrigger>
               <SelectContent>
@@ -289,75 +286,77 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
             </Select>
           </div>
 
-          <div className="space-y-3">
-            <Label className="text-primary-foreground/80">Objetivo principal *</Label>
+          <div className="space-y-4">
+            <Label className="text-primary-foreground/80 font-bold text-[10px] uppercase tracking-[0.2em] ml-1">Qual o seu objetivo principal? *</Label>
             <RadioGroup
               value={form.objetivo}
               onValueChange={(val) => setForm({ ...form, objetivo: val })}
-              className="space-y-2"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3"
             >
               {objetivoOptions.map((opt) => (
-                <div key={opt} className="flex items-center space-x-3">
+                <div key={opt} className="flex items-center space-x-3 bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5 hover:border-accent/30 transition-all cursor-pointer group">
                   <RadioGroupItem value={opt} id={opt} className="border-primary-foreground/30 text-accent" />
-                  <Label htmlFor={opt} className="text-primary-foreground/70 font-normal cursor-pointer">{opt}</Label>
+                  <Label htmlFor={opt} className="text-primary-foreground/70 font-medium text-xs sm:text-sm cursor-pointer flex-grow">{opt}</Label>
                 </div>
               ))}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 bg-white/5 p-3 sm:p-4 rounded-xl border border-white/5 hover:border-accent/30 transition-all cursor-pointer">
                 <RadioGroupItem value="Outro" id="outro" className="border-primary-foreground/30 text-accent" />
-                <Label htmlFor="outro" className="text-primary-foreground/70 font-normal cursor-pointer">Outro</Label>
+                <Label htmlFor="outro" className="text-primary-foreground/70 font-medium text-xs sm:text-sm cursor-pointer flex-grow">Outro</Label>
               </div>
             </RadioGroup>
 
             {form.objetivo === "Outro" && (
               <Textarea
-                placeholder="Descreva seu objetivo..."
+                placeholder="Descreva seu objetivo específico..."
                 value={form.outroObjetivo}
                 onChange={(e) => setForm({ ...form, outroObjetivo: e.target.value })}
-                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 mt-2"
+                className="bg-white/5 border-white/10 text-primary-foreground placeholder:text-primary-foreground/30 focus:border-accent/50 transition-all rounded-xl sm:rounded-2xl mt-3 min-h-[100px]"
                 maxLength={500}
               />
             )}
           </div>
 
-          <div className="flex items-start space-x-3 bg-primary-foreground/5 p-4 rounded-lg border border-primary-foreground/10">
-            <Checkbox
-              id="consentimento"
-              checked={form.consentimento}
-              onCheckedChange={(checked) => setForm({ ...form, consentimento: checked === true })}
-              className="mt-1 border-primary-foreground/30 data-[state=checked]:bg-accent data-[state=checked]:border-accent"
-            />
-            <div className="grid gap-1.5 leading-none">
-              <label
-                htmlFor="consentimento"
-                className="text-xs sm:text-sm text-primary-foreground/70 cursor-pointer select-none"
-              >
-                Concordo em receber contatos comerciais da TGT Marketing e aceito a <span className="text-accent hover:underline">Política de Privacidade</span>.
-              </label>
+          <div className="space-y-6 pt-2">
+            <div className="flex items-start space-x-3 bg-white/5 p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-white/10">
+              <Checkbox
+                id="consentimento"
+                checked={form.consentimento}
+                onCheckedChange={(checked) => setForm({ ...form, consentimento: checked === true })}
+                className="mt-1 border-primary-foreground/30 data-[state=checked]:bg-accent data-[state=checked]:border-accent"
+              />
+              <div className="grid gap-1.5 leading-none">
+                <label
+                  htmlFor="consentimento"
+                  className="text-[11px] sm:text-xs text-primary-foreground/50 cursor-pointer select-none leading-relaxed"
+                >
+                  Concordo em receber contatos comerciais da TGT Marketing e aceito a <span className="text-accent hover:underline font-bold">Política de Privacidade</span>.
+                </label>
+              </div>
             </div>
-          </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 text-[10px] text-primary-foreground/40 uppercase tracking-widest justify-center">
-              <ShieldCheck size={12} />
-              Seus dados estão seguros conosco
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-[9px] text-primary-foreground/30 uppercase tracking-[0.2em] justify-center font-bold">
+                <ShieldCheck size={12} className="text-accent/50" />
+                Seus dados estão 100% seguros
+              </div>
+              
+              <p className="text-[9px] text-primary-foreground/20 text-center leading-relaxed max-w-sm mx-auto">
+                Base Legal: O tratamento dos seus dados é realizado com base no seu <strong>Consentimento</strong> e no <strong>Legítimo Interesse</strong> (Art. 7º, LGPD) para fornecer o diagnóstico solicitado.
+              </p>
             </div>
-            
-            <p className="text-[10px] text-primary-foreground/30 text-center leading-relaxed">
-              Base Legal: O tratamento dos seus dados é realizado com base no seu <strong>Consentimento</strong> (Art. 7º, I, LGPD) e no <strong>Legítimo Interesse</strong> da TGT Marketing (Art. 7º, IX, LGPD) para fornecer o diagnóstico solicitado e realizar comunicações comerciais pertinentes ao seu interesse demonstrado. Você pode revogar seu consentimento a qualquer momento.
-            </p>
-          </div>
 
-          <Button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-6"
-          >
-            {loading ? (
-              <><Loader2 className="animate-spin" size={20} /> Agendando...</>
-            ) : (
-              <><Send size={20} /> Agendar agora</>
-            )}
-          </Button>
+            <Button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-black text-base sm:text-xl py-7 sm:py-8 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_-10px_hsl(var(--accent)/0.5)] hover:-translate-y-1 transition-all shine-effect"
+            >
+              {loading ? (
+                <><Loader2 className="animate-spin mr-2" size={24} /> Processando...</>
+              ) : (
+                <><Send className="mr-2" size={24} /> Agendar agora</>
+              )}
+            </Button>
+          </div>
         </form>
       </DialogContent>
     </Dialog>

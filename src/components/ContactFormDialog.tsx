@@ -10,6 +10,12 @@ import { Send, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 interface ContactFormDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -69,6 +75,17 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
       if (error) throw error;
 
       toast({ title: "Enviado com sucesso!", description: "Entraremos em contato em breve." });
+      
+      // Analytics Event: Form Submission
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: "form_submission",
+          form_name: "contato_diagnostico",
+          faturamento: form.faturamento,
+          objetivo: form.objetivo
+        });
+      }
+
       setForm({ nome: "", empresa: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "" });
       onOpenChange(false);
     } catch {

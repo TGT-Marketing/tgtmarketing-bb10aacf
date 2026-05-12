@@ -2,13 +2,23 @@ import { motion } from "framer-motion";
 import { createPortal } from "react-dom";
 
 const WhatsAppFloat = () => {
-  if (typeof document === "undefined") return null;
+  if (typeof window === "undefined") return null;
+
+  const handleWhatsAppClick = () => {
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: "whatsapp_click",
+        button_location: "floating_button"
+      });
+    }
+  };
 
   return createPortal(
     <motion.a
       href="https://wa.me/5519992795271"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleWhatsAppClick}
       className="shine-effect fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
       aria-label="Falar no WhatsApp"
       style={{

@@ -85,7 +85,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             <br />
             especialista em{" "}
             <span className="text-gradient bg-gradient-to-r from-accent to-marsala bg-clip-text text-transparent">
-              Google Ads, Tráfego Pago
+              Gestão de Mídias, Tráfego Pago
             </span>{" "}
             e Conversão de Leads
           </motion.h1>

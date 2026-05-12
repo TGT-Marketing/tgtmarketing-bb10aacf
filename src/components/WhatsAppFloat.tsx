@@ -31,7 +31,7 @@ const WhatsAppFloat = () => {
 
   return createPortal(
     <motion.a
-      href="https://wa.me/5519992795271"
+      href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa."
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleWhatsAppClick}

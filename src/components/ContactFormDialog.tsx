@@ -180,11 +180,11 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="w-[calc(100%-1.5rem)] sm:max-w-xl max-h-[92vh] overflow-y-auto bg-primary border-accent/20 mx-auto rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8" data-lenis-prevent>
         <DialogHeader className="mb-4 sm:mb-6">
-          <DialogTitle className="text-2xl sm:text-3xl font-black text-primary-foreground leading-tight">
+          <DialogTitle className="text-xl sm:text-3xl font-black text-primary-foreground leading-tight">
             Agendar Diagnóstico <span className="text-gradient">Gratuito.</span>
           </DialogTitle>
-          <DialogDescription className="text-primary-foreground/60 text-sm sm:text-base mt-2">
-            Preencha os campos abaixo e escolha um horário para conversarmos sobre o crescimento do seu negócio.
+          <DialogDescription className="text-primary-foreground/60 text-xs sm:text-base mt-1 sm:mt-2">
+            Preencha os campos abaixo e receba um diagnóstico estratégico para o seu negócio.
           </DialogDescription>
         </DialogHeader>
 
@@ -345,17 +345,17 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
               </p>
             </div>
 
-            <Button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-black text-base sm:text-xl py-7 sm:py-8 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_-10px_hsl(var(--accent)/0.5)] hover:-translate-y-1 transition-all shine-effect"
-            >
-              {loading ? (
-                <><Loader2 className="animate-spin mr-2" size={24} /> Processando...</>
-              ) : (
-                <><Send className="mr-2" size={24} /> Agendar agora</>
-              )}
-            </Button>
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-black text-base sm:text-xl py-6 sm:py-8 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_-10px_hsl(var(--accent)/0.5)] hover:-translate-y-1 transition-all shine-effect"
+          >
+            {loading ? (
+              <><Loader2 className="animate-spin mr-2" size={20} /> Enviando...</>
+            ) : (
+              <><Send className="mr-2" size={20} /> Agendar agora</>
+            )}
+          </Button>
           </div>
         </form>
       </DialogContent>

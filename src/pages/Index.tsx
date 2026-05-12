@@ -8,6 +8,7 @@ import AiSection from "@/components/AiSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ResultsSection from "@/components/ResultsSection";
+import FaqSection from "@/components/FaqSection";
 import ProcessSection from "@/components/ProcessSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
@@ -33,6 +34,7 @@ const Index = () => {
           <PortfolioSection />
           <TestimonialsSection />
           <ResultsSection />
+          <FaqSection />
           <ProcessSection />
           <CtaSection onOpenContact={() => setContactOpen(true)} />
         </main>

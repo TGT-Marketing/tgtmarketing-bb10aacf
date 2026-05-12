@@ -34,7 +34,7 @@ const ProcessSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="pt-12 pb-24 sm:pt-20 sm:pb-40 px-4 sm:px-6 md:px-8 bg-background" ref={ref}>
+    <section className="pt-8 pb-24 sm:pt-12 sm:pb-40 px-4 sm:px-6 md:px-8 bg-background" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

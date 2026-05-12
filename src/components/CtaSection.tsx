@@ -96,9 +96,9 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                     });
                   }
                 }}
-                className="shine-effect btn-outline-light inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4 order-2 sm:order-1"
+                className="shine-effect btn-outline-light inline-flex items-center justify-center gap-2.5 text-[15px] sm:text-lg flex-nowrap w-full sm:w-auto py-4 sm:py-5 px-10 order-2 sm:order-1"
               >
-                <MessageCircle size={20} className="shrink-0" />
+                <MessageCircle size={22} className="shrink-0" />
                 <span>Falar no WhatsApp</span>
               </a>
             </div>

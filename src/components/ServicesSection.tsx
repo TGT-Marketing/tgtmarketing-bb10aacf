@@ -14,9 +14,9 @@ import {
 const services = [
   {
     icon: Megaphone,
-    title: "Meta e Google Ads",
-    desc: "Campanhas de tráfego pago estratégicas no Meta Ads e Google Ads para atrair clientes qualificados, aumentar suas vendas e escalar seus resultados com investimento inteligente e estratégico.",
-    highlight: "Resultados com tráfego pago",
+    title: "Google Ads e Meta Ads",
+    desc: "Aumente suas vendas com gestão de tráfego pago profissional. Criamos campanhas estratégicas no Google Ads e Meta Ads focadas em ROI e atração de leads qualificados para o seu negócio.",
+    highlight: "Performance e Conversão",
   },
   {
     icon: BarChart3,

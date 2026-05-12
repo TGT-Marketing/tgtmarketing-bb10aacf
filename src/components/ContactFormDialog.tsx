@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Send, Loader2 } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Send, Loader2, ShieldCheck } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -54,6 +55,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     faturamento: "",
     objetivo: "",
     outroObjetivo: "",
+    consentimento: false,
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -61,6 +63,11 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
     if (!form.nome || !form.empresa || !form.email || !form.whatsapp || !form.faturamento || !form.objetivo) {
       toast({ title: "Preencha todos os campos obrigatórios.", variant: "destructive" });
+      return;
+    }
+
+    if (!form.consentimento) {
+      toast({ title: "Consentimento necessário", description: "Você precisa aceitar os termos de privacidade para continuar.", variant: "destructive" });
       return;
     }
 
@@ -87,7 +94,6 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
       toast({ title: "Enviado com sucesso!", description: "Entraremos em contato em breve." });
       
-      // Analytics Event: Form Submission
       if (window.dataLayer) {
         window.dataLayer.push({
           event: "form_submission",
@@ -97,7 +103,6 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
         });
       }
 
-      // Google Ads Conversion: Lead
       if (typeof window.gtag === "function") {
         window.gtag('event', 'conversion', {
           'send_to': 'AW-XXXXXXXXX/CONVERSION_LABEL',
@@ -106,7 +111,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
         });
       }
 
-      setForm({ nome: "", empresa: "", email: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "" });
+      setForm({ nome: "", empresa: "", email: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "", consentimento: false });
       onOpenChange(false);
       navigate("/obrigado");
     } catch {
@@ -232,6 +237,28 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
                 maxLength={500}
               />
             )}
+          </div>
+
+          <div className="flex items-start space-x-3 bg-primary-foreground/5 p-4 rounded-lg border border-primary-foreground/10">
+            <Checkbox
+              id="consentimento"
+              checked={form.consentimento}
+              onCheckedChange={(checked) => setForm({ ...form, consentimento: checked === true })}
+              className="mt-1 border-primary-foreground/30 data-[state=checked]:bg-accent data-[state=checked]:border-accent"
+            />
+            <div className="grid gap-1.5 leading-none">
+              <label
+                htmlFor="consentimento"
+                className="text-xs sm:text-sm text-primary-foreground/70 cursor-pointer select-none"
+              >
+                Concordo com o processamento dos meus dados para fins de diagnóstico e contato comercial, conforme a <span className="text-accent hover:underline">Política de Privacidade</span>.
+              </label>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 text-[10px] text-primary-foreground/40 uppercase tracking-widest justify-center">
+            <ShieldCheck size={12} />
+            Seus dados estão seguros conosco
           </div>
 
           <Button

@@ -92,7 +92,7 @@ const TestimonialsSection = () => {
                   />
                 ))}
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-6 relative z-10 text-[15px] whitespace-pre-wrap flex-grow">
+              <p className="text-muted-foreground leading-relaxed mb-8 relative z-10 text-[15px] sm:text-base italic flex-grow">
                 "{t.text}"
               </p>
               

@@ -98,7 +98,10 @@ const ResultsSection = () => {
       className="section-padding bg-section-dark relative overflow-hidden"
       ref={ref}
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/3 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none whitespace-nowrap">
+        RESULTADOS
+      </div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="container-main relative z-10">
         <motion.div

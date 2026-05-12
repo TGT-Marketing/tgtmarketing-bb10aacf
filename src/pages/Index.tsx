@@ -34,6 +34,7 @@ const Index = () => {
           <PortfolioSection />
           <TestimonialsSection />
           <ResultsSection />
+          <FaqSection />
           <ProcessSection />
           <CtaSection onOpenContact={() => setContactOpen(true)} />
         </main>

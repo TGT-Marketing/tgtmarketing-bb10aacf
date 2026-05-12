@@ -180,7 +180,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-xl max-h-[95vh] overflow-y-auto bg-primary border-accent/20 mx-3 sm:mx-auto rounded-xl sm:rounded-[2.5rem] p-4 sm:p-8" data-lenis-prevent>
         <DialogHeader className="mb-4 sm:mb-6">
-          <DialogTitle className="text-2xl sm:text-4xl font-black text-primary-foreground leading-tight">
+          <DialogTitle className="text-2xl sm:text-3xl font-black text-primary-foreground leading-tight">
             Agendar Diagnóstico <span className="text-gradient">Gratuito.</span>
           </DialogTitle>
           <DialogDescription className="text-primary-foreground/60 text-sm sm:text-base mt-2">

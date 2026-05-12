@@ -114,6 +114,15 @@ const ServicesSection = () => {
               <div className="relative mt-auto">
                 <a
                   href="#contato"
+                  onClick={() => {
+                    if (window.dataLayer) {
+                      window.dataLayer.push({
+                        event: "cta_click",
+                        cta_name: `saber_mais_${service.title.toLowerCase().replace(/\s+/g, '_')}`,
+                        button_location: "services_section"
+                      });
+                    }
+                  }}
                   className="inline-flex items-center gap-2 text-accent font-bold text-sm uppercase tracking-wider group-hover:gap-4 transition-all duration-300"
                 >
                   Saber mais

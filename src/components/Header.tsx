@@ -55,9 +55,17 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             </a>
           ))}
           <a
-            href="https://wa.me/5519992795271"
+            href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa."
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  event: "whatsapp_click",
+                  button_location: "header_desktop"
+                });
+              }
+            }}
             className="shine-effect inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-[13px] font-bold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 uppercase tracking-wide active:scale-[0.97]"
           >
             <MessageCircle size={15} className="shrink-0" />
@@ -96,9 +104,18 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                 </a>
               ))}
               <a
-                href="https://wa.me/5519992795271"
+                href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (window.dataLayer) {
+                    window.dataLayer.push({
+                      event: "whatsapp_click",
+                      button_location: "header_mobile"
+                    });
+                  }
+                  setMobileOpen(false);
+                }}
                 className="shine-effect inline-flex items-center justify-center gap-2.5 bg-accent text-accent-foreground px-5 py-3.5 rounded-lg text-sm font-bold text-center hover:shadow-lg transition-all mt-2 uppercase tracking-wide active:scale-[0.97]"
               >
                 <MessageCircle size={18} className="shrink-0" />

@@ -139,10 +139,10 @@ const ResultsSection = () => {
                   isInView={isInView}
                 />
               </h4>
-              <div className="text-section-dark-foreground font-semibold text-sm mb-1">
+              <div className="text-section-dark-foreground font-bold text-xs sm:text-sm mb-1 uppercase tracking-wider">
                 {stat.label}
               </div>
-              <div className="text-section-dark-foreground/35 text-xs">
+              <div className="text-section-dark-foreground/40 text-[10px] sm:text-xs font-medium italic">
                 {stat.sub}
               </div>
             </motion.div>

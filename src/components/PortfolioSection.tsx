@@ -1154,7 +1154,19 @@ const PortfolioSection = () => {
                     size="lg"
                     className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold"
                   >
-                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                    <a 
+                      href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa." 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        if (window.dataLayer) {
+                          window.dataLayer.push({
+                            event: "whatsapp_click",
+                            button_location: "portfolio_modal"
+                          });
+                        }
+                      }}
+                    >
                       <MessageCircle className="w-5 h-5" />
                       Quero algo assim para minha empresa
                     </a>

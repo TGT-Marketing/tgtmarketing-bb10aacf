@@ -95,9 +95,17 @@ const ProblemsSection = ({
           ))}
 
           <motion.a
-            href="https://wa.me/5519992795271"
+            href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa."
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  event: "whatsapp_click",
+                  button_location: "problems_section"
+                });
+              }
+            }}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}

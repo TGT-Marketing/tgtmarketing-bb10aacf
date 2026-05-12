@@ -94,7 +94,20 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[11px] uppercase tracking-wider text-white/20 mb-1">WhatsApp</span>
-                  <a href="https://wa.me/5519992795271" className="text-white/60 hover:text-accent transition-colors font-semibold">
+                  <a 
+                    href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa." 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => {
+                      if (window.dataLayer) {
+                        window.dataLayer.push({
+                          event: "whatsapp_click",
+                          button_location: "footer"
+                        });
+                      }
+                    }}
+                    className="text-white/60 hover:text-accent transition-colors font-semibold"
+                  >
                     +55 19 99279-5271
                   </a>
                 </div>

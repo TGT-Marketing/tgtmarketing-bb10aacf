@@ -47,7 +47,7 @@ serve(async (req) => {
       throw new Error("RESEND_API_KEY is not configured");
     }
 
-    const emailHtml = `
+    const emailHtmlAdmin = `
       <h2>Novo pedido de diagnóstico gratuito</h2>
       <table style="border-collapse:collapse;width:100%;max-width:600px;">
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Nome completo</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(nome)}</td></tr>
@@ -59,7 +59,24 @@ serve(async (req) => {
       </table>
     `;
 
-    const res = await fetch("https://api.resend.com/emails", {
+    const emailHtmlUser = `
+      <div style="font-family: sans-serif; color: #333; line-height: 1.6; max-width: 600px;">
+        <h2 style="color: #df1a1a;">Recebemos sua solicitação, ${escapeHtml(nome.split(' ')[0])}!</h2>
+        <p>Obrigado pelo seu interesse em realizar um diagnóstico com a <strong>TGT Marketing</strong>.</p>
+        <p>Nossa equipe já foi notificada e em breve entraremos em contato para agendar nossa conversa estratégica.</p>
+        <p>Para agilizar o processo, você pode nos chamar agora mesmo no WhatsApp clicando no botão abaixo:</p>
+        <div style="margin: 30px 0;">
+          <a href="${whatsappLink}" style="background-color: #25D366; color: white; padding: 15px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block;">
+            Falar no WhatsApp agora
+          </a>
+        </div>
+        <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;" />
+        <p style="font-size: 12px; color: #777;">TGT Marketing & Comunicação<br />Americana - SP</p>
+      </div>
+    `;
+
+    // Send email to Admin
+    const resAdmin = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -69,14 +86,29 @@ serve(async (req) => {
         from: "TGT Marketing <onboarding@resend.dev>",
         to: ["contato@tgtmarketing.com.br"],
         subject: `Novo diagnóstico - ${nome} | ${empresa}`,
-        html: emailHtml,
+        html: emailHtmlAdmin,
       }),
     });
 
-    const data = await res.json();
+    // Send confirmation email to User
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "TGT Marketing <onboarding@resend.dev>",
+        to: [email],
+        subject: `Recebemos sua solicitação de diagnóstico - TGT Marketing`,
+        html: emailHtmlUser,
+      }),
+    });
 
-    if (!res.ok) {
-      throw new Error(`Resend API error [${res.status}]: ${JSON.stringify(data)}`);
+    const data = await resAdmin.json();
+
+    if (!resAdmin.ok) {
+      throw new Error(`Resend API error [${resAdmin.status}]: ${JSON.stringify(data)}`);
     }
 
     return new Response(JSON.stringify({ success: true }), {

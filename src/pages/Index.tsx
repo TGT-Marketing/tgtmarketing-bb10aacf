@@ -29,7 +29,7 @@ const Index = () => {
           <AboutSection />
           <ProblemsSection onOpenContact={() => setContactOpen(true)} />
           <ServicesSection />
-          <AiSection />
+          <AiSection onOpenContact={() => setContactOpen(true)} />
           <PortfolioSection />
           <TestimonialsSection />
           <ResultsSection />

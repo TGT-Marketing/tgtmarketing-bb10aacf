@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -43,6 +44,7 @@ const objetivoOptions = [
 
 const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     nome: "",
@@ -98,6 +100,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
       setForm({ nome: "", empresa: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "" });
       onOpenChange(false);
+      navigate("/obrigado");
     } catch {
       toast({ title: "Erro ao enviar", description: "Tente novamente ou fale conosco pelo WhatsApp.", variant: "destructive" });
     } finally {

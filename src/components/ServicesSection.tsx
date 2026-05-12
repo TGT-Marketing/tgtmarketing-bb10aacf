@@ -73,8 +73,8 @@ const ServicesSection = () => {
           <span className="section-label justify-center mb-4 block">
             O que fazemos
           </span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-4 tracking-tight">
-            Marketing e Vendas: Soluções que geram <span className="text-accent">resultado real</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 tracking-tight leading-[1.1]">
+            Marketing e Vendas: Soluções que geram <span className="text-gradient">resultado real.</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-[15px]">

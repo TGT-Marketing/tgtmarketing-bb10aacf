@@ -331,7 +331,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
                 htmlFor="consentimento"
                 className="text-xs sm:text-sm text-primary-foreground/70 cursor-pointer select-none"
               >
-                Concordo com o processamento dos meus dados para fins de diagnóstico e contato comercial, conforme a <span className="text-accent hover:underline">Política de Privacidade</span>.
+                Concordo em receber contatos comerciais da TGT Marketing e aceito a <span className="text-accent hover:underline">Política de Privacidade</span>.
               </label>
             </div>
           </div>

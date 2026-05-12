@@ -9,7 +9,11 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre" className="section-padding bg-background scroll-mt-20 overflow-hidden">
+    <section id="sobre" className="section-padding bg-background scroll-mt-20 overflow-hidden relative">
+      {/* Subtle background text */}
+      <div className="absolute -top-10 -right-20 text-[20vw] font-black text-primary/[0.02] select-none pointer-events-none whitespace-nowrap">
+        MARKETING
+      </div>
       <div className="container-main" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           <motion.div

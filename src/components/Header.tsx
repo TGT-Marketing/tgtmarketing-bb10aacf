@@ -49,9 +49,10 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] font-medium text-primary-foreground/70 hover:text-accent transition-colors duration-300 uppercase tracking-wide"
+              className="text-[11px] font-bold text-primary-foreground/50 hover:text-accent transition-all duration-300 uppercase tracking-[0.2em] relative group/nav"
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover/nav:w-full" />
             </a>
           ))}
           <a

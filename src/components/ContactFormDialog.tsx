@@ -77,6 +77,16 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
       return;
     }
 
+    const whatsappDigits = form.whatsapp.replace(/\D/g, "");
+    if (whatsappDigits.length < 10 || whatsappDigits.length > 11) {
+      toast({ 
+        title: "WhatsApp inválido", 
+        description: "O número deve ter 10 ou 11 dígitos (incluindo o DDD).", 
+        variant: "destructive" 
+      });
+      return;
+    }
+
     setLoading(true);
     try {
       const { error } = await supabase.functions.invoke("send-contact-email", {

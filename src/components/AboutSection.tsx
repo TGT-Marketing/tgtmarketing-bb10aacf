@@ -117,7 +117,7 @@ const AboutSection = () => {
                   {/* Glow background on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-accent/10 transition-all duration-500 pointer-events-none" />
                   
-                  <h4 className="relative text-xl sm:text-2xl font-extrabold text-accent mb-1 transition-transform duration-300 group-hover:scale-110">
+                  <h4 className="relative text-2xl sm:text-4xl font-black text-accent mb-1 transition-transform duration-500 group-hover:scale-110">
                     {stat.number}
                   </h4>
                   <div className="relative text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">

@@ -89,7 +89,7 @@ const AiSection = () => {
               className="text-sm sm:text-[15px] leading-relaxed mb-4"
               style={{ color: "hsl(0 0% 65%)" }}
             >
-              Utilizamos a Inteligência Artificial como o cérealo por trás de toda a operação de marketing — analisando dados em tempo real, identificando oportunidades, prevendo comportamentos e orientando decisões com precisão. Mais do que automatizar tarefas, a IA permite construir estratégias altamente inteligentes, personalizadas e orientadas a performance.
+              Utilizamos a Inteligência Artificial como o cérebro por trás de toda a operação de marketing — analisando dados em tempo real, identificando oportunidades, prevendo comportamentos e orientando decisões com precisão. Mais do que automatizar tarefas, a IA permite construir estratégias altamente inteligentes, personalizadas e orientadas a performance.
             </p>
             <p
               className="text-sm sm:text-[15px] leading-relaxed mb-4"

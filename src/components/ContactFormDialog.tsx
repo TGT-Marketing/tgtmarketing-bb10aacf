@@ -73,17 +73,29 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     // Anti-spam: Rate limiting (min 5 seconds between submissions)
     const now = Date.now();
     if (now - lastSubmitTime < 5000) {
-      toast({ title: "Aguarde um momento", description: "Muitas solicitações em pouco tempo. Tente novamente em alguns segundos.", variant: "destructive" });
+      toast({ 
+        title: "Calma aí! 🛑", 
+        description: "Você está enviando solicitações muito rápido. Aguarde alguns segundos para tentar novamente.", 
+        variant: "destructive" 
+      });
       return;
     }
 
     if (!form.nome || !form.empresa || !form.email || !form.whatsapp || !form.faturamento || !form.objetivo) {
-      toast({ title: "Preencha todos os campos obrigatórios.", variant: "destructive" });
+      toast({ 
+        title: "Campos obrigatórios 📋", 
+        description: "Para um diagnóstico preciso, precisamos que todos os campos marcados com * sejam preenchidos.", 
+        variant: "destructive" 
+      });
       return;
     }
 
     if (!form.consentimento) {
-      toast({ title: "Consentimento necessário", description: "Você precisa aceitar os termos de privacidade para continuar.", variant: "destructive" });
+      toast({ 
+        title: "Política de Privacidade 🛡️", 
+        description: "Precisamos do seu aceite nos termos para processar seu diagnóstico com segurança.", 
+        variant: "destructive" 
+      });
       return;
     }
 

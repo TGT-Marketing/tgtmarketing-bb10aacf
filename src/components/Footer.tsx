@@ -29,14 +29,22 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-5">
               {[
-                { icon: Instagram, href: "https://www.instagram.com/tgt.mkt", label: "Visitar Instagram TGT" },
-                { icon: Facebook, href: "https://www.facebook.com/tgt.mktecom", label: "Visitar Facebook TGT" },
+                { icon: Instagram, href: "https://www.instagram.com/tgt.mkt", label: "Visitar Instagram TGT", event: "social_click_instagram" },
+                { icon: Facebook, href: "https://www.facebook.com/tgt.mktecom", label: "Visitar Facebook TGT", event: "social_click_facebook" },
               ].map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    if (window.dataLayer) {
+                      window.dataLayer.push({
+                        event: social.event,
+                        button_location: "footer"
+                      });
+                    }
+                  }}
                   className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-accent hover:border-accent hover:bg-accent/5 transition-all duration-300"
                   aria-label={social.label}
                 >
@@ -47,6 +55,14 @@ const Footer = () => {
                 href="https://www.tiktok.com/@acertandonoalvo"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (window.dataLayer) {
+                    window.dataLayer.push({
+                      event: "social_click_tiktok",
+                      button_location: "footer"
+                    });
+                  }
+                }}
                 className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-accent hover:border-accent hover:bg-accent/5 transition-all duration-300"
                 aria-label="Visitar TikTok TGT"
               >

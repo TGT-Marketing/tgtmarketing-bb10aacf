@@ -154,7 +154,11 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
           event: "form_submission",
           form_name: "contato_diagnostico",
           faturamento: form.faturamento,
-          objetivo: form.objetivo
+          objetivo: form.objetivo,
+          user_name: form.nome,
+          user_email: form.email,
+          user_whatsapp: form.whatsapp,
+          user_company: form.empresa
         });
       }
 

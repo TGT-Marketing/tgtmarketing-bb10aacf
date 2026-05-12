@@ -98,7 +98,10 @@ const ResultsSection = () => {
       className="section-padding bg-section-dark relative overflow-hidden"
       ref={ref}
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/3 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none whitespace-nowrap">
+        RESULTADOS
+      </div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="container-main relative z-10">
         <motion.div
@@ -110,8 +113,8 @@ const ResultsSection = () => {
           <span className="section-label text-accent justify-center mb-4 block">
             Resultados
           </span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-section-dark-foreground mt-3 mb-4 tracking-tight">
-            Marketing Digital: Números que <span className="text-accent">comprovam!</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-section-dark-foreground mt-3 mb-6 leading-[1.1] tracking-tight">
+            Marketing Digital: Números que <span className="text-gradient">comprovam!</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />
           <p className="text-section-dark-foreground/40 max-w-xl mx-auto text-[15px]">
@@ -119,7 +122,7 @@ const ResultsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -131,7 +134,7 @@ const ResultsSection = () => {
               <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-xl sm:rounded-2xl bg-accent/8 flex items-center justify-center mb-3 sm:mb-5 group-hover:bg-accent/15 transition-colors duration-500">
                 <stat.icon className="text-accent" size={22} />
               </div>
-              <h4 className="text-2xl sm:text-4xl font-extrabold text-accent mb-1 sm:mb-2">
+              <h4 className="text-3xl sm:text-5xl font-black text-accent mb-1 sm:mb-2 transition-transform duration-500 group-hover:scale-110">
                 <CountUpNumber
                   value={stat.numericValue}
                   prefix={stat.prefix}
@@ -139,10 +142,10 @@ const ResultsSection = () => {
                   isInView={isInView}
                 />
               </h4>
-              <div className="text-section-dark-foreground font-semibold text-sm mb-1">
+              <div className="text-section-dark-foreground font-bold text-xs sm:text-sm mb-1 uppercase tracking-wider">
                 {stat.label}
               </div>
-              <div className="text-section-dark-foreground/35 text-xs">
+              <div className="text-section-dark-foreground/40 text-[10px] sm:text-xs font-medium italic">
                 {stat.sub}
               </div>
             </motion.div>

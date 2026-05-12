@@ -9,20 +9,24 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre" className="section-padding bg-background scroll-mt-20 overflow-hidden">
+    <section id="sobre" className="section-padding bg-background scroll-mt-20 overflow-hidden relative">
+      {/* Subtle background text */}
+      <div className="absolute -top-10 -right-20 text-[20vw] font-black text-primary/[0.02] select-none pointer-events-none whitespace-nowrap">
+        MARKETING
+      </div>
       <div className="container-main" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
           >
             <span className="section-label mb-4 block">Quem somos</span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 leading-tight tracking-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.1] tracking-tight">
               Estratégia de Marketing Digital:
               <br />
               Somos sua{" "}
-              <span className="text-accent">parceira de crescimento.</span>
+              <span className="text-gradient">parceira de crescimento.</span>
             </h2>
             <div className="divider-accent mb-8" />
             <div className="space-y-5 text-muted-foreground leading-relaxed text-[15px]">
@@ -63,9 +67,9 @@ const AboutSection = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
             className="space-y-6"
           >
             {/* Photo */}
@@ -89,8 +93,8 @@ const AboutSection = () => {
                 decoding="async"
                 className="w-full h-[360px] sm:h-[420px] object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-110 aspect-[3/4] sm:aspect-auto"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 sm:p-5 z-10 transition-all duration-500 group-hover:from-black/90">
-                <p className="text-white/90 text-xs sm:text-sm font-medium transition-transform duration-500 group-hover:translate-y-[-2px]">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 sm:p-7 z-10 transition-all duration-500 group-hover:from-black">
+                <p className="text-white text-sm sm:text-base font-bold transition-transform duration-500 group-hover:translate-y-[-2px]">
                   Guilherme Santos, diretor de comunicação e equipe TGT.
                 </p>
               </div>
@@ -109,7 +113,7 @@ const AboutSection = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
                   whileHover={{ y: -6, scale: 1.03 }}
-                  className="card-premium p-3.5 sm:p-5 text-center group relative overflow-hidden cursor-pointer transition-all duration-300 hover:border-accent hover:shadow-premium-accent"
+                  className="card-premium p-4 sm:p-7 text-center group relative overflow-hidden cursor-pointer"
                 >
                   {/* Shine sweep effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-accent/10 to-transparent pointer-events-none" />
@@ -117,10 +121,10 @@ const AboutSection = () => {
                   {/* Glow background on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-accent/10 transition-all duration-500 pointer-events-none" />
                   
-                  <h4 className="relative text-xl sm:text-2xl font-extrabold text-accent mb-1 transition-transform duration-300 group-hover:scale-110">
+                  <h4 className="relative text-2xl sm:text-4xl font-black text-accent mb-1 transition-transform duration-500 group-hover:scale-110">
                     {stat.number}
                   </h4>
-                  <div className="relative text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">
+                  <div className="relative text-[10px] sm:text-xs text-muted-foreground font-bold uppercase tracking-widest group-hover:text-foreground transition-colors duration-300">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -174,8 +178,8 @@ const AboutSection = () => {
                   <span className="text-accent text-xs font-bold uppercase tracking-widest mb-2 block drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                     Nossa marca
                   </span>
-                  <p className="text-white text-lg sm:text-2xl font-bold tracking-tight leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-                    Clique na imagem e confira a <span className="text-accent">Linha do Tempo</span> da marca TGT.
+                  <p className="text-white text-xl sm:text-3xl font-black tracking-tight leading-[1.1] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-500">
+                    Clique na imagem e confira a <span className="text-gradient">Linha do Tempo</span> da marca TGT.
                   </p>
                 </div>
               </div>
@@ -186,7 +190,7 @@ const AboutSection = () => {
               <motion.img
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                transition={{ type: "spring", damping: 30, stiffness: 200 }}
                 src="https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778097120020-rhqx5-linha-do-tempo-atualizadaFeed.png"
                 alt="Trajetória TGT Marketing - 15 Anos de História"
                 loading="lazy"

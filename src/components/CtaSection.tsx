@@ -46,9 +46,8 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             </span>
           </motion.div>
 
-          <h3 className="text-[1.4rem] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-primary-foreground mt-2 mb-6 sm:mb-8 leading-[1.2] sm:leading-tight tracking-tight px-2">
-            Sua empresa merece ser vista, lembrada e{" "}
-            <span className="text-accent">escolhida.</span>
+          <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black text-primary-foreground mt-2 mb-8 leading-[1.1] tracking-tight px-2">
+            Sua empresa merece ser vista, lembrada e <span className="text-gradient">escolhida.</span>
           </h3>
           <p className="text-primary-foreground/50 text-[14px] sm:text-lg mb-5 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
             Pare de desperdiçar tempo e dinheiro com marketing que não funciona.
@@ -79,9 +78,9 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                   }
                   onOpenContact?.();
                 }}
-                className="shine-effect btn-primary inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4 order-1 sm:order-2"
+                className="shine-effect btn-primary inline-flex items-center justify-center gap-2.5 text-[15px] sm:text-lg flex-nowrap w-full sm:w-auto py-4 sm:py-5 px-10 order-1 sm:order-2 shadow-2xl"
               >
-                <ArrowRight size={20} className="shrink-0" />
+                <ArrowRight size={22} className="shrink-0" />
                 <span>Agendar diagnóstico gratuito</span>
               </button>
               
@@ -97,9 +96,9 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                     });
                   }
                 }}
-                className="shine-effect btn-outline-light inline-flex items-center justify-center gap-2.5 text-[14px] sm:text-lg flex-nowrap w-full sm:w-auto py-3 sm:py-4 order-2 sm:order-1"
+                className="shine-effect btn-outline-light inline-flex items-center justify-center gap-2.5 text-[15px] sm:text-lg flex-nowrap w-full sm:w-auto py-4 sm:py-5 px-10 order-2 sm:order-1"
               >
-                <MessageCircle size={20} className="shrink-0" />
+                <MessageCircle size={22} className="shrink-0" />
                 <span>Falar no WhatsApp</span>
               </a>
             </div>

@@ -57,9 +57,8 @@ const TestimonialsSection = () => {
           <span className="section-label justify-center mb-4 block">
             Prova social
           </span>
-          <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 tracking-tight">
-            Quem trabalhou com a TGT{" "}
-            <span className="text-accent">recomenda.</span>
+          <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.1] tracking-tight">
+            Quem trabalhou com a TGT <span className="text-gradient">recomenda.</span>
           </h3>
           <div className="flex items-center justify-center gap-1 mb-3">
             {[...Array(5)].map((_, i) => (
@@ -78,7 +77,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="card-premium p-6 sm:p-8 relative group border-2 border-border hover:border-accent/50 transition-all duration-500 flex flex-col h-full"
+              className="card-premium p-6 sm:p-10 relative group transition-all duration-500 flex flex-col h-full"
             >
               <Quote
                 className="text-accent/8 absolute top-6 right-6 group-hover:text-accent/15 transition-colors duration-500"
@@ -93,7 +92,7 @@ const TestimonialsSection = () => {
                   />
                 ))}
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-6 relative z-10 text-[15px] whitespace-pre-wrap flex-grow">
+              <p className="text-muted-foreground leading-relaxed mb-8 relative z-10 text-[15px] sm:text-base italic flex-grow">
                 "{t.text}"
               </p>
               

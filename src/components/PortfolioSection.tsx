@@ -762,8 +762,8 @@ const PortfolioSection = () => {
           <span className="section-label justify-center mb-6 block">
             Nossa Expertise
           </span>
-          <h3 className="text-3xl sm:text-5xl lg:text-7xl font-[900] text-foreground mt-3 mb-8 tracking-tighter leading-none">
-            Projetos que <br className="hidden sm:block" /><span className="text-gradient">fazem história</span>
+          <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-8 tracking-tight leading-[1.1]">
+            Projetos que <br className="hidden sm:block" /><span className="text-gradient">fazem história.</span>
           </h3>
           <div className="divider-accent mx-auto mb-10" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed px-4">

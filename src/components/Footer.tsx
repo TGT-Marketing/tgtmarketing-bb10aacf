@@ -24,8 +24,8 @@ const Footer = () => {
             </a>
             <p className="text-white/40 text-lg leading-relaxed max-w-md mb-10">
               Especialistas em transformar o potencial da sua empresa em 
-              <span className="text-white font-semibold"> autoridade digital </span> 
-              e <span className="text-accent font-semibold"> resultados exponenciais</span>.
+              <span className="text-white font-bold tracking-tight"> autoridade digital </span> 
+              e <span className="text-gradient font-bold tracking-tight text-xl"> resultados exponenciais</span>.
             </p>
             <div className="flex items-center gap-5">
               {[

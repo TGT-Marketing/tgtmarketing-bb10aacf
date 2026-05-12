@@ -30,7 +30,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
       }`}
     >
       <div className="container-main px-4 sm:px-6 flex items-center justify-between">
-        <a href="#" className="relative z-10">
+        <a href="#" className="relative z-10 group/logo">
           <img
             src={logoTgt}
             alt="TGT Marketing Digital Americana SP"
@@ -39,7 +39,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             loading="eager"
             decoding="async"
             fetchPriority="high"
-            className={`transition-all duration-500 ${scrolled ? "h-8" : "h-10"} w-auto brightness-0 invert`}
+            className={`transition-all duration-700 ${scrolled ? "h-7 sm:h-8" : "h-9 sm:h-10"} w-auto brightness-0 invert group-hover/logo:scale-105`}
           />
         </a>
 
@@ -49,9 +49,10 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] font-medium text-primary-foreground/70 hover:text-accent transition-colors duration-300 uppercase tracking-wide"
+              className="text-[11px] font-bold text-primary-foreground/50 hover:text-accent transition-all duration-300 uppercase tracking-[0.2em] relative group/nav"
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover/nav:w-full" />
             </a>
           ))}
           <a
@@ -66,9 +67,9 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                 });
               }
             }}
-            className="shine-effect inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-[13px] font-bold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 uppercase tracking-wide active:scale-[0.97]"
+            className="shine-effect inline-flex items-center gap-2.5 bg-accent text-accent-foreground px-6 py-2.5 rounded-full text-[11px] font-black hover:shadow-[0_0_30px_hsl(var(--accent)/0.4)] hover:scale-105 transition-all duration-500 uppercase tracking-[0.15em] active:scale-[0.97]"
           >
-            <MessageCircle size={15} className="shrink-0" />
+            <MessageCircle size={14} className="shrink-0" />
             Falar no WhatsApp
           </a>
         </nav>

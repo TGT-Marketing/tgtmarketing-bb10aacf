@@ -78,10 +78,20 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     }
 
     const whatsappDigits = form.whatsapp.replace(/\D/g, "");
-    if (whatsappDigits.length < 10 || whatsappDigits.length > 11) {
+    
+    // Brazilian number rules:
+    // 1. Must have 10 or 11 digits
+    // 2. DDD must be valid (between 11 and 99)
+    // 3. If 11 digits, must be a mobile number (starts with 9)
+    const ddd = parseInt(whatsappDigits.slice(0, 2));
+    const isValidDDD = ddd >= 11 && ddd <= 99;
+    const isMobile = whatsappDigits.length === 11 && whatsappDigits[2] === "9";
+    const isLandline = whatsappDigits.length === 10;
+
+    if (!isValidDDD || (!isMobile && !isLandline)) {
       toast({ 
         title: "WhatsApp inválido", 
-        description: "O número deve ter 10 ou 11 dígitos (incluindo o DDD).", 
+        description: "Por favor, insira um número de WhatsApp válido com DDD.", 
         variant: "destructive" 
       });
       return;
@@ -194,10 +204,18 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
               value={form.whatsapp}
               onChange={(e) => {
                 const val = e.target.value.replace(/\D/g, "");
-                let formatted = val;
+                let formatted = "";
                 if (val.length > 0) formatted = `(${val.slice(0, 2)}`;
                 if (val.length > 2) formatted += `) ${val.slice(2, 7)}`;
-                if (val.length > 7) formatted += `-${val.slice(7, 11)}`;
+                if (val.length > 7) {
+                  // If it's a mobile number (11 digits), format with hyphen after 5th digit
+                  // If it's a landline (10 digits), format with hyphen after 4th digit
+                  if (val.length === 11) {
+                    formatted = `(${val.slice(0, 2)}) ${val.slice(2, 7)}-${val.slice(7, 11)}`;
+                  } else {
+                    formatted = `(${val.slice(0, 2)}) ${val.slice(2, 6)}-${val.slice(6, 10)}`;
+                  }
+                }
                 setForm({ ...form, whatsapp: formatted });
               }}
               className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent/50 transition-colors"

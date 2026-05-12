@@ -105,7 +105,7 @@ const ProblemsSection = ({
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="shine-effect bg-accent/10 border-2 border-section-dark-foreground/10 rounded-xl sm:rounded-2xl p-5 sm:p-7 flex flex-col items-center justify-center gap-3 text-center cursor-pointer hover:bg-accent/20 hover:border-section-dark-foreground/50 transition-all duration-500 group"
+            className="shine-effect bg-accent/5 border border-accent/20 rounded-[2rem] p-6 sm:p-10 flex flex-col items-center justify-center gap-4 text-center cursor-pointer transition-all duration-700 hover:bg-accent/10 hover:border-accent/50 group"
           >
             <span className="text-accent font-extrabold text-xl">
               Chega de perder tempo.

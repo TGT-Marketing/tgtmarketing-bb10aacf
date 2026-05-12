@@ -120,7 +120,7 @@ const AboutSection = () => {
                   <h4 className="relative text-2xl sm:text-4xl font-black text-accent mb-1 transition-transform duration-500 group-hover:scale-110">
                     {stat.number}
                   </h4>
-                  <div className="relative text-xs text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">
+                  <div className="relative text-[10px] sm:text-xs text-muted-foreground font-bold uppercase tracking-widest group-hover:text-foreground transition-colors duration-300">
                     {stat.label}
                   </div>
                 </motion.div>

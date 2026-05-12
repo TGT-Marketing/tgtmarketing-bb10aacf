@@ -60,10 +60,18 @@ const ThankYou = () => {
               href="https://wa.me/5519992795271?text=Olá! Acabei de solicitar um diagnóstico no site e gostaria de agilizar o atendimento."
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (window.dataLayer) {
+                  window.dataLayer.push({
+                    event: "whatsapp_click",
+                    button_location: "thank_you_page"
+                  });
+                }
+              }}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-accent-foreground font-bold rounded-xl hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
             >
               <MessageCircle size={20} />
-              Falar no WhatsApp
+              Falar com especialista agora
             </a>
           </motion.div>
         </div>

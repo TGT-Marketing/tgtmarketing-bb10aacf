@@ -63,9 +63,9 @@ const AboutSection = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
             className="space-y-6"
           >
             {/* Photo */}

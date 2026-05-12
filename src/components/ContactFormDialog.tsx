@@ -125,10 +125,12 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
             <Label htmlFor="nome" className="text-primary-foreground/80">Nome completo *</Label>
             <Input
               id="nome"
-              placeholder="Seu nome completo"
+              placeholder="Ex: João Silva"
               value={form.nome}
               onChange={(e) => setForm({ ...form, nome: e.target.value })}
-              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40"
+              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent/50 transition-colors"
+              required
+              minLength={3}
               maxLength={100}
             />
           </div>
@@ -137,10 +139,12 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
             <Label htmlFor="empresa" className="text-primary-foreground/80">Nome da empresa *</Label>
             <Input
               id="empresa"
-              placeholder="Nome da sua empresa"
+              placeholder="Ex: Minha Empresa Ltda"
               value={form.empresa}
               onChange={(e) => setForm({ ...form, empresa: e.target.value })}
-              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40"
+              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent/50 transition-colors"
+              required
+              minLength={2}
               maxLength={100}
             />
           </div>
@@ -149,11 +153,19 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
             <Label htmlFor="whatsapp" className="text-primary-foreground/80">Contato WhatsApp *</Label>
             <Input
               id="whatsapp"
+              type="tel"
               placeholder="(00) 00000-0000"
               value={form.whatsapp}
-              onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
-              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40"
-              maxLength={20}
+              onChange={(e) => {
+                const val = e.target.value.replace(/\D/g, "");
+                let formatted = val;
+                if (val.length > 0) formatted = `(${val.slice(0, 2)}`;
+                if (val.length > 2) formatted += `) ${val.slice(2, 7)}`;
+                if (val.length > 7) formatted += `-${val.slice(7, 11)}`;
+                setForm({ ...form, whatsapp: formatted });
+              }}
+              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent/50 transition-colors"
+              required
             />
           </div>
 

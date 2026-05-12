@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 declare global {
   interface Window {
     dataLayer: any[];
+    gtag: (...args: any[]) => void;
   }
 }
 
@@ -83,6 +84,15 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
           form_name: "contato_diagnostico",
           faturamento: form.faturamento,
           objetivo: form.objetivo
+        });
+      }
+
+      // Google Ads Conversion: Lead
+      if (typeof window.gtag === "function") {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-XXXXXXXXX/CONVERSION_LABEL',
+          'value': 1.0,
+          'currency': 'BRL'
         });
       }
 

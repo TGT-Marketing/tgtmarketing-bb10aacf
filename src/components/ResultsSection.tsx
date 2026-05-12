@@ -98,7 +98,7 @@ const ResultsSection = () => {
       className="pt-20 pb-10 sm:pt-32 sm:pb-16 bg-section-dark relative overflow-hidden"
       ref={ref}
     >
-      <div className="absolute -bottom-20 -left-20 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none whitespace-nowrap">
+      <div className="absolute -bottom-20 -left-20 text-[20vw] font-black text-white/[0.01] select-none pointer-events-none whitespace-nowrap">
         RESULTADOS
       </div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[160px] pointer-events-none" />

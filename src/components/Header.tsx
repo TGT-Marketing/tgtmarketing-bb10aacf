@@ -67,9 +67,9 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                 });
               }
             }}
-            className="shine-effect inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-[13px] font-bold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 uppercase tracking-wide active:scale-[0.97]"
+            className="shine-effect inline-flex items-center gap-2.5 bg-accent text-accent-foreground px-6 py-2.5 rounded-full text-[11px] font-black hover:shadow-[0_0_30px_hsl(var(--accent)/0.4)] hover:scale-105 transition-all duration-500 uppercase tracking-[0.15em] active:scale-[0.97]"
           >
-            <MessageCircle size={15} className="shrink-0" />
+            <MessageCircle size={14} className="shrink-0" />
             Falar no WhatsApp
           </a>
         </nav>

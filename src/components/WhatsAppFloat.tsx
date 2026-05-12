@@ -35,7 +35,7 @@ const WhatsAppFloat = () => {
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleWhatsAppClick}
-      className="shine-effect fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
+      className="shine-effect fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-[#25D366] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full flex items-center gap-2 sm:gap-3"
       aria-label="Falar no WhatsApp"
       style={{
         boxShadow:

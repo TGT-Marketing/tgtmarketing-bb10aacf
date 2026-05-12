@@ -32,7 +32,7 @@ const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="pt-24 pb-8 sm:pt-40 sm:pb-12 px-4 sm:px-6 md:px-8 bg-background relative overflow-hidden" ref={ref}>
+    <section id="faq" className="pt-16 pb-6 sm:pt-40 sm:pb-12 px-4 sm:px-6 md:px-8 bg-background relative overflow-hidden" ref={ref}>
       <div className="absolute top-0 right-0 text-[15vw] font-black text-primary/[0.01] select-none pointer-events-none whitespace-nowrap">
         DÚVIDAS
       </div>

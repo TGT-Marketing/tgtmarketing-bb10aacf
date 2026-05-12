@@ -57,7 +57,7 @@ const ThankYou = () => {
             </button>
             
             <a
-              href="https://wa.me/5519992795271"
+              href="https://wa.me/5519992795271?text=Olá! Acabei de solicitar um diagnóstico no site e gostaria de agilizar o atendimento."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-accent-foreground font-bold rounded-xl hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"

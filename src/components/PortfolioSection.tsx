@@ -1150,9 +1150,26 @@ const PortfolioSection = () => {
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                   <Button
+                    onClick={() => {
+                      if (window.dataLayer) {
+                        window.dataLayer.push({
+                          event: "diagnosis_button_click",
+                          button_location: "portfolio_modal"
+                        });
+                      }
+                      setContactOpen(true);
+                    }}
+                    size="lg"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold"
+                  >
+                    Agendar diagnóstico gratuito
+                  </Button>
+
+                  <Button
                     asChild
                     size="lg"
-                    className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold order-2 sm:order-1"
+                    variant="outline"
+                    className="border-accent text-accent hover:bg-accent/10 font-bold"
                   >
                     <a 
                       href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa." 
@@ -1168,25 +1185,8 @@ const PortfolioSection = () => {
                       }}
                     >
                       <MessageCircle className="w-5 h-5" />
-                      Falar no WhatsApp
+                      Enviar uma mensagem
                     </a>
-                  </Button>
-
-                  <Button
-                    onClick={() => {
-                      if (window.dataLayer) {
-                        window.dataLayer.push({
-                          event: "diagnosis_button_click",
-                          button_location: "portfolio_modal"
-                        });
-                      }
-                      setContactOpen(true);
-                    }}
-                    size="lg"
-                    variant="outline"
-                    className="border-accent text-accent hover:bg-accent/10 font-bold order-1 sm:order-2"
-                  >
-                    Agendar diagnóstico gratuito
                   </Button>
                 </div>
               </div>

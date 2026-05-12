@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -19,6 +19,12 @@ import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   const [contactOpen, setContactOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpenContact = () => setContactOpen(true);
+    window.addEventListener('open-contact', handleOpenContact);
+    return () => window.removeEventListener('open-contact', handleOpenContact);
+  }, []);
 
   return (
     <SmoothScroll>

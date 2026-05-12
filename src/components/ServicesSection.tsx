@@ -62,7 +62,7 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="servicos" className="section-padding bg-background" ref={ref}>
+    <section id="servicos" className="pt-16 pb-12 sm:pt-32 sm:pb-24 bg-background" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

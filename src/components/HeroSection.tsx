@@ -96,9 +96,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-[14px] sm:text-lg lg:text-xl text-primary-foreground/65 mb-6 sm:mb-12 max-w-2xl leading-relaxed"
           >
-            Há mais de 15 anos, a TGT transforma a comunicação de empresas em
-            estratégia real de crescimento. Mais de 200 empresas no Brasil e na
-            Europa já comprovaram.
+            A TGT transforma a comunicação do seu negócio em estratégia real de crescimento. Mais de 15 anos de experiência e 200 empresas atendidas no Brasil e na Europa.
           </motion.p>
 
           <motion.div

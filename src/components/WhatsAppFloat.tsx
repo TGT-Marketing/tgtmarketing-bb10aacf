@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import { createPortal } from "react-dom";
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const WhatsAppFloat = () => {
   if (typeof window === "undefined") return null;
 
@@ -9,6 +16,15 @@ const WhatsAppFloat = () => {
       window.dataLayer.push({
         event: "whatsapp_click",
         button_location: "floating_button"
+      });
+    }
+
+    // Google Ads Conversion: WhatsApp
+    if (typeof window.gtag === "function") {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-XXXXXXXXX/WHATSAPP_LABEL',
+        'value': 1.0,
+        'currency': 'BRL'
       });
     }
   };

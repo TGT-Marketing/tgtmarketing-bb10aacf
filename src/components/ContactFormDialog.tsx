@@ -86,6 +86,15 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
         });
       }
 
+      // Google Ads Conversion: Lead
+      if (typeof window.gtag === "function") {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-XXXXXXXXX/CONVERSION_LABEL',
+          'value': 1.0,
+          'currency': 'BRL'
+        });
+      }
+
       setForm({ nome: "", empresa: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "" });
       onOpenChange(false);
     } catch {

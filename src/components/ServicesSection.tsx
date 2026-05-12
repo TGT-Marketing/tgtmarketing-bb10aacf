@@ -11,6 +11,13 @@ import {
   MessageCircle,
 } from "lucide-react";
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const services = [
   {
     icon: Megaphone,
@@ -128,6 +135,21 @@ const ServicesSection = () => {
             href="https://wa.me/5519992795271"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  event: "whatsapp_click",
+                  button_location: "services_section"
+                });
+              }
+              if (typeof window.gtag === "function") {
+                window.gtag('event', 'conversion', {
+                  'send_to': 'AW-XXXXXXXXX/WHATSAPP_LABEL',
+                  'value': 1.0,
+                  'currency': 'BRL'
+                });
+              }
+            }}
             className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 w-full sm:w-auto"
           >
             <MessageCircle size={24} fill="white" />

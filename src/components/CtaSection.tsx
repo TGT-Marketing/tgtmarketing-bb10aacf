@@ -46,7 +46,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             </span>
           </motion.div>
 
-          <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black text-primary-foreground mt-2 mb-8 leading-[1.1] tracking-tight px-2">
+          <h3 className="text-2xl sm:text-5xl lg:text-7xl font-black text-primary-foreground mt-2 mb-8 leading-[1.2] sm:leading-[1.1] tracking-tight px-2">
             Sua empresa merece ser vista, lembrada e <span className="text-gradient">escolhida.</span>
           </h3>
           <p className="text-primary-foreground/50 text-[14px] sm:text-lg mb-5 sm:mb-6 leading-relaxed max-w-2xl mx-auto">

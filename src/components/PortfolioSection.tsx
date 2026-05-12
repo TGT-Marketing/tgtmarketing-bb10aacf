@@ -1148,11 +1148,11 @@ const PortfolioSection = () => {
                   </article>
                 ))}
 
-                <div className="flex justify-center pt-4">
+                <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                   <Button
                     asChild
                     size="lg"
-                    className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold order-2 sm:order-1"
                   >
                     <a 
                       href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa." 
@@ -1168,8 +1168,25 @@ const PortfolioSection = () => {
                       }}
                     >
                       <MessageCircle className="w-5 h-5" />
-                      Quero algo assim para minha empresa
+                      Falar no WhatsApp
                     </a>
+                  </Button>
+
+                  <Button
+                    onClick={() => {
+                      if (window.dataLayer) {
+                        window.dataLayer.push({
+                          event: "diagnosis_button_click",
+                          button_location: "portfolio_modal"
+                        });
+                      }
+                      setContactOpen(true);
+                    }}
+                    size="lg"
+                    variant="outline"
+                    className="border-accent text-accent hover:bg-accent/10 font-bold order-1 sm:order-2"
+                  >
+                    Agendar diagnóstico gratuito
                   </Button>
                 </div>
               </div>

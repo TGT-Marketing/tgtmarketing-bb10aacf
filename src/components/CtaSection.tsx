@@ -15,7 +15,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
     <section
       id="contato"
-      className="section-padding bg-[#0a0a0a] relative overflow-hidden"
+      className="pt-16 pb-12 sm:pt-32 sm:pb-24 bg-[#0a0a0a] relative overflow-hidden"
       ref={ref}
     >
       {/* Premium decorative elements */}
@@ -46,7 +46,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             </span>
           </motion.div>
 
-          <h3 className="text-3xl sm:text-5xl lg:text-7xl font-black text-primary-foreground mt-2 mb-8 leading-[1.1] tracking-tight px-2">
+          <h3 className="text-2xl sm:text-5xl lg:text-7xl font-black text-primary-foreground mt-2 mb-8 leading-[1.2] sm:leading-[1.1] tracking-tight px-2">
             Sua empresa merece ser vista, lembrada e <span className="text-gradient">escolhida.</span>
           </h3>
           <p className="text-primary-foreground/50 text-[14px] sm:text-lg mb-5 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
@@ -96,7 +96,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                     });
                   }
                 }}
-                className="shine-effect btn-outline-light inline-flex items-center justify-center gap-2.5 text-[15px] sm:text-lg flex-nowrap w-full sm:w-auto py-4 sm:py-5 px-10 order-2 sm:order-1"
+                className="shine-effect btn-outline-light inline-flex items-center justify-center gap-2.5 text-[15px] sm:text-lg flex-nowrap w-full sm:w-auto py-4 sm:py-5 px-10 order-2 sm:order-1 transition-all duration-500"
               >
                 <MessageCircle size={22} className="shrink-0" />
                 <span>Falar no WhatsApp</span>

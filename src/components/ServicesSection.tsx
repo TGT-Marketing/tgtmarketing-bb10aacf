@@ -62,7 +62,7 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="servicos" className="section-padding bg-background" ref={ref}>
+    <section id="servicos" className="pt-16 pb-12 sm:pt-32 sm:pb-24 bg-background" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ const ServicesSection = () => {
           <span className="section-label justify-center mb-4 block">
             O que fazemos
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 tracking-tight leading-[1.1]">
+          <h2 className="text-2xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 tracking-tight leading-[1.2] sm:leading-[1.1]">
             Marketing e Vendas: Soluções que geram <span className="text-gradient">resultado real.</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />

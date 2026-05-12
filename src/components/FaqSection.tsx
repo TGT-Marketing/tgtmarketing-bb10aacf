@@ -45,7 +45,7 @@ const FaqSection = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="section-label mb-4 block">Dúvidas Frequentes</span>
-            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.1] tracking-tight">
+            <h2 className="text-2xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.2] sm:leading-[1.1] tracking-tight">
               Tudo o que você precisa <span className="text-gradient">saber.</span>
             </h2>
             <div className="divider-accent mb-8" />

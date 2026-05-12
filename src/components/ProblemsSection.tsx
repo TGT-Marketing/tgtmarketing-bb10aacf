@@ -46,7 +46,7 @@ const ProblemsSection = ({
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding bg-section-dark" ref={ref}>
+    <section className="pt-20 pb-10 sm:pt-32 sm:pb-24 bg-section-dark" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ const ProblemsSection = ({
           <span className="section-label text-accent justify-center mb-4 block">
             Isso parece familiar?
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-section-dark-foreground mt-3 mb-6 leading-[1.1] tracking-tight">
+          <h2 className="text-2xl sm:text-5xl lg:text-7xl font-black text-section-dark-foreground mt-3 mb-6 leading-[1.2] sm:leading-[1.1] tracking-tight">
             Se sua empresa enfrenta esses problemas, <span className="text-gradient">você está perdendo dinheiro.</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />

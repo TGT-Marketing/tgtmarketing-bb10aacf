@@ -95,10 +95,10 @@ const ResultsSection = () => {
   return (
     <section
       id="resultados"
-      className="section-padding bg-section-dark relative overflow-hidden"
+      className="pt-20 pb-10 sm:pt-32 sm:pb-16 bg-section-dark relative overflow-hidden"
       ref={ref}
     >
-      <div className="absolute -bottom-20 -left-20 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none whitespace-nowrap">
+      <div className="absolute -bottom-20 -left-20 text-[20vw] font-black text-white/[0.01] select-none pointer-events-none whitespace-nowrap">
         RESULTADOS
       </div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[160px] pointer-events-none" />
@@ -113,7 +113,7 @@ const ResultsSection = () => {
           <span className="section-label text-accent justify-center mb-4 block">
             Resultados
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-section-dark-foreground mt-3 mb-6 leading-[1.1] tracking-tight">
+          <h2 className="text-2xl sm:text-5xl lg:text-7xl font-black text-section-dark-foreground mt-3 mb-6 leading-[1.2] sm:leading-[1.1] tracking-tight">
             Marketing Digital: Números que <span className="text-gradient">comprovam!</span>
           </h2>
           <div className="divider-accent mx-auto mb-6" />
@@ -129,7 +129,7 @@ const ResultsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="text-center bg-primary/50 rounded-2xl p-3 sm:p-8 border-2 border-section-dark-foreground/5 hover:border-accent/50 transition-all duration-500 group"
+              className="text-center bg-white/[0.03] backdrop-blur-md rounded-[2rem] p-4 sm:p-8 border border-white/[0.08] transition-all duration-700 hover:border-accent/40 hover:-translate-y-2 hover:bg-white/[0.06] group"
             >
               <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-xl sm:rounded-2xl bg-accent/8 flex items-center justify-center mb-3 sm:mb-5 group-hover:bg-accent/15 transition-colors duration-500">
                 <stat.icon className="text-accent" size={22} />

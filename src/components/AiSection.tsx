@@ -29,7 +29,7 @@ const AiSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
     <section
       ref={ref}
-      className="section-padding"
+      className="pt-16 pb-12 sm:pt-32 sm:pb-24"
       style={{ background: "hsl(0 0% 8%)" }}
     >
       <div className="container-main">

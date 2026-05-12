@@ -96,9 +96,21 @@ const ProcessSection = () => {
           <p className="text-muted-foreground mb-5 text-[15px]">
             O primeiro passo é simples — e gratuito.
           </p>
-          <a href="#contato" className="btn-primary inline-block">
+          <button
+            onClick={() => {
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  event: "diagnosis_button_click",
+                  button_location: "process_section"
+                });
+              }
+              const event = new CustomEvent('open-contact');
+              window.dispatchEvent(event);
+            }}
+            className="shine-effect btn-primary inline-block"
+          >
             Agendar meu diagnóstico
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

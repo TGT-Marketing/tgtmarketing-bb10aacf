@@ -15,7 +15,7 @@ const CtaSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   return (
     <section
       id="contato"
-      className="section-padding bg-[#0a0a0a] relative overflow-hidden"
+      className="pt-16 pb-12 sm:pt-32 sm:pb-24 bg-[#0a0a0a] relative overflow-hidden"
       ref={ref}
     >
       {/* Premium decorative elements */}

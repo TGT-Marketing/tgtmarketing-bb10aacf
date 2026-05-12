@@ -77,8 +77,10 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-primary-foreground relative z-10"
+          className="md:hidden text-primary-foreground relative z-[60] w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 active:scale-90 transition-transform"
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-expanded={mobileOpen}
+          aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -88,13 +90,21 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-            className="md:hidden bg-primary/95 backdrop-blur-2xl border-t border-white/5 overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setMobileOpen(false)}
+            className="fixed inset-0 z-[50] md:hidden bg-primary/60 backdrop-blur-md"
           >
-            <nav className="flex flex-col p-8 gap-6">
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="absolute right-0 top-0 h-full w-[85%] max-w-[320px] bg-primary border-l border-white/5 shadow-2xl overflow-y-auto"
+            >
+              <div className="flex flex-col p-8 pt-24 gap-6">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
@@ -129,8 +139,9 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                 <MessageCircle size={22} className="shrink-0" />
                 Falar no WhatsApp
               </motion.a>
-            </nav>
+            </div>
           </motion.div>
+        </motion.div>
         )}
       </AnimatePresence>
     </header>

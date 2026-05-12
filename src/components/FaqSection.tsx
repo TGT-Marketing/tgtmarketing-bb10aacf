@@ -53,9 +53,40 @@ const FaqSection = () => {
               Separamos as principais dúvidas de quem busca elevar o patamar do seu marketing e vendas. Se não encontrar o que procura, fale conosco.
             </p>
             
-            <div className="mt-12 hidden lg:flex items-center gap-4 text-accent/60">
-              <HelpCircle size={40} className="animate-pulse" />
-              <div className="text-sm font-bold uppercase tracking-widest">Suporte especializado</div>
+            <div className="mt-12 flex flex-col gap-5">
+              <button
+                onClick={() => {
+                  if (window.dataLayer) {
+                    window.dataLayer.push({
+                      event: "diagnosis_button_click",
+                      button_location: "faq_section"
+                    });
+                  }
+                  const event = new CustomEvent('open-contact');
+                  window.dispatchEvent(event);
+                }}
+                className="shine-effect btn-primary w-full sm:w-auto px-10 py-5 text-base sm:text-lg"
+              >
+                Agendar diagnóstico gratuito
+              </button>
+              
+              <a
+                href="https://wa.me/5519992795271?text=Olá! Gostaria de tirar uma dúvida sobre o diagnóstico gratuito."
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (window.dataLayer) {
+                    window.dataLayer.push({
+                      event: "whatsapp_click",
+                      button_location: "faq_section"
+                    });
+                  }
+                }}
+                className="flex items-center gap-3 text-accent font-bold text-sm uppercase tracking-widest hover:gap-5 transition-all duration-300 ml-2"
+              >
+                Tirar dúvida no WhatsApp
+                <ChevronDown className="-rotate-90 w-4 h-4" />
+              </a>
             </div>
           </motion.div>
 

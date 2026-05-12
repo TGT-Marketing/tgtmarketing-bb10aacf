@@ -292,9 +292,15 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-[10px] text-primary-foreground/40 uppercase tracking-widest justify-center">
-            <ShieldCheck size={12} />
-            Seus dados estão seguros conosco
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 text-[10px] text-primary-foreground/40 uppercase tracking-widest justify-center">
+              <ShieldCheck size={12} />
+              Seus dados estão seguros conosco
+            </div>
+            
+            <p className="text-[10px] text-primary-foreground/30 text-center leading-relaxed">
+              Base Legal: O tratamento dos seus dados é realizado com base no seu <strong>Consentimento</strong> (Art. 7º, I, LGPD) e no <strong>Legítimo Interesse</strong> da TGT Marketing (Art. 7º, IX, LGPD) para fornecer o diagnóstico solicitado e realizar comunicações comerciais pertinentes ao seu interesse demonstrado. Você pode revogar seu consentimento a qualquer momento.
+            </p>
           </div>
 
           <Button

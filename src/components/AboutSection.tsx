@@ -47,6 +47,15 @@ const AboutSection = () => {
             </div>
             <a
               href="#trabalhos"
+              onClick={() => {
+                if (window.dataLayer) {
+                  window.dataLayer.push({
+                    event: "cta_click",
+                    cta_name: "conheca_nossos_trabalhos",
+                    button_location: "about_section"
+                  });
+                }
+              }}
               className="inline-block mt-8 btn-primary text-base py-3.5 px-7"
             >
               Conheça nossos trabalhos
@@ -129,6 +138,15 @@ const AboutSection = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               whileHover={{ y: -6, scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                if (window.dataLayer) {
+                  window.dataLayer.push({
+                    event: "cta_click",
+                    cta_name: "linha_do_tempo",
+                    button_location: "about_section"
+                  });
+                }
+              }}
               className="mt-16 sm:mt-24 relative rounded-2xl overflow-hidden border border-border group cursor-pointer transition-all duration-500 hover:border-accent hover:shadow-[0_20px_60px_-15px_hsl(var(--accent)/0.5)] bg-secondary"
             >
               {/* Shine sweep effect - white reflection */}

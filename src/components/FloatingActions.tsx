@@ -31,9 +31,17 @@ const FloatingActions = () => {
       </AnimatePresence>
 
       <motion.a
-        href="https://wa.me/5519992795271"
+        href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa."
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => {
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: "whatsapp_click",
+              button_location: "floating_button"
+            });
+          }
+        }}
         className="shine-effect pointer-events-auto relative w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
         aria-label="Falar no WhatsApp"
         style={{

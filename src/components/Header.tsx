@@ -30,7 +30,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
       }`}
     >
       <div className="container-main px-4 sm:px-6 flex items-center justify-between">
-        <a href="#" className="relative z-10">
+        <a href="#" className="relative z-10 group/logo">
           <img
             src={logoTgt}
             alt="TGT Marketing Digital Americana SP"
@@ -39,7 +39,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             loading="eager"
             decoding="async"
             fetchPriority="high"
-            className={`transition-all duration-500 ${scrolled ? "h-8" : "h-10"} w-auto brightness-0 invert`}
+            className={`transition-all duration-700 ${scrolled ? "h-7 sm:h-8" : "h-9 sm:h-10"} w-auto brightness-0 invert group-hover/logo:scale-105`}
           />
         </a>
 

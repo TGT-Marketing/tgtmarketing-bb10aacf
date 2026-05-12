@@ -18,11 +18,11 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="section-label mb-4 block">Quem somos</span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-5 leading-tight tracking-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.1] tracking-tight">
               Estratégia de Marketing Digital:
               <br />
               Somos sua{" "}
-              <span className="text-accent">parceira de crescimento.</span>
+              <span className="text-gradient">parceira de crescimento.</span>
             </h2>
             <div className="divider-accent mb-8" />
             <div className="space-y-5 text-muted-foreground leading-relaxed text-[15px]">

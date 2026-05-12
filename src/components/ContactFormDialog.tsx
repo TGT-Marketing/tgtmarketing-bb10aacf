@@ -150,8 +150,8 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
       if (error) throw error;
 
       toast({ 
-        title: "Agendamento confirmado! 🎉", 
-        description: "Seus dados foram enviados com sucesso. Você será redirecionado para finalizar o processo." 
+        title: "Solicitação recebida com sucesso! 🎉", 
+        description: "Em instantes você será redirecionado para a página de confirmação." 
       });
       
       if (window.dataLayer) {

@@ -49,6 +49,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
   const [form, setForm] = useState({
     nome: "",
     empresa: "",
+    email: "",
     whatsapp: "",
     faturamento: "",
     objetivo: "",
@@ -58,8 +59,14 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!form.nome || !form.empresa || !form.whatsapp || !form.faturamento || !form.objetivo) {
+    if (!form.nome || !form.empresa || !form.email || !form.whatsapp || !form.faturamento || !form.objetivo) {
       toast({ title: "Preencha todos os campos obrigatórios.", variant: "destructive" });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      toast({ title: "E-mail inválido", description: "Por favor, insira um e-mail válido.", variant: "destructive" });
       return;
     }
 
@@ -69,6 +76,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
         body: {
           nome: form.nome,
           empresa: form.empresa,
+          email: form.email,
           whatsapp: form.whatsapp,
           faturamento: form.faturamento,
           objetivo: form.objetivo === "Outro" ? form.outroObjetivo : form.objetivo,
@@ -98,7 +106,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
         });
       }
 
-      setForm({ nome: "", empresa: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "" });
+      setForm({ nome: "", empresa: "", email: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "" });
       onOpenChange(false);
       navigate("/obrigado");
     } catch {
@@ -132,6 +140,19 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
               required
               minLength={3}
               maxLength={100}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-primary-foreground/80">E-mail corporativo *</Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="Ex: joao@empresa.com.br"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent/50 transition-colors"
+              required
             />
           </div>
 

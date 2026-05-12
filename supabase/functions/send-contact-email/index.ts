@@ -12,10 +12,10 @@ serve(async (req) => {
   }
 
   try {
-    const { nome, empresa, whatsapp, faturamento, objetivo } = await req.json();
+    const { nome, empresa, email, whatsapp, faturamento, objetivo } = await req.json();
 
     // Validate inputs
-    if (!nome || !empresa || !whatsapp || !faturamento || !objetivo) {
+    if (!nome || !empresa || !email || !whatsapp || !faturamento || !objetivo) {
       return new Response(
         JSON.stringify({ error: "Todos os campos são obrigatórios." }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -32,6 +32,7 @@ serve(async (req) => {
       <table style="border-collapse:collapse;width:100%;max-width:600px;">
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Nome completo</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(nome)}</td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Empresa</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(empresa)}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">E-mail</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(email)}</td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">WhatsApp</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(whatsapp)}</td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Faturamento</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(faturamento)}</td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Objetivo</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(objetivo)}</td></tr>

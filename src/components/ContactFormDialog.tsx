@@ -94,7 +94,6 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
       toast({ title: "Enviado com sucesso!", description: "Entraremos em contato em breve." });
       
-      // Analytics Event: Form Submission
       if (window.dataLayer) {
         window.dataLayer.push({
           event: "form_submission",
@@ -104,7 +103,6 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
         });
       }
 
-      // Google Ads Conversion: Lead
       if (typeof window.gtag === "function") {
         window.gtag('event', 'conversion', {
           'send_to': 'AW-XXXXXXXXX/CONVERSION_LABEL',
@@ -211,27 +209,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
             </Select>
           </div>
 
-          <div className="flex items-start space-x-3 bg-primary-foreground/5 p-4 rounded-lg border border-primary-foreground/10">
-            <Checkbox
-              id="consentimento"
-              checked={form.consentimento}
-              onCheckedChange={(checked) => setForm({ ...form, consentimento: checked === true })}
-              className="mt-1 border-primary-foreground/30 data-[state=checked]:bg-accent data-[state=checked]:border-accent"
-            />
-            <div className="grid gap-1.5 leading-none">
-              <label
-                htmlFor="consentimento"
-                className="text-xs sm:text-sm text-primary-foreground/70 cursor-pointer select-none"
-              >
-                Concordo com o processamento dos meus dados para fins de diagnóstico e contato comercial, conforme a <span className="text-accent hover:underline">Política de Privacidade</span>.
-              </label>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 text-[10px] text-primary-foreground/40 uppercase tracking-widest justify-center">
-            <ShieldCheck size={12} />
-            Seus dados estão seguros conosco
-          </div>
+          <div className="space-y-3">
             <Label className="text-primary-foreground/80">Objetivo principal *</Label>
             <RadioGroup
               value={form.objetivo}
@@ -259,6 +237,28 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
                 maxLength={500}
               />
             )}
+          </div>
+
+          <div className="flex items-start space-x-3 bg-primary-foreground/5 p-4 rounded-lg border border-primary-foreground/10">
+            <Checkbox
+              id="consentimento"
+              checked={form.consentimento}
+              onCheckedChange={(checked) => setForm({ ...form, consentimento: checked === true })}
+              className="mt-1 border-primary-foreground/30 data-[state=checked]:bg-accent data-[state=checked]:border-accent"
+            />
+            <div className="grid gap-1.5 leading-none">
+              <label
+                htmlFor="consentimento"
+                className="text-xs sm:text-sm text-primary-foreground/70 cursor-pointer select-none"
+              >
+                Concordo com o processamento dos meus dados para fins de diagnóstico e contato comercial, conforme a <span className="text-accent hover:underline">Política de Privacidade</span>.
+              </label>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 text-[10px] text-primary-foreground/40 uppercase tracking-widest justify-center">
+            <ShieldCheck size={12} />
+            Seus dados estão seguros conosco
           </div>
 
           <Button

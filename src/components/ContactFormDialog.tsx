@@ -113,10 +113,10 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
       <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-primary border-accent/20 mx-3 sm:mx-auto rounded-xl sm:rounded-2xl p-4 sm:p-6" data-lenis-prevent>
         <DialogHeader>
           <DialogTitle className="text-2xl font-extrabold text-primary-foreground">
-            Diagnóstico <span className="text-accent">Gratuito</span>
+            Agendar Diagnóstico <span className="text-accent">Gratuito</span>
           </DialogTitle>
           <DialogDescription className="text-primary-foreground/60">
-            Preencha o formulário e receba um diagnóstico personalizado para o seu negócio.
+            Escolha um horário para conversarmos sobre o crescimento do seu negócio.
           </DialogDescription>
         </DialogHeader>
 
@@ -219,9 +219,9 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
             className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-6"
           >
             {loading ? (
-              <><Loader2 className="animate-spin" size={20} /> Enviando...</>
+              <><Loader2 className="animate-spin" size={20} /> Agendando...</>
             ) : (
-              <><Send size={20} /> Enviar diagnóstico</>
+              <><Send size={20} /> Agendar agora</>
             )}
           </Button>
         </form>

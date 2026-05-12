@@ -12,7 +12,11 @@ serve(async (req) => {
   }
 
   try {
-    const { nome, empresa, email, whatsapp, faturamento, objetivo } = await req.json();
+    let { nome, empresa, email, whatsapp, faturamento, objetivo } = await req.json();
+
+    // Normalize WhatsApp (remove all non-digits)
+    const whatsappNormalized = whatsapp.replace(/\D/g, "");
+    const whatsappLink = `https://wa.me/55${whatsappNormalized}`;
 
     // Validate inputs
     if (!nome || !empresa || !email || !whatsapp || !faturamento || !objetivo) {
@@ -33,7 +37,7 @@ serve(async (req) => {
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Nome completo</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(nome)}</td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Empresa</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(empresa)}</td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">E-mail</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(email)}</td></tr>
-        <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">WhatsApp</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(whatsapp)}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">WhatsApp</td><td style="padding:8px;border:1px solid #ddd;"><a href="${whatsappLink}">${escapeHtml(whatsapp)}</a></td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Faturamento</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(faturamento)}</td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Objetivo</td><td style="padding:8px;border:1px solid #ddd;">${escapeHtml(objetivo)}</td></tr>
       </table>

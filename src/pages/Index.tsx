@@ -20,6 +20,12 @@ import CustomCursor from "@/components/CustomCursor";
 const Index = () => {
   const [contactOpen, setContactOpen] = useState(false);
 
+  useEffect(() => {
+    const handleOpenContact = () => setContactOpen(true);
+    window.addEventListener('open-contact', handleOpenContact);
+    return () => window.removeEventListener('open-contact', handleOpenContact);
+  }, []);
+
   return (
     <SmoothScroll>
       <div className="min-h-screen bg-section-dark selection:bg-accent/30 selection:text-white">

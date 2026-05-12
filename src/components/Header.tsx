@@ -88,27 +88,33 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-primary shadow-2xl border-t border-primary-foreground/5 overflow-hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+            className="md:hidden bg-primary/95 backdrop-blur-2xl border-t border-white/5 overflow-hidden"
           >
-            <nav className="flex flex-col p-6 gap-4">
-              {navLinks.map((link) => (
-                <a
+            <nav className="flex flex-col p-8 gap-6">
+              {navLinks.map((link, i) => (
+                <motion.a
                   key={link.href}
                   href={link.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
                   onClick={() => setMobileOpen(false)}
-                  className="text-primary-foreground/70 hover:text-accent transition-colors font-medium text-sm uppercase tracking-wide"
+                  className="text-primary-foreground/60 hover:text-accent transition-colors font-bold text-lg uppercase tracking-[0.2em]"
                 >
                   {link.label}
-                </a>
+                </motion.a>
               ))}
-              <a
+              <motion.a
                 href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa."
                 target="_blank"
                 rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.1 }}
                 onClick={() => {
                   if (window.dataLayer) {
                     window.dataLayer.push({
@@ -118,11 +124,11 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                   }
                   setMobileOpen(false);
                 }}
-                className="shine-effect inline-flex items-center justify-center gap-2.5 bg-accent text-accent-foreground px-5 py-3.5 rounded-lg text-sm font-bold text-center hover:shadow-lg transition-all mt-2 uppercase tracking-wide active:scale-[0.97]"
+                className="shine-effect inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground px-6 py-5 rounded-2xl text-base font-black hover:shadow-[0_0_40px_hsl(var(--accent)/0.5)] transition-all mt-4 uppercase tracking-[0.15em] active:scale-[0.95]"
               >
-                <MessageCircle size={18} className="shrink-0" />
+                <MessageCircle size={22} className="shrink-0" />
                 Falar no WhatsApp
-              </a>
+              </motion.a>
             </nav>
           </motion.div>
         )}

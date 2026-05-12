@@ -781,7 +781,16 @@ const PortfolioSection = () => {
             >
               <motion.button
                 type="button"
-                onClick={() => setActiveItem(item)}
+                onClick={() => {
+                  if (window.dataLayer) {
+                    window.dataLayer.push({
+                      event: "portfolio_item_click",
+                      portfolio_title: item.title,
+                      portfolio_category: item.category
+                    });
+                  }
+                  setActiveItem(item);
+                }}
                 whileHover={{ y: -10 }}
                 className="group relative w-full aspect-[3/4.5] overflow-hidden rounded-[2rem] cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-accent shadow-2xl transition-all duration-500 hover:shadow-premium-accent"
                 aria-label={`Ver trabalhos de ${item.title}`}

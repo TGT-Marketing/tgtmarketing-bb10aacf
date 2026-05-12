@@ -17,6 +17,14 @@ serve(async (req) => {
     // Normalize WhatsApp (remove all non-digits)
     const whatsappNormalized = whatsapp.replace(/\D/g, "");
     
+    // Server-side validation for WhatsApp
+    if (whatsappNormalized.length < 8 || whatsappNormalized.length > 15) {
+      return new Response(
+        JSON.stringify({ error: "Número de WhatsApp inválido." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+    
     // Add 55 prefix if it's a Brazilian number (10 or 11 digits) and doesn't have it
     let whatsappWithCountry = whatsappNormalized;
     if ((whatsappNormalized.length === 10 || whatsappNormalized.length === 11) && !whatsappNormalized.startsWith("55")) {

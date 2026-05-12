@@ -114,19 +114,17 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-14"
           >
             <div className="flex flex-wrap gap-4">
-              <motion.a
-                href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa."
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.button
                 onClick={() => {
                   if (window.dataLayer) {
                     window.dataLayer.push({
-                      event: "whatsapp_click",
+                      event: "diagnosis_button_click",
                       button_location: "hero_section"
                     });
                   }
+                  onOpenContact?.();
                 }}
-                className="group relative inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground font-extrabold text-[15px] sm:text-lg px-8 sm:px-12 py-3.5 sm:py-5 rounded-xl w-full sm:w-auto whitespace-nowrap overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground font-extrabold text-[15px] sm:text-lg px-8 sm:px-12 py-3.5 sm:py-5 rounded-xl w-full sm:w-auto whitespace-nowrap overflow-hidden order-1 sm:order-2"
                 style={{
                   boxShadow: "0 0 20px hsl(0 78% 48% / 0.5), 0 0 60px hsl(0 78% 48% / 0.2), 0 8px 32px hsl(0 0% 0% / 0.3)",
                 }}
@@ -141,26 +139,28 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
                 {/* Pulse ring */}
                 <span className="absolute inset-0 rounded-xl animate-ping opacity-20 bg-accent pointer-events-none" style={{ animationDuration: "2.5s" }} />
-                <MessageCircle size={20} className="shrink-0 relative z-10" />
-                <span className="relative z-10">Falar com especialista agora</span>
-              </motion.a>
+                <span className="relative z-10">Agendar diagnóstico gratuito</span>
+              </motion.button>
 
-              <motion.button
+              <motion.a
+                href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa."
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   if (window.dataLayer) {
                     window.dataLayer.push({
-                      event: "diagnosis_button_click",
+                      event: "whatsapp_click",
                       button_location: "hero_section"
                     });
                   }
-                  onOpenContact?.();
                 }}
-                className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-5 rounded-xl border-2 border-primary-foreground/20 hover:border-accent/50 hover:bg-accent/5 text-primary-foreground font-bold text-[15px] sm:text-lg transition-all duration-300 w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-5 rounded-xl border-2 border-primary-foreground/20 hover:border-accent/50 hover:bg-accent/5 text-primary-foreground font-bold text-[15px] sm:text-lg transition-all duration-300 w-full sm:w-auto order-2 sm:order-1"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Análise gratuita
-              </motion.button>
+                <MessageCircle size={20} className="shrink-0" />
+                <span className="relative z-10">Falar no WhatsApp</span>
+              </motion.a>
             </div>
           </motion.div>
 

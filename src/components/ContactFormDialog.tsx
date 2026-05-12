@@ -87,14 +87,22 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     const isValidDDD = ddd >= 11 && ddd <= 99;
     const isMobile = whatsappDigits.length === 11 && whatsappDigits[2] === "9";
     const isLandline = whatsappDigits.length === 10;
+    const isInternational = whatsappDigits.length >= 8 && whatsappDigits.length <= 15;
 
-    if (!isValidDDD || (!isMobile && !isLandline)) {
+    if (!isInternational) {
       toast({ 
-        title: "WhatsApp inválido", 
-        description: "Por favor, insira um número de WhatsApp válido com DDD.", 
+        title: "Número inválido", 
+        description: "Por favor, insira um número de contato válido.", 
         variant: "destructive" 
       });
       return;
+    }
+
+    // Fallback/Warning for Brazilian numbers that don't match strict rules
+    if (whatsappDigits.startsWith("55") === false && (whatsappDigits.length === 10 || whatsappDigits.length === 11)) {
+      if (!isValidDDD || (!isMobile && !isLandline)) {
+        console.warn("Número brasileiro detectado com formato possivelmente inválido, mas permitindo envio.");
+      }
     }
 
     setLoading(true);

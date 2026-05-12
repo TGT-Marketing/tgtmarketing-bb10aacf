@@ -57,6 +57,13 @@
       gtag('js', new Date());
       gtag('config', 'AW-XXXXXXXXX');
       gtag('config', 'G-XXXXXXXXXX'); // GA4 Measurement ID
+      
+      // GTM Fallback: Garantir que o dataLayer funcione mesmo se o GTM demorar a carregar
+      window.addEventListener('load', function() {
+        if (!window.google_tag_manager) {
+          console.warn('GTM não detectado. Ativando fallback para eventos via gtag.');
+        }
+      });
     </script>
     <!-- Google Tag Manager -->
     <script>

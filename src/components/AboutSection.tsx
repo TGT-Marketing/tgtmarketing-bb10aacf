@@ -111,7 +111,7 @@ const AboutSection = () => {
                   key={stat.label}
                   initial={{ opacity: 0, y: 15 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.4 + i * 0.1, ease: [0.23, 1, 0.32, 1] }}
                   whileHover={{ y: -6, scale: 1.03 }}
                   className="card-premium p-4 sm:p-7 text-center group relative overflow-hidden"
                 >

@@ -22,7 +22,7 @@ const highlights = [
   },
 ];
 
-const AiSection = () => {
+const AiSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 

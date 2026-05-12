@@ -13,9 +13,9 @@ const AboutSection = () => {
       <div className="container-main" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
           >
             <span className="section-label mb-4 block">Quem somos</span>
             <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.1] tracking-tight">

@@ -75,7 +75,7 @@ const ProblemsSection = ({
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-primary/60 border-2 border-section-dark-foreground/8 rounded-xl sm:rounded-2xl p-4 sm:p-7 hover:border-accent/50 transition-all duration-500 hover:bg-primary/80"
+              className="group bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-[2rem] p-6 sm:p-10 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] hover:border-accent/40 hover:-translate-y-3 hover:bg-white/[0.06] hover:shadow-2xl"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
                 <problem.icon

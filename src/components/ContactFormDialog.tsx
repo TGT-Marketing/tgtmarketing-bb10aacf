@@ -149,7 +149,10 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
       if (error) throw error;
 
-      toast({ title: "Enviado com sucesso!", description: "Entraremos em contato em breve." });
+      toast({ 
+        title: "Agendamento confirmado! 🎉", 
+        description: "Seus dados foram enviados com sucesso. Você será redirecionado para finalizar o processo." 
+      });
       
       if (window.dataLayer) {
         window.dataLayer.push({

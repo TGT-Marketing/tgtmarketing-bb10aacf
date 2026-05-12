@@ -56,10 +56,26 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     objetivo: "",
     outroObjetivo: "",
     consentimento: false,
+    website: "", // Honeypot field
   });
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Anti-spam: Honeypot check
+    if (form.website) {
+      console.warn("Spam detected via honeypot.");
+      onOpenChange(false);
+      return;
+    }
+
+    // Anti-spam: Rate limiting (min 5 seconds between submissions)
+    const now = Date.now();
+    if (now - lastSubmitTime < 5000) {
+      toast({ title: "Aguarde um momento", description: "Muitas solicitações em pouco tempo. Tente novamente em alguns segundos.", variant: "destructive" });
+      return;
+    }
 
     if (!form.nome || !form.empresa || !form.email || !form.whatsapp || !form.faturamento || !form.objetivo) {
       toast({ title: "Preencha todos os campos obrigatórios.", variant: "destructive" });
@@ -107,6 +123,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
     setLoading(true);
     try {
+      setLastSubmitTime(Date.now());
       const { error } = await supabase.functions.invoke("send-contact-email", {
         body: {
           nome: form.nome,
@@ -139,7 +156,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
         });
       }
 
-      setForm({ nome: "", empresa: "", email: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "", consentimento: false });
+      setForm({ nome: "", empresa: "", email: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "", consentimento: false, website: "" });
       onOpenChange(false);
       navigate("/obrigado");
     } catch {
@@ -162,6 +179,18 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-5 mt-2">
+          {/* Honeypot field - hidden from users */}
+          <div className="hidden" aria-hidden="true">
+            <Input
+              type="text"
+              name="website"
+              value={form.website}
+              onChange={(e) => setForm({ ...form, website: e.target.value })}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
           <div className="space-y-2">
             <Label htmlFor="nome" className="text-primary-foreground/80">Nome completo *</Label>
             <Input

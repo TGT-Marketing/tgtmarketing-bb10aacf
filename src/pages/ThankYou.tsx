@@ -30,7 +30,7 @@ const ThankYou = () => {
             transition={{ delay: 0.2 }}
             className="text-4xl sm:text-5xl font-extrabold text-primary-foreground mb-6"
           >
-            Solicitação Recebida!
+            Quase lá! Só falta um passo.
           </motion.h1>
 
           <motion.p
@@ -39,7 +39,7 @@ const ThankYou = () => {
             transition={{ delay: 0.3 }}
             className="text-lg text-primary-foreground/70 mb-12 leading-relaxed"
           >
-            Obrigado pelo seu interesse. Nossa equipe de especialistas já foi notificada e entrará em contato com você em até 24 horas úteis para iniciarmos seu diagnóstico.
+            Sua solicitação foi recebida com sucesso. Para agilizar seu diagnóstico, você pode nos chamar diretamente no WhatsApp clicando no botão abaixo.
           </motion.p>
 
           <motion.div

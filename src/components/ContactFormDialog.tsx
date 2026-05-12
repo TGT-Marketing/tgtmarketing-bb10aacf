@@ -54,6 +54,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     faturamento: "",
     objetivo: "",
     outroObjetivo: "",
+    consentimento: false,
   });
 
   const handleSubmit = async (e: React.FormEvent) => {

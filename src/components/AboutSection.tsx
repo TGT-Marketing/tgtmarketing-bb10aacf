@@ -22,7 +22,7 @@ const AboutSection = () => {
             transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
           >
             <span className="section-label mb-4 block">Quem somos</span>
-            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.1] tracking-tight">
+            <h2 className="text-2xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.2] sm:leading-[1.1] tracking-tight">
               Estratégia de Marketing Digital:
               <br />
               Somos sua{" "}

@@ -637,9 +637,9 @@ const portfolioItems: PortfolioItem[] = [
         link: "https://claudiopocosartesianos.com.br/",
       },
       {
-        client: "Cliente: Rick Medicina Ocupacional | https://www.ricksocupacional.com.br/",
+        client: "Cliente: Ricks Medicina Ocupacional | https://www.ricksocupacional.com.br/",
         description:
-          "O site da Rick Medicina Ocupacional apresenta uma construção moderna, objetiva e profissional, transmitindo credibilidade, organização e confiança para empresas que buscam serviços de medicina ocupacional e segurança do trabalho.\n\nDo ponto de vista de desenvolvimento, o site se destaca pela navegação simples, layout limpo, boa hierarquia visual e estrutura comercial, facilitando o acesso às informações e conduzindo o visitante ao contato.\n\nResumo final:\nUm site bem estruturado, estratégico e funcional, pensado para fortalecer a autoridade da marca e transformar visitantes em potenciais clientes.",
+          "O site da Ricks Medicina Ocupacional apresenta uma construção moderna, objetiva e profissional, transmitindo credibilidade, organização e confiança para empresas que buscam serviços de medicina ocupacional e segurança do trabalho.\n\nDo ponto de vista de desenvolvimento, o site se destaca pela navegação simples, layout limpo, boa hierarquia visual e estrutura comercial, facilitando o acesso às informações e conduzindo o visitante ao contato.\n\nResumo final:\nUm site bem estruturado, estratégico e funcional, pensado para fortalecer a autoridade da marca e transformar visitantes em potenciais clientes.",
         results: [
           "Sua empresa aberta 24 horas por dia na internet",
           "Mais credibilidade e confiança para o cliente comprar",

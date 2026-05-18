@@ -25,6 +25,15 @@ const testimonials = [
     videoUrl: "https://www.youtube.com/embed/1jg7Gn7HnBA",
   },
   {
+    name: "Vinicius Ribeiro",
+    role: "Diretor Executivo, Max Limp Produtos de Limpeza, Higiene e Descartáveis",
+    text: "As ideias que nós passamos para a TGT sempre se encaixava, casou muito essa questão das ideias e fez com que essa parceria se tornasse um sucesso. Eu agradeço muito a toda a equipe TGT, à todos os colaboradores, ao time. Toda equipe tem toda paciência para que as coisas aconteçam e espero que continuemos sendo parceiros por muitos e muitos anos...",
+    rating: 5,
+    initials: "VR",
+    photo: testimonialVinicius,
+    videoUrl: "https://www.youtube.com/embed/vUUIUwri964",
+  },
+  {
     name: "Andréa Palharini",
     role: "Diretora e Engenheira de Alimentos, Equalisa Consultoria e Treinamentos de Alimentos",
     text: "Excelente experiência do início ao fim! Atendimento atencioso, condução super profissional durante o evento e uma entrega final impecável. As fotos, vídeos e depoimentos captaram perfeitamente a essência do evento e fortaleceram muito o posicionamento da minha marca. Recomendo sem hesitar!",
@@ -39,15 +48,6 @@ const testimonials = [
     rating: 5,
     initials: "FF",
     photo: testimonialFrancine,
-  },
-  {
-    name: "Vinicius Ribeiro",
-    role: "Diretor Executivo, Max Limp Produtos de Limpeza, Higiene e Descartáveis",
-    text: "As ideias que nós passamos para a TGT sempre se encaixava, casou muito essa questão das ideias e fez com que essa parceria se tornasse um sucesso. Eu agradeço muito a toda a equipe TGT, à todos os colaboradores, ao time. Toda equipe tem toda paciência para que as coisas aconteçam e espero que continuemos sendo parceiros por muitos e muitos anos...",
-    rating: 5,
-    initials: "VR",
-    photo: testimonialVinicius,
-    videoUrl: "https://www.youtube.com/embed/vUUIUwri964",
   },
 ];
 

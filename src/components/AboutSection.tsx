@@ -23,7 +23,7 @@ const AboutSection = () => {
           >
             <span className="section-label mb-4 block">Quem somos</span>
             <h2 className="text-2xl sm:text-5xl lg:text-7xl font-black text-foreground mt-3 mb-6 leading-[1.2] sm:leading-[1.1] tracking-tight">
-              Estratégia de Marketing Digital:
+              <h1>Estratégia de Marketing Digital:</h1>
               <br />
               Somos sua{" "}
               <span className="text-gradient">parceira de crescimento.</span>

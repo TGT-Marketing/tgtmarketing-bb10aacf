@@ -91,7 +91,7 @@ const AboutSection = () => {
                 height={1350}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-[320px] sm:h-[420px] object-cover object-[center_15%] transition-transform duration-700 ease-out group-hover:scale-110 aspect-[3/4] sm:aspect-auto"
+                className="w-full h-[320px] sm:h-[420px] object-cover object-[center_5%] transition-transform duration-700 ease-out group-hover:scale-110 aspect-[3/4] sm:aspect-auto"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 sm:p-7 z-10 transition-all duration-500 group-hover:from-black">
                 <p className="text-white text-sm sm:text-base font-bold transition-transform duration-500 group-hover:translate-y-[-2px]">

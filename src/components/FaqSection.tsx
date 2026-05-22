@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     question: "Minha empresa atua tanto no varejo quanto no atacado. A TGT Marketing consegue entregar resultados para o meu modelo de negócio?",
-    answer: "Trabalhamos com empresas de diversos portes. O que avaliamos não é apenas o tamanho atual, mas o potencial de crescimento e a disposição para investir estrategicamente. Se você busca escala e profissionalismo, estamos prontos para te ajudar."
+    answer: "Sim! A TGT Marketing & Comunicação é especializada em estratégias para empresas que atuam no varejo e no atacado. Desenvolvemos soluções completas de marketing digital para clientes B2B e B2C, focando em geração de leads, conversão e crescimento real do seu negócio, independente do canal de vendas."
   },
   {
     question: "Em quanto tempo verei os primeiros resultados?",

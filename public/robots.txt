@@ -1,3 +1,5 @@
+Sitemap: https://tgtmarketing.lovable.app/sitemap.xml
+
 User-agent: Googlebot
 Allow: /
 

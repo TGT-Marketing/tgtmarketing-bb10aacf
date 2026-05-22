@@ -9,7 +9,7 @@ const faqs = [
     answer: "Sim, é 100% gratuito. Fazemos isso porque acreditamos que a melhor forma de provar nosso valor é gerando clareza para o seu negócio antes mesmo de qualquer contrato. Se ao final você perceber que faz sentido trabalharmos juntos, excelente. Se não, você sairá com um plano de ação claro para sua empresa."
   },
   {
-    question: "Minha empresa é pequena, o marketing da TGT serve para mim?",
+    question: "Minha empresa atua tanto no varejo quanto no atacado. A TGT Marketing consegue entregar resultados para o meu modelo de negócio?",
     answer: "Trabalhamos com empresas de diversos portes. O que avaliamos não é apenas o tamanho atual, mas o potencial de crescimento e a disposição para investir estrategicamente. Se você busca escala e profissionalismo, estamos prontos para te ajudar."
   },
   {

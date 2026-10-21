@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Star, Quote, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, Quote, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { cn } from "@/lib/utils";
 import { youtubeWatchUrl } from "@/lib/youtube";
@@ -228,7 +228,7 @@ const TestimonialsSection = () => {
 
         <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
           <DialogContent
-            className={cn("p-0 gap-0 bg-black border-none overflow-hidden", videoVertical ? "w-auto max-w-[92vw]" : "max-w-4xl")}
+            className={cn("p-0 gap-0 bg-black border-none overflow-hidden", videoVertical ? "w-auto max-w-[92vw]" : "w-[calc(100%-1.5rem)] max-w-4xl")}
             data-lenis-prevent
           >
             <DialogHeader className="sr-only">
@@ -260,12 +260,6 @@ const TestimonialsSection = () => {
                 </div>
               </>
             )}
-            <button
-              onClick={() => setSelectedVideo(null)}
-              className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-            >
-              <X size={20} />
-            </button>
           </DialogContent>
         </Dialog>
       </div>

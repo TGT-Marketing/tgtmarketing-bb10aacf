@@ -5,8 +5,8 @@ localizados na pasta "ARQUIVOS SITE TGT MARKETING" do Google Drive (ver
 `scripts/midia-drive.json`). Os 10 abaixo não têm arquivo de origem e foram
 escondidos em `src/components/PortfolioSection.tsx` até serem repostos.
 
-Resolvido: a capa do card "Registro de Marca INPI" foi desenhada em código
-(`public/midia/capa-registro-marca-inpi.webp`) e o card está visível.
+Resolvido: o card "Registro de Marca INPI" usa a arte enviada pela TGT
+(`public/midia/registro-marca-inpi.webp`) na capa e dentro do popup.
 
 | Onde aparece | O que falta | Como está hoje |
 |---|---|---|

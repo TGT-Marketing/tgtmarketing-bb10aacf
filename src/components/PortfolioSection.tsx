@@ -30,6 +30,7 @@ type PortfolioProject = {
   videoUrl?: string; // YouTube or Vimeo embed URL (single, legacy)
   videoUrls?: string[]; // Multiple YouTube or Vimeo embed URLs
   directVideoUrl?: string;
+  imagemDestaque?: string; // arte em pé exibida ao lado do texto no popup (clique amplia)
   oculto?: boolean; // esconde o projeto enquanto a mídia não for reposta
 };
 
@@ -648,7 +649,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Registro de Marca INPI",
     category: "Proteção",
-    image: "/midia/capa-registro-marca-inpi.webp",
+    image: "/midia/registro-marca-inpi.webp",
     intro:
       "Proteja o maior patrimônio da sua empresa. Realizamos todo o processo de registro de marca no INPI com segurança e agilidade.\n\nTer uma marca registrada é garantir a exclusividade do seu nome e logotipo em todo o território nacional, evitando cópias e problemas jurídicos.",
     projects: [
@@ -663,6 +664,7 @@ const portfolioItems: PortfolioItem[] = [
           "Segurança jurídica para expansão do negócio",
         ],
         gallery: [],
+        imagemDestaque: "/midia/registro-marca-inpi.webp",
       },
     ],
   },
@@ -701,6 +703,27 @@ const PortfolioSection = () => {
     setCurrentImageIndex(prevIdx);
     setSelectedImage(currentGallery[prevIdx]);
   };
+
+  const blocoResultados = (project: PortfolioProject, titulo: string) =>
+    project.results.length > 0 && (
+      <div className="bg-muted/40 rounded-lg p-4 mb-5">
+        <p className="text-sm font-bold text-foreground mb-2">
+          {titulo === "Produção de Conteúdos [Foto & Vídeo]"
+            ? "Resultados que uma captação profissional pode gerar:"
+            : titulo === "Gestão de Tráfego Estratégica"
+            ? "Resultados que podem ser alcançados:"
+            : "Resultados:"}
+        </p>
+        <ul className="space-y-2">
+          {project.results.map((r, rIdx) => (
+            <li key={rIdx} className="flex items-start gap-2 text-sm text-foreground">
+              <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -867,16 +890,23 @@ const PortfolioSection = () => {
         if (selectedImage) return;
         if (!open) setActiveItem(null);
       }}>
-        <DialogContent 
-          className="max-w-4xl max-h-[90vh] overflow-y-auto" 
+        <DialogContent
+          className="w-[calc(100%-1.5rem)] max-w-4xl p-0 gap-0 overflow-hidden rounded-2xl sm:rounded-2xl focus:outline-none"
           data-lenis-prevent
+          // ao abrir, o foco vai para o popup em si (sem destacar a primeira imagem ou botão)
+          onOpenAutoFocus={(e) => {
+            e.preventDefault();
+            (e.currentTarget as HTMLElement | null)?.focus({ preventScroll: true });
+          }}
           onInteractOutside={(e) => {
             if (selectedImage) e.preventDefault();
           }}
         >
+          {/* a rolagem fica por dentro: o X do canto continua sempre visível */}
+          <div className="max-h-[85vh] sm:max-h-[90vh] overflow-y-auto overscroll-contain p-6 sm:p-8" data-lenis-prevent>
           {activeItem && (
             <>
-              <DialogHeader>
+              <DialogHeader className="px-8 sm:px-0 sm:pr-12">
                 <span className="text-accent text-xs font-bold uppercase tracking-widest">
                   {activeItem.category}
                 </span>
@@ -931,9 +961,39 @@ const PortfolioSection = () => {
                         project.client
                       )}
                     </h4>
-                    <p className="text-muted-foreground mb-5 whitespace-pre-line">
-                      {project.description}
-                    </p>
+                    {project.imagemDestaque ? (
+                      <div className="grid gap-6 sm:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] items-start mb-5">
+                        <button
+                          type="button"
+                          onClick={() => openImageModal(project.imagemDestaque!, [project.imagemDestaque!])}
+                          className="group/destaque relative mx-auto w-full max-w-[340px] sm:max-w-none overflow-hidden rounded-xl border border-border/60 bg-black shadow-lg cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                          aria-label={`Ampliar imagem de ${activeItem.title}`}
+                        >
+                          <img
+                            src={project.imagemDestaque}
+                            alt={activeItem.title}
+                            width={1040}
+                            height={1512}
+                            loading="lazy"
+                            decoding="async"
+                            className="block w-full h-auto transition-transform duration-500 group-hover/destaque:scale-105"
+                          />
+                          <span className="absolute bottom-3 right-3 p-2 bg-black/50 backdrop-blur-md rounded-full border border-white/20 opacity-80 group-hover/destaque:opacity-100 transition-opacity">
+                            <Maximize2 className="w-4 h-4 text-white" />
+                          </span>
+                        </button>
+                        <div className="min-w-0">
+                          <p className="text-muted-foreground mb-5 whitespace-pre-line">
+                            {project.description}
+                          </p>
+                          {blocoResultados(project, activeItem.title)}
+                        </div>
+                      </div>
+                    ) : (
+                      <p className="text-muted-foreground mb-5 whitespace-pre-line">
+                        {project.description}
+                      </p>
+                    )}
 
                     {project.directVideoUrl && (
                       <div className="mb-5 aspect-video overflow-hidden rounded-xl bg-muted border-2 border-border/50 shadow-inner group/video">
@@ -1132,25 +1192,7 @@ const PortfolioSection = () => {
                       </div>
                     )}
 
-                    {project.results.length > 0 && (
-                      <div className="bg-muted/40 rounded-lg p-4 mb-5">
-                        <p className="text-sm font-bold text-foreground mb-2">
-                          {activeItem.title === "Produção de Conteúdos [Foto & Vídeo]" 
-                            ? "Resultados que uma captação profissional pode gerar:" 
-                            : activeItem.title === "Gestão de Tráfego Estratégica"
-                            ? "Resultados que podem ser alcançados:"
-                            : "Resultados:"}
-                        </p>
-                        <ul className="space-y-2">
-                          {project.results.map((r, rIdx) => (
-                            <li key={rIdx} className="flex items-start gap-2 text-sm text-foreground">
-                              <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
-                              <span>{r}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                    {!project.imagemDestaque && blocoResultados(project, activeItem.title)}
                   </article>
                 ))}
 
@@ -1198,6 +1240,7 @@ const PortfolioSection = () => {
               </div>
             </>
           )}
+          </div>
         </DialogContent>
       </Dialog>
 
@@ -1207,7 +1250,7 @@ const PortfolioSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-md cursor-zoom-out"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-md cursor-zoom-out pointer-events-auto"
             onClick={(e) => {
               e.stopPropagation();
               setSelectedImage(null);
@@ -1217,7 +1260,8 @@ const PortfolioSection = () => {
               type="button"
               variant="ghost"
               size="icon"
-              className="fixed top-6 right-6 z-[110] rounded-full bg-red-600 hover:bg-red-700 text-white transition-all duration-300 shadow-2xl hover:scale-110 border-2 border-white/20 group/close cursor-pointer pointer-events-auto w-12 h-12"
+              aria-label="Fechar imagem"
+              className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[110] rounded-full bg-red-600 hover:bg-red-700 text-white transition-all duration-300 shadow-2xl hover:scale-110 border-2 border-white/20 group/close cursor-pointer pointer-events-auto w-12 h-12"
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();

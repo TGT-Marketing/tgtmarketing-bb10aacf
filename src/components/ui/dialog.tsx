@@ -42,9 +42,13 @@ const DialogContent = React.forwardRef<
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity data-[state=open]:bg-accent data-[state=open]:text-muted-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
+      {/* X padrão de todos os popups: redondo, contrastado e sempre no canto */}
+      <DialogPrimitive.Close
+        aria-label="Fechar"
+        className="absolute right-3 top-3 sm:right-4 sm:top-4 z-50 grid place-items-center w-10 h-10 rounded-full bg-black/70 text-white ring-1 ring-white/30 shadow-[0_6px_18px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-[background-color,transform] duration-200 hover:bg-accent hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:pointer-events-none"
+      >
+        <X className="h-5 w-5" strokeWidth={2.5} />
+        <span className="sr-only">Fechar</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </DialogPortal>

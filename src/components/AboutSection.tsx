@@ -186,7 +186,8 @@ const AboutSection = () => {
               </div>
             </motion.div>
           </DialogTrigger>
-          <DialogContent className="max-w-[95vw] lg:max-w-[90vw] grid-cols-[minmax(0,1fr)] p-0 overflow-visible bg-transparent border-none shadow-none [&>button:last-child]:hidden">
+          {/* A área transparente ao redor da arte não recebe clique: tocar fora da imagem fecha o popup */}
+          <DialogContent className="max-w-[95vw] lg:max-w-[90vw] grid-cols-[minmax(0,1fr)] p-0 overflow-visible bg-transparent border-none shadow-none [&>button:last-child]:hidden !pointer-events-none">
             <DialogTitle className="sr-only">Linha do tempo da marca TGT</DialogTitle>
             <div className="relative w-full min-w-0 flex items-center justify-center p-2 sm:p-4">
               <motion.div
@@ -200,13 +201,13 @@ const AboutSection = () => {
                   <button
                     type="button"
                     aria-label="Fechar linha do tempo"
-                    className="absolute left-2 top-2 sm:left-3 sm:top-3 z-20 grid place-items-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-accent text-white ring-2 ring-white/40 shadow-[0_6px_18px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-colors focus-visible:outline-none focus-visible:ring-white"
+                    className="pointer-events-auto absolute left-2 top-2 sm:left-3 sm:top-3 z-20 grid place-items-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-accent text-white ring-2 ring-white/40 shadow-[0_6px_18px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-colors focus-visible:outline-none focus-visible:ring-white"
                   >
                     <X className="w-5 h-5" strokeWidth={2.75} />
                   </button>
                 </DialogClose>
                 {/* No celular a arte fica numa altura legível e a pessoa arrasta para o lado */}
-                <div className="w-full min-w-0 overflow-x-auto overscroll-x-contain rounded-xl sm:overflow-visible" data-lenis-prevent>
+                <div className="pointer-events-auto w-full min-w-0 overflow-x-auto overscroll-x-contain rounded-xl sm:overflow-visible" data-lenis-prevent>
                   <img
                     src="/midia/linha-do-tempo-tgt-horizontal.webp"
                     alt="Linha do tempo da marca TGT: Target em 2012, 2014 e 2016, target em 2021, tgt em 2024 e tgt comunicação estratégica em 2026"

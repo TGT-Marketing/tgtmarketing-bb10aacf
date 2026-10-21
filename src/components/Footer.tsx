@@ -30,7 +30,7 @@ const ESCRITORIOS = [
   },
   {
     pais: "Reino Unido - Inglaterra",
-    cidade: "LONDON, UK • GBR",
+    cidade: "LONDON, GBR • UK",
     endereco: ["42 Baker Street – Postcode: NW1 6XE", "London, Greater London – England"],
     telefone: "+44 7375 858464",
     telefoneHref: "https://wa.me/447375858464?text=" + encodeURIComponent("Hi! I would like to talk to TGT about a free consultation for my business."),

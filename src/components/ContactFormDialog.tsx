@@ -185,8 +185,10 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[calc(100%-1.5rem)] sm:max-w-xl max-h-[92vh] overflow-y-auto bg-primary border-accent/20 mx-auto rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8" data-lenis-prevent>
-        <DialogHeader className="mb-4 sm:mb-6">
+      <DialogContent className="w-[calc(100%-1.5rem)] sm:max-w-xl p-0 gap-0 overflow-hidden bg-primary border-accent/20 mx-auto rounded-[2rem] sm:rounded-[2.5rem]" data-lenis-prevent>
+        {/* a rolagem fica por dentro: o X do canto continua sempre visível */}
+        <div className="max-h-[88vh] overflow-y-auto overscroll-contain p-6 sm:p-8" data-lenis-prevent>
+        <DialogHeader className="mb-4 sm:mb-6 px-8 sm:px-0 sm:pr-10">
           <DialogTitle className="text-xl sm:text-3xl font-black text-primary-foreground leading-tight">
             Agendar Diagnóstico <span className="text-gradient">Gratuito.</span>
           </DialogTitle>
@@ -365,6 +367,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
           </Button>
           </div>
         </form>
+        </div>
       </DialogContent>
     </Dialog>
   );

@@ -34,6 +34,7 @@ type PortfolioProject = {
   videoUrl?: string; // YouTube or Vimeo embed URL (single, legacy)
   videoUrls?: string[]; // Multiple YouTube or Vimeo embed URLs
   directVideoUrl?: string;
+  oculto?: boolean; // esconde o projeto enquanto a mídia não for reposta
 };
 
 type PortfolioItem = {
@@ -43,6 +44,7 @@ type PortfolioItem = {
   intro: string;
   projects: PortfolioProject[];
   imageClassName?: string;
+  oculto?: boolean; // esconde o card enquanto a mídia não for reposta
 };
 
 const portfolioItems: PortfolioItem[] = [
@@ -134,10 +136,6 @@ const portfolioItems: PortfolioItem[] = [
         ],
         gallery: [
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778181872111-w25uc-O-verdadeiro-significado-de-amizade-verdadeiraFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140174-7u2hh-670181640_122178236666834302_7456115394013555943_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140175-ix9b1-672088487_122178547760834302_4138360703695770976_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140195-ecw8r-679760497_122179753940834302_2488337138745105770_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778188140199-rizcm-684942112_122180455880834302_7969995090522368855_n__1_.jpg",
           "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778287532636-h6nek-690747193_122181512162834302_7014447445182412673_n.jpg"
         ],
       },
@@ -569,14 +567,15 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778174211841-ry4h3-ChatGPT_Image_7_de_mai._de_2026__14_16_19.png"],
+        gallery: [],
+        oculto: true, // imagem da marca pendente
       },
     ],
   },
   {
     title: "Produção de Conteúdos [Foto & Vídeo]",
     category: "Conteúdo",
-    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778154287641-p2qfp-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png",
+    image: portfolioContent,
     intro:
       "Conteúdo estratégico que educa, engaja e converte seguidores em clientes.\n\nA Produção de Conteúdos [Foto & Vídeo] da TGT Marketing transforma ideias em materiais profissionais para redes sociais, campanhas e posicionamento de marca.\n\nCom equipamentos de alta qualidade, equipe experiente, direção criativa e olhar estratégico, criamos fotos, vídeos e conteúdos que geram mais autoridade, conexão e valor para o público.\n\nMais do que produzir, entregamos conteúdo pensado para destacar sua marca e vender melhor.",
     projects: [
@@ -593,7 +592,7 @@ const portfolioItems: PortfolioItem[] = [
           "Conteúdos prontos para usar em Instagram, Reels, TikTok, YouTube e Tráfego Pago",
           "Aumento da percepção de valor do público sobre a empresa"
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778154287641-p2qfp-ChatGPT_Image_7_de_mai._de_2026__08_34_36.png"],
+        gallery: [],
         videoUrls: [
           "https://www.youtube.com/embed/-O33RMVZN6k",
           "https://www.youtube.com/embed/Sen_t5TeVLU",
@@ -619,7 +618,6 @@ const portfolioItems: PortfolioItem[] = [
           "Foco total em autoridade e conversão"
         ],
         gallery: [],
-        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778006473251-gx70g-esse_aqui.mp4",
         link: "https://www.rochacontabil.com.br/",
       },
       {
@@ -633,7 +631,6 @@ const portfolioItems: PortfolioItem[] = [
           "Fácil acesso aos canais de contato"
         ],
         gallery: [],
-        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778001726442-quuxq-download.mp4",
         link: "https://claudiopocosartesianos.com.br/",
       },
       {
@@ -648,7 +645,6 @@ const portfolioItems: PortfolioItem[] = [
           "Mais contatos e pedidos"
         ],
         gallery: [],
-        directVideoUrl: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778005777476-4788w-ESSE.mp4",
         link: "https://www.ricksocupacional.com.br/",
       },
     ],
@@ -656,7 +652,8 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Registro de Marca INPI",
     category: "Proteção",
-    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778174354076-wswtx-ChatGPT_Image_7_de_mai._de_2026__14_19_00.png",
+    image: "",
+    oculto: true, // capa pendente
     intro:
       "Proteja o maior patrimônio da sua empresa. Realizamos todo o processo de registro de marca no INPI com segurança e agilidade.\\n\\nTer uma marca registrada é garantir a exclusividade do seu nome e logotipo em todo o território nacional, evitando cópias e problemas jurídicos.",
     projects: [
@@ -670,7 +667,7 @@ const portfolioItems: PortfolioItem[] = [
           "Valorização do patrimônio da empresa",
           "Segurança jurídica para expansão do negócio",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778174354076-wswtx-ChatGPT_Image_7_de_mai._de_2026__14_19_00.png"],
+        gallery: [],
       },
     ],
   },
@@ -772,7 +769,7 @@ const PortfolioSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
-          {portfolioItems.map((item, i) => (
+          {portfolioItems.filter((item) => !item.oculto).map((item, i) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 50 }}
@@ -916,7 +913,7 @@ const PortfolioSection = () => {
               </DialogHeader>
 
               <div className="space-y-10 mt-4">
-                {activeItem.projects.map((project, idx) => (
+                {activeItem.projects.filter((project) => !project.oculto).map((project, idx) => (
                   <article
                     key={idx}
                     className="relative pt-6 first:pt-0 before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[2px] before:bg-gradient-to-r before:from-[hsl(0_78%_28%)] before:via-[hsl(0_78%_48%)] before:to-[hsl(0_85%_65%)] first:before:hidden"

@@ -79,7 +79,7 @@ jobs:
         run: |
           IP=$(getent ahostsv4 "$FTP_HOST" | awk 'NR==1{print $1}')
           echo "::notice::IP do servidor de hospedagem: $IP"
-          for h in www.tgtmarketing.com.br tgtmarketing.com.br; do
+          for h in www.tgtmarketing.com.br; do
             T=$(curl -s -m 20 --resolve "$h:443:$IP" "https://$h/" | grep -o '<title>[^<]*' | head -1 | sed 's/<title>//')
             echo "::notice::Servidor $IP com $h responde: ${T:-sem título (vazio ou erro)}"
           done

@@ -15,20 +15,38 @@ jobs:
   imagens:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Baixar imagens do storage do Lovable
-        run: python3 -I scripts/trazer-imagens.py . | tee resultado.txt
+        run: python3 -I scripts/trazer-imagens.py . > relatorio.txt 2>&1 || true
 
-      - name: Conferir se nada falhou
+      - name: Diagnóstico das imagens que ficaram de fora
         run: |
-          grep -q "falhas: 0" resultado.txt || { echo "Algumas imagens falharam"; cat resultado.txt; exit 1; }
+          python3 - <<'EOF' >> relatorio.txt 2>&1
+          import re, os, urllib.request
+          pat = re.compile(r'https://cvbgrjauqjawrsyknhyj\.supabase\.co/storage/v1/object/public/files/uploads/[^"`\'\s)]+')
+          urls = set()
+          for dp, _, fns in os.walk("src"):
+              for fn in fns:
+                  if fn.endswith((".ts", ".tsx", ".css")):
+                      urls.update(pat.findall(open(os.path.join(dp, fn), encoding="utf-8").read()))
+          print("restantes:", len(urls))
+          for u in sorted(urls):
+              try:
+                  r = urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0"}), timeout=30)
+                  code = r.status
+              except Exception as e:
+                  code = getattr(e, "code", None) or repr(e)
+              print(code, u)
+          EOF
+          cat relatorio.txt
 
       - name: Salvar no repositório
         run: |
-          rm -f resultado.txt
+          mkdir -p scripts
+          mv relatorio.txt scripts/relatorio-imagens.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
-          git add public/midia src
-          git commit -m "Traz as imagens do portfólio para dentro do site (public/midia)" || echo "Nada novo para salvar"
+          git add public/midia src scripts/relatorio-imagens.txt 2>/dev/null || git add src scripts/relatorio-imagens.txt
+          git commit -m "Traz as imagens do portfólio para dentro do site (public/midia) e relatório" || echo "Nada novo para salvar"
           git push

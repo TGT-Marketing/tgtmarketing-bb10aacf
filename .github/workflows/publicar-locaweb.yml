@@ -101,6 +101,10 @@ jobs:
             OK=$(curl -s -o /dev/null -w '%{http_code}' -m 20 --resolve "$h:443:$IP" "https://$h/" || echo "falhou")
             echo "::notice::HTTPS em $IP para $h: status $OK | certificado: ${CERT:-nenhum}"
           done
+          for u in http://www.tgtmarketing.com.br/ http://tgtmarketing.com.br/ https://tgtmarketing.com.br/; do
+            echo "::notice::$u responde: $(curl -s -o /dev/null -m 20 -w '%{http_code} -> %{redirect_url}' "$u")"
+          done
+          echo "::notice::Cabeçalhos repassados ao site pelo servidor (https): $(curl -s -m 20 -I https://www.tgtmarketing.com.br/ | grep -iE '^(server|x-forwarded|strict-transport)' | tr -d '\r' | tr '\n' ' ')"
           echo "::notice::Como o mundo vê hoje (https, DNS público): $(curl -s -m 20 https://www.tgtmarketing.com.br/ | grep -o 'assets/index-[A-Za-z0-9_-]*\.js' | head -1) | esta versão: $(grep -o 'assets/index-[A-Za-z0-9_-]*\.js' dist/index.html | head -1)"
           for t in NS A AAAA MX; do echo "::notice::tgtmarketing.com.br $t: $(dig +short $t tgtmarketing.com.br | tr '\n' ' ')"; done
           echo "::notice::www.tgtmarketing.com.br CNAME: $(dig +short CNAME www.tgtmarketing.com.br | tr '\n' ' ') | A: $(dig +short A www.tgtmarketing.com.br | tr '\n' ' ') | AAAA: $(dig +short AAAA www.tgtmarketing.com.br | tr '\n' ' ')"

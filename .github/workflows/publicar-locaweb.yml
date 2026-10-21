@@ -71,9 +71,6 @@ jobs:
           else
             echo "::error::Não foi possível enviar o site. Últimas linhas do envio:"; tail -15 envio.log; exit 1
           fi
-          echo "::notice::Itens na public_html depois do envio: $(grep -c . envio.log)"
-          grep -qx "index.html" envio.log && echo "::notice::index.html está na public_html." || echo "::warning::index.html não apareceu na listagem da public_html."
-          grep -qx ".htaccess" envio.log && echo "::notice::.htaccess está na public_html." || echo "::warning::.htaccess não apareceu na listagem (pode estar oculto na listagem)."
 
       - name: Conferir se o servidor da Locaweb já entrega o site novo
         if: steps.dados.outputs.pronto == 'sim'
@@ -88,3 +85,13 @@ jobs:
           done
           C=$(curl -s -o /dev/null -w '%{http_code}' -m 20 -H "Host: www.tgtmarketing.com.br" "http://$IP/obrigado")
           echo "::notice::Página /obrigado no servidor novo: HTTP $C"
+          if [ "$(curl -s -m 20 -H "Host: www.tgtmarketing.com.br" "http://$IP/" | sha1sum | cut -c1-12)" = "$(sha1sum dist/index.html | cut -c1-12)" ]; then
+            echo "::notice::Conferido: o index.html no servidor é idêntico ao desta versão."
+          else
+            echo "::warning::O index.html no servidor é diferente desta versão (pode ser cache da Locaweb)."
+          fi
+
+      - name: Mostrar para onde o domínio aponta hoje
+        run: |
+          for t in NS A AAAA MX; do echo "::notice::tgtmarketing.com.br $t: $(dig +short $t tgtmarketing.com.br | tr '\n' ' ')"; done
+          echo "::notice::www.tgtmarketing.com.br CNAME: $(dig +short CNAME www.tgtmarketing.com.br | tr '\n' ' ') | A: $(dig +short A www.tgtmarketing.com.br | tr '\n' ' ') | AAAA: $(dig +short AAAA www.tgtmarketing.com.br | tr '\n' ' ')"

@@ -51,7 +51,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Gestão de Mídias Sociais [Posts e Estratégias]",
     category: "Social",
-    image: "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778173610398-ac02q-Beige_Tan_Elegant_Neutral_Brand_Feature_Instagram_Post.jpg",
+    image: "/midia/Beige-Tan-Elegant-Neutral-Brand-Feature-Instagram-Post.webp",
     intro:
       "Gestão profissional de redes sociais com foco em posicionamento, engajamento e conversão de seguidores em clientes. A TGT Marketing cuida de tudo: do planejamento estratégico à criação de conteúdos que conectam sua marca ao público certo.",
     projects: [
@@ -69,12 +69,12 @@ const portfolioItems: PortfolioItem[] = [
           "Postura profissional com posicionamento estratégico",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289474561-4xj4e-Pe_as-prontas_-brilho-impec_vel-e-entrega-garantidaFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289486334-tcdth-691745657_122140277919117447_7687120502705712289_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289495281-x9igw-679170175_122138262801117447_8229563020474506300_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289548218-u4i42-Por-que-o-corte-perde-precis_o-mesmo-com-l_mina-novaFEED.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289556719-9kx1n-641634784_122127880917117447_9071547022214512582_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778289560655-8unrq-627678523_122123943117117447_3270420552538723139_n.jpg"
+          "/midia/Pe-as-prontas--brilho-impec-vel-e-entrega-garantidaFeed.webp",
+          "/midia/691745657-122140277919117447-7687120502705712289-n.webp",
+          "/midia/679170175-122138262801117447-8229563020474506300-n.webp",
+          "/midia/Por-que-o-corte-perde-precis-o-mesmo-com-l-mina-novaFEED.webp",
+          "/midia/641634784-122127880917117447-9071547022214512582-n.webp",
+          "/midia/627678523-122123943117117447-3270420552538723139-n.webp"
         ],
       },
       {
@@ -91,12 +91,12 @@ const portfolioItems: PortfolioItem[] = [
           "Geração constante de oportunidades reais de negócio",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778524833559-mrcda-658775806_1351949186953319_161827266595207215_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778524881750-y4b6c-649556301_1333256088822629_5154231053455871792_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778525714891-9mbsa-feed01.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778525727354-02dd8-631361658_1309686674512904_173969759776589160_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778525727368-ox71t-641493569_1321506236664281_8839569345727818433_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778525735571-skaaj-626799498_1303474051800833_3396260069711442477_n.jpg"
+          "/midia/658775806-1351949186953319-161827266595207215-n.webp",
+          "/midia/649556301-1333256088822629-5154231053455871792-n.webp",
+          "/midia/feed01.webp",
+          "/midia/631361658-1309686674512904-173969759776589160-n.webp",
+          "/midia/641493569-1321506236664281-8839569345727818433-n.webp",
+          "/midia/626799498-1303474051800833-3396260069711442477-n.webp"
         ],
       },
       {
@@ -113,12 +113,12 @@ const portfolioItems: PortfolioItem[] = [
           "Transformação de seguidores em participantes ativos e promotores da marca",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531384892-mpn2i-CRONOGRAMA-OFICALFEED04.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531394214-x8yeq-SORTEIO-TENIS---FEED.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531403376-x1cg2-SORTEIO-ITENS-EXCLUSIVOS---FEED.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531409868-5ccb5-POSTS-DO-VIVA-LEVESORTEIO-ESTETICA---FEED.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531420254-fw6mq-SORTEIO-CESTA--FEED.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531433710-20rp9-POSTS-VIVA-LEVEPRESSAO-FEED.png"
+          "/midia/CRONOGRAMA-OFICALFEED04.webp",
+          "/midia/SORTEIO-TENIS---FEED.webp",
+          "/midia/SORTEIO-ITENS-EXCLUSIVOS---FEED.webp",
+          "/midia/POSTS-DO-VIVA-LEVESORTEIO-ESTETICA---FEED.webp",
+          "/midia/SORTEIO-CESTA--FEED.webp",
+          "/midia/POSTS-VIVA-LEVEPRESSAO-FEED.webp"
         ],
       },
       {
@@ -135,8 +135,8 @@ const portfolioItems: PortfolioItem[] = [
           "Postura profissional com posicionamento estratégico",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778181872111-w25uc-O-verdadeiro-significado-de-amizade-verdadeiraFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778287532636-h6nek-690747193_122181512162834302_7014447445182412673_n.jpg"
+          "/midia/O-verdadeiro-significado-de-amizade-verdadeiraFeed.webp",
+          "/midia/690747193-122181512162834302-7014447445182412673-n.webp"
         ],
       },
       {
@@ -153,12 +153,12 @@ const portfolioItems: PortfolioItem[] = [
           "Posicionamento digital profissional que destaca a qualidade e o ambiente único",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530602030-9jjbj-660128867_122126511615027172_7181486853950673380_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530611198-zjm3s-645224562_122123398125027172_7758422421863180841_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530618277-uso6p-630408837_122121400617027172_7855154179457873359_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530625376-03ids-650272318_122124526527027172_7918758654754351238_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530633358-8bnvi-649965760_122124102489027172_693835564554407905_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778530643393-8xmju-641515891_122122637571027172_1083553411909082118_n.jpg"
+          "/midia/660128867-122126511615027172-7181486853950673380-n.webp",
+          "/midia/645224562-122123398125027172-7758422421863180841-n.webp",
+          "/midia/630408837-122121400617027172-7855154179457873359-n.webp",
+          "/midia/650272318-122124526527027172-7918758654754351238-n.webp",
+          "/midia/649965760-122124102489027172-693835564554407905-n.webp",
+          "/midia/641515891-122122637571027172-1083553411909082118-n.webp"
         ],
       },
       {
@@ -175,12 +175,12 @@ const portfolioItems: PortfolioItem[] = [
           "Geração de leads qualificados com alto potencial de fechamento",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917931-fjwo6-616805785_1469535471844131_6141252066559969670_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917934-xrnen-649746563_1519685110162500_2559229668752246722_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917936-u80cb-657262324_1532092848921726_3648576694463748583_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917937-d4goj-683400859_1563232529141091_3421082289211447923_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917938-h1h2j-Prateleira-de-a_o-resist_ncia-e-robustezFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778291917941-16qjb-Quando-reformar-compensa-mais-do-que-trocar-e-comprar-uma-cadeira-novaaFeed.png"
+          "/midia/616805785-1469535471844131-6141252066559969670-n.webp",
+          "/midia/649746563-1519685110162500-2559229668752246722-n.webp",
+          "/midia/657262324-1532092848921726-3648576694463748583-n.webp",
+          "/midia/683400859-1563232529141091-3421082289211447923-n.webp",
+          "/midia/Prateleira-de-a-o-resist-ncia-e-robustezFeed.webp",
+          "/midia/Quando-reformar-compensa-mais-do-que-trocar-e-comprar-uma-cadeira-novaaFeed.webp"
         ],
       },
       {
@@ -197,12 +197,12 @@ const portfolioItems: PortfolioItem[] = [
           "Fortalecimento da marca no mercado regional como distribuidora de confiança",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523275745-iwjut-682374950_122177598974868384_2429669155329707505_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523287265-xtgkw-628907704_122166324260868384_7537452365478158545_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523296693-7j0di-653712442_122171516978868384_6280650583696313743_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523310570-ihh9b-Pare-de-comprar-em-v_rios-lugaresFEED.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523318014-spgsh-645706279_122169593912868384_3007976163592112103_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778523323335-vj289-653926315_122172405860868384_6093467671984733436_n.jpg"
+          "/midia/682374950-122177598974868384-2429669155329707505-n.webp",
+          "/midia/628907704-122166324260868384-7537452365478158545-n.webp",
+          "/midia/653712442-122171516978868384-6280650583696313743-n.webp",
+          "/midia/Pare-de-comprar-em-v-rios-lugaresFEED.webp",
+          "/midia/645706279-122169593912868384-3007976163592112103-n.webp",
+          "/midia/653926315-122172405860868384-6093467671984733436-n.webp"
         ],
       },
       {
@@ -219,12 +219,12 @@ const portfolioItems: PortfolioItem[] = [
           "Transformação de seguidores em clientes fiéis e promotores da marca",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240190-zpjgj-653876049_122153539118971914_1127253856516598276_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240194-6pxhk-653883713_122154118952971914_1204500173646539272_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240197-vni0f-677608012_122158746578971914_1890888369597635411_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240198-isanf-683762100_122159714330971914_8541895814565481454_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240200-025e9-Conhe_a-nossos-servi_os-que-v_o-al_m-da-lavagemFeed01.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778528240203-a1zkk-Quem-confia-na-BMVFeed.png"
+          "/midia/653876049-122153539118971914-1127253856516598276-n.webp",
+          "/midia/653883713-122154118952971914-1204500173646539272-n.webp",
+          "/midia/677608012-122158746578971914-1890888369597635411-n.webp",
+          "/midia/683762100-122159714330971914-8541895814565481454-n.webp",
+          "/midia/Conhe-a-nossos-servi-os-que-v-o-al-m-da-lavagemFeed01.webp",
+          "/midia/Quem-confia-na-BMVFeed.webp"
         ],
       },
       {
@@ -241,12 +241,12 @@ const portfolioItems: PortfolioItem[] = [
           "Posicionamento digital profissional que transmite segurança e alta tecnologia",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529303140-t7hdd-625411031_122120678901074388_4638513374126777075_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529310873-7uktt-649263441_122124853209074388_2134566509739938299_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529317890-kextl-Se-os-seus-pneus-est_o-carecasFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529323674-myr0u-673596735_122129280765074388_5055005283054981723_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529330540-l3nev-Se-voc_-s_-pudesse-escolher-um_-qual-seriaFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778529336396-0w354-A-manuten__o-que-voc_-evitaFeed.png"
+          "/midia/625411031-122120678901074388-4638513374126777075-n.webp",
+          "/midia/649263441-122124853209074388-2134566509739938299-n.webp",
+          "/midia/Se-os-seus-pneus-est-o-carecasFeed.webp",
+          "/midia/673596735-122129280765074388-5055005283054981723-n.webp",
+          "/midia/Se-voc--s--pudesse-escolher-um--qual-seriaFeed.webp",
+          "/midia/A-manuten-o-que-voc--evitaFeed.webp"
         ],
       },
       {
@@ -263,12 +263,12 @@ const portfolioItems: PortfolioItem[] = [
           "Transformação da presença digital em uma ferramenta poderosa de vendas diárias",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532309124-h3xj2-592534881_1436331228501640_3701314169288317674_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532320258-w39qo-670640606_1555655623235866_4519767485197009256_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532326728-odst7-690783234_1573356691465759_8879674165552660891_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532332124-5g7uu-Seu-compromisso-com-a-apar_ncia-come_a-por-aquifeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532338596-izds6-601031075_1448813700586726_6987031387439350393_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532344976-fx2l0-666233146_1549509060517189_5719883050776475607_n.jpg"
+          "/midia/592534881-1436331228501640-3701314169288317674-n.webp",
+          "/midia/670640606-1555655623235866-4519767485197009256-n.webp",
+          "/midia/690783234-1573356691465759-8879674165552660891-n.webp",
+          "/midia/Seu-compromisso-com-a-apar-ncia-come-a-por-aquifeed.webp",
+          "/midia/601031075-1448813700586726-6987031387439350393-n.webp",
+          "/midia/666233146-1549509060517189-5719883050776475607-n.webp"
         ],
       },
       {
@@ -285,12 +285,12 @@ const portfolioItems: PortfolioItem[] = [
           "Posicionamento digital como referência em medicina veterinária regional",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531665219-5jw98-FEED_01.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531673189-foj38-Tudo-que-o-seu-pet-precisaFeed.png",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531682719-qo8x7-679394154_1794481971946977_2144743752380283482_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531689043-lzsob-688789617_1803615867700254_7001099313163050659_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531695549-7o96a-690806351_1800714904657017_4202914202453555253_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778531701424-9tucv-Feliz-PascoaFEED.png"
+          "/midia/FEED-01.webp",
+          "/midia/Tudo-que-o-seu-pet-precisaFeed.webp",
+          "/midia/679394154-1794481971946977-2144743752380283482-n.webp",
+          "/midia/688789617-1803615867700254-7001099313163050659-n.webp",
+          "/midia/690806351-1800714904657017-4202914202453555253-n.webp",
+          "/midia/Feliz-PascoaFEED.webp"
         ],
       },
       {
@@ -307,12 +307,12 @@ const portfolioItems: PortfolioItem[] = [
           "Posicionamento digital humanizado que transmite segurança e acolhimento",
         ],
         gallery: [
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532228431-mc20g-652787626_122173779788875994_5604786247441520785_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532242393-8ge3l-625963460_122166992642875994_7603116155984567083_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532248722-2g6ba-656100364_122175198950875994_3514353214040532152_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532248754-masxb-663254576_122176192778875994_3045299159000078796_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532248758-yiwfn-673643612_122178037364875994_7141081123530115360_n.jpg",
-          "https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778532228431-mc20g-652787626_122173779788875994_5604786247441520785_n.jpg"
+          "/midia/652787626-122173779788875994-5604786247441520785-n.webp",
+          "/midia/625963460-122166992642875994-7603116155984567083-n.webp",
+          "/midia/656100364-122175198950875994-3514353214040532152-n.webp",
+          "/midia/663254576-122176192778875994-3045299159000078796-n.webp",
+          "/midia/673643612-122178037364875994-7141081123530115360-n.webp",
+          "/midia/652787626-122173779788875994-5604786247441520785-n.webp"
         ],
       },
     ],
@@ -355,28 +355,28 @@ const portfolioItems: PortfolioItem[] = [
         description:
           "A marca Multi Malte apresenta uma identidade visual forte, marcante e autêntica, construída para se destacar no mercado cervejeiro.\n\nCom uma comunicação visual alinhada ao universo da cerveja artesanal, a marca transmite qualidade, tradição e experiência, criando conexão imediata com o público e fortalecendo seu posicionamento comercial.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777925637700-sefsq-ChatGPT_Image_30_de_abr._de_2026__08_13_55.png"],
+        gallery: ["/midia/ChatGPT-Image-30-de-abr-de-2026-08-13-55.webp"],
       },
       {
         client: "Cliente: Queijaria Três Saltos | Criação de Identidade Visual da Marca",
         description:
           "A marca Queijaria Três Saltos apresenta uma identidade visual acolhedora, artesanal e muito bem conectada ao universo rural.\n\nCom elementos que remetem à fazenda, natureza e produção caseira, a marca transmite tradição, qualidade e origem, criando uma percepção de produto autêntico, regional e de alto valor.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777927952222-jbi04-ChatGPT_Image_30_de_abr._de_2026__08_23_48.png"],
+        gallery: ["/midia/ChatGPT-Image-30-de-abr-de-2026-08-23-48.webp"],
       },
       {
         client: "Cliente: Droga Única Popular | Criação de Identidade Visual da Marca",
         description:
           "A marca Droga Única Popular apresenta uma identidade visual forte, direta e altamente comercial, muito bem alinhada ao segmento farmacêutico popular.\nCom cores de alto impacto, comunicação objetiva e elementos ligados à saúde e economia, a marca transmite confiança, acessibilidade e conveniência, criando uma presença visual marcante e fácil de reconhecer.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1777928466120-l5onc-ChatGPT_Image_30_de_abr._de_2026__08_51_04.png"],
+        gallery: ["/midia/ChatGPT-Image-30-de-abr-de-2026-08-51-04.webp"],
       },
       {
         client: "Cliente: Alma & Afeto Semijoias | Criação de Identidade Visual da Marca",
         description:
           "A marca Alma & Afeto Semijoias apresenta uma identidade visual sofisticada, elegante e muito bem posicionada para o mercado de acessórios premium.\n\nCom uma paleta refinada, acabamento em dourado e comunicação delicada, a marca transmite exclusividade, cuidado e valorização pessoal, criando uma percepção de desejo, beleza e alto valor.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778010820224-gzh50-ChatGPT_Image_30_de_abr._de_2026__16_24_13.png"],
+        gallery: ["/midia/ChatGPT-Image-30-de-abr-de-2026-16-24-13.webp"],
       },
       {
         client: "Cliente: Studio Evolua | Criação de Nome e Identidade Visual da Marca",
@@ -389,42 +389,42 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778072361401-4uxi6-ChatGPT_Image_5_de_mai._de_2026__17_09_29.png"],
+        gallery: ["/midia/ChatGPT-Image-5-de-mai-de-2026-17-09-29.webp"],
       },
       {
         client: "Cliente: Lumarchi Embalagens | Rebranding da Marca - 40 anos de Mercado",
         description:
           "A marca Lumarchi Embalagens apresenta uma identidade visual sólida, profissional e muito bem alinhada ao segmento industrial.\n\nCom símbolo marcante, tipografia forte e paleta em azul, a marca transmite confiança, organização e credibilidade, criando uma percepção de empresa estruturada, segura e preparada para atender o mercado de embalagens.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778072883028-vccsp-ChatGPT_Image_6_de_mai._de_2026__10_07_29.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-10-07-29.webp"],
       },
       {
         client: "Cliente: Rocha Assessoria de Contabilidade | Rebranding da Marca - 40 anos de Mercado",
         description:
           "A marca Rocha Contábil apresenta uma identidade visual elegante, sólida e muito bem alinhada ao mercado contábil.\n\nCom monograma sofisticado, tipografia forte e paleta em azul e cinza, a marca transmite confiança, credibilidade e profissionalismo, criando uma percepção de empresa séria, estruturada e preparada para atender com segurança.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778073471739-ng3x5-ChatGPT_Image_6_de_mai._de_2026__10_14_39.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-10-14-39.webp"],
       },
       {
         client: "Cliente: Vision Merchandising | Criação de Nome e Identidade Visual de Marca",
         description:
           "A marca Vision Merchandising apresenta uma identidade visual forte, moderna e altamente conectada ao universo do varejo.\n\nCom cores marcantes, ícone de carrinho e composição direta, a marca transmite organização, presença e eficiência, criando uma percepção de empresa estratégica, preparada para destacar produtos e potencializar resultados dentro dos supermercados.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778079403849-f1lbk-ChatGPT_Image_6_de_mai._de_2026__11_55_16.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-11-55-16.webp"],
       },
       {
         client: "Cliente: Global Serviços | Criação de Identidade Visual de Marca",
         description:
           "A marca Global Serviços apresenta uma identidade visual forte, tecnológica e muito bem alinhada ao segmento de segurança.\n\nCom símbolo marcante, paleta em azul e presença corporativa, a marca transmite proteção, confiança e monitoramento, criando uma percepção de empresa moderna, preparada e eficiente para atender condomínios com vigilância e portaria remota.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778079694917-ni8wo-ChatGPT_Image_6_de_mai._de_2026__12_01_18.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-12-01-18.webp"],
       },
       {
         client: "Cliente: Gigi´s House - Recreação Bilíngue e Inglês para Crianças | Criação de Identidade Visual de Marca",
         description:
           "A marca Gigi’s House apresenta uma identidade visual lúdica, acolhedora e muito bem alinhada ao universo infantil.\n\nCom cores vibrantes, personagem carismático e comunicação educativa, a marca transmite alegria, confiança e aprendizado, criando uma percepção de escola divertida, segura e preparada para ensinar inglês de forma leve e envolvente.",
         results: [],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778086334651-ke64u-ChatGPT_Image_6_de_mai._de_2026__13_50_43.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-13-50-43.webp"],
       },
       {
         client: "Cliente: Anjos de Patas | Criação de Identidade Visual de Marca",
@@ -437,7 +437,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778086865463-ppowz-ChatGPT_Image_6_de_mai._de_2026__13_58_43.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-13-58-43.webp"],
       },
       {
         client: "Cliente: SS Assessoria de Seguros | Criação de Identidade Visual de Marca",
@@ -450,7 +450,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087117829-trgud-ChatGPT_Image_6_de_mai._de_2026__14_03_57.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-14-03-57.webp"],
       },
       {
         client: "Cliente: STT Segurança Tática | Criação de Identidade Visual de Marca",
@@ -463,7 +463,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087627621-9dmzl-ChatGPT_Image_6_de_mai._de_2026__14_13_25.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-14-13-25.webp"],
       },
       {
         client: "Cliente: Prime Montagens & Planejados | Criação de Nome e Identidade Visual de Marca",
@@ -476,7 +476,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778087978969-c1e4v-ChatGPT_Image_6_de_mai._de_2026__14_19_21.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-14-19-21.webp"],
       },
       {
         client: "Cliente: Contabilidade a 1 Clique | Criação de Identidade Visual de Marca",
@@ -489,7 +489,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088236968-ga30o-ChatGPT_Image_6_de_mai._de_2026__14_22_33.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-14-22-33.webp"],
       },
       {
         client: "Cliente: Point Pizzaria | Criação de Identidade Visual de Marca",
@@ -502,7 +502,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088536903-k9woy-ChatGPT_Image_6_de_mai._de_2026__14_27_30.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-14-27-30.webp"],
       },
       {
         client: "Cliente: Dona Dora Bar| Criação de Identidade Visual de Marca",
@@ -515,7 +515,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778088734395-9lb2n-ChatGPT_Image_6_de_mai._de_2026__14_30_58.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-14-30-58.webp"],
       },
       {
         client: "Cliente: Quintal019 Bar & Restaurante | Criação de Identidade Visual de Marca",
@@ -528,7 +528,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778089821331-zpxq1-ChatGPT_Image_6_de_mai._de_2026__14_49_57.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-14-49-57.webp"],
       },
       {
         client: "Cliente: JR Fortunato | Criação de Identidade Visual de Marca",
@@ -541,7 +541,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778090277555-8jndt-ChatGPT_Image_6_de_mai._de_2026__14_57_40.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-14-57-40.webp"],
       },
       {
         client: "Cliente: My Porto Ecologia Urbana - Portugal | Criação de Identidade Visual de Marca",
@@ -554,7 +554,7 @@ const portfolioItems: PortfolioItem[] = [
           "Padronização visual completa (on e offline)",
           "Manual de marca completo entregue",
         ],
-        gallery: ["https://cvbgrjauqjawrsyknhyj.supabase.co/storage/v1/object/public/files/uploads/2yyDFbv3SZYCVOKzHfDhTmjpljf2/1778090761663-t19x8-ChatGPT_Image_6_de_mai._de_2026__15_03_43.png"],
+        gallery: ["/midia/ChatGPT-Image-6-de-mai-de-2026-15-03-43.webp"],
       },
       {
         client: "Cliente: DGL Eletrônica Têxtil | Criação de Identidade Visual da Marca",

@@ -93,5 +93,14 @@ jobs:
 
       - name: Mostrar para onde o domínio aponta hoje
         run: |
+          echo "::notice::Google DNS: $(dig +short A www.tgtmarketing.com.br @8.8.8.8 | tr '\n' ' ') | Cloudflare DNS: $(dig +short A www.tgtmarketing.com.br @1.1.1.1 | tr '\n' ' ') | Locaweb NS: $(dig +short A tgtmarketing.com.br @ns1.locaweb.com.br | tr '\n' ' ')"
+          echo "::notice::TTL e SOA: $(dig +noall +answer A tgtmarketing.com.br @ns1.locaweb.com.br | tr -s ' \t' ' ') | $(dig +short SOA tgtmarketing.com.br @ns1.locaweb.com.br)"
+          IP=$(dig +short A tgtmarketing.com.br @ns1.locaweb.com.br | tail -1)
+          for h in www.tgtmarketing.com.br tgtmarketing.com.br; do
+            CERT=$(echo | timeout 15 openssl s_client -connect "$IP:443" -servername "$h" 2>/dev/null | openssl x509 -noout -subject -issuer -enddate 2>/dev/null | tr '\n' ' ')
+            OK=$(curl -s -o /dev/null -w '%{http_code}' -m 20 --resolve "$h:443:$IP" "https://$h/" || echo "falhou")
+            echo "::notice::HTTPS em $IP para $h: status $OK | certificado: ${CERT:-nenhum}"
+          done
+          echo "::notice::Como o mundo vê hoje (https, DNS público): $(curl -s -m 20 https://www.tgtmarketing.com.br/ | grep -o 'assets/index-[A-Za-z0-9_-]*\.js' | head -1) | esta versão: $(grep -o 'assets/index-[A-Za-z0-9_-]*\.js' dist/index.html | head -1)"
           for t in NS A AAAA MX; do echo "::notice::tgtmarketing.com.br $t: $(dig +short $t tgtmarketing.com.br | tr '\n' ' ')"; done
           echo "::notice::www.tgtmarketing.com.br CNAME: $(dig +short CNAME www.tgtmarketing.com.br | tr '\n' ' ') | A: $(dig +short A www.tgtmarketing.com.br | tr '\n' ' ') | AAAA: $(dig +short AAAA www.tgtmarketing.com.br | tr '\n' ' ')"

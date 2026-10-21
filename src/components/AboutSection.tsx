@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { X } from "lucide-react";
+import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import guilhermeTgt from "@/assets/guilherme-tgt-sobre.webp";
 import tgtLogoWall from "@/assets/tgt-logo-wall.webp";
 
@@ -185,18 +186,39 @@ const AboutSection = () => {
               </div>
             </motion.div>
           </DialogTrigger>
-          <DialogContent className="max-w-[95vw] lg:max-w-[80vw] p-0 overflow-hidden bg-transparent border-none shadow-none">
-            <div className="relative w-full h-full flex items-center justify-center p-4">
-              <motion.img
+          <DialogContent className="max-w-[95vw] lg:max-w-[90vw] grid-cols-[minmax(0,1fr)] p-0 overflow-visible bg-transparent border-none shadow-none [&>button:last-child]:hidden">
+            <DialogTitle className="sr-only">Linha do tempo da marca TGT</DialogTitle>
+            <div className="relative w-full min-w-0 flex items-center justify-center p-2 sm:p-4">
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ type: "spring", damping: 30, stiffness: 200 }}
-                src="/midia/linha-do-tempo-tgt-2026.webp"
-                alt="Linha do tempo da marca TGT, da Target em 2012 até a tgt comunicação estratégica em 2026"
-                loading="lazy"
-                fetchPriority="low"
-                className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
-              />
+                className="relative w-full min-w-0 sm:w-auto max-w-full"
+              >
+                {/* X para fechar: canto superior esquerdo, por cima da arte */}
+                <DialogClose asChild>
+                  <button
+                    type="button"
+                    aria-label="Fechar linha do tempo"
+                    className="absolute left-2 top-2 sm:left-3 sm:top-3 z-20 grid place-items-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-accent text-white ring-2 ring-white/40 shadow-[0_6px_18px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-colors focus-visible:outline-none focus-visible:ring-white"
+                  >
+                    <X className="w-5 h-5" strokeWidth={2.75} />
+                  </button>
+                </DialogClose>
+                {/* No celular a arte fica numa altura legível e a pessoa arrasta para o lado */}
+                <div className="w-full min-w-0 overflow-x-auto overscroll-x-contain rounded-xl sm:overflow-visible" data-lenis-prevent>
+                  <img
+                    src="/midia/linha-do-tempo-tgt-horizontal.webp"
+                    alt="Linha do tempo da marca TGT: Target em 2012, 2014 e 2016, target em 2021, tgt em 2024 e tgt comunicação estratégica em 2026"
+                    loading="lazy"
+                    decoding="async"
+                    className="block h-[min(58vh,300px)] w-auto max-w-none sm:h-auto sm:max-w-full sm:max-h-[85vh] object-contain rounded-xl shadow-2xl"
+                  />
+                </div>
+                <p className="sm:hidden mt-3 text-center text-xs font-medium text-white/75">
+                  Arraste para o lado e veja a linha do tempo completa →
+                </p>
+              </motion.div>
             </div>
           </DialogContent>
         </Dialog>

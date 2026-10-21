@@ -17,7 +17,7 @@ const ESCRITORIOS = [
     cidade: "BUENOS AIRES, BA • ARG",
     endereco: ["Calle Pichincha, 765 – San Cristóbal", "Comuna 3, Buenos Aires"],
     telefone: "+54 9 11 6477-7066",
-    telefoneHref: "tel:+5491164777066",
+    telefoneHref: "https://wa.me/5491164777066?text=" + encodeURIComponent("¡Hola! Me gustaría hablar con TGT sobre un diagnóstico gratuito para mi empresa."),
     email: "contactoarg@tgtmarketing.com.br",
   },
   {
@@ -25,7 +25,7 @@ const ESCRITORIOS = [
     cidade: "MEDFORD, MA • USA",
     endereco: ["236 Main St – ZIP Code: 02155", "Medford, Massachusetts"],
     telefone: "+1 (781) 333-0708",
-    telefoneHref: "tel:+17813330708",
+    telefoneHref: "https://wa.me/17813330708?text=" + encodeURIComponent("Hi! I would like to talk to TGT about a free consultation for my business."),
     email: "contactoeua@tgtmarketing.com.br",
   },
   {
@@ -33,7 +33,7 @@ const ESCRITORIOS = [
     cidade: "LONDON, UK • GBR",
     endereco: ["42 Baker Street – Postcode: NW1 6XE", "London, Greater London – England"],
     telefone: "+44 7375 858464",
-    telefoneHref: "tel:+447375858464",
+    telefoneHref: "https://wa.me/447375858464?text=" + encodeURIComponent("Hi! I would like to talk to TGT about a free consultation for my business."),
     email: "contactouk@tgtmarketing.com.br",
   },
 ];
@@ -161,10 +161,12 @@ const Footer = () => {
                 <div className="relative flex flex-col gap-2.5 text-sm">
                   <a
                     href={e.telefoneHref}
-                    {...(e.telefoneHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Falar no WhatsApp com a TGT ${e.pais}: ${e.telefone}`}
                     onClick={() => {
-                      if (window.dataLayer && e.telefoneHref === WHATSAPP_BR) {
-                        window.dataLayer.push({ event: "whatsapp_click", button_location: "footer" });
+                      if (window.dataLayer) {
+                        window.dataLayer.push({ event: "whatsapp_click", button_location: `footer_${e.pais.toLowerCase().split(" ")[0]}` });
                       }
                     }}
                     className="inline-flex items-center gap-2.5 text-white/60 hover:text-accent transition-colors font-semibold"

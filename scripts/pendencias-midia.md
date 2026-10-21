@@ -5,6 +5,9 @@ localizados na pasta "ARQUIVOS SITE TGT MARKETING" do Google Drive (ver
 `scripts/midia-drive.json`). Os 10 abaixo não têm arquivo de origem e foram
 escondidos em `src/components/PortfolioSection.tsx` até serem repostos.
 
+Resolvido: a capa do card "Registro de Marca INPI" foi desenhada em código
+(`public/midia/capa-registro-marca-inpi.webp`) e o card está visível.
+
 | Onde aparece | O que falta | Como está hoje |
 |---|---|---|
 | Gestão de Mídias Sociais > Braza Bar & Restaurante | 4 posts da galeria (originais do Instagram do cliente) | Galeria mostra os 2 posts recuperados |
@@ -13,7 +16,6 @@ escondidos em `src/components/PortfolioSection.tsx` até serem repostos.
 | Desenvolvimento de Site > Rocha Contábil | Vídeo do site | Sem vídeo; descrição, resultados e link seguem |
 | Desenvolvimento de Site > Claudio Poços Artesianos | Vídeo do site | Sem vídeo; descrição, resultados e link seguem |
 | Desenvolvimento de Site > Ricks Medicina Ocupacional | Vídeo do site | Sem vídeo; descrição, resultados e link seguem |
-| Registro de Marca INPI | Capa nova gerada no Canva (aguardando o arquivo em tamanho cheio) | Conteúdo do card pronto; card oculto até salvar a capa em `public/midia/capa-registro-marca-inpi.webp` e remover `oculto: true` |
 
 ## Como reativar
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense, startTransition, type ReactNode } from "react";
+import { useState, useEffect, useRef, lazy, Suspense, startTransition, type ReactNode } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import FloatingActions from "@/components/FloatingActions";
@@ -78,10 +78,116 @@ const Index = () => {
     typeof window !== "undefined" && window.location.hash.length > 1 ? secoes.length : 0,
   );
   const completa = montadas >= secoes.length;
+  const montadasRef = useRef(montadas);
+  montadasRef.current = montadas;
 
   useEffect(() => {
     window.addEventListener("open-contact", abrirContato);
     return () => window.removeEventListener("open-contact", abrirContato);
+  }, []);
+
+  // Navegação interna: todo link "#secao" (menu, logo, botões) desce suavemente até a seção certa,
+  // mesmo que ela ainda não tenha sido montada, descontando o cabeçalho fixo.
+  useEffect(() => {
+    const total = secoes.length;
+    const DESCONTO_CABECALHO = 72;
+    type LenisLike = {
+      resize?: () => void;
+      scrollTo: (alvo: number, opcoes?: { duration?: number; immediate?: boolean; force?: boolean; onComplete?: () => void }) => void;
+    };
+
+    const esperarElemento = (id: string, limiteMs: number) =>
+      new Promise<HTMLElement | null>((resolver) => {
+        const inicio = performance.now();
+        const tentar = () => {
+          const el = document.getElementById(id);
+          if (el) return resolver(el);
+          if (performance.now() - inicio > limiteMs) return resolver(null);
+          requestAnimationFrame(tentar);
+        };
+        tentar();
+      });
+
+    const rolarAte = (calcularTopo: () => number, imediato: boolean) => {
+      const lenis = (window as Window & { __lenis?: LenisLike }).__lenis;
+      const reduzir = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+      const semAnimacao = imediato || reduzir;
+      if (lenis) {
+        // a página acabou de crescer (seções recém-montadas): o Lenis precisa recalcular a altura total
+        lenis.resize?.();
+        lenis.scrollTo(calcularTopo(), {
+          duration: semAnimacao ? 0 : 1.2,
+          immediate: semAnimacao,
+          force: true,
+          // confere a posição final (imagens podem ter mudado a altura no caminho)
+          onComplete: () => {
+            if (Math.abs(calcularTopo() - window.scrollY) > 6) {
+              lenis.resize?.();
+              lenis.scrollTo(calcularTopo(), { immediate: true, force: true });
+            }
+          },
+        });
+      } else {
+        window.scrollTo({ top: calcularTopo(), behavior: semAnimacao ? "auto" : "smooth" });
+      }
+    };
+
+    // Alguns navegadores embutidos (apps, prévias) bloqueiam a troca do endereço: a rolagem segue igual
+    const atualizarEndereco = (url: string) => {
+      try {
+        history.replaceState(history.state, "", url);
+      } catch {
+        /* sem problema */
+      }
+    };
+
+    const irPara = async (hash: string, imediato = false) => {
+      if (hash === "#" || hash === "#topo" || hash === "#inicio") {
+        rolarAte(() => 0, imediato);
+        atualizarEndereco(window.location.pathname + window.location.search);
+        return;
+      }
+      const id = decodeURIComponent(hash.slice(1));
+      if (montadasRef.current < total) setMontadas(total);
+      const el = await esperarElemento(id, 4000);
+      if (!el) return;
+      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+      rolarAte(() => Math.max(0, el.getBoundingClientRect().top + window.scrollY - DESCONTO_CABECALHO), imediato);
+      atualizarEndereco(`#${id}`);
+    };
+
+    // Fase de captura: funciona também dentro do menu do celular, que bloqueia a propagação dos cliques
+    const aoClicar = (ev: MouseEvent) => {
+      if (ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+      const link = (ev.target as Element | null)?.closest?.('a[href^="#"]') as HTMLAnchorElement | null;
+      if (!link || link.target === "_blank" || link.hasAttribute("download")) return;
+      ev.preventDefault();
+      void irPara(link.getAttribute("href") || "#");
+    };
+    document.addEventListener("click", aoClicar, true);
+
+    // Quem chega por um link com âncora (ex.: tgtmarketing.com.br/#trabalhos) cai direto na seção.
+    // Enquanto imagens e seções terminam de carregar, a posição é conferida algumas vezes,
+    // até a pessoa rolar por conta própria.
+    const timers: number[] = [];
+    let pessoaRolou = false;
+    const marcarInteracao = () => { pessoaRolou = true; };
+    const eventosInteracao = ["wheel", "touchstart", "keydown", "mousedown"] as const;
+    if (window.location.hash.length > 1) {
+      eventosInteracao.forEach((e) => window.addEventListener(e, marcarInteracao, { passive: true, once: true }));
+      const hashInicial = window.location.hash;
+      void irPara(hashInicial, true);
+      [400, 1000, 2000, 3500].forEach((ms) =>
+        timers.push(window.setTimeout(() => { if (!pessoaRolou) void irPara(hashInicial, true); }, ms)),
+      );
+    }
+
+    return () => {
+      document.removeEventListener("click", aoClicar, true);
+      timers.forEach((t) => window.clearTimeout(t));
+      eventosInteracao.forEach((e) => window.removeEventListener(e, marcarInteracao));
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Baixa todos os pacotes em paralelo assim que o topo aparece

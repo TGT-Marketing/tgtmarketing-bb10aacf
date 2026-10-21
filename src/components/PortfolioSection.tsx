@@ -649,21 +649,18 @@ const portfolioItems: PortfolioItem[] = [
     title: "Registro de Marca INPI",
     category: "Proteção",
     image: "/midia/capa-registro-marca-inpi.webp",
-    oculto: true, // reativar quando a capa estiver em public/midia
     intro:
-      "Sua marca é um dos patrimônios mais valiosos da sua empresa. Na TGT, todo o processo de registro no INPI é conduzido por advogados especializados e formados em Propriedade Intelectual, com segurança jurídica do início ao fim.\n\nCom a marca registrada, sua empresa garante o uso exclusivo do nome e do logotipo em todo o território nacional, evita cópias e cresce sem o risco de perder a identidade que construiu.",
+      "Proteja o maior patrimônio da sua empresa. Realizamos todo o processo de registro de marca no INPI com segurança e agilidade.\n\nTer uma marca registrada é garantir a exclusividade do seu nome e logotipo em todo o território nacional, evitando cópias e problemas jurídicos.",
     projects: [
       {
-        client: "TGT Marketing | Assessoria Jurídica em Registro de Marca",
+        client: "TGT Marketing — Assessoria de Registro de Marca",
         description:
-          "O registro é conduzido por advogados especializados em Propriedade Intelectual, que acompanham cada etapa do processo junto ao INPI:\n\n1. Pesquisa de viabilidade: analisamos a base do INPI em busca de marcas iguais ou parecidas e avaliamos as chances reais de aprovação antes de qualquer investimento.\n\n2. Enquadramento nas classes: definimos as classes de produtos e serviços certas para que a proteção cubra exatamente o que a sua empresa faz e planeja fazer.\n\n3. Protocolo do pedido: preparamos a documentação e protocolamos o pedido no INPI, com o pagamento das taxas oficiais.\n\n4. Acompanhamento semanal: monitoramos o processo na Revista da Propriedade Industrial (RPI) e respondemos às exigências dentro do prazo.\n\n5. Defesa contra oposições: após a publicação do pedido, terceiros têm 60 dias para se opor. Se houver oposição, nossos advogados apresentam a defesa técnica da sua marca.\n\n6. Concessão do registro: com o pedido aprovado, sua marca fica registrada e protegida em todo o Brasil por 10 anos, com renovação por períodos iguais e sucessivos.",
+          "Acompanhamento completo de processos de registro no INPI, desde a pesquisa de viabilidade até a concessão do certificado de registro.",
         results: [
-          "Processo conduzido por advogados especializados em Propriedade Intelectual",
-          "Uso exclusivo da marca em todo o território nacional",
-          "Proteção contra cópias e uso indevido por concorrentes",
-          "Valorização da marca como patrimônio da empresa",
-          "Segurança jurídica para crescer, abrir filiais, franquear ou licenciar",
-          "Acompanhamento completo, da pesquisa até o certificado de registro",
+          "Garantia de exclusividade da marca",
+          "Proteção contra uso indevido por terceiros",
+          "Valorização do patrimônio da empresa",
+          "Segurança jurídica para expansão do negócio",
         ],
         gallery: [],
       },
@@ -1142,8 +1139,6 @@ const PortfolioSection = () => {
                             ? "Resultados que uma captação profissional pode gerar:" 
                             : activeItem.title === "Gestão de Tráfego Estratégica"
                             ? "Resultados que podem ser alcançados:"
-                            : activeItem.title === "Registro de Marca INPI"
-                            ? "O que sua empresa garante com o registro:"
                             : "Resultados:"}
                         </p>
                         <ul className="space-y-2">

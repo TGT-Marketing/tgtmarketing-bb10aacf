@@ -17,6 +17,7 @@ import testimonialAndrea from "@/assets/testimonial-andrea.webp";
 import testimonialFrancine from "@/assets/testimonial-francine.webp";
 import testimonialVinicius from "@/assets/testimonial-vinicius.webp";
 import testimonialEdson from "@/assets/testimonial-edson-otimizada.webp";
+import testimonialGeraldo from "@/assets/testimonial-geraldo.webp";
 
 const testimonials = [
   {
@@ -44,6 +45,7 @@ const testimonials = [
     text: "Eu estou muito satisfeito. A gente sabe desde um início que é um projeto bastante ousado, a Gerbelli está crescendo bastante, temos projetos até a expansão internacional. E a gente acreditou no trabalho da TGT lá atrás, já tem alguns anos que estamos juntos aí e eu estou bastante satisfeito, estou contente. Os feedbacks são bastante interessantes. O retorno das informações, do investimento que fazemos. Gosto do profissionalismo, da agilidade, das entregas... Aqui é tudo muito ágil, muito rápido. Tudo acontece rapidinho, num modo geral, estou muito satisfeito!",
     rating: 5,
     initials: "GB",
+    photo: testimonialGeraldo,
     videoUrl: "https://www.youtube.com/embed/_P7kMKK-FkQ",
     videoVertical: true,
   },

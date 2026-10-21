@@ -4,6 +4,9 @@ import { Star, Quote, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { cn } from "@/lib/utils";
 import { youtubeWatchUrl } from "@/lib/youtube";
+
+// Na prévia do Claude, players de outros sites são bloqueados: lá o botão abre o vídeo no YouTube.
+const PREVIA = import.meta.env.VITE_PREVIA === "1";
 import {
   Dialog,
   DialogContent,
@@ -24,6 +27,7 @@ const testimonials = [
     initials: "EC",
     photo: testimonialEdson,
     videoUrl: "https://www.youtube.com/embed/1jg7Gn7HnBA",
+    videoVertical: true,
   },
   {
     name: "Vinicius Ribeiro",
@@ -33,6 +37,15 @@ const testimonials = [
     initials: "VR",
     photo: testimonialVinicius,
     videoUrl: "https://www.youtube.com/embed/vUUIUwri964",
+  },
+  {
+    name: "Geraldo Belline",
+    role: "Diretor, Grupo Gerbelli",
+    text: "Eu estou muito satisfeito. A gente sabe desde um início que é um projeto bastante ousado, a Gerbelli está crescendo bastante, temos projetos até a expansão internacional. E a gente acreditou no trabalho da TGT lá atrás, já tem alguns anos que estamos juntos aí e eu estou bastante satisfeito, estou contente. Os feedbacks são bastante interessantes. O retorno das informações, do investimento que fazemos. Gosto do profissionalismo, da agilidade, das entregas... Aqui é tudo muito ágil, muito rápido. Tudo acontece rapidinho, num modo geral, estou muito satisfeito!",
+    rating: 5,
+    initials: "GB",
+    videoUrl: "https://www.youtube.com/embed/_P7kMKK-FkQ",
+    videoVertical: true,
   },
   {
     name: "Andréa Palharini",
@@ -56,6 +69,7 @@ const TestimonialsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [videoVertical, setVideoVertical] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: false,
@@ -131,9 +145,24 @@ const TestimonialsSection = () => {
                       "{t.text}"
                     </p>
 
-                    {t.videoUrl && (
+                    {t.videoUrl && (PREVIA ? (
+                      <a
+                        href={youtubeWatchUrl(t.videoUrl)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-accent font-semibold text-sm mb-6 hover:text-accent/80 transition-colors group/btn"
+                      >
+                        <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center group-hover/btn:bg-accent/20 transition-colors">
+                          <Play size={14} className="fill-accent ml-0.5" />
+                        </div>
+                        Assistir depoimento em vídeo
+                      </a>
+                    ) : (
                       <button
-                        onClick={() => setSelectedVideo(t.videoUrl!)}
+                        onClick={() => {
+                          setVideoVertical(!!t.videoVertical);
+                          setSelectedVideo(t.videoUrl!);
+                        }}
                         className="flex items-center gap-2 text-accent font-semibold text-sm mb-6 hover:text-accent/80 transition-colors group/btn"
                       >
                         <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center group-hover/btn:bg-accent/20 transition-colors">
@@ -141,7 +170,7 @@ const TestimonialsSection = () => {
                         </div>
                         Assistir depoimento em vídeo
                       </button>
-                    )}
+                    ))}
 
                     <div className="border-t border-border pt-5 flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-border shadow-sm">
@@ -196,13 +225,16 @@ const TestimonialsSection = () => {
         </div>
 
         <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-          <DialogContent className="max-w-4xl p-0 gap-0 bg-black border-none overflow-hidden" data-lenis-prevent>
+          <DialogContent
+            className={cn("p-0 gap-0 bg-black border-none overflow-hidden", videoVertical ? "w-auto max-w-[92vw]" : "max-w-4xl")}
+            data-lenis-prevent
+          >
             <DialogHeader className="sr-only">
               <DialogTitle>Depoimento em Vídeo</DialogTitle>
             </DialogHeader>
             {selectedVideo && (
               <>
-                <div className="aspect-video w-full bg-black">
+                <div className={cn("bg-black", videoVertical ? "mx-auto aspect-[9/16] h-[min(78vh,720px,calc(92vw*16/9))]" : "aspect-video w-full")}>
                   <iframe
                     src={`${selectedVideo}?autoplay=1&rel=0&playsinline=1`}
                     title="Depoimento em vídeo"
@@ -212,7 +244,7 @@ const TestimonialsSection = () => {
                     allowFullScreen
                   />
                 </div>
-                <div className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3 bg-black border-t border-white/10">
+                <div className="flex flex-wrap items-center justify-center sm:justify-between gap-x-3 gap-y-2 px-4 sm:px-5 py-3 bg-black border-t border-white/10">
                   <span className="text-white/60 text-xs sm:text-sm">O vídeo não carregou?</span>
                   <a
                     href={youtubeWatchUrl(selectedVideo)}

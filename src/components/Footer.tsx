@@ -1,5 +1,42 @@
-import { MapPin, Phone, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
 import logoTgt from "@/assets/logo-tgt.webp";
+
+const WHATSAPP_BR = "https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa.";
+
+const ESCRITORIOS = [
+  {
+    pais: "Brasil",
+    cidade: "AMERICANA, SP • BRA",
+    endereco: ["Rua das Poncianas, 669 – CEP: 13468-180", "Americana/SP"],
+    telefone: "(19) 99279-5271",
+    telefoneHref: WHATSAPP_BR,
+    email: "contato@tgtmarketing.com.br",
+  },
+  {
+    pais: "Argentina",
+    cidade: "BUENOS AIRES, BA • ARG",
+    endereco: ["Calle Pichincha, 765 – San Cristóbal", "Comuna 3, Buenos Aires"],
+    telefone: "+54 9 11 6477-7066",
+    telefoneHref: "tel:+5491164777066",
+    email: "contactoarg@tgtmarketing.com.br",
+  },
+  {
+    pais: "Estados Unidos",
+    cidade: "MEDFORD, MA • USA",
+    endereco: ["236 Main St – ZIP Code: 02155", "Medford, Massachusetts"],
+    telefone: "+1 (781) 333-0708",
+    telefoneHref: "tel:+17813330708",
+    email: "contactoeua@tgtmarketing.com.br",
+  },
+  {
+    pais: "Reino Unido - Inglaterra",
+    cidade: "LONDON, UK • GBR",
+    endereco: ["42 Baker Street – Postcode: NW1 6XE", "London, Greater London – England"],
+    telefone: "+44 7375 858464",
+    telefoneHref: "tel:+447375858464",
+    email: "contactouk@tgtmarketing.com.br",
+  },
+];
 
 const Footer = () => {
   return (
@@ -10,7 +47,7 @@ const Footer = () => {
       <div className="container-main relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20 px-4">
           {/* Brand Info */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-6">
             <a href="#" className="inline-block mb-8 group">
               <img
                 src={logoTgt}
@@ -74,7 +111,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-2 md:col-start-7">
+          <div className="md:col-span-3 md:col-start-10">
             <h3 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Navegação</h3>
             <ul className="space-y-4">
               {[
@@ -95,41 +132,50 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="md:col-span-3 md:col-start-10">
-            <h3 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Onde estamos</h3>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 text-white/40 text-[15px]">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                  <MapPin size={18} className="text-accent" />
+        </div>
+
+        {/* Onde estamos */}
+        <div className="mb-20 px-4">
+          <h3 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Onde estamos</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+            {ESCRITORIOS.map((e) => (
+              <div key={e.pais} className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 flex flex-col gap-4 min-w-0">
+                <span className="block text-[11px] uppercase tracking-[0.18em] text-accent font-bold whitespace-nowrap">{e.pais}</span>
+                <div className="flex items-center gap-3 -mt-1">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <MapPin size={18} className="text-accent" />
+                  </div>
+                  <span className="block min-w-0 text-white font-bold text-[15px] tracking-wide">{e.cidade}</span>
                 </div>
-                <span>Americana – São Paulo<br />Brasil</span>
-              </div>
-              <div className="flex items-start gap-4 text-white/40 text-[15px]">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                  <Phone size={18} className="text-accent" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[11px] uppercase tracking-wider text-white/20 mb-1">WhatsApp</span>
-                  <a 
-                    href="https://wa.me/5519992795271?text=Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa." 
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <p className="text-white/40 text-sm leading-relaxed">
+                  {e.endereco.map((linha) => (
+                    <span key={linha} className="block">{linha}</span>
+                  ))}
+                </p>
+                <div className="flex flex-col gap-2.5 text-sm">
+                  <a
+                    href={e.telefoneHref}
+                    {...(e.telefoneHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     onClick={() => {
-                      if (window.dataLayer) {
-                        window.dataLayer.push({
-                          event: "whatsapp_click",
-                          button_location: "footer"
-                        });
+                      if (window.dataLayer && e.telefoneHref === WHATSAPP_BR) {
+                        window.dataLayer.push({ event: "whatsapp_click", button_location: "footer" });
                       }
                     }}
-                    className="text-white/60 hover:text-accent transition-colors font-semibold"
+                    className="inline-flex items-center gap-2.5 text-white/60 hover:text-accent transition-colors font-semibold"
                   >
-                    +55 19 99279-5271
+                    <Phone size={15} className="text-accent shrink-0" />
+                    {e.telefone}
+                  </a>
+                  <a href={`mailto:${e.email}`} className="inline-flex items-center gap-2.5 text-[13px] text-white/60 hover:text-accent transition-colors">
+                    <Mail size={15} className="text-accent shrink-0" />
+                    <span className="min-w-0">
+                      {e.email.split("@")[0]}
+                      <wbr />@{e.email.split("@")[1]}
+                    </span>
                   </a>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 

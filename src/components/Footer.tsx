@@ -139,20 +139,26 @@ const Footer = () => {
           <h3 className="text-white font-bold text-xs uppercase tracking-[0.3em] mb-8">Onde estamos</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
             {ESCRITORIOS.map((e) => (
-              <div key={e.pais} className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 flex flex-col gap-4 min-w-0">
-                <span className="block text-[11px] uppercase tracking-[0.18em] text-accent font-bold whitespace-nowrap">{e.pais}</span>
-                <div className="flex items-center gap-3 -mt-1">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                    <MapPin size={18} className="text-accent" />
+              <div
+                key={e.pais}
+                className="group/escritorio relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-6 flex flex-col gap-4 min-w-0 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-accent/40 hover:bg-white/[0.05] hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6),0_0_40px_-12px_hsl(0_78%_48%/0.35)] focus-within:border-accent/40 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              >
+                {/* Linha vermelha que se desenha no topo e brilho no canto ao passar o mouse */}
+                <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-accent via-accent to-transparent origin-left scale-x-0 transition-transform duration-700 ease-out group-hover/escritorio:scale-x-100 group-focus-within/escritorio:scale-x-100" />
+                <span aria-hidden="true" className="pointer-events-none absolute -top-20 -right-20 w-48 h-48 rounded-full bg-accent/0 blur-3xl transition-colors duration-700 group-hover/escritorio:bg-accent/15" />
+                <span className="relative block text-[11px] uppercase tracking-[0.18em] text-accent font-bold whitespace-nowrap">{e.pais}</span>
+                <div className="relative flex items-center gap-3 -mt-1">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 transition-all duration-500 group-hover/escritorio:bg-accent group-hover/escritorio:-rotate-3 group-hover/escritorio:scale-110 group-hover/escritorio:shadow-lg group-hover/escritorio:shadow-accent/40 motion-reduce:transition-none">
+                    <MapPin size={18} className="text-accent transition-colors duration-300 group-hover/escritorio:text-accent-foreground" />
                   </div>
                   <span className="block min-w-0 text-white font-bold text-[15px] tracking-wide">{e.cidade}</span>
                 </div>
-                <p className="text-white/40 text-sm leading-relaxed">
+                <p className="relative text-white/40 text-sm leading-relaxed transition-colors duration-500 group-hover/escritorio:text-white/65">
                   {e.endereco.map((linha) => (
                     <span key={linha} className="block">{linha}</span>
                   ))}
                 </p>
-                <div className="flex flex-col gap-2.5 text-sm">
+                <div className="relative flex flex-col gap-2.5 text-sm">
                   <a
                     href={e.telefoneHref}
                     {...(e.telefoneHref.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}

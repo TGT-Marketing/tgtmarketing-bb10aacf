@@ -3,9 +3,6 @@
 Options -Indexes
 DirectoryIndex index.html
 
-# Arquivo interno da publicação automática: não fica acessível pelo navegador
-RedirectMatch 404 /\.ftp-deploy-sync-state\.json$
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /

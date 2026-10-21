@@ -3,7 +3,7 @@
 #   LOCAWEB_FTP_HOST     host de FTP (use o host alternativo enquanto o domínio ainda apontar para o Lovable)
 #   LOCAWEB_FTP_USUARIO  usuário de FTP
 #   LOCAWEB_FTP_SENHA    senha de FTP
-# Opcional (variável, não secret): LOCAWEB_FTP_PROTOCOLO = ftps (padrão, conexão criptografada) ou ftp.
+# O envio tenta SFTP (criptografado) e, se o plano não liberar, usa o FTP padrão da Locaweb.
 name: Publicar na Locaweb
 
 on:
@@ -49,17 +49,42 @@ jobs:
 
       - name: Enviar para a public_html da Locaweb
         if: steps.dados.outputs.pronto == 'sim'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.LOCAWEB_FTP_HOST }}
-          username: ${{ secrets.LOCAWEB_FTP_USUARIO }}
-          password: ${{ secrets.LOCAWEB_FTP_SENHA }}
-          protocol: ${{ vars.LOCAWEB_FTP_PROTOCOLO || 'ftps' }}
-          security: loose
-          port: 21
-          local-dir: ./dist/
-          server-dir: /public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            placeholder.svg
+        env:
+          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+          FTP_USUARIO: ${{ secrets.LOCAWEB_FTP_USUARIO }}
+          LFTP_PASSWORD: ${{ secrets.LOCAWEB_FTP_SENHA }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp > /dev/null
+          rm -f dist/placeholder.svg
+          enviar() {
+            lftp --env-password -u "$FTP_USUARIO" "$1" -e "
+              set net:max-retries 2; set net:timeout 25; set net:reconnect-interval-base 5;
+              set sftp:auto-confirm yes; set ftp:ssl-allow no; set ftp:passive-mode yes;
+              mirror --reverse --parallel=4 --exclude-glob .git* dist/ public_html/;
+              cls -1 public_html/ ; bye"
+          }
+          # SFTP (criptografado) primeiro; se o plano não liberar, usa o FTP padrão da Locaweb
+          if enviar "sftp://$FTP_HOST" > envio.log 2>&1; then
+            echo "::notice::Site enviado por SFTP (conexão criptografada)."
+          elif enviar "ftp://$FTP_HOST" > envio.log 2>&1; then
+            echo "::notice::Site enviado por FTP (o plano não liberou SFTP)."
+          else
+            echo "::error::Não foi possível enviar o site. Últimas linhas do envio:"; tail -15 envio.log; exit 1
+          fi
+          echo "::notice::Itens na public_html depois do envio: $(grep -c . envio.log)"
+          grep -qx "index.html" envio.log && echo "::notice::index.html está na public_html." || echo "::warning::index.html não apareceu na listagem da public_html."
+          grep -qx ".htaccess" envio.log && echo "::notice::.htaccess está na public_html." || echo "::warning::.htaccess não apareceu na listagem (pode estar oculto na listagem)."
+
+      - name: Conferir se o servidor da Locaweb já entrega o site novo
+        if: steps.dados.outputs.pronto == 'sim'
+        env:
+          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+        run: |
+          IP=$(getent ahostsv4 "$FTP_HOST" | awk 'NR==1{print $1}')
+          echo "::notice::IP do servidor de hospedagem: $IP"
+          for h in www.tgtmarketing.com.br tgtmarketing.com.br; do
+            T=$(curl -s -m 20 -H "Host: $h" "http://$IP/" | grep -o '<title>[^<]*' | head -1 | sed 's/<title>//')
+            echo "::notice::Servidor $IP com $h responde: ${T:-sem título (vazio ou erro)}"
+          done
+          C=$(curl -s -o /dev/null -w '%{http_code}' -m 20 -H "Host: www.tgtmarketing.com.br" "http://$IP/obrigado")
+          echo "::notice::Página /obrigado no servidor novo: HTTP $C"

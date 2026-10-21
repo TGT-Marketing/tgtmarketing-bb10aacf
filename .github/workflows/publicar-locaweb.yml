@@ -1,0 +1,65 @@
+# Publica o site na hospedagem Locaweb (pasta public_html) a cada atualização do branch.
+# Os dados de acesso ficam guardados como "secrets" do repositório (Settings > Secrets and variables > Actions):
+#   LOCAWEB_FTP_HOST     host de FTP (use o host alternativo enquanto o domínio ainda apontar para o Lovable)
+#   LOCAWEB_FTP_USUARIO  usuário de FTP
+#   LOCAWEB_FTP_SENHA    senha de FTP
+# Opcional (variável, não secret): LOCAWEB_FTP_PROTOCOLO = ftps (padrão, conexão criptografada) ou ftp.
+name: Publicar na Locaweb
+
+on:
+  push:
+    branches: [migracao-locaweb]
+  workflow_dispatch:
+
+concurrency:
+  group: publicar-locaweb
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Conferir se os dados de acesso já foram cadastrados
+        id: dados
+        env:
+          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+          FTP_USUARIO: ${{ secrets.LOCAWEB_FTP_USUARIO }}
+          FTP_SENHA: ${{ secrets.LOCAWEB_FTP_SENHA }}
+        run: |
+          if [ -n "$FTP_HOST" ] && [ -n "$FTP_USUARIO" ] && [ -n "$FTP_SENHA" ]; then
+            echo "pronto=sim" >> "$GITHUB_OUTPUT"
+          else
+            echo "pronto=nao" >> "$GITHUB_OUTPUT"
+            echo "::notice::Dados de FTP da Locaweb ainda não cadastrados: o site foi gerado, mas não foi enviado."
+          fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+
+      - name: Gerar o site
+        run: npm run build
+
+      - name: Enviar para a public_html da Locaweb
+        if: steps.dados.outputs.pronto == 'sim'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.LOCAWEB_FTP_HOST }}
+          username: ${{ secrets.LOCAWEB_FTP_USUARIO }}
+          password: ${{ secrets.LOCAWEB_FTP_SENHA }}
+          protocol: ${{ vars.LOCAWEB_FTP_PROTOCOLO || 'ftps' }}
+          security: loose
+          port: 21
+          local-dir: ./dist/
+          server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            placeholder.svg

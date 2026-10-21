@@ -21,6 +21,12 @@ DirectoryIndex index.html
   RewriteRule ^ index.html [L]
 </IfModule>
 
+# Tipo correto para a fonte hospedada no site
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+</IfModule>
+
 # Cache de arquivos para carregar mais rápido
 <IfModule mod_headers.c>
   <FilesMatch "\.(js|css|webp|png|jpg|jpeg|svg|woff2?|mp4)$">

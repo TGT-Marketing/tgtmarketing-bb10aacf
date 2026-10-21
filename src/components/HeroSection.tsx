@@ -65,26 +65,20 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
           >
             {/* Shine sweep */}
             <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
-            <motion.span
-              className="w-2.5 h-2.5 rounded-full bg-accent shrink-0 relative z-10"
-              animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            <span
+              className="tgt-anim-pulso w-2.5 h-2.5 rounded-full bg-accent shrink-0 relative z-10"
               style={{ boxShadow: "0 0 8px hsl(0 78% 48% / 0.8), 0 0 20px hsl(0 78% 48% / 0.4)" }}
             />
             <span className="text-primary-foreground text-sm sm:text-base font-bold tracking-wide relative z-10">
               Diagnóstico gratuito disponível
             </span>
-            <motion.span
-              className="text-accent text-lg relative z-10"
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
-            >
+            <span className="tgt-anim-seta text-accent text-lg relative z-10">
               →
-            </motion.span>
+            </span>
           </motion.button>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-[1.6rem] sm:text-5xl lg:text-7xl font-extrabold leading-[1.12] sm:leading-[1.05] text-primary-foreground mb-4 sm:mb-8 tracking-tight"
@@ -195,11 +189,7 @@ const HeroSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             Explorar
           </span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-accent to-transparent relative overflow-hidden">
-            <motion.div
-              className="absolute top-0 left-0 w-full h-full bg-white/40"
-              animate={{ y: ['-100%', '100%'] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
+            <div className="tgt-anim-rolagem absolute top-0 left-0 w-full h-full bg-white/40" />
           </div>
         </a>
       </motion.div>

@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { BrainCircuit, BarChart3, Target, Zap, MessageCircle } from "lucide-react";
-import aiImage from "@/assets/ai-intelligence.webp";
+import aiImage from "@/assets/ai-intelligence-otimizada.webp";
 
 const highlights = [
   {
@@ -52,16 +52,14 @@ const AiSection = ({ onOpenContact }: { onOpenContact?: () => void }) => {
               {/* Subtle white glow on hover */}
               <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-500 pointer-events-none z-10" />
 
-              <motion.img
+              <img
                 src={aiImage}
                 alt="Inteligência Artificial aplicada ao marketing estratégico"
-                className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="tgt-anim-flutuar w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 loading="lazy"
                 decoding="async"
                 width={512}
                 height={512}
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 z-10 pointer-events-none" />
             </motion.div>

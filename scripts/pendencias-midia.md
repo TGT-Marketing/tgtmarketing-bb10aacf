@@ -9,11 +9,11 @@ escondidos em `src/components/PortfolioSection.tsx` até serem repostos.
 |---|---|---|
 | Gestão de Mídias Sociais > Braza Bar & Restaurante | 4 posts da galeria (originais do Instagram do cliente) | Galeria mostra os 2 posts recuperados |
 | Criação de Marca > DGL Eletrônica Têxtil | Imagem da marca (ChatGPT, 7/mai/2026 14h16) | Case oculto (`oculto: true`) |
-| Produção de Conteúdos [Foto & Vídeo] | Capa do card (ChatGPT, 7/mai/2026 08h34) | Usa a capa local `src/assets/portfolio-content-cover.png`; vídeos do YouTube seguem |
+| Produção de Conteúdos [Foto & Vídeo] | Capa do card (ChatGPT, 7/mai/2026 08h34) | Usa a capa local `src/assets/portfolio-content-cover.webp`; vídeos do YouTube seguem |
 | Desenvolvimento de Site > Rocha Contábil | Vídeo do site | Sem vídeo; descrição, resultados e link seguem |
 | Desenvolvimento de Site > Claudio Poços Artesianos | Vídeo do site | Sem vídeo; descrição, resultados e link seguem |
 | Desenvolvimento de Site > Ricks Medicina Ocupacional | Vídeo do site | Sem vídeo; descrição, resultados e link seguem |
-| Registro de Marca INPI | Capa do card (ChatGPT, 7/mai/2026 14h19) | Card oculto (`oculto: true`); o serviço segue na seção Serviços |
+| Registro de Marca INPI | Capa nova gerada no Canva (aguardando o arquivo em tamanho cheio) | Conteúdo do card pronto; card oculto até salvar a capa em `public/midia/capa-registro-marca-inpi.webp` e remover `oculto: true` |
 
 ## Como reativar
 

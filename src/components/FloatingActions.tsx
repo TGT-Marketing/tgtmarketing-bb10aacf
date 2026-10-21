@@ -6,9 +6,9 @@ const FloatingActions = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShowScrollTop(window.scrollY > 600);
+    const onScroll = () => setShowScrollTop(window.scrollY > 400);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -21,8 +21,13 @@ const FloatingActions = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="pointer-events-auto bg-primary hover:bg-primary/90 text-primary-foreground w-11 h-11 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+            onClick={() => {
+              const lenis = (window as Window & { __lenis?: { scrollTo: (t: number, o?: { duration?: number }) => void } }).__lenis;
+              const reduzir = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+              if (lenis) lenis.scrollTo(0, { duration: reduzir ? 0 : 1.2 });
+              else window.scrollTo({ top: 0, behavior: reduzir ? "auto" : "smooth" });
+            }}
+            className="pointer-events-auto bg-accent hover:bg-accent/90 text-accent-foreground ring-2 ring-white/25 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-[0_8px_24px_rgba(0,0,0,0.45)] hover:scale-110 transition-all duration-300"
             aria-label="Voltar ao topo"
           >
             <ArrowUp className="w-6 h-6" />

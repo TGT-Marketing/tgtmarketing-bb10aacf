@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { cn } from "@/lib/utils";
+import { youtubeWatchUrl } from "@/lib/youtube";
 import {
   Carousel,
   CarouselContent,
@@ -12,18 +13,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MessageCircle, CheckCircle2, Sparkles as SparklesIcon, ArrowRight, X, Maximize2, ChevronLeft, ChevronRight } from "lucide-react";
-import portfolioBranding from "/portfolio-branding-new.png";
-import portfolioContent from "@/assets/portfolio-content-cover.png";
-import portfolioWeb from "/portfolio-web-new.png";
-import portfolioTraffic from "@/assets/portfolio-traffic-cover.jpg";
+import portfolioBranding from "/portfolio-branding-new.webp";
+import portfolioContent from "@/assets/portfolio-content-cover.webp";
+import portfolioWeb from "/portfolio-web-new.webp";
+import portfolioTraffic from "@/assets/portfolio-traffic-capa.webp";
 
-// Preload critical images
-if (typeof window !== 'undefined') {
-  [portfolioBranding, portfolioContent, portfolioWeb, portfolioTraffic].forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
-}
+// Galerias mostram a miniatura (public/midia/thumbs); ao ampliar, abre a foto grande.
+const miniatura = (src: string) => (src.startsWith("/midia/") ? src.replace("/midia/", "/midia/thumbs/") : src);
 
 type PortfolioProject = {
   client: string;
@@ -652,20 +648,22 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Registro de Marca INPI",
     category: "Proteção",
-    image: "",
-    oculto: true, // capa pendente
+    image: "/midia/capa-registro-marca-inpi.webp",
+    oculto: true, // reativar quando a capa estiver em public/midia
     intro:
-      "Proteja o maior patrimônio da sua empresa. Realizamos todo o processo de registro de marca no INPI com segurança e agilidade.\\n\\nTer uma marca registrada é garantir a exclusividade do seu nome e logotipo em todo o território nacional, evitando cópias e problemas jurídicos.",
+      "Sua marca é um dos patrimônios mais valiosos da sua empresa. Na TGT, todo o processo de registro no INPI é conduzido por advogados especializados e formados em Propriedade Intelectual, com segurança jurídica do início ao fim.\n\nCom a marca registrada, sua empresa garante o uso exclusivo do nome e do logotipo em todo o território nacional, evita cópias e cresce sem o risco de perder a identidade que construiu.",
     projects: [
       {
-        client: "TGT Marketing — Assessoria de Registro de Marca",
+        client: "TGT Marketing | Assessoria Jurídica em Registro de Marca",
         description:
-          "Acompanhamento completo de processos de registro no INPI, desde a pesquisa de viabilidade até a concessão do certificado de registro.",
+          "O registro é conduzido por advogados especializados em Propriedade Intelectual, que acompanham cada etapa do processo junto ao INPI:\n\n1. Pesquisa de viabilidade: analisamos a base do INPI em busca de marcas iguais ou parecidas e avaliamos as chances reais de aprovação antes de qualquer investimento.\n\n2. Enquadramento nas classes: definimos as classes de produtos e serviços certas para que a proteção cubra exatamente o que a sua empresa faz e planeja fazer.\n\n3. Protocolo do pedido: preparamos a documentação e protocolamos o pedido no INPI, com o pagamento das taxas oficiais.\n\n4. Acompanhamento semanal: monitoramos o processo na Revista da Propriedade Industrial (RPI) e respondemos às exigências dentro do prazo.\n\n5. Defesa contra oposições: após a publicação do pedido, terceiros têm 60 dias para se opor. Se houver oposição, nossos advogados apresentam a defesa técnica da sua marca.\n\n6. Concessão do registro: com o pedido aprovado, sua marca fica registrada e protegida em todo o Brasil por 10 anos, com renovação por períodos iguais e sucessivos.",
         results: [
-          "Garantia de exclusividade da marca",
-          "Proteção contra uso indevido por terceiros",
-          "Valorização do patrimônio da empresa",
-          "Segurança jurídica para expansão do negócio",
+          "Processo conduzido por advogados especializados em Propriedade Intelectual",
+          "Uso exclusivo da marca em todo o território nacional",
+          "Proteção contra cópias e uso indevido por concorrentes",
+          "Valorização da marca como patrimônio da empresa",
+          "Segurança jurídica para crescer, abrir filiais, franquear ou licenciar",
+          "Acompanhamento completo, da pesquisa até o certificado de registro",
         ],
         gallery: [],
       },
@@ -999,7 +997,7 @@ const PortfolioSection = () => {
                                   onClick={() => openImageModal(img, project.gallery)}
                                 >
                                   <img
-                                    src={img}
+                                    src={miniatura(img)}
                                     alt={`${project.client} ${gIdx + 1}`}
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover/social:scale-110"
                                     loading="lazy"
@@ -1040,7 +1038,7 @@ const PortfolioSection = () => {
                                         className="block w-full h-full"
                                       >
                                         <img
-                                          src={src}
+                                          src={miniatura(src)}
                                           alt={`${project.client} - imagem ${gIdx + 1}`}
                                           className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
                                           loading="lazy"
@@ -1054,7 +1052,7 @@ const PortfolioSection = () => {
                                         onClick={() => openImageModal(src, project.gallery)}
                                       >
                                         <img
-                                          src={src}
+                                          src={miniatura(src)}
                                           alt={`${project.client} - imagem ${gIdx + 1}`}
                                           className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105 aspect-video"
                                           loading="lazy"
@@ -1094,14 +1092,21 @@ const PortfolioSection = () => {
                     {(project.videoUrl || project.videoUrls) && (
                       <div className="space-y-4 mb-5">
                         {project.videoUrl && (
-                          <div className="aspect-video overflow-hidden rounded-lg bg-muted">
-                            <iframe
-                              src={project.videoUrl}
-                              title={`${project.client} - vídeo`}
-                              className="w-full h-full"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            />
+                          <div className="space-y-2">
+                            <div className="aspect-video overflow-hidden rounded-lg bg-muted">
+                              <iframe
+                                src={project.videoUrl}
+                                title={`${project.client} - vídeo`}
+                                className="w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                loading="lazy"
+                                allowFullScreen
+                              />
+                            </div>
+                            <a href={youtubeWatchUrl(project.videoUrl)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:underline">
+                              Assistir no YouTube <ArrowRight size={12} />
+                            </a>
                           </div>
                         )}
                         {project.videoUrls?.map((url, vIdx) => {
@@ -1109,14 +1114,21 @@ const PortfolioSection = () => {
                           const playerUrl = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&version=3&playerapiid=ytplayer`;
                           
                           return (
-                            <div key={vIdx} className="aspect-video overflow-hidden rounded-lg bg-muted">
-                              <iframe
-                                src={playerUrl}
-                                title={`${project.client} - vídeo ${vIdx + 1}`}
-                                className="w-full h-full youtube-video-iframe"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                              />
+                            <div key={vIdx} className="space-y-2">
+                              <div className="aspect-video overflow-hidden rounded-lg bg-muted">
+                                <iframe
+                                  src={playerUrl}
+                                  title={`${project.client} - vídeo ${vIdx + 1}`}
+                                  className="w-full h-full youtube-video-iframe"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  referrerPolicy="strict-origin-when-cross-origin"
+                                  loading="lazy"
+                                  allowFullScreen
+                                />
+                              </div>
+                              <a href={youtubeWatchUrl(url)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:underline">
+                                Assistir no YouTube <ArrowRight size={12} />
+                              </a>
                             </div>
                           );
                         })}
@@ -1130,6 +1142,8 @@ const PortfolioSection = () => {
                             ? "Resultados que uma captação profissional pode gerar:" 
                             : activeItem.title === "Gestão de Tráfego Estratégica"
                             ? "Resultados que podem ser alcançados:"
+                            : activeItem.title === "Registro de Marca INPI"
+                            ? "O que sua empresa garante com o registro:"
                             : "Resultados:"}
                         </p>
                         <ul className="space-y-2">

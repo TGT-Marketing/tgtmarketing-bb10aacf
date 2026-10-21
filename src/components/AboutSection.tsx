@@ -1,8 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import guilhermeTgt from "@/assets/guilherme-tgt.jpg";
-import tgtLogoWall from "@/assets/tgt-logo-wall.png";
+import guilhermeTgt from "@/assets/guilherme-tgt-sobre.webp";
+import tgtLogoWall from "@/assets/tgt-logo-wall.webp";
 
 const AboutSection = () => {
   const ref = useRef(null);

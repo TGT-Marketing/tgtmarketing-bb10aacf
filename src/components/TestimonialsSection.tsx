@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { Star, Quote, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { cn } from "@/lib/utils";
+import { youtubeWatchUrl } from "@/lib/youtube";
 import {
   Dialog,
   DialogContent,
@@ -12,7 +13,7 @@ import {
 import testimonialAndrea from "@/assets/testimonial-andrea.webp";
 import testimonialFrancine from "@/assets/testimonial-francine.webp";
 import testimonialVinicius from "@/assets/testimonial-vinicius.webp";
-import testimonialEdson from "@/assets/testimonial-edson.webp";
+import testimonialEdson from "@/assets/testimonial-edson-otimizada.webp";
 
 const testimonials = [
   {
@@ -195,17 +196,35 @@ const TestimonialsSection = () => {
         </div>
 
         <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-          <DialogContent className="max-w-4xl p-0 bg-black border-none overflow-hidden aspect-video" data-lenis-prevent>
+          <DialogContent className="max-w-4xl p-0 gap-0 bg-black border-none overflow-hidden" data-lenis-prevent>
             <DialogHeader className="sr-only">
               <DialogTitle>Depoimento em Vídeo</DialogTitle>
             </DialogHeader>
             {selectedVideo && (
-              <iframe
-                src={`${selectedVideo}?autoplay=1`}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <>
+                <div className="aspect-video w-full bg-black">
+                  <iframe
+                    src={`${selectedVideo}?autoplay=1&rel=0&playsinline=1`}
+                    title="Depoimento em vídeo"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3 bg-black border-t border-white/10">
+                  <span className="text-white/60 text-xs sm:text-sm">O vídeo não carregou?</span>
+                  <a
+                    href={youtubeWatchUrl(selectedVideo)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-2 text-xs sm:text-sm font-semibold transition-colors"
+                  >
+                    <Play size={14} className="fill-current" />
+                    Assistir no YouTube
+                  </a>
+                </div>
+              </>
             )}
             <button
               onClick={() => setSelectedVideo(null)}

@@ -20,6 +20,7 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
     }
 
     requestAnimationFrame(raf);
+    (window as Window & { __lenis?: Lenis }).__lenis = lenis;
 
     // Watch for modal open (Radix)
     const observer = new MutationObserver((mutations) => {
@@ -39,6 +40,7 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
 
     return () => {
       lenis.destroy();
+      delete (window as Window & { __lenis?: Lenis }).__lenis;
       observer.disconnect();
     };
   }, []);

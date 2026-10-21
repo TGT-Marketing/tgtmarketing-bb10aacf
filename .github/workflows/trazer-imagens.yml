@@ -1,0 +1,34 @@
+name: Trazer imagens para o site
+
+# Automação temporária: baixa as imagens que ainda estão no storage do Lovable
+# para public/midia e atualiza os links no código. Pode ser apagada depois.
+
+on:
+  push:
+    branches: [migracao-locaweb]
+    paths: [".github/workflows/trazer-imagens.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  imagens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Baixar imagens do storage do Lovable
+        run: python3 -I scripts/trazer-imagens.py . | tee resultado.txt
+
+      - name: Conferir se nada falhou
+        run: |
+          grep -q "falhas: 0" resultado.txt || { echo "Algumas imagens falharam"; cat resultado.txt; exit 1; }
+
+      - name: Salvar no repositório
+        run: |
+          rm -f resultado.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add public/midia src
+          git commit -m "Traz as imagens do portfólio para dentro do site (public/midia)" || echo "Nada novo para salvar"
+          git push

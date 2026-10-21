@@ -191,8 +191,8 @@ const AboutSection = () => {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ type: "spring", damping: 30, stiffness: 200 }}
-                src="/midia/linha-do-tempo-atualizadaFeed.webp"
-                alt="Trajetória TGT Marketing - 15 Anos de História"
+                src="/midia/linha-do-tempo-tgt-2026.webp"
+                alt="Linha do tempo da marca TGT, da Target em 2012 até a tgt comunicação estratégica em 2026"
                 loading="lazy"
                 fetchPriority="low"
                 className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"

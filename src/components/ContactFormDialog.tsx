@@ -9,7 +9,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Send, Loader2, ShieldCheck } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
 declare global {
@@ -131,18 +130,22 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     setLoading(true);
     try {
       setLastSubmitTime(Date.now());
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: {
+      const response = await fetch("/enviar-contato.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           nome: form.nome,
           empresa: form.empresa,
           email: form.email,
           whatsapp: form.whatsapp,
           faturamento: form.faturamento,
           objetivo: form.objetivo === "Outro" ? form.outroObjetivo : form.objetivo,
-        },
+          website: form.website,
+        }),
       });
 
-      if (error) throw error;
+      const result = await response.json().catch(() => null);
+      if (!response.ok || !result?.success) throw new Error(result?.error || "Falha no envio");
 
       toast({ 
         title: "Solicitação recebida com sucesso! 🎉", 

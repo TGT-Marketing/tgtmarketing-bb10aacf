@@ -1,0 +1,38 @@
+# Site TGT Marketing na Locaweb (Apache)
+
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Depois que o SSL (cadeado) estiver ativo na Locaweb, apague o "#" das 4 linhas abaixo
+  # para forçar https e o endereço com www:
+  # RewriteCond %{HTTPS} off [OR]
+  # RewriteCond %{HTTP_HOST} !^www\. [NC]
+  # RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+  # RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]
+
+  # Páginas do site (ex.: /obrigado) abrem pelo index.html
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Cache de arquivos para carregar mais rápido
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|webp|png|jpg|jpeg|svg|woff2?|mp4)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "^index\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/xml text/plain
+</IfModule>

@@ -1,4 +1,4 @@
-Sitemap: https://tgtmarketing.lovable.app/sitemap.xml
+Sitemap: https://www.tgtmarketing.com.br/sitemap.xml
 
 User-agent: Googlebot
 Allow: /

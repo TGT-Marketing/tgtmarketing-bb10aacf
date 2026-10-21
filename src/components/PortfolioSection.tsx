@@ -644,6 +644,35 @@ const portfolioItems: PortfolioItem[] = [
         gallery: [],
         link: "https://www.ricksocupacional.com.br/",
       },
+      {
+        client: "Cliente: Denis Andia | https://www.denisandia.com.br/",
+        description:
+          "O site oficial de Denis Andia, ex-prefeito de Santa Bárbara d'Oeste por dois mandatos e candidato a deputado federal em 2026, foi criado para ser a casa digital da campanha: um só lugar para reunir história, trajetória, propostas e agenda, com a força do conceito \"Gente que conhece gente\".\n\nDo ponto de vista de desenvolvimento, destaca-se pelo mapa interativo que direciona o conteúdo por região (Região Metropolitana de Campinas, Região Metropolitana de Piracicaba e todo o Estado de SP), pela central de notícias \"Aconteceu e é notícia\", com agenda, apoios e propostas, e por páginas dedicadas a cada eixo da campanha: Por sua cidade, Por nossa gente, Pelo Brasil e Sobre o Denis. Tudo responsivo, leve e preparado para ser compartilhado no WhatsApp e nas redes sociais com imagem e título.\n\nResumo final:\nUm site político moderno e estratégico, pensado para aproximar o candidato do eleitor, organizar a comunicação da campanha e transformar cada notícia em conteúdo pronto para circular.",
+        results: [
+          "Canal oficial com história, trajetória e propostas em um só lugar",
+          "Conteúdo direcionado por região: RMC, RMP e todo o Estado de SP",
+          "Central de notícias para divulgar agenda, apoios e propostas",
+          "Compartilhamento profissional no WhatsApp e nas redes sociais, com imagem e título",
+          "Navegação rápida e 100% adaptada ao celular"
+        ],
+        gallery: [],
+        link: "https://www.denisandia.com.br/",
+      },
+      {
+        client: "Cliente: Gerbelli | https://gerbelli.com.br/pt",
+        description:
+          "O site da Gerbelli, fabricante de lâminas e acessórios para fatiadores e equipamentos de gastronomia desde 1994, foi totalmente reconstruído com foco em velocidade, presença internacional e geração de orçamentos. O site antigo levava até 20 segundos para carregar. O novo abre em até 2 segundos: 10 vezes mais rápido.\n\nDo ponto de vista de desenvolvimento, incluímos um pacote completo de performance: páginas entregues já prontas pelo servidor, distribuição por rede global (CDN) com cache inteligente e compressão de arquivos, imagens otimizadas em WebP, banners com versões próprias para celular e computador, carregamento sob demanda das imagens que estão fora da tela, prioridade para o banner principal, código dividido por página com pré-carregamento e fontes que aparecem na hora. O site também ganhou versões em 4 idiomas (português, inglês, espanhol e italiano), páginas com endereço próprio para o Google, catálogo em PDF, loja online e acesso direto ao WhatsApp e ao pedido de orçamento.\n\nResumo final:\nUm site rápido, internacional e comercial, pensado para segurar o visitante desde o primeiro segundo, fortalecer a autoridade da marca e transformar acessos em pedidos de orçamento.",
+        results: [
+          "Carregamento reduzido de até 20 segundos para até 2 segundos",
+          "Site 10 vezes mais rápido, inclusive no celular",
+          "Presença internacional em 4 idiomas: português, inglês, espanhol e italiano",
+          "Mais chances de aparecer no Google, com páginas otimizadas por idioma",
+          "Menos abandono de visitantes e caminho direto para o orçamento",
+          "Acesso imediato ao WhatsApp, ao catálogo e à loja online"
+        ],
+        gallery: [],
+        link: "https://gerbelli.com.br/pt",
+      },
     ],
   },
   {

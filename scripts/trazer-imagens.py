@@ -8,7 +8,9 @@ src_dir = os.path.join(root, "src")
 dest_dir = os.path.join(root, "public", "midia")
 os.makedirs(dest_dir, exist_ok=True)
 pat = re.compile(r'https://cvbgrjauqjawrsyknhyj\.supabase\.co/storage/v1/object/public/files/uploads/[^"`\'\s)]+')
-ctx = ssl.create_default_context(cafile=os.environ.get("SSL_CERT_FILE") or "/root/.ccr/ca-bundle.crt")
+cafile = os.environ.get("SSL_CERT_FILE") or "/root/.ccr/ca-bundle.crt"
+# Fora do ambiente de nuvem (Mac/Windows/Linux comum) o arquivo acima não existe: usa os certificados do sistema.
+ctx = ssl.create_default_context(cafile=cafile) if os.path.isfile(cafile) else ssl.create_default_context()
 proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
 opener = urllib.request.build_opener(urllib.request.ProxyHandler({"https": proxy} if proxy else {}), urllib.request.HTTPSHandler(context=ctx))
 
@@ -20,7 +22,7 @@ for dp, _, fns in os.walk(src_dir):
 
 urls = set()
 for f in files:
-    urls.update(pat.findall(open(f, encoding="utf-8").read()))
+    urls.update(pat.findall(open(f, encoding="utf-8", newline="").read()))
 
 mapping, falhas = {}, []
 for url in sorted(urls):
@@ -39,12 +41,13 @@ for url in sorted(urls):
     mapping[url] = "/midia/" + final
 
 for f in files:
-    s = open(f, encoding="utf-8").read()
+    # newline="" mantém as quebras de linha originais (no Windows evita trocar o arquivo inteiro)
+    s = open(f, encoding="utf-8", newline="").read()
     novo = s
     for url, local in mapping.items():
         novo = novo.replace(url, local)
     if novo != s:
-        open(f, "w", encoding="utf-8").write(novo)
+        open(f, "w", encoding="utf-8", newline="").write(novo)
 
 print(f"encontradas: {len(urls)}  baixadas: {len(mapping)}  falhas: {len(falhas)}")
 for u, e in falhas[:10]:

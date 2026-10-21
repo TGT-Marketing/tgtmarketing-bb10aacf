@@ -2,6 +2,7 @@ name: Trazer imagens para o site
 
 # Automação temporária: baixa as mídias do portfólio da pasta do Google Drive,
 # salva em public/midia e atualiza os links no código. Pode ser apagada depois.
+# Execução: pasta do Drive liberada por link em 21/10/2026.
 
 on:
   push:

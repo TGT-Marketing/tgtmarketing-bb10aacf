@@ -7,12 +7,11 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /
 
-  # Depois que o SSL (cadeado) estiver ativo na Locaweb, apague o "#" das 4 linhas abaixo
-  # para forçar https e o endereço com www:
-  # RewriteCond %{HTTPS} off [OR]
-  # RewriteCond %{HTTP_HOST} !^www\. [NC]
-  # RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
-  # RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]
+  # Sempre com cadeado (https) e com www. Na Locaweb, o acesso sem cadeado chega pela porta 80
+  # (mesma condição da regra recomendada no Help Center deles).
+  RewriteCond %{SERVER_PORT} ^80$ [OR]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^ https://www.tgtmarketing.com.br%{REQUEST_URI} [L,R=302]
 
   # Páginas do site (ex.: /obrigado) abrem pelo index.html
   RewriteCond %{REQUEST_FILENAME} -f [OR]

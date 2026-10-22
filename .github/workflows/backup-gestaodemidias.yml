@@ -1,0 +1,35 @@
+# Cópia de segurança da página atual de /gestaodemidias (que só existe no servidor) antes de substituí-la.
+# Guarda tudo no branch backup-gestaodemidias deste repositório.
+name: Backup de /gestaodemidias
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [migracao-locaweb]
+    paths:
+      - .github/workflows/backup-gestaodemidias.yml
+
+permissions:
+  contents: write
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Baixar a pasta do servidor e guardar no branch de backup
+        env:
+          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+          FTP_USUARIO: ${{ secrets.LOCAWEB_FTP_USUARIO }}
+          LFTP_PASSWORD: ${{ secrets.LOCAWEB_FTP_SENHA }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp > /dev/null
+          mkdir backup && cd backup
+          lftp --env-password -u "$FTP_USUARIO" "sftp://$FTP_HOST" -e "set net:max-retries 2; set net:timeout 25; set sftp:auto-confirm yes; mirror --parallel=4 public_html/gestaodemidias gestaodemidias; bye" > ../backup.log 2>&1 || { tail -5 ../backup.log; exit 1; }
+          echo "::notice::Arquivos: $(find gestaodemidias -type f | wc -l) | tamanho: $(du -sh gestaodemidias | cut -f1) | $(find gestaodemidias -maxdepth 2 | head -30 | tr '\n' ' ')"
+          git init -q && git checkout -q -b backup-gestaodemidias
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          git add -A && git commit -q -m "Backup de public_html/gestaodemidias em $(date -u +%F)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" backup-gestaodemidias
+          echo "::notice::Backup guardado no branch backup-gestaodemidias"

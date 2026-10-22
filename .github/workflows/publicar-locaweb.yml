@@ -91,6 +91,24 @@ jobs:
             echo "::warning::O index.html no servidor é diferente desta versão (pode ser cache da Locaweb)."
           fi
 
+      - name: Conferir a landing /sites no servidor
+        if: steps.dados.outputs.pronto == 'sim'
+        env:
+          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+        run: |
+          IP=$(getent ahostsv4 "$FTP_HOST" | awk 'NR==1{print $1}')
+          H=www.tgtmarketing.com.br
+          T=$(curl -s -m 20 --resolve "$H:443:$IP" "https://$H/sites/" | grep -o '<title>[^<]*' | head -1 | sed 's/<title>//')
+          echo "::notice::/sites/ responde: ${T:-sem título}"
+          C=$(curl -s -o /dev/null -w '%{http_code}' -L -m 20 --resolve "$H:443:$IP" "https://$H/sites/politica-de-privacidade")
+          echo "::notice::/sites/politica-de-privacidade: HTTP $C"
+          G=$(curl -s -m 20 --resolve "$H:443:$IP" "https://$H/sites/enviar-lead.php")
+          echo "::notice::Formulário (GET, deve recusar): $G"
+          P=$(curl -s -m 20 --resolve "$H:443:$IP" -X POST -H 'Content-Type: application/json' -d '{"website":"teste-automatico"}' "https://$H/sites/enviar-lead.php")
+          echo "::notice::Formulário (teste sem enviar e-mail): $P"
+          A=$(curl -s -o /dev/null -w '%{http_code} %{content_type}' -m 20 --resolve "$H:443:$IP" "https://$H/sites/assets/$(ls dist/sites/assets | grep -m1 '^main-.*\.js$')")
+          echo "::notice::Arquivo JS da landing: $A"
+
       - name: Mostrar para onde o domínio aponta hoje
         run: |
           echo "::notice::Google DNS: $(dig +short A www.tgtmarketing.com.br @8.8.8.8 | tr '\n' ' ') | Cloudflare DNS: $(dig +short A www.tgtmarketing.com.br @1.1.1.1 | tr '\n' ' ') | Locaweb NS: $(dig +short A tgtmarketing.com.br @ns1.locaweb.com.br | tr '\n' ' ')"

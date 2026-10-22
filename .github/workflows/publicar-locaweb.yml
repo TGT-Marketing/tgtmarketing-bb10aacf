@@ -3,6 +3,8 @@
 #   LOCAWEB_FTP_HOST     host de FTP (use o host alternativo enquanto o domínio ainda apontar para o Lovable)
 #   LOCAWEB_FTP_USUARIO  usuário de FTP
 #   LOCAWEB_FTP_SENHA    senha de FTP
+#   LOCAWEB_SMTP_SENHA   senha da caixa postal contato@tgtmarketing.com.br (envio dos formulários)
+#   LOCAWEB_SMTP_USUARIO opcional: outra caixa postal do domínio para enviar (padrão: contato@tgtmarketing.com.br)
 # O envio tenta SFTP (criptografado) e, se o plano não liberar, usa o FTP padrão da Locaweb.
 name: Publicar na Locaweb
 
@@ -72,6 +74,40 @@ jobs:
             echo "::error::Não foi possível enviar o site. Últimas linhas do envio:"; tail -15 envio.log; exit 1
           fi
 
+      - name: Configurar o envio de e-mail dos formulários (SMTP da Locaweb)
+        if: steps.dados.outputs.pronto == 'sim'
+        env:
+          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+          FTP_USUARIO: ${{ secrets.LOCAWEB_FTP_USUARIO }}
+          LFTP_PASSWORD: ${{ secrets.LOCAWEB_FTP_SENHA }}
+          SMTP_USUARIO: ${{ secrets.LOCAWEB_SMTP_USUARIO }}
+          SMTP_SENHA: ${{ secrets.LOCAWEB_SMTP_SENHA }}
+        run: |
+          # A Locaweb desativa a função mail() do PHP: os formulários enviam pela caixa postal (SMTP autenticado).
+          # A senha vem dos secrets e vai para um arquivo FORA da public_html (não fica no código nem no site).
+          if [ -z "$SMTP_SENHA" ]; then
+            echo "::warning::Falta cadastrar o secret LOCAWEB_SMTP_SENHA (senha do e-mail contato@tgtmarketing.com.br). Sem ele, os formulários não conseguem enviar e-mail."
+            exit 0
+          fi
+          U="${SMTP_USUARIO:-contato@tgtmarketing.com.br}"
+          umask 077
+          mkdir -p .smtp
+          {
+            echo "<?php"
+            echo "// Gerado automaticamente na publicação (GitHub Actions). Não publique este arquivo."
+            echo "return array('host' => 'email-ssl.com.br', 'porta' => 465, 'usuario' => base64_decode('$(printf '%s' "$U" | base64 -w0)'), 'senha' => base64_decode('$(printf '%s' "$SMTP_SENHA" | base64 -w0)'));"
+          } > .smtp/tgt-smtp-config.php
+          for proto in sftp ftp; do
+            if lftp --env-password -u "$FTP_USUARIO" "$proto://$FTP_HOST" -e "
+                set net:max-retries 2; set net:timeout 25; set sftp:auto-confirm yes; set ftp:ssl-allow no; set ftp:passive-mode yes;
+                put .smtp/tgt-smtp-config.php -o tgt-smtp-config.php; bye" > smtp.log 2>&1; then
+              echo "::notice::Configuração do envio de e-mail gravada no servidor (fora da public_html), usando $U."
+              break
+            fi
+            [ "$proto" = ftp ] && { echo "::error::Não consegui gravar a configuração do SMTP no servidor."; tail -5 smtp.log; }
+          done
+          rm -rf .smtp
+
       - name: Remover do servidor pastas que saíram do site
         if: steps.dados.outputs.pronto == 'sim'
         env:
@@ -81,6 +117,16 @@ jobs:
         run: |
           # O envio só acrescenta e atualiza arquivos. Pastas listadas aqui são apagadas do servidor.
           REMOVER="marcas-previa"
+          ARQUIVOS="diag-419d85af2d669db3.php"
+          for arq in $ARQUIVOS; do
+            for proto in sftp ftp; do
+              if lftp --env-password -u "$FTP_USUARIO" "$proto://$FTP_HOST" -e "
+                  set net:max-retries 2; set net:timeout 25; set sftp:auto-confirm yes; set ftp:ssl-allow no; set ftp:passive-mode yes;
+                  rm -f public_html/$arq; bye" > remover.log 2>&1; then
+                echo "::notice::Arquivo $arq removido do servidor (ou já não existia)."; break
+              fi
+            done
+          done
           for pasta in $REMOVER; do
             if [ -d "dist/$pasta" ]; then echo "::warning::$pasta ainda existe no projeto, não foi apagada"; continue; fi
             for proto in sftp ftp; do
@@ -115,6 +161,7 @@ jobs:
         if: steps.dados.outputs.pronto == 'sim'
         env:
           FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+          SMTP_SENHA: ${{ secrets.LOCAWEB_SMTP_SENHA }}
         run: |
           IP=$(getent ahostsv4 "$FTP_HOST" | awk 'NR==1{print $1}')
           H=www.tgtmarketing.com.br
@@ -132,22 +179,15 @@ jobs:
           echo "::notice::/marcas/ responde: ${M:-sem título}"
           MP=$(curl -s -m 20 --resolve "$H:443:$IP" -X POST -H 'Content-Type: application/json' -d '{"website":"teste-automatico"}' "https://$H/marcas/enviar-diagnostico.php")
           echo "::notice::Formulário do /marcas (teste sem enviar e-mail): $MP"
-          PV=$(curl -s -o /dev/null -w '%{http_code}' -m 20 --resolve "$H:443:$IP" "https://$H/marcas-previa/")
-          echo "::notice::/marcas-previa/ (deve estar fora do ar): HTTP $PV"
-
-      - name: Diagnóstico temporário dos formulários
-        if: steps.dados.outputs.pronto == 'sim'
-        env:
-          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
-        run: |
-          IP=$(getent ahostsv4 "$FTP_HOST" | awk 'NR==1{print $1}')
-          H=www.tgtmarketing.com.br
-          echo "::notice::DIAG MX do domínio (DNS público): $(dig +short MX tgtmarketing.com.br | tr '\n' ' ')"
-          curl -s -m 90 --resolve "$H:443:$IP" "https://$H/diag-419d85af2d669db3.php" -o diag.json || true
-          if jq -e . diag.json >/dev/null 2>&1; then
-            jq -r 'to_entries | map("\(.key)=\(.value)") | join(" || ")' diag.json | fold -w 900 | head -8 | while IFS= read -r l; do echo "::notice::DIAG $l"; done
+          # Login no SMTP pelos 3 formulários (não envia e-mail; o token do dia só funciona com a senha)
+          if [ -n "$SMTP_SENHA" ]; then
+            TOKEN=$(printf '%s' "$(date -u +%F)" | openssl dgst -sha256 -hmac "$SMTP_SENHA" -r | cut -d' ' -f1)
+            for u in enviar-contato.php sites/enviar-lead.php marcas/enviar-diagnostico.php; do
+              R=$(curl -s -m 60 --resolve "$H:443:$IP" -X POST -H "X-TGT-Verificar: $TOKEN" "https://$H/$u" | sed -e 's/<[^>]*>/ /g' | tr -s ' \n\t' ' ' | cut -c1-220)
+              echo "::notice::E-mail do formulário /$u: $R"
+            done
           else
-            echo "::notice::DIAG resposta não JSON: $(sed -e 's/<[^>]*>/ /g' diag.json | tr -s ' \n\t' ' ' | cut -c1-600)"
+            echo "::warning::Formulários sem senha do e-mail cadastrada (secret LOCAWEB_SMTP_SENHA): os envios vão falhar até ela ser cadastrada."
           fi
 
       - name: Mostrar para onde o domínio aponta hoje

@@ -8,11 +8,6 @@ on:
       testar:
         description: "Formulários a testar (principal, marcas, midias)"
         default: "principal,marcas,midias"
-  push:
-    branches: [migracao-locaweb]
-    paths:
-      - scripts/testar-formularios.mjs
-      - .github/workflows/testar-formularios.yml
 
 jobs:
   testar:
@@ -35,9 +30,8 @@ jobs:
         timeout-minutes: 6
         working-directory: /tmp/teste
         env:
-          # Ao mudar este teste, roda só o formulário novo (sem repetir e-mails dos outros)
-          TESTAR: ${{ github.event_name == 'push' && 'midias' || inputs.testar }}
-          MIDIAS_PATH: /gestaodemidias-previa/
+          TESTAR: ${{ inputs.testar }}
+          MIDIAS_PATH: /gestaodemidias/
         run: node testar-formularios.mjs
 
       - name: Guardar as telas do teste

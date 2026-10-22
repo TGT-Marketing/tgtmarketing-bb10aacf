@@ -127,8 +127,9 @@ jobs:
           LFTP_PASSWORD: ${{ secrets.LOCAWEB_FTP_SENHA }}
         run: |
           # O envio só acrescenta e atualiza arquivos. Pastas listadas aqui são apagadas do servidor.
-          REMOVER="marcas-previa"
-          ARQUIVOS="diag-419d85af2d669db3.php"
+          REMOVER="marcas-previa gestaodemidias-previa"
+          # Arquivos avulsos que saíram do site (diagnóstico antigo e arquivos da página anterior de /gestaodemidias)
+          ARQUIVOS="diag-419d85af2d669db3.php gestaodemidias/assets/index-BF9olfQY.js gestaodemidias/assets/index-D-Bu1R-4.js gestaodemidias/assets/index-Dc_A_IBz.js gestaodemidias/assets/index-S2dz8If6.css gestaodemidias/assets/logo-CI7g4pb_.png gestaodemidias/assets/favicon-DP7dUWxT.png"
           for arq in $ARQUIVOS; do
             for proto in sftp ftp; do
               if lftp --env-password -u "$FTP_USUARIO" "$proto://$FTP_HOST" -e "
@@ -191,17 +192,19 @@ jobs:
           echo "::notice::/marcas/ responde: ${M:-sem título}"
           MP=$(curl -s -m 20 --resolve "$H:443:$IP" -X POST -H 'Content-Type: application/json' -d '{"website":"teste-automatico"}' "https://$H/marcas/enviar-diagnostico.php")
           echo "::notice::Formulário /marcas com dados incompletos (deve recusar, não envia): $MP"
-          # Login no SMTP pelos 3 formulários (não envia e-mail; o token do dia só funciona com a senha)
+          GM=$(curl -s -m 20 --resolve "$H:443:$IP" "https://$H/gestaodemidias/" | grep -ao '<title>[^<]*' | head -1 | sed 's/<title>//')
+          echo "::notice::/gestaodemidias/ responde: ${GM:-sem título}"
+          # Login no SMTP pelos 4 formulários (não envia e-mail; o token do dia só funciona com a senha)
           if [ -n "$SMTP_SENHA" ]; then
             SMTP_SENHA=$(printf '%s' "$SMTP_SENHA" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | tr -d '\r\n')
             TOKEN=$(printf '%s' "$(date -u +%F)" | openssl dgst -sha256 -hmac "$SMTP_SENHA" -r | cut -d' ' -f1)
             # Para não acumular tentativas de login erradas (a Locaweb pode bloquear), para no primeiro erro
-            for u in enviar-contato.php sites/enviar-lead.php marcas/enviar-diagnostico.php; do
+            for u in enviar-contato.php sites/enviar-lead.php marcas/enviar-diagnostico.php gestaodemidias/enviar-lead.php; do
               R=$(curl -s -m 60 --resolve "$H:443:$IP" -X POST -H "X-TGT-Verificar: $TOKEN" "https://$H/$u" | sed -e 's/<[^>]*>/ /g' | tr -s ' \n\t' ' ' | cut -c1-220)
               echo "::notice::E-mail do formulário /$u: $R"
               case "$R" in *'"success":true'*) OKS=$((${OKS:-0}+1)) ;; *) break ;; esac
             done
-            [ "${OKS:-0}" = 3 ] && echo "smtp_ok=sim" >> "$GITHUB_OUTPUT"
+            [ "${OKS:-0}" = 4 ] && echo "smtp_ok=sim" >> "$GITHUB_OUTPUT"
           else
             echo "::warning::Formulários sem senha do e-mail cadastrada (secret LOCAWEB_SMTP_SENHA): os envios vão falhar até ela ser cadastrada."
           fi

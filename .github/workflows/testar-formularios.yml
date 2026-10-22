@@ -13,7 +13,7 @@ on:
 jobs:
   testar:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
 
@@ -24,10 +24,11 @@ jobs:
       - name: Preparar o navegador
         run: |
           mkdir -p /tmp/teste && cp scripts/testar-formularios.mjs /tmp/teste/
-          cd /tmp/teste && npm init -y > /dev/null && npm i --no-audit --no-fund playwright@1.56.0 > /dev/null
-          npx playwright install --with-deps chromium > /dev/null
+          cd /tmp/teste && npm init -y > /dev/null && PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm i --no-audit --no-fund playwright@1.56.0 > /dev/null
+          google-chrome --version || npx playwright install chromium
 
       - name: Preencher e enviar os formulários
+        timeout-minutes: 6
         working-directory: /tmp/teste
         run: node testar-formularios.mjs
 

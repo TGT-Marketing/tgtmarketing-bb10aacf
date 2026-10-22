@@ -8,7 +8,8 @@ const nota = (m) => console.log(`::notice::${m.replace(/\s+/g, " ").slice(0, 900
 const limpo = (t) => t.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim().slice(0, 220);
 let falhou = false;
 
-const navegador = await chromium.launch();
+// Usa o Google Chrome que já vem instalado no servidor do GitHub (mais rápido e igual ao de um visitante)
+const navegador = await chromium.launch({ channel: "chrome" }).catch(() => chromium.launch());
 
 async function abrir(largura) {
   const ctx = await navegador.newContext({ viewport: { width: largura, height: 900 }, locale: "pt-BR" });

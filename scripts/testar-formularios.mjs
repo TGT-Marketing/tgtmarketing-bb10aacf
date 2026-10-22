@@ -82,9 +82,39 @@ async function marcas(largura) {
   await pagina.screenshot({ path: `marcas-${largura}.png` }).catch(() => {});
 }
 
+async function midias(largura) {
+  const caminho = process.env.MIDIAS_PATH || "/gestaodemidias/";
+  const { pagina, errosJs } = await abrir(largura);
+  try {
+    await pagina.goto(SITE + caminho, { waitUntil: "networkidle", timeout: 60000 });
+    const f = pagina.locator("#contato form").first();
+    await f.scrollIntoViewIfNeeded();
+    await f.getByPlaceholder("Seu nome").fill(`TESTE TGT navegador ${largura}px (gestão de mídias)`);
+    await f.getByPlaceholder("WhatsApp com DDD").fill("(19) 99279-5271");
+    await f.getByPlaceholder("Seu melhor e-mail").fill("contato@tgtmarketing.com.br");
+    await f.getByPlaceholder("Empresa ou @ do Instagram").fill("Teste do formulário");
+    await f.getByLabel("Plano de interesse").selectOption("Basic");
+    await f.locator("textarea").fill(`Teste automático em ${quando} (pode apagar)`);
+    const resposta = pagina.waitForResponse((r) => r.url().includes("enviar-lead.php"), { timeout: 60000 });
+    await f.getByRole("button", { name: /Quero meu diagnóstico/i }).click();
+    const r = await resposta;
+    const corpo = limpo(await r.text());
+    await pagina.waitForTimeout(2500);
+    const sucesso = await pagina.getByText("Recebemos seu pedido!").first().isVisible().catch(() => false);
+    if (!sucesso) falhou = true;
+    nota(`Gestão de mídias ${caminho} (${largura}px): ${sucesso ? "OK, mostrou a confirmação" : "FALHOU"} | HTTP ${r.status()} | resposta: ${corpo} | erros JS: ${errosJs.slice(0, 3).join(" ; ") || "nenhum"}`);
+  } catch (e) {
+    falhou = true;
+    nota(`Gestão de mídias (${largura}px): ERRO NO TESTE ${e.message} | erros JS: ${errosJs.slice(0, 3).join(" ; ") || "nenhum"}`);
+  }
+  await pagina.screenshot({ path: `midias-${largura}.png` }).catch(() => {});
+}
+
 nota(`IP deste teste: ${await (await fetch("https://api.ipify.org")).text().catch(() => "?")}`);
-await siteprincipal(1366);
-await new Promise((r) => setTimeout(r, 22000)); // o servidor aceita 1 envio a cada 20s por IP
-await marcas(1366);
+// Quais formulários testar: "principal,marcas,midias" (padrão: todos)
+const testar = (process.env.TESTAR || "principal,marcas,midias").split(",").map((t) => t.trim());
+if (testar.includes("principal")) await siteprincipal(1366);
+if (testar.includes("marcas")) await marcas(1366);
+if (testar.includes("midias")) await midias(1366);
 await navegador.close();
 process.exit(falhou ? 1 : 0);

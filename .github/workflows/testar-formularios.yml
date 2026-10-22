@@ -4,6 +4,10 @@ name: Testar formulários (navegador real)
 
 on:
   workflow_dispatch:
+    inputs:
+      testar:
+        description: "Formulários a testar (principal, marcas, midias)"
+        default: "principal,marcas,midias"
   push:
     branches: [migracao-locaweb]
     paths:
@@ -30,6 +34,10 @@ jobs:
       - name: Preencher e enviar os formulários
         timeout-minutes: 6
         working-directory: /tmp/teste
+        env:
+          # Ao mudar este teste, roda só o formulário novo (sem repetir e-mails dos outros)
+          TESTAR: ${{ github.event_name == 'push' && 'midias' || inputs.testar }}
+          MIDIAS_PATH: /gestaodemidias-previa/
         run: node testar-formularios.mjs
 
       - name: Guardar as telas do teste

@@ -89,6 +89,15 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
       return;
     }
 
+    if (form.objetivo === "Outro" && form.outroObjetivo.trim().length < 3) {
+      toast({
+        title: "Conte seu objetivo ✍️",
+        description: "Você marcou \"Outro\": descreva em poucas palavras qual é o seu objetivo principal.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     if (!form.consentimento) {
       toast({ 
         title: "Política de Privacidade 🛡️", 
@@ -176,8 +185,12 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
       setForm({ nome: "", empresa: "", email: "", whatsapp: "", faturamento: "", objetivo: "", outroObjetivo: "", consentimento: false, website: "" });
       onOpenChange(false);
       navigate("/obrigado");
-    } catch {
-      toast({ title: "Erro ao enviar", description: "Tente novamente ou fale conosco pelo WhatsApp.", variant: "destructive" });
+    } catch (falha) {
+      // Mostra o motivo que o servidor devolveu (ex.: campo faltando, aguarde alguns segundos)
+      const motivo = falha instanceof Error && falha.message && falha.message !== "Falha no envio" && falha.message !== "Failed to fetch"
+        ? falha.message
+        : "Tente novamente ou fale conosco pelo WhatsApp.";
+      toast({ title: "Erro ao enviar", description: motivo, variant: "destructive" });
     } finally {
       setLoading(false);
     }

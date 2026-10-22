@@ -142,12 +142,17 @@ jobs:
         run: |
           IP=$(getent ahostsv4 "$FTP_HOST" | awk 'NR==1{print $1}')
           H=www.tgtmarketing.com.br
-          r() { curl -s -m 25 --resolve "$H:443:$IP" "$@" -w ' [HTTP %{http_code}]' | tr '\n' ' ' | cut -c1-900; }
-          echo "::notice::DIAG ambiente: $(r https://$H/diag-419d85af2d669db3.php)"
-          # e-mail inválido: passa por todas as etapas do PHP, menos o envio, então nenhum e-mail sai
-          echo "::notice::DIAG sites: $(r -X POST -H 'Content-Type: application/json' -d '{"nome":"Teste","email":"invalido","whatsapp":"19992795271","mensagem":"teste","tipo":"rapido"}' https://$H/sites/enviar-lead.php)"
-          echo "::notice::DIAG marcas: $(r -X POST -H 'Content-Type: application/json' -d '{"nome":"Teste","email":"invalido","whatsapp":"19992795271","empresa":"Teste","segmento":"a","estagio":"b","objetivo":"c","orcamento":"d"}' https://$H/marcas/enviar-diagnostico.php)"
-          echo "::notice::DIAG principal: $(r -X POST -H 'Content-Type: application/json' -d '{"nome":"Teste","empresa":"Teste","email":"invalido","whatsapp":"19992795271","faturamento":"x","objetivo":"y"}' https://$H/enviar-contato.php)"
+          echo "::notice::DIAG IP do runner: $(curl -s -m 10 https://api.ipify.org)"
+          # Texto da página de verificação (sem as tags)
+          curl -s -m 25 --resolve "$H:443:$IP" -D cab.txt "https://$H/diag-419d85af2d669db3.php" -o corpo.html || true
+          echo "::notice::DIAG cabeçalhos: $(tr '\r\n' '  ' < cab.txt | cut -c1-700)"
+          echo "::notice::DIAG texto: $(sed -e 's/<[^>]*>/ /g' corpo.html | tr -s ' \n\t' ' ' | cut -c1-1500)"
+          echo "::notice::DIAG formulários/ações: $(grep -o '<form[^>]*>\|name=\"[^\"]*\"\|action=\"[^\"]*\"' corpo.html | tr '\n' ' ' | cut -c1-600)"
+          # HTML estático continua passando?
+          echo "::notice::DIAG estático /sites/: $(curl -s -o /dev/null -w '%{http_code} %{content_type}' -m 20 --resolve "$H:443:$IP" https://$H/sites/)"
+          echo "::notice::DIAG php GET sites: $(curl -s -m 20 --resolve "$H:443:$IP" https://$H/sites/enviar-lead.php | head -c 120 | tr '\n' ' ')"
+          # Sem passar pelo IP fixo (DNS normal)
+          echo "::notice::DIAG via DNS: $(curl -s -m 20 https://$H/sites/enviar-lead.php | head -c 120 | tr '\n' ' ')"
 
       - name: Mostrar para onde o domínio aponta hoje
         run: |

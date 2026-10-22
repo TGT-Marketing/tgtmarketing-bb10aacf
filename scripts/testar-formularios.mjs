@@ -93,7 +93,7 @@ async function midias(largura) {
     await f.getByPlaceholder("WhatsApp com DDD").fill("(19) 99279-5271");
     await f.getByPlaceholder("Seu melhor e-mail").fill("contato@tgtmarketing.com.br");
     await f.getByPlaceholder("Empresa ou @ do Instagram").fill("Teste do formulário");
-    await f.getByLabel("Plano de interesse").selectOption("Basic");
+    await f.getByLabel("Objetivo principal").selectOption("Gerar leads e orçamentos");
     await f.locator("textarea").fill(`Teste automático em ${quando} (pode apagar)`);
     const resposta = pagina.waitForResponse((r) => r.url().includes("enviar-lead.php"), { timeout: 60000 });
     await f.getByRole("button", { name: /Quero meu diagnóstico/i }).click();

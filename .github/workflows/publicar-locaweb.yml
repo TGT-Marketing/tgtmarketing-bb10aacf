@@ -94,7 +94,13 @@ jobs:
             echo "::warning::Falta cadastrar o secret LOCAWEB_SMTP_SENHA (senha do e-mail contato@tgtmarketing.com.br). Sem ele, os formulários não conseguem enviar e-mail."
             exit 0
           fi
-          U="${SMTP_USUARIO:-contato@tgtmarketing.com.br}"
+          # Espaços ou quebra de linha colados junto com a senha no GitHub derrubam o login
+          LIMPA=$(printf '%s' "$SMTP_SENHA" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | tr -d '\r\n')
+          if [ "$LIMPA" != "$SMTP_SENHA" ]; then
+            echo "::notice::A senha cadastrada tinha espaço ou quebra de linha no começo/fim: removidos."
+            SMTP_SENHA="$LIMPA"
+          fi
+          U=$(printf '%s' "${SMTP_USUARIO:-contato@tgtmarketing.com.br}" | tr -d '[:space:]')
           umask 077
           mkdir -p .smtp
           {
@@ -186,10 +192,13 @@ jobs:
           echo "::notice::Formulário do /marcas (teste sem enviar e-mail): $MP"
           # Login no SMTP pelos 3 formulários (não envia e-mail; o token do dia só funciona com a senha)
           if [ -n "$SMTP_SENHA" ]; then
+            SMTP_SENHA=$(printf '%s' "$SMTP_SENHA" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | tr -d '\r\n')
             TOKEN=$(printf '%s' "$(date -u +%F)" | openssl dgst -sha256 -hmac "$SMTP_SENHA" -r | cut -d' ' -f1)
+            # Para não acumular tentativas de login erradas (a Locaweb pode bloquear), para no primeiro erro
             for u in enviar-contato.php sites/enviar-lead.php marcas/enviar-diagnostico.php; do
               R=$(curl -s -m 60 --resolve "$H:443:$IP" -X POST -H "X-TGT-Verificar: $TOKEN" "https://$H/$u" | sed -e 's/<[^>]*>/ /g' | tr -s ' \n\t' ' ' | cut -c1-220)
               echo "::notice::E-mail do formulário /$u: $R"
+              case "$R" in *'"success":true'*) ;; *) break ;; esac
             done
           else
             echo "::warning::Formulários sem senha do e-mail cadastrada (secret LOCAWEB_SMTP_SENHA): os envios vão falhar até ela ser cadastrada."

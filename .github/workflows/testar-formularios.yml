@@ -1,0 +1,40 @@
+# Testa os formulários do site principal e do /marcas como um visitante real
+# (abre o site num navegador, preenche e envia). Cada execução manda leads "TESTE TGT" para contato@.
+name: Testar formulários (navegador real)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [migracao-locaweb]
+    paths:
+      - scripts/testar-formularios.mjs
+      - .github/workflows/testar-formularios.yml
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Preparar o navegador
+        run: |
+          mkdir -p /tmp/teste && cp scripts/testar-formularios.mjs /tmp/teste/
+          cd /tmp/teste && npm init -y > /dev/null && npm i --no-audit --no-fund playwright@1.56.0 > /dev/null
+          npx playwright install --with-deps chromium > /dev/null
+
+      - name: Preencher e enviar os formulários
+        working-directory: /tmp/teste
+        run: node testar-formularios.mjs
+
+      - name: Guardar as telas do teste
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: telas-do-teste
+          path: /tmp/teste/*.png
+          retention-days: 7

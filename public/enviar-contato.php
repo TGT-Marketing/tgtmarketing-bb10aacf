@@ -141,11 +141,11 @@ function enviar($para, $assuntoTexto, $html, $replyTo = '') {
             . rtrim(chunk_split(base64_encode($html), 76, "\r\n")) . "\r\n.";
         $resposta = tgt_smtp_cmd($con, $mensagem, 250, 'envio');
         $fila = preg_match('/queued as (\S+)/i', $resposta, $m) ? ' (fila ' . $m[1] . ')' : '';
-        $GLOBALS['tgt_registro'][] = ($para === EMAIL_DESTINO ? 'aviso TGT' : 'confirmação') . ' aceito' . $fila;
+        $GLOBALS['tgt_registro'][] = (empty($GLOBALS['tgt_registro']) ? 'aviso TGT' : 'confirmação ao lead') . ' aceito' . $fila;
         return true;
     } catch (Exception $e) {
         error_log('[TGT formulário] ' . $e->getMessage());
-        $GLOBALS['tgt_registro'][] = ($para === EMAIL_DESTINO ? 'aviso TGT' : 'confirmação') . ' falhou: ' . $e->getMessage();
+        $GLOBALS['tgt_registro'][] = (empty($GLOBALS['tgt_registro']) ? 'aviso TGT' : 'confirmação ao lead') . ' falhou: ' . $e->getMessage();
         return false;
     }
 }
@@ -171,7 +171,10 @@ function tgt_registrar($status, $dados) {
         'ip ' . $ip,
     );
     if (!empty($GLOBALS['dados']['website'])) {
-        $partes[] = 'campo anti-robô preenchido (lead marcado para conferência)';
+        // Só o tipo do conteúdo, para saber se foi o preenchimento automático do navegador (nunca o texto em si)
+        $v = (string) $GLOBALS['dados']['website'];
+        $tipo = strpos($v, '@') !== false ? 'parece e-mail' : (preg_match('/^(https?:|www\.)/i', $v) ? 'parece site' : (preg_match('/^[\d\s()+-]+$/', $v) ? 'parece telefone' : 'texto'));
+        $partes[] = 'campo anti-robô preenchido (' . $tipo . ', ' . strlen($v) . ' caracteres; lead marcado para conferência)';
     }
     if (!empty($GLOBALS['email']) && is_string($GLOBALS['email']) && strpos($GLOBALS['email'], '@') !== false) {
         $partes[] = 'lead @' . substr(strrchr($GLOBALS['email'], '@'), 1);

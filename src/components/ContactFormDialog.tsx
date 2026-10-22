@@ -62,12 +62,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Anti-spam: Honeypot check
-    if (form.website) {
-      console.warn("Spam detected via honeypot.");
-      onOpenChange(false);
-      return;
-    }
+    // O campo anti-robô vai junto no envio: o servidor marca o lead para conferência em vez de descartar.
 
     // Anti-spam: Rate limiting (min 5 seconds between submissions)
     const now = Date.now();
@@ -215,7 +210,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
           <div className="hidden" aria-hidden="true">
             <Input
               type="text"
-              name="website"
+              name="tgt_campo_extra"
               value={form.website}
               onChange={(e) => setForm({ ...form, website: e.target.value })}
               tabIndex={-1}

@@ -12,6 +12,9 @@ const NOME_REMETENTE  = 'TGT Marketing';
 const WHATSAPP_TGT    = '5519992795271';
 
 function responder($status, $dados) {
+    if (function_exists('tgt_registrar') && empty($dados['smtp'])) {
+        tgt_registrar($status, $dados);
+    }
     http_response_code($status);
     echo json_encode($dados, JSON_UNESCAPED_UNICODE);
     exit;
@@ -48,6 +51,7 @@ function tgt_smtp_config() {
     for ($i = 0; $i < 5; $i++) {
         $arquivo = $dir . '/tgt-smtp-config.php';
         if (@is_file($arquivo)) {
+            $GLOBALS['tgt_dir_privado'] = $dir;
             $lido = include $arquivo;
             if (is_array($lido) && !empty($lido['usuario']) && !empty($lido['senha'])) {
                 $cfg = $lido;
@@ -138,12 +142,47 @@ function enviar($para, $assuntoTexto, $html, $replyTo = '') {
         // Corpo em base64: nenhuma linha começa com ponto, então a mensagem chega íntegra
         $mensagem = implode("\r\n", $cabecalhos) . "\r\n\r\n"
             . rtrim(chunk_split(base64_encode($html), 76, "\r\n")) . "\r\n.";
-        tgt_smtp_cmd($con, $mensagem, 250, 'envio');
+        $resposta = tgt_smtp_cmd($con, $mensagem, 250, 'envio');
+        $fila = preg_match('/queued as (\S+)/i', $resposta, $m) ? ' (fila ' . $m[1] . ')' : '';
+        $GLOBALS['tgt_registro'][] = ($para === EMAIL_DESTINO ? 'aviso TGT' : 'confirmação') . ' aceito' . $fila;
         return true;
     } catch (Exception $e) {
         error_log('[TGT formulário] ' . $e->getMessage());
+        $GLOBALS['tgt_registro'][] = ($para === EMAIL_DESTINO ? 'aviso TGT' : 'confirmação') . ' falhou: ' . $e->getMessage();
         return false;
     }
+}
+
+// Registro de cada tentativa (sem nome, telefone ou mensagem): data, resultado e motivo de erro.
+// Fica fora da public_html, junto da configuração do SMTP, e ajuda a descobrir por que um lead não chegou.
+function tgt_registrar($status, $dados) {
+    tgt_smtp_config();
+    if (empty($GLOBALS['tgt_dir_privado'])) {
+        return;
+    }
+    $arquivo = $GLOBALS['tgt_dir_privado'] . '/tgt-formularios.log';
+    if (@filesize($arquivo) > 300000) {
+        @rename($arquivo, $arquivo . '.1');
+    }
+    $ip = isset($_SERVER['REMOTE_ADDR']) ? preg_replace('/[.:][0-9a-f]+$/i', '.x', $_SERVER['REMOTE_ADDR']) : '?';
+    $agora = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+    $partes = array(
+        $agora->format('Y-m-d H:i:s'),
+        basename(dirname($_SERVER['SCRIPT_NAME'])) . '/' . basename($_SERVER['SCRIPT_NAME']),
+        $status,
+        isset($dados['error']) ? $dados['error'] : 'ok',
+        'ip ' . $ip,
+    );
+    if (!empty($GLOBALS['dados']['website'])) {
+        $partes[] = 'campo anti-robô preenchido (lead marcado para conferência)';
+    }
+    if (!empty($GLOBALS['email']) && is_string($GLOBALS['email']) && strpos($GLOBALS['email'], '@') !== false) {
+        $partes[] = 'lead @' . substr(strrchr($GLOBALS['email'], '@'), 1);
+    }
+    if (!empty($GLOBALS['tgt_registro'])) {
+        $partes[] = implode('; ', $GLOBALS['tgt_registro']);
+    }
+    @file_put_contents($arquivo, implode(' | ', $partes) . "\n", FILE_APPEND | LOCK_EX);
 }
 
 // Conferência automática feita na publicação: testa o login no SMTP sem enviar e-mail.
@@ -179,10 +218,10 @@ if (!is_array($dados)) {
     $dados = $_POST;
 }
 
-// Anti-spam: campo escondido que só robôs preenchem
-if (!empty($dados['website'])) {
-    responder(200, array('success' => true));
-}
+// Anti-spam: campo escondido que só robôs preenchem. O envio NÃO é descartado, porque o
+// preenchimento automático do navegador às vezes preenche esse campo e um lead real se perderia.
+// O lead chega para a TGT com o assunto marcado para conferência e não recebe a confirmação.
+$suspeito = !empty($dados['website']);
 
 // Anti-spam: no máximo 1 envio a cada 20 segundos por IP
 $ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'desconhecido';
@@ -261,13 +300,15 @@ $htmlLead = '<div style="font-family:sans-serif;color:#333;line-height:1.6;max-w
     . '<p style="font-size:12px;color:#777;">TGT Marketing &amp; Comunicação<br />Americana - SP</p>'
     . '</div>';
 
-$okAdmin = enviar(EMAIL_DESTINO, "Novo diagnóstico de marca - {$empresa} | {$nome}", $htmlAdmin, $email);
+$okAdmin = enviar(EMAIL_DESTINO, ($suspeito ? '[Verificar: possível robô] ' : '') . "Novo diagnóstico de marca - {$empresa} | {$nome}", $htmlAdmin, $email);
 
 if (!$okAdmin) {
     responder(500, array('error' => 'Não foi possível enviar agora. Tente novamente ou fale conosco pelo WhatsApp.'));
 }
 
 @touch($trava);
-enviar($email, 'Recebemos seu pedido de diagnóstico - TGT Marketing', $htmlLead);
+if (!$suspeito) {
+    enviar($email, 'Recebemos seu pedido de diagnóstico - TGT Marketing', $htmlLead);
+}
 
 responder(200, array('success' => true));

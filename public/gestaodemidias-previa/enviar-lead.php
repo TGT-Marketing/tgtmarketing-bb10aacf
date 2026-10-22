@@ -241,7 +241,7 @@ $nome      = $campo('nome', 100);
 $email     = $campo('email', 150);
 $whatsapp  = $campo('whatsapp', 30);
 $empresa   = $campo('empresa', 120);
-$plano     = $campo('plano', 60);
+$objetivo  = $campo('objetivo', 60);
 $mensagem  = $campo('mensagem', 1000, true);
 
 if ($nome === '' || $email === '' || $whatsapp === '') {
@@ -278,7 +278,7 @@ $htmlAdmin = '<h2 style="font-family:sans-serif;">Novo pedido de diagnóstico: G
     . $linha('E-mail', h($email))
     . $linha('WhatsApp', '<a href="' . htmlspecialchars($linkLead, ENT_QUOTES, 'UTF-8') . '">' . h($whatsapp) . '</a>')
     . $linha('Empresa / Instagram', h($empresa))
-    . $linha('Plano de interesse', h($plano))
+    . $linha('Objetivo principal', h($objetivo))
     . $linha('Mensagem', h($mensagem))
     . $linha('Origem', 'Landing /gestaodemidias' . (strpos($_SERVER['SCRIPT_NAME'], 'previa') !== false ? ' (prévia)' : ''))
     . '</table>'
@@ -294,7 +294,7 @@ $htmlLead = '<div style="font-family:sans-serif;color:#333;line-height:1.6;max-w
     . '<p style="font-size:12px;color:#777;">TGT Marketing &amp; Comunicação<br />Americana - SP</p>'
     . '</div>';
 
-$assuntoAdmin = "NOVO LEAD GESTÃO DE MÍDIAS: {$nome}" . ($plano !== '' ? " | Plano {$plano}" : '');
+$assuntoAdmin = "NOVO LEAD GESTÃO DE MÍDIAS: {$nome}" . ($objetivo !== '' ? " | {$objetivo}" : '');
 $okAdmin = enviar(EMAIL_DESTINO, ($suspeito ? '[Verificar: possível robô] ' : '') . $assuntoAdmin, $htmlAdmin, $email);
 
 if (!$okAdmin) {

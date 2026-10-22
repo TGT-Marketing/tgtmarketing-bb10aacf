@@ -169,6 +169,7 @@ jobs:
           fi
 
       - name: Conferir as landings /sites e /marcas no servidor
+        id: conferir
         if: steps.dados.outputs.pronto == 'sim'
         env:
           FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
@@ -198,14 +199,15 @@ jobs:
             for u in enviar-contato.php sites/enviar-lead.php marcas/enviar-diagnostico.php; do
               R=$(curl -s -m 60 --resolve "$H:443:$IP" -X POST -H "X-TGT-Verificar: $TOKEN" "https://$H/$u" | sed -e 's/<[^>]*>/ /g' | tr -s ' \n\t' ' ' | cut -c1-220)
               echo "::notice::E-mail do formulário /$u: $R"
-              case "$R" in *'"success":true'*) ;; *) break ;; esac
+              case "$R" in *'"success":true'*) OKS=$((${OKS:-0}+1)) ;; *) break ;; esac
             done
+            [ "${OKS:-0}" = 3 ] && echo "smtp_ok=sim" >> "$GITHUB_OUTPUT"
           else
             echo "::warning::Formulários sem senha do e-mail cadastrada (secret LOCAWEB_SMTP_SENHA): os envios vão falhar até ela ser cadastrada."
           fi
 
       - name: Lead de teste nos 3 formulários (só quando pedido manualmente)
-        if: steps.dados.outputs.pronto == 'sim' && github.event_name == 'workflow_dispatch' && inputs.lead_teste
+        if: steps.dados.outputs.pronto == 'sim' && github.event_name == 'workflow_dispatch' && inputs.lead_teste && steps.conferir.outputs.smtp_ok == 'sim'
         env:
           FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
         run: |

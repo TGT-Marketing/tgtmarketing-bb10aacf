@@ -135,6 +135,20 @@ jobs:
           PV=$(curl -s -o /dev/null -w '%{http_code}' -m 20 --resolve "$H:443:$IP" "https://$H/marcas-previa/")
           echo "::notice::/marcas-previa/ (deve estar fora do ar): HTTP $PV"
 
+      - name: Diagnóstico temporário dos formulários
+        if: steps.dados.outputs.pronto == 'sim'
+        env:
+          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+        run: |
+          IP=$(getent ahostsv4 "$FTP_HOST" | awk 'NR==1{print $1}')
+          H=www.tgtmarketing.com.br
+          r() { curl -s -m 25 --resolve "$H:443:$IP" "$@" -w ' [HTTP %{http_code}]' | tr '\n' ' ' | cut -c1-900; }
+          echo "::notice::DIAG ambiente: $(r https://$H/diag-419d85af2d669db3.php)"
+          # e-mail inválido: passa por todas as etapas do PHP, menos o envio, então nenhum e-mail sai
+          echo "::notice::DIAG sites: $(r -X POST -H 'Content-Type: application/json' -d '{"nome":"Teste","email":"invalido","whatsapp":"19992795271","mensagem":"teste","tipo":"rapido"}' https://$H/sites/enviar-lead.php)"
+          echo "::notice::DIAG marcas: $(r -X POST -H 'Content-Type: application/json' -d '{"nome":"Teste","email":"invalido","whatsapp":"19992795271","empresa":"Teste","segmento":"a","estagio":"b","objetivo":"c","orcamento":"d"}' https://$H/marcas/enviar-diagnostico.php)"
+          echo "::notice::DIAG principal: $(r -X POST -H 'Content-Type: application/json' -d '{"nome":"Teste","empresa":"Teste","email":"invalido","whatsapp":"19992795271","faturamento":"x","objetivo":"y"}' https://$H/enviar-contato.php)"
+
       - name: Mostrar para onde o domínio aponta hoje
         run: |
           echo "::notice::Google DNS: $(dig +short A www.tgtmarketing.com.br @8.8.8.8 | tr '\n' ' ') | Cloudflare DNS: $(dig +short A www.tgtmarketing.com.br @1.1.1.1 | tr '\n' ' ') | Locaweb NS: $(dig +short A tgtmarketing.com.br @ns1.locaweb.com.br | tr '\n' ' ')"

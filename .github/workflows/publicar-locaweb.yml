@@ -12,6 +12,11 @@ on:
   push:
     branches: [migracao-locaweb]
   workflow_dispatch:
+    inputs:
+      lead_teste:
+        description: "Enviar 1 lead de teste por formulário (site, /sites e /marcas) para contato@tgtmarketing.com.br"
+        type: boolean
+        default: false
 
 concurrency:
   group: publicar-locaweb
@@ -189,6 +194,22 @@ jobs:
           else
             echo "::warning::Formulários sem senha do e-mail cadastrada (secret LOCAWEB_SMTP_SENHA): os envios vão falhar até ela ser cadastrada."
           fi
+
+      - name: Lead de teste nos 3 formulários (só quando pedido manualmente)
+        if: steps.dados.outputs.pronto == 'sim' && github.event_name == 'workflow_dispatch' && inputs.lead_teste
+        env:
+          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+        run: |
+          IP=$(getent ahostsv4 "$FTP_HOST" | awk 'NR==1{print $1}')
+          H=www.tgtmarketing.com.br
+          QUANDO=$(TZ=America/Sao_Paulo date '+%d/%m %H:%M')
+          enviar() {
+            R=$(curl -s -m 60 --resolve "$H:443:$IP" -X POST -H 'Content-Type: application/json' -d "$2" "https://$H/$1" | sed -e 's/<[^>]*>/ /g' | tr -s ' \n\t' ' ' | cut -c1-200)
+            echo "::notice::Lead de teste em /$1: $R"
+          }
+          enviar enviar-contato.php '{"nome":"TESTE TGT site principal","empresa":"Teste do formulário","email":"contato@tgtmarketing.com.br","whatsapp":"(19) 99279-5271","faturamento":"Teste","objetivo":"Teste automático do envio em '"$QUANDO"' (pode apagar)"}'
+          enviar sites/enviar-lead.php '{"tipo":"rapido","nome":"TESTE TGT landing sites","email":"contato@tgtmarketing.com.br","whatsapp":"(19) 99279-5271","mensagem":"Teste automático do envio em '"$QUANDO"' (pode apagar)"}'
+          enviar marcas/enviar-diagnostico.php '{"nome":"TESTE TGT branding","email":"contato@tgtmarketing.com.br","whatsapp":"(19) 99279-5271","empresa":"Teste do formulário","segmento":"Teste","estagio":"Teste","objetivo":"Teste","orcamento":"Teste","desafio":"Teste automático do envio em '"$QUANDO"' (pode apagar)"}'
 
       - name: Mostrar para onde o domínio aponta hoje
         run: |

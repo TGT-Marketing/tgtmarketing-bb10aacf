@@ -87,6 +87,7 @@ async function midias(largura) {
   const { pagina, errosJs } = await abrir(largura);
   try {
     await pagina.goto(SITE + caminho, { waitUntil: "networkidle", timeout: 60000 });
+    nota(`Gestão de mídias: página aberta com o título "${await pagina.title()}"`);
     const f = pagina.locator("#contato form").first();
     await f.scrollIntoViewIfNeeded();
     await f.getByPlaceholder("Seu nome").fill(`TESTE TGT navegador ${largura}px (gestão de mídias)`);

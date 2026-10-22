@@ -22,17 +22,12 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq lftp > /dev/null
           lf() { lftp --env-password -u "$FTP_USUARIO" "sftp://$FTP_HOST" -e "set net:max-retries 2; set net:timeout 25; set sftp:auto-confirm yes; $1; bye" 2>&1; }
           {
-            echo "RAIZ: $(lf 'cls -1a' | tr '\n' ' ')"
-            for d in logs log tmp; do L=$(lf "cls -la $d" | tail -12 | tr '\n' ' '); [ -n "$L" ] && echo "PASTA $d: $L"; done
+            echo "REGISTRO DOS FORMULÁRIOS (horário de Brasília):"
           } > saida.txt
           mkdir -p reg && cd reg
-          lf "mirror --include-glob '*.log' --include-glob '*.log.1' --include-glob '*error*' --no-recursion . ." > /dev/null || true
-          for d in logs log; do lf "mirror --newer-than=now-2days $d $d" > /dev/null || true; done
+          lf "get tgt-formularios.log" > /dev/null || true
           {
-            echo "BAIXADOS: $(find . -type f | head -20 | tr '\n' ' ')"
-            if [ -f tgt-formularios.log ]; then tail -n 30 tgt-formularios.log | sed 's/^/REG /'; else echo "SEM tgt-formularios.log"; fi
-            grep -rh "TGT formul" . 2>/dev/null | tail -n 15 | cut -c1-300 | sed 's/^/PHPLOG /'
-            grep -rhiE "enviar-diagnostico|enviar-contato|enviar-lead" . 2>/dev/null | tail -n 20 | cut -c1-250 | sed 's/^/ACESSO /'
+            if [ -f tgt-formularios.log ]; then tail -n 30 tgt-formularios.log; else echo "SEM tgt-formularios.log"; fi
           } >> ../saida.txt
           cd ..
           # As anotações do GitHub têm limite por passo: junta tudo em blocos

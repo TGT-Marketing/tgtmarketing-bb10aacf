@@ -72,6 +72,26 @@ jobs:
             echo "::error::Não foi possível enviar o site. Últimas linhas do envio:"; tail -15 envio.log; exit 1
           fi
 
+      - name: Remover do servidor pastas que saíram do site
+        if: steps.dados.outputs.pronto == 'sim'
+        env:
+          FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
+          FTP_USUARIO: ${{ secrets.LOCAWEB_FTP_USUARIO }}
+          LFTP_PASSWORD: ${{ secrets.LOCAWEB_FTP_SENHA }}
+        run: |
+          # O envio só acrescenta e atualiza arquivos. Pastas listadas aqui são apagadas do servidor.
+          REMOVER="marcas-previa"
+          for pasta in $REMOVER; do
+            if [ -d "dist/$pasta" ]; then echo "::warning::$pasta ainda existe no projeto, não foi apagada"; continue; fi
+            for proto in sftp ftp; do
+              if lftp --env-password -u "$FTP_USUARIO" "$proto://$FTP_HOST" -e "
+                  set net:max-retries 2; set net:timeout 25; set sftp:auto-confirm yes; set ftp:ssl-allow no; set ftp:passive-mode yes;
+                  rm -r -f public_html/$pasta; bye" > remover.log 2>&1; then
+                echo "::notice::Pasta $pasta removida do servidor (ou já não existia)."; break
+              fi
+            done
+          done
+
       - name: Conferir se o servidor da Locaweb já entrega o site novo
         if: steps.dados.outputs.pronto == 'sim'
         env:
@@ -91,7 +111,7 @@ jobs:
             echo "::warning::O index.html no servidor é diferente desta versão (pode ser cache da Locaweb)."
           fi
 
-      - name: Conferir a landing /sites no servidor
+      - name: Conferir as landings /sites e /marcas no servidor
         if: steps.dados.outputs.pronto == 'sim'
         env:
           FTP_HOST: ${{ secrets.LOCAWEB_FTP_HOST }}
@@ -108,6 +128,12 @@ jobs:
           echo "::notice::Formulário (teste sem enviar e-mail): $P"
           A=$(curl -s -o /dev/null -w '%{http_code} %{content_type}' -m 20 --resolve "$H:443:$IP" "https://$H/sites/assets/$(ls dist/sites/assets | grep -m1 '^main-.*\.js$')")
           echo "::notice::Arquivo JS da landing: $A"
+          M=$(curl -s -m 20 --resolve "$H:443:$IP" "https://$H/marcas/" | grep -o '<title>[^<]*' | head -1 | sed 's/<title>//')
+          echo "::notice::/marcas/ responde: ${M:-sem título}"
+          MP=$(curl -s -m 20 --resolve "$H:443:$IP" -X POST -H 'Content-Type: application/json' -d '{"website":"teste-automatico"}' "https://$H/marcas/enviar-diagnostico.php")
+          echo "::notice::Formulário do /marcas (teste sem enviar e-mail): $MP"
+          PV=$(curl -s -o /dev/null -w '%{http_code}' -m 20 --resolve "$H:443:$IP" "https://$H/marcas-previa/")
+          echo "::notice::/marcas-previa/ (deve estar fora do ar): HTTP $PV"
 
       - name: Mostrar para onde o domínio aponta hoje
         run: |

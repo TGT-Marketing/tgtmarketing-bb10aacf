@@ -65,6 +65,20 @@
       });
     </script>
     <!-- End Google tag (gtag.js) -->
+    <!-- Google Tag Manager da TGT (o mesmo das landing pages): carrega depois que a página termina de abrir -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NLC7QKJ9';
+          document.head.appendChild(s);
+        }, 1500);
+      });
+    </script>
+    <!-- End Google Tag Manager -->
     <link rel="canonical" href="https://www.tgtmarketing.com.br/" />
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="TGT Marketing | Agência de Marketing em Americana - SP">

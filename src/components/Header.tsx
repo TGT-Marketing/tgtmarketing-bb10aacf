@@ -5,6 +5,7 @@ import logoTgt from "@/assets/logo-tgt.webp";
 
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
+  { label: "Onde estamos", href: "#onde-estamos" },
   { label: "Serviços", href: "#servicos" },
   { label: "TRABALHOS", href: "#trabalhos" },
   { label: "Resultados", href: "#resultados" },
@@ -45,12 +46,12 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[11px] font-bold text-primary-foreground/50 hover:text-accent transition-all duration-300 uppercase tracking-[0.2em] relative group/nav"
+              className="whitespace-nowrap text-[11px] font-bold text-primary-foreground/50 hover:text-accent transition-all duration-300 uppercase tracking-[0.14em] xl:tracking-[0.2em] relative group/nav"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover/nav:w-full" />
@@ -68,7 +69,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
                 });
               }
             }}
-            className="shine-effect inline-flex items-center gap-2.5 bg-accent text-accent-foreground px-6 py-2.5 rounded-full text-[11px] font-black hover:shadow-[0_0_30px_hsl(var(--accent)/0.4)] hover:scale-105 transition-all duration-500 uppercase tracking-[0.15em] active:scale-[0.97]"
+            className="shine-effect inline-flex shrink-0 whitespace-nowrap items-center gap-2.5 bg-accent text-accent-foreground px-5 xl:px-6 py-2.5 rounded-full text-[11px] font-black hover:shadow-[0_0_30px_hsl(var(--accent)/0.4)] hover:scale-105 transition-all duration-500 uppercase tracking-[0.15em] active:scale-[0.97]"
           >
             <MessageCircle size={14} className="shrink-0" />
             Falar no WhatsApp
@@ -77,7 +78,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-primary-foreground relative z-[60] w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 active:scale-90 transition-transform"
+          className="lg:hidden text-primary-foreground relative z-[60] w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 active:scale-90 transition-transform"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
@@ -94,7 +95,7 @@ const Header = ({ onOpenContact }: { onOpenContact?: () => void }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setMobileOpen(false)}
-            className="fixed inset-0 z-[50] md:hidden bg-primary/60 backdrop-blur-md"
+            className="fixed inset-0 z-[50] lg:hidden bg-primary/60 backdrop-blur-md"
           >
             <motion.div
               initial={{ x: "100%" }}

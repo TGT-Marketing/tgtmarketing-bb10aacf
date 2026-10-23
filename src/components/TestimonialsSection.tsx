@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
   }, [emblaApi]);
 
   return (
-    <section className="pt-2 pb-20 sm:pt-4 sm:pb-32 bg-background" ref={ref}>
+    <section className="pt-2 pb-20 sm:pt-4 sm:pb-32 bg-background overflow-x-clip" ref={ref}>
       <div className="container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

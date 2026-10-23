@@ -9,6 +9,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 // processador, uma por vez, para a tela nunca travar.
 const importadores = {
   about: () => import("@/components/AboutSection"),
+  mundo: () => import("@/components/OndeEstamosSection"),
   problems: () => import("@/components/ProblemsSection"),
   services: () => import("@/components/ServicesSection"),
   ai: () => import("@/components/AiSection"),
@@ -23,6 +24,7 @@ const importadores = {
 };
 
 const AboutSection = lazy(importadores.about);
+const OndeEstamosSection = lazy(importadores.mundo);
 const ProblemsSection = lazy(importadores.problems);
 const ServicesSection = lazy(importadores.services);
 const AiSection = lazy(importadores.ai);
@@ -62,6 +64,7 @@ const Index = () => {
 
   const secoes: ReactNode[] = [
     <AboutSection key="about" />,
+    <OndeEstamosSection key="mundo" />,
     <ProblemsSection key="problems" onOpenContact={abrirContato} />,
     <ServicesSection key="services" />,
     <AiSection key="ai" onOpenContact={abrirContato} />,

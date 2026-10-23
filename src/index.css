@@ -191,6 +191,136 @@
   }
 }
 
+/* ===== Seção "TGT pelo mundo": globo 3D ===== */
+.globo-estrelas {
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.55), transparent 60%),
+    radial-gradient(1px 1px at 28% 72%, rgba(255,255,255,0.35), transparent 60%),
+    radial-gradient(1.5px 1.5px at 44% 12%, rgba(255,255,255,0.45), transparent 60%),
+    radial-gradient(1px 1px at 63% 84%, rgba(255,255,255,0.4), transparent 60%),
+    radial-gradient(1.5px 1.5px at 78% 26%, rgba(255,255,255,0.5), transparent 60%),
+    radial-gradient(1px 1px at 88% 62%, rgba(255,255,255,0.35), transparent 60%),
+    radial-gradient(1px 1px at 6% 52%, rgba(255,255,255,0.3), transparent 60%),
+    radial-gradient(1px 1px at 52% 44%, rgba(255,90,90,0.5), transparent 60%),
+    radial-gradient(1px 1px at 92% 8%, rgba(255,255,255,0.4), transparent 60%),
+    radial-gradient(1px 1px at 36% 92%, rgba(255,255,255,0.3), transparent 60%),
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, 48px 48px, 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 85%);
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 85%);
+}
+.globo-caixa canvas { outline: none; }
+.globo-esqueleto {
+  width: min(62%, 420px);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 30%, rgba(255,60,60,0.35), rgba(120,8,18,0.35) 45%, rgba(10,4,6,0.9) 70%);
+  box-shadow: 0 0 80px rgba(255,40,40,0.35), inset 0 0 60px rgba(0,0,0,0.6);
+  animation: globo-respira 2.4s ease-in-out infinite;
+}
+@keyframes globo-respira { 0%, 100% { opacity: 0.55; scale: 0.97; } 50% { opacity: 0.9; scale: 1; } }
+
+/* Dica com o nome do país ao passar o mouse */
+.globo-dica {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 9999px;
+  background: rgba(10,10,12,0.92);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  font: 700 12px/1 'Inter', sans-serif;
+  letter-spacing: 0.02em;
+  box-shadow: 0 12px 30px -10px rgba(0,0,0,0.8);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.globo-dica.visivel { opacity: 1; }
+.globo-dica-tgt {
+  padding: 3px 7px;
+  border-radius: 9999px;
+  background: hsl(0 78% 48%);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Pinos das unidades (a posição é calculada a cada quadro) */
+.globo-pino {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -9px 0 0 -9px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  will-change: transform;
+  transition: opacity 0.35s ease;
+}
+.globo-pino.atras { opacity: 0; pointer-events: none; }
+.globo-pino-ponto {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 4px solid hsl(0 78% 50%);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.15), 0 0 22px rgba(255,40,40,0.9);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.globo-pino-ponto::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  border: 2px solid rgba(255,60,60,0.7);
+  animation: globo-pulso 1.8s ease-out infinite;
+}
+@keyframes globo-pulso { from { transform: scale(0.6); opacity: 1; } to { transform: scale(1.7); opacity: 0; } }
+.globo-pino-rotulo {
+  padding: 6px 10px;
+  border-radius: 9999px;
+  background: rgba(10,10,12,0.85);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  font: 800 11px/1 'Inter', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.globo-pino:hover .globo-pino-ponto,
+.globo-pino.ativo .globo-pino-ponto { transform: scale(1.35); }
+.globo-pino:hover .globo-pino-rotulo,
+.globo-pino.ativo .globo-pino-rotulo {
+  background: hsl(0 78% 48%);
+  border-color: hsl(0 78% 60%);
+  box-shadow: 0 10px 30px -8px hsl(0 78% 48% / 0.8);
+  transform: translateX(3px);
+}
+@media (max-width: 640px) {
+  .globo-pino-rotulo { font-size: 9px; padding: 5px 8px; }
+  .globo-pino-ponto { width: 15px; height: 15px; border-width: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .globo-pino-ponto::after, .globo-esqueleto { animation: none; }
+}
+
 /* Lenis CSS */
 html.lenis, html.lenis body {
   height: auto;

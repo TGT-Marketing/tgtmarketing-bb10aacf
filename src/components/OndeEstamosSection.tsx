@@ -154,23 +154,22 @@ const OndeEstamosSection = () => {
               encontre a unidade TGT mais perto de você.
             </p>
           </div>
-          <div className="grid grid-cols-4 gap-2 sm:gap-3 lg:col-span-5">
+          {/* No celular, 2 colunas (número e rótulo lado a lado) para o texto não ser cortado */}
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3 lg:col-span-5">
             {NUMEROS.map((n, i) => (
               <motion.div
                 key={n.rotulo}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 + i * 0.1, ease: [0.23, 1, 0.32, 1] }}
-                className="group rounded-2xl border border-black/[0.06] bg-white px-2 py-4 text-center shadow-[0_10px_30px_-18px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_40px_-18px_hsl(0_78%_48%/0.45)] sm:px-3 sm:py-5"
+                className="group flex items-baseline justify-center gap-2 rounded-2xl border border-black/[0.06] bg-white px-3 py-3.5 text-center shadow-[0_10px_30px_-18px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_40px_-18px_hsl(0_78%_48%/0.45)] sm:block sm:py-5"
               >
                 {n.rotulo === "desde" && (
-                  <div className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground sm:text-[10px]">desde</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">desde</div>
                 )}
                 <div className="text-2xl font-black leading-none tracking-tight text-gradient sm:text-4xl">{n.valor}</div>
                 {n.rotulo !== "desde" && (
-                  <div className="mt-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground sm:text-[10px]">
-                    {n.rotulo}
-                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground sm:mt-1.5">{n.rotulo}</div>
                 )}
               </motion.div>
             ))}

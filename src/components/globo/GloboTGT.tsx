@@ -323,6 +323,7 @@ const GloboTGT = forwardRef<GloboControle, Props>(({ unidades, ativa, aoSelecion
     let ultimoX = 0;
     let ultimoY = 0;
     let moveu = 0;
+    let inicioNoPino = false;
     let pendente: PointerEvent | null = null;
 
     const paisEm = (ev: PointerEvent | MouseEvent) => {
@@ -361,7 +362,27 @@ const GloboTGT = forwardRef<GloboControle, Props>(({ unidades, ativa, aoSelecion
       tela.style.cursor = m.arrastando ? "grabbing" : pais && comTGT.has(pais.codigo) ? "pointer" : sobreGlobo ? "grab" : "";
     };
 
+    // Dedos na tela (celular): um dedo gira o globo em qualquer direção, dois dedos aproximam ou afastam
+    const toques = new Map<number, { x: number; y: number }>();
+    let pinca: { distancia: number; escala: number } | null = null;
+    const distanciaDedos = () => {
+      const [a, b] = [...toques.values()];
+      return Math.hypot(a.x - b.x, a.y - b.y);
+    };
+
     const aoMover = (ev: PointerEvent) => {
+      if (ev.pointerType === "touch" && toques.has(ev.pointerId)) {
+        toques.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+        if (pinca && toques.size >= 2) {
+          const d = distanciaDedos();
+          if (pinca.distancia > 0) {
+            const nova = limitar((pinca.escala * d) / pinca.distancia, 0.75, 2.2);
+            m.escala = nova;
+            m.alvoEscala = nova;
+          }
+          return;
+        }
+      }
       if (m.arrastando) {
         const dx = ev.clientX - ultimoX;
         const dy = ev.clientY - ultimoY;
@@ -371,7 +392,7 @@ const GloboTGT = forwardRef<GloboControle, Props>(({ unidades, ativa, aoSelecion
         const passoPhi = ((dx / largura) * Math.PI * 1.1) / m.escala;
         m.phi += passoPhi;
         m.velocidade = passoPhi;
-        if (ev.pointerType !== "touch") m.theta = limitar(m.theta + ((dy / altura) * Math.PI * 0.8) / m.escala, -0.9, 1.1);
+        m.theta = limitar(m.theta + ((dy / altura) * Math.PI * 0.8) / m.escala, -0.9, 1.1);
       }
       if (ev.pointerType === "mouse") {
         pendente = ev;
@@ -382,7 +403,22 @@ const GloboTGT = forwardRef<GloboControle, Props>(({ unidades, ativa, aoSelecion
       }
     };
     const aoPressionar = (ev: PointerEvent) => {
-      if (ev.button !== 0) return;
+      if (ev.pointerType === "touch") {
+        toques.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+        if (toques.size === 2) {
+          // Começou a pinça: para de girar e passa a controlar o zoom
+          pinca = { distancia: distanciaDedos(), escala: m.escala };
+          m.arrastando = false;
+          m.velocidade = 0;
+          el.classList.remove("arrastando");
+          return;
+        }
+        if (toques.size > 2) return;
+      }
+      // Com o mouse, girar só começa no próprio globo (o pino tem o clique dele).
+      // No celular, o dedo que começa num pino também gira o globo se arrastar; se só tocar, abre a cidade.
+      const noPino = ev.target !== tela;
+      if ((noPino && ev.pointerType !== "touch") || ev.button !== 0) return;
       m.arrastando = true;
       m.alvoPhi = null;
       m.alvoTheta = null;
@@ -390,20 +426,38 @@ const GloboTGT = forwardRef<GloboControle, Props>(({ unidades, ativa, aoSelecion
       inicioX = ultimoX = ev.clientX;
       inicioY = ultimoY = ev.clientY;
       moveu = 0;
-      tela.setPointerCapture?.(ev.pointerId);
+      inicioNoPino = noPino;
+      if (!noPino) tela.setPointerCapture?.(ev.pointerId);
       el.classList.add("arrastando");
     };
     const aoSoltar = (ev: PointerEvent) => {
+      if (ev.pointerType === "touch") {
+        toques.delete(ev.pointerId);
+        if (pinca) {
+          if (toques.size < 2) {
+            pinca = null;
+            m.pausadoAte = performance.now() + 4500;
+          }
+          return;
+        }
+      }
       if (!m.arrastando) return;
       m.arrastando = false;
       el.classList.remove("arrastando");
       m.pausadoAte = performance.now() + 4500;
-      // Um clique (sem arrastar) num país com TGT abre a unidade
-      if (moveu < 6 && Math.abs(ev.clientX - inicioX) < 6 && Math.abs(ev.clientY - inicioY) < 6) {
+      // Um clique (sem arrastar) num país com TGT abre a unidade (no pino, quem abre é o próprio pino)
+      if (!inicioNoPino && moveu < 6 && Math.abs(ev.clientX - inicioX) < 6 && Math.abs(ev.clientY - inicioY) < 6) {
         const { pais } = paisEm(ev);
         const u = pais ? unidades.find((x) => x.codigo === pais.codigo) : undefined;
         if (u) selecionarRef.current(u.id);
       }
+    };
+    const aoCancelar = (ev: PointerEvent) => {
+      if (!toques.has(ev.pointerId) && !el.contains(ev.target as Node)) return;
+      toques.delete(ev.pointerId);
+      if (toques.size < 2) pinca = null;
+      m.arrastando = false;
+      el.classList.remove("arrastando");
     };
     const aoSair = () => {
       m.sobre = false;
@@ -411,14 +465,34 @@ const GloboTGT = forwardRef<GloboControle, Props>(({ unidades, ativa, aoSelecion
       dica.current?.classList.remove("visivel");
     };
 
-    tela.addEventListener("pointerdown", aoPressionar);
+    // No celular, o toque que começa em cima da esfera é do globo (a página não rola);
+    // o toque nas bordas do quadro, fora da esfera, continua rolando a página normalmente.
+    // Dois dedos (mesmo que um caia em cima de um pino) viram pinça. Num pino, o toque só é bloqueado
+    // quando o dedo arrasta, para que o toque simples continue abrindo a cidade.
+    let modoToque: "globo" | "pino" | "pagina" = "pagina";
+    const aoTocar = (ev: TouchEvent) => {
+      if (ev.touches.length > 1) {
+        modoToque = "globo";
+      } else if (ev.target === tela) {
+        const t = ev.touches[0];
+        const r = tela.getBoundingClientRect();
+        modoToque = desprojetar((t.clientX - r.left) / r.width, (t.clientY - r.top) / r.height, vista()) ? "globo" : "pagina";
+      } else {
+        modoToque = (ev.target as Element).closest?.(".globo-pino") ? "pino" : "pagina";
+      }
+      if (modoToque === "globo" && ev.cancelable) ev.preventDefault();
+    };
+    const aoArrastarToque = (ev: TouchEvent) => {
+      if (modoToque !== "pagina" && ev.cancelable) ev.preventDefault();
+    };
+
+    el.addEventListener("pointerdown", aoPressionar);
     window.addEventListener("pointermove", aoMover, { passive: true });
     window.addEventListener("pointerup", aoSoltar);
-    tela.addEventListener("pointercancel", () => {
-      m.arrastando = false;
-      el.classList.remove("arrastando");
-    });
+    window.addEventListener("pointercancel", aoCancelar);
     tela.addEventListener("pointerleave", aoSair);
+    el.addEventListener("touchstart", aoTocar, { passive: false });
+    el.addEventListener("touchmove", aoArrastarToque, { passive: false });
 
     const ro = new ResizeObserver(ajustarTamanho);
     // Fora da tela, o globo para de desenhar (economiza bateria e processador)
@@ -462,7 +536,7 @@ const GloboTGT = forwardRef<GloboControle, Props>(({ unidades, ativa, aoSelecion
 
       // Mapa dos países (contornos e nomes), carregado logo depois do globo
       try {
-        const dados = (await fetch("/dados/paises.json").then((r) => r.json())) as {
+        const dados = (await fetch(`${import.meta.env.BASE_URL}dados/paises.json`).then((r) => r.json())) as {
           features: { properties: { n: string; c: string }; geometry: { type: string; coordinates: number[][][] | number[][][][] } }[];
         };
         if (cancelado) return;
@@ -494,10 +568,13 @@ const GloboTGT = forwardRef<GloboControle, Props>(({ unidades, ativa, aoSelecion
       if (quadro) cancelAnimationFrame(quadro);
       ro.disconnect();
       io.disconnect();
-      tela.removeEventListener("pointerdown", aoPressionar);
+      el.removeEventListener("pointerdown", aoPressionar);
       window.removeEventListener("pointermove", aoMover);
       window.removeEventListener("pointerup", aoSoltar);
+      window.removeEventListener("pointercancel", aoCancelar);
       tela.removeEventListener("pointerleave", aoSair);
+      el.removeEventListener("touchstart", aoTocar);
+      el.removeEventListener("touchmove", aoArrastarToque);
       globo?.destroy();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -516,7 +593,9 @@ const GloboTGT = forwardRef<GloboControle, Props>(({ unidades, ativa, aoSelecion
       {unidades.map((u, i) => (
         <button
           key={u.id}
-          ref={(b) => (pinos.current[i] = b)}
+          ref={(b) => {
+            pinos.current[i] = b;
+          }}
           type="button"
           className={`globo-pino ${u.id === ativa ? "ativo" : ""}`}
           onClick={() => aoSelecionar(u.id)}
